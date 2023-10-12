@@ -19,5 +19,6 @@ namespace LanguageCenterManage.Models
         public string LanguageId { set; get; }
         [ForeignKey(nameof(LanguageId))]
         public Language Language { set; get; }
+        public string Status { set; get; } 
     }
 }
