@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using LanguageCenterManage.Services.UserService;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,10 @@ namespace LanguageCenterManage
 {
     public partial class Login : Dashboard
     {
+        private UserService _userService;
         public Login()
         {
+            _userService = new UserService();
             InitializeComponent();
         }
 
@@ -40,10 +43,10 @@ namespace LanguageCenterManage
 
         private void txtUsername_Click(object sender, EventArgs e)
         {
-            if(txtUsername.Text == "Enter Username")
+            if(txtEmail.Text == "Enter Username")
             {
-                txtUsername.Text = "";
-                txtUsername.ForeColor = Color.Black;
+                txtEmail.Text = "";
+                txtEmail.ForeColor = Color.Black;
             }
         }
 
@@ -75,7 +78,21 @@ namespace LanguageCenterManage
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            
+            var email = txtEmail.Text;
+            var password = txtPassword.Text;
+
+            var response = _userService.Login(email, password);
+            if(response == null)
+            {
+
+            }
+            else
+            {
+                USER.FirstName = response.FirstName;
+                USER.LastName = response.LastName;
+                USER.UserId = response.UserId;
+                USER.Email = response.Email;
+            }
         }
     }
 }

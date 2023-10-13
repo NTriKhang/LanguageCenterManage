@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net48\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
@@ -115,9 +118,9 @@
     <Compile Include="Migrations\202310120520547_initial.designer.cs">
       <DependentUpon>202310120520547_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202310121452346_adjustCourseModel.cs" />
-    <Compile Include="Migrations\202310121452346_adjustCourseModel.designer.cs">
-      <DependentUpon>202310121452346_adjustCourseModel.cs</DependentUpon>
+    <Compile Include="Migrations\202310130331523_disabelNullForEmail.cs" />
+    <Compile Include="Migrations\202310130331523_disabelNullForEmail.designer.cs">
+      <DependentUpon>202310130331523_disabelNullForEmail.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class.cs" />
@@ -136,6 +139,7 @@
     <Compile Include="Services\MailService\EmailService.cs" />
     <Compile Include="Services\MailService\EmailSetting.cs" />
     <Compile Include="Services\MailService\MailRequest.cs" />
+    <Compile Include="Services\UserService\UserService.cs" />
     <Compile Include="utility.cs" />
     <EmbeddedResource Include="Form\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -149,8 +153,8 @@
     <EmbeddedResource Include="Migrations\202310120520547_initial.resx">
       <DependentUpon>202310120520547_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310121452346_adjustCourseModel.resx">
-      <DependentUpon>202310121452346_adjustCourseModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310130331523_disabelNullForEmail.resx">
+      <DependentUpon>202310130331523_disabelNullForEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

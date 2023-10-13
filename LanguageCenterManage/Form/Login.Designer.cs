@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtUsername = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.txtPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.showPassword = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialCheckBox1 = new MaterialSkin.Controls.MaterialCheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Navbar.SuspendLayout();
@@ -57,20 +55,19 @@
             // 
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Controls.Add(this.materialCheckBox1);
             this.panel4.Controls.Add(this.showPassword);
-            this.panel4.Controls.Add(this.materialRaisedButton2);
             this.panel4.Controls.Add(this.materialRaisedButton1);
             this.panel4.Controls.Add(this.txtPassword);
             this.panel4.Controls.Add(this.materialLabel2);
-            this.panel4.Controls.Add(this.txtUsername);
+            this.panel4.Controls.Add(this.txtEmail);
             this.panel4.Controls.Add(this.materialLabel1);
             this.panel4.Size = new System.Drawing.Size(638, 614);
+            this.panel4.TabIndex = 1;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // Content
             // 
-            this.Content.Size = new System.Drawing.Size(1138, 734);
+            this.Content.Size = new System.Drawing.Size(500, 614);
             // 
             // materialLabel1
             // 
@@ -81,29 +78,28 @@
             this.materialLabel1.Location = new System.Drawing.Point(107, 98);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(95, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(58, 24);
             this.materialLabel1.TabIndex = 0;
-            this.materialLabel1.Text = "Username";
+            this.materialLabel1.Text = "Email";
             // 
-            // txtUsername
+            // txtEmail
             // 
-            this.txtUsername.Depth = 0;
-            this.txtUsername.Hint = "";
-            this.txtUsername.Location = new System.Drawing.Point(265, 94);
-            this.txtUsername.MaxLength = 32767;
-            this.txtUsername.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.PasswordChar = '\0';
-            this.txtUsername.SelectedText = "";
-            this.txtUsername.SelectionLength = 0;
-            this.txtUsername.SelectionStart = 0;
-            this.txtUsername.Size = new System.Drawing.Size(288, 28);
-            this.txtUsername.TabIndex = 1;
-            this.txtUsername.TabStop = false;
-            this.txtUsername.Text = "Enter Username";
-            this.txtUsername.UseSystemPasswordChar = false;
-            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
-            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
+            this.txtEmail.Depth = 0;
+            this.txtEmail.Hint = "";
+            this.txtEmail.Location = new System.Drawing.Point(265, 94);
+            this.txtEmail.MaxLength = 32767;
+            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(288, 28);
+            this.txtEmail.TabIndex = 0;
+            this.txtEmail.TabStop = false;
+            this.txtEmail.UseSystemPasswordChar = false;
+            this.txtEmail.Click += new System.EventHandler(this.txtUsername_Click);
+            this.txtEmail.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
             // materialLabel2
             // 
@@ -133,7 +129,6 @@
             this.txtPassword.Size = new System.Drawing.Size(189, 28);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.TabStop = false;
-            this.txtPassword.Text = "Enter Password";
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
@@ -143,7 +138,7 @@
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(212, 294);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(265, 238);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -152,21 +147,6 @@
             this.materialRaisedButton1.Text = "LOGIN";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
-            // 
-            // materialRaisedButton2
-            // 
-            this.materialRaisedButton2.AutoSize = true;
-            this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Icon = null;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(347, 294);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(206, 36);
-            this.materialRaisedButton2.TabIndex = 3;
-            this.materialRaisedButton2.Text = "FORGOTEN PASSWORD";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
             // 
             // showPassword
             // 
@@ -184,22 +164,6 @@
             this.showPassword.Text = "Show";
             this.showPassword.UseVisualStyleBackColor = true;
             this.showPassword.CheckedChanged += new System.EventHandler(this.showPassword_CheckedChanged);
-            // 
-            // materialCheckBox1
-            // 
-            this.materialCheckBox1.AutoSize = true;
-            this.materialCheckBox1.Depth = 0;
-            this.materialCheckBox1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox1.Location = new System.Drawing.Point(212, 238);
-            this.materialCheckBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox1.Name = "materialCheckBox1";
-            this.materialCheckBox1.Ripple = true;
-            this.materialCheckBox1.Size = new System.Drawing.Size(143, 30);
-            this.materialCheckBox1.TabIndex = 5;
-            this.materialCheckBox1.Text = "Remember Me";
-            this.materialCheckBox1.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -243,11 +207,9 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtPassword;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtUsername;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtEmail;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox1;
         private MaterialSkin.Controls.MaterialCheckBox showPassword;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
