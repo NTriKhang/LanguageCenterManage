@@ -48,6 +48,9 @@
     <Reference Include="MailKit, Version=4.2.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
       <HintPath>..\packages\MailKit.4.2.0\lib\net48\MailKit.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="MimeKit, Version=4.2.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
       <HintPath>..\packages\MimeKit.4.2.0\lib\net48\MimeKit.dll</HintPath>
     </Reference>
@@ -90,19 +93,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\AppDbContext.cs" />
-    <Compile Include="Form\Form1.cs">
+    <Compile Include="Form\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Form\Dashboard.designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\MDIParent1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\MDIParent1.Designer.cs">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202310120520547_initial.cs" />
     <Compile Include="Migrations\202310120520547_initial.designer.cs">
       <DependentUpon>202310120520547_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202310121444250_adjustCourseModel.cs" />
-    <Compile Include="Migrations\202310121444250_adjustCourseModel.designer.cs">
-      <DependentUpon>202310121444250_adjustCourseModel.cs</DependentUpon>
+    <Compile Include="Migrations\202310121452346_adjustCourseModel.cs" />
+    <Compile Include="Migrations\202310121452346_adjustCourseModel.designer.cs">
+      <DependentUpon>202310121452346_adjustCourseModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class.cs" />
@@ -122,11 +137,20 @@
     <Compile Include="Services\MailService\EmailSetting.cs" />
     <Compile Include="Services\MailService\MailRequest.cs" />
     <Compile Include="utility.cs" />
+    <EmbeddedResource Include="Form\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MDIParent1.resx">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310120520547_initial.resx">
       <DependentUpon>202310120520547_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310121444250_adjustCourseModel.resx">
-      <DependentUpon>202310121444250_adjustCourseModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310121452346_adjustCourseModel.resx">
+      <DependentUpon>202310121452346_adjustCourseModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -136,6 +160,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -150,6 +175,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

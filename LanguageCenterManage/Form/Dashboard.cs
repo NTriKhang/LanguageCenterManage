@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
+using MaterialSkin;
 
 namespace LanguageCenterManage
 {
-    public partial class Form1 : Form
+    public partial class Dashboard : MaterialForm
     {
-        public Form1()
+        public Dashboard()
         {
             InitializeComponent();
         }
