@@ -45,7 +45,7 @@
             this.Navbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.Navbar.Location = new System.Drawing.Point(0, 0);
             this.Navbar.Name = "Navbar";
-            this.Navbar.Size = new System.Drawing.Size(1172, 120);
+            this.Navbar.Size = new System.Drawing.Size(1172, 67);
             this.Navbar.TabIndex = 0;
             // 
             // label1
@@ -53,7 +53,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(40, 27);
+            this.label1.Location = new System.Drawing.Point(510, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(680, 45);
             this.label1.TabIndex = 0;
@@ -63,26 +63,26 @@
             // 
             this.Sidebar.Controls.Add(this.panel4);
             this.Sidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Sidebar.Location = new System.Drawing.Point(0, 120);
+            this.Sidebar.Location = new System.Drawing.Point(0, 67);
             this.Sidebar.Name = "Sidebar";
-            this.Sidebar.Size = new System.Drawing.Size(638, 465);
+            this.Sidebar.Size = new System.Drawing.Size(351, 518);
             this.Sidebar.TabIndex = 0;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.Silver;
+            this.panel4.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(638, 465);
+            this.panel4.Size = new System.Drawing.Size(351, 518);
             this.panel4.TabIndex = 0;
             // 
             // Content
             // 
             this.Content.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Content.Location = new System.Drawing.Point(638, 120);
+            this.Content.Location = new System.Drawing.Point(351, 67);
             this.Content.Name = "Content";
-            this.Content.Size = new System.Drawing.Size(534, 465);
+            this.Content.Size = new System.Drawing.Size(821, 518);
             this.Content.TabIndex = 0;
             // 
             // Dashboard

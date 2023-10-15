@@ -6,7 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1;
+using LanguageCenterManage;
 
 namespace LanguageCenterManage
 {
