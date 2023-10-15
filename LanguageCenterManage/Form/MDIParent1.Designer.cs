@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace LanguageCenterManage
 {
     partial class MDIParent1
     {
