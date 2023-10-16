@@ -220,7 +220,7 @@ namespace LanguageCenterManage
             this.btnStudentStatistics.Primary = false;
             this.btnStudentStatistics.Size = new System.Drawing.Size(344, 87);
             this.btnStudentStatistics.TabIndex = 0;
-            this.btnStudentStatistics.Text = "Student Statistics";
+            this.btnStudentStatistics.Text = "Statistics";
             this.btnStudentStatistics.UseVisualStyleBackColor = true;
             // 
             // panel6

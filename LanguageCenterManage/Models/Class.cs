@@ -12,17 +12,9 @@ namespace LanguageCenterManage.Models
     {
         [Key]
         public string Id { get; set; }  
-        public string StudentId { get; set; }
-        [ForeignKey(nameof(StudentId))]
-        public Student Student { get; set; }
-        
         public string CourseId { get; set; }
         [ForeignKey(nameof(CourseId))]
         public Course Course { get; set; }
-        public decimal FirstGrade { get; set; }
-        public decimal SecondGrade { get; set; }    
-        public decimal FinalGrade { get; set; } 
         public decimal TuiTion { set; get; }
-        public bool TuiTionState { set; get; }
     }
 }

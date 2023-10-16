@@ -24,5 +24,6 @@ namespace LanguageCenterManage.DAL
         public DbSet<Student> Students { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Join> Joins { get; set; }
     }
 }

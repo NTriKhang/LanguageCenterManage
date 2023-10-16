@@ -15,7 +15,8 @@ namespace LanguageCenterManage.Models
         public string Name { set; get; }
         public string Description { set; get; }
         public int Quanlity { set; get; }   
-        public DateTime DateTime { set; get; }
+        public DateTime DateStart { set; get; }
+        public DateTime DateEnd { set; get; }
         public string LanguageId { set; get; }
         [ForeignKey(nameof(LanguageId))]
         public Language Language { set; get; }
