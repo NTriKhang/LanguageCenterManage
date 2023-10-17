@@ -97,12 +97,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\StudentControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\StudentControl.Designer.cs">
-      <DependentUpon>StudentControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="DAL\AppDbContext.cs" />
     <Compile Include="DTO\StudentDTO.cs" />
     <Compile Include="Form\Dashboard.cs">
@@ -135,18 +129,15 @@
     <Compile Include="Form\MDIParent1.Designer.cs">
       <DependentUpon>MDIParent1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202310120520547_initial.cs" />
-    <Compile Include="Migrations\202310120520547_initial.designer.cs">
-      <DependentUpon>202310120520547_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310130459364_disableNullForEmail.cs" />
-    <Compile Include="Migrations\202310130459364_disableNullForEmail.designer.cs">
-      <DependentUpon>202310130459364_disableNullForEmail.cs</DependentUpon>
+    <Compile Include="Migrations\202310161325202_redesignDbModels.cs" />
+    <Compile Include="Migrations\202310161325202_redesignDbModels.designer.cs">
+      <DependentUpon>202310161325202_redesignDbModels.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Human.cs" />
+    <Compile Include="Models\Join.cs" />
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Room.cs" />
@@ -162,9 +153,6 @@
     <Compile Include="Services\MailService\MailRequest.cs" />
     <Compile Include="Services\UserService\UserService.cs" />
     <Compile Include="utility.cs" />
-    <EmbeddedResource Include="Controls\StudentControl.resx">
-      <DependentUpon>StudentControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,11 +168,8 @@
     <EmbeddedResource Include="Form\MDIParent1.resx">
       <DependentUpon>MDIParent1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310120520547_initial.resx">
-      <DependentUpon>202310120520547_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310130459364_disableNullForEmail.resx">
-      <DependentUpon>202310130459364_disableNullForEmail.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310161325202_redesignDbModels.resx">
+      <DependentUpon>202310161325202_redesignDbModels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

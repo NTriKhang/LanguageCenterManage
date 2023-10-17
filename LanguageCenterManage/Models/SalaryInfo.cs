@@ -15,10 +15,6 @@ namespace LanguageCenterManage.Models
         [ForeignKey(nameof(TeacherId))]
         public Teacher Teacher { get; set; }
         [Key, Column(Order = 1)]
-        public string UserId { get; set; }
-        [ForeignKey(nameof(UserId))]
-        public User User { get; set; }
-        [Key, Column(Order = 2)]
         public DateTime DatePay { get; set; }
         public decimal Amount { get; set; }
     }
