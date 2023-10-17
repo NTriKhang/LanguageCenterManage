@@ -66,25 +66,28 @@ namespace LanguageCenterManage
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var email = txtEmail.Text;
-            var password = txtPassword.Text;
+            EmployeeDashboard emplDashbooard = new EmployeeDashboard();
+            emplDashbooard.Show();
+            emplDashbooard.MdiParent = this.MdiParent;
+            //var email = txtEmail.Text;
+            //var password = txtPassword.Text;
 
-            var response = _userService.Login(email, password);
-            if (response == null)
-            {
-                MessageBox.Show("Wrong email or password", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                USER.FirstName = response.FirstName;
-                USER.LastName = response.LastName;
-                USER.UserId = response.UserId;
-                USER.Email = response.Email;
+            //var response = _userService.Login(email, password);
+            //if (response == null)
+            //{
+            //    MessageBox.Show("Wrong email or password", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            //else
+            //{
+            //    USER.FirstName = response.FirstName;
+            //    USER.LastName = response.LastName;
+            //    USER.UserId = response.UserId;
+            //    USER.Email = response.Email;
 
-                EmployeeDashboard emplDashbooard = new EmployeeDashboard();
-                emplDashbooard.Show();
-                emplDashbooard.MdiParent = this.MdiParent;
-            }
+            //    EmployeeDashboard emplDashbooard = new EmployeeDashboard();
+            //    emplDashbooard.Show();
+            //    emplDashbooard.MdiParent = this.MdiParent;
+            //}
         }
 
         private void txtEmail_Leave(object sender, EventArgs e)

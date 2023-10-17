@@ -26,12 +26,11 @@ namespace LanguageCenterManage
             control.Focus();
             Content.Controls.Add(control);
         }
-        private void Navbar_Paint(object sender, PaintEventArgs e)
+        public void clearControl(Control control)
         {
-
+            Content.Controls.Clear();
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void Navbar_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -58,7 +57,8 @@ namespace LanguageCenterManage
 
         private void btnStudent_Click(object sender, EventArgs e)
         {
-
+            StudentControl studentCtr = new StudentControl();
+            showControl(studentCtr);
         }
 
         private void btnSwitchDashboard_Click(object sender, EventArgs e)
@@ -81,6 +81,11 @@ namespace LanguageCenterManage
                 MessageBox.Show("Bạn không có quyền !", "Message",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
