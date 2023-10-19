@@ -107,7 +107,7 @@ namespace LanguageCenterManage
 
         private void MDIParent1_Load(object sender, EventArgs e)
         {
-            Login dbd = new Login();
+            LoginForm dbd = new LoginForm();
             dbd.Show();
             dbd.MdiParent = this;   
             dbd.WindowState = FormWindowState.Maximized;

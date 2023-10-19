@@ -1,4 +1,5 @@
-﻿using LanguageCenterManage.DAL;
+﻿using LanguageCenterManage.Controls;
+using LanguageCenterManage.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
