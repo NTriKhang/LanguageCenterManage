@@ -14,10 +14,10 @@ using MaterialSkin.Controls;
 
 namespace LanguageCenterManage
 {
-    public partial class Login : MaterialForm
+    public partial class LoginForm : MaterialForm
     {
         private UserService _userService;
-        public Login()
+        public LoginForm()
         {
             _userService = new UserService();
             InitializeComponent();
@@ -66,28 +66,25 @@ namespace LanguageCenterManage
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            EmployeeDashboard emplDashbooard = new EmployeeDashboard();
-            emplDashbooard.Show();
-            emplDashbooard.MdiParent = this.MdiParent;
-            //var email = txtEmail.Text;
-            //var password = txtPassword.Text;
+            var email = txtEmail.Text;
+            var password = txtPassword.Text;
 
-            //var response = _userService.Login(email, password);
-            //if (response == null)
-            //{
-            //    MessageBox.Show("Wrong email or password", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            //else
-            //{
-            //    USER.FirstName = response.FirstName;
-            //    USER.LastName = response.LastName;
-            //    USER.UserId = response.UserId;
-            //    USER.Email = response.Email;
+            var response = _userService.Login(email, password);
+            if (response == null)
+            {
+                MessageBox.Show("Wrong email or password", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                USER.FirstName = response.FirstName;
+                USER.LastName = response.LastName;
+                USER.UserId = response.UserId;
+                USER.Email = response.Email;
 
-            //    EmployeeDashboard emplDashbooard = new EmployeeDashboard();
-            //    emplDashbooard.Show();
-            //    emplDashbooard.MdiParent = this.MdiParent;
-            //}
+                EmployeeDashboard emplDashbooard = new EmployeeDashboard();
+                emplDashbooard.Show();
+                emplDashbooard.MdiParent = this.MdiParent;
+            }
         }
 
         private void txtEmail_Leave(object sender, EventArgs e)

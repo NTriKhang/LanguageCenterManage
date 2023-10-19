@@ -50,6 +50,10 @@ namespace LanguageCenterManage
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.btnLanguage = new MaterialSkin.Controls.MaterialFlatButton();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.Navbar.SuspendLayout();
             this.Sidebar.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -66,6 +70,9 @@ namespace LanguageCenterManage
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // Navbar
@@ -104,16 +111,18 @@ namespace LanguageCenterManage
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.panel9, 0, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.21053F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.1579F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.1579F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.1579F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.1579F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.1579F));
+            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.23256F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.62791F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.62791F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.62791F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.62791F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.62791F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.62791F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(350, 707);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -122,18 +131,18 @@ namespace LanguageCenterManage
             this.panel8.Controls.Add(this.pictureBox3);
             this.panel8.Controls.Add(this.btnSchedule);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(3, 430);
+            this.panel8.Location = new System.Drawing.Point(3, 380);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(344, 87);
+            this.panel8.Size = new System.Drawing.Size(344, 76);
             this.panel8.TabIndex = 3;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = global::LanguageCenterManage.Properties.Resources.calendar;
-            this.pictureBox3.Location = new System.Drawing.Point(21, 23);
+            this.pictureBox3.Location = new System.Drawing.Point(21, 18);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox3.Size = new System.Drawing.Size(60, 36);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
@@ -151,7 +160,7 @@ namespace LanguageCenterManage
             this.btnSchedule.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSchedule.Name = "btnSchedule";
             this.btnSchedule.Primary = false;
-            this.btnSchedule.Size = new System.Drawing.Size(344, 87);
+            this.btnSchedule.Size = new System.Drawing.Size(344, 76);
             this.btnSchedule.TabIndex = 0;
             this.btnSchedule.Text = "Schedule";
             this.btnSchedule.UseVisualStyleBackColor = true;
@@ -163,7 +172,7 @@ namespace LanguageCenterManage
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(344, 235);
+            this.panel2.Size = new System.Drawing.Size(344, 207);
             this.panel2.TabIndex = 3;
             // 
             // pictureBox1
@@ -189,18 +198,18 @@ namespace LanguageCenterManage
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.btnStudentStatistics);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 337);
+            this.panel3.Location = new System.Drawing.Point(3, 298);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(344, 87);
+            this.panel3.Size = new System.Drawing.Size(344, 76);
             this.panel3.TabIndex = 3;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::LanguageCenterManage.Properties.Resources.statistics;
-            this.pictureBox2.Location = new System.Drawing.Point(21, 17);
+            this.pictureBox2.Location = new System.Drawing.Point(21, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox2.Size = new System.Drawing.Size(60, 36);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -218,7 +227,7 @@ namespace LanguageCenterManage
             this.btnStudentStatistics.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnStudentStatistics.Name = "btnStudentStatistics";
             this.btnStudentStatistics.Primary = false;
-            this.btnStudentStatistics.Size = new System.Drawing.Size(344, 87);
+            this.btnStudentStatistics.Size = new System.Drawing.Size(344, 76);
             this.btnStudentStatistics.TabIndex = 0;
             this.btnStudentStatistics.Text = "Statistics";
             this.btnStudentStatistics.UseVisualStyleBackColor = true;
@@ -228,18 +237,18 @@ namespace LanguageCenterManage
             this.panel6.Controls.Add(this.pictureBox7);
             this.panel6.Controls.Add(this.btnCourse);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(3, 244);
+            this.panel6.Location = new System.Drawing.Point(3, 216);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(344, 87);
+            this.panel6.Size = new System.Drawing.Size(344, 76);
             this.panel6.TabIndex = 3;
             // 
             // pictureBox7
             // 
             this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox7.Image = global::LanguageCenterManage.Properties.Resources.course;
-            this.pictureBox7.Location = new System.Drawing.Point(21, 26);
+            this.pictureBox7.Location = new System.Drawing.Point(21, 21);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox7.Size = new System.Drawing.Size(60, 36);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 2;
             this.pictureBox7.TabStop = false;
@@ -248,6 +257,7 @@ namespace LanguageCenterManage
             // 
             this.btnCourse.AutoSize = true;
             this.btnCourse.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCourse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCourse.Depth = 0;
             this.btnCourse.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCourse.Icon = null;
@@ -256,37 +266,39 @@ namespace LanguageCenterManage
             this.btnCourse.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCourse.Name = "btnCourse";
             this.btnCourse.Primary = false;
-            this.btnCourse.Size = new System.Drawing.Size(344, 87);
+            this.btnCourse.Size = new System.Drawing.Size(344, 76);
             this.btnCourse.TabIndex = 0;
             this.btnCourse.Text = "Course";
             this.btnCourse.UseVisualStyleBackColor = true;
+            this.btnCourse.Click += new System.EventHandler(this.btnCourse_Click);
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.panel5);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(3, 523);
+            this.panel7.Location = new System.Drawing.Point(3, 462);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(344, 87);
+            this.panel7.Size = new System.Drawing.Size(344, 76);
             this.panel7.TabIndex = 0;
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Controls.Add(this.pictureBox4);
             this.panel5.Controls.Add(this.materialFlatButton2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(344, 87);
+            this.panel5.Size = new System.Drawing.Size(344, 76);
             this.panel5.TabIndex = 3;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Image = global::LanguageCenterManage.Properties.Resources.salary;
-            this.pictureBox4.Location = new System.Drawing.Point(21, 24);
+            this.pictureBox4.Location = new System.Drawing.Point(21, 19);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox4.Size = new System.Drawing.Size(60, 36);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
@@ -304,10 +316,59 @@ namespace LanguageCenterManage
             this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton2.Name = "materialFlatButton2";
             this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(344, 87);
+            this.materialFlatButton2.Size = new System.Drawing.Size(344, 76);
             this.materialFlatButton2.TabIndex = 0;
             this.materialFlatButton2.Text = "Salary";
             this.materialFlatButton2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.Image = global::LanguageCenterManage.Properties.Resources.salary;
+            this.pictureBox5.Location = new System.Drawing.Point(3, 564);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(344, 36);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 3;
+            this.pictureBox5.TabStop = false;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.pictureBox6);
+            this.panel9.Controls.Add(this.btnLanguage);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(3, 544);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(344, 76);
+            this.panel9.TabIndex = 4;
+            // 
+            // btnLanguage
+            // 
+            this.btnLanguage.AutoSize = true;
+            this.btnLanguage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLanguage.Depth = 0;
+            this.btnLanguage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLanguage.Icon = null;
+            this.btnLanguage.Location = new System.Drawing.Point(0, 0);
+            this.btnLanguage.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnLanguage.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLanguage.Name = "btnLanguage";
+            this.btnLanguage.Primary = false;
+            this.btnLanguage.Size = new System.Drawing.Size(344, 76);
+            this.btnLanguage.TabIndex = 0;
+            this.btnLanguage.Text = "Language";
+            this.btnLanguage.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.Image = global::LanguageCenterManage.Properties.Resources.salary;
+            this.pictureBox6.Location = new System.Drawing.Point(21, 21);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(60, 36);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 4;
+            this.pictureBox6.TabStop = false;
             // 
             // ManagerDashboard
             // 
@@ -337,6 +398,10 @@ namespace LanguageCenterManage
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -361,5 +426,9 @@ namespace LanguageCenterManage
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.PictureBox pictureBox3;
         private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
+        private Panel panel9;
+        private PictureBox pictureBox6;
+        private MaterialFlatButton btnLanguage;
     }
 }

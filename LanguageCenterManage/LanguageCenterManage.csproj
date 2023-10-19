@@ -97,41 +97,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CourseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CourseControl.Designer.cs">
+      <DependentUpon>CourseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LanguageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LanguageControl.Designer.cs">
+      <DependentUpon>LanguageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StudentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StudentControl.Designer.cs">
+      <DependentUpon>StudentControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\AppDbContext.cs" />
+    <Compile Include="DTO\CourseDTO.cs" />
     <Compile Include="DTO\StudentDTO.cs" />
-    <Compile Include="Form\Dashboard.cs">
+    <Compile Include="Forms\CourseDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Dashboard.designer.cs">
+    <Compile Include="Forms\CourseDetailForm.Designer.cs">
+      <DependentUpon>CourseDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dashboard.designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\EmployeeDashboard.cs">
+    <Compile Include="Forms\EmployeeDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\EmployeeDashboard.designer.cs">
+    <Compile Include="Forms\EmployeeDashboard.designer.cs">
       <DependentUpon>EmployeeDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Login.cs">
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Login.designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Forms\LoginForm.designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ManagerDashboard.cs">
+    <Compile Include="Forms\ManagerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ManagerDashboard.designer.cs">
+    <Compile Include="Forms\ManagerDashboard.designer.cs">
       <DependentUpon>ManagerDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\MDIParent1.cs">
+    <Compile Include="Forms\MDIParent1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\MDIParent1.Designer.cs">
+    <Compile Include="Forms\MDIParent1.Designer.cs">
       <DependentUpon>MDIParent1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310161325202_redesignDbModels.cs" />
-    <Compile Include="Migrations\202310161325202_redesignDbModels.designer.cs">
-      <DependentUpon>202310161325202_redesignDbModels.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class.cs" />
@@ -153,23 +174,32 @@
     <Compile Include="Services\MailService\MailRequest.cs" />
     <Compile Include="Services\UserService\UserService.cs" />
     <Compile Include="utility.cs" />
-    <EmbeddedResource Include="Form\Dashboard.resx">
+    <EmbeddedResource Include="Controls\CourseControl.resx">
+      <DependentUpon>CourseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LanguageControl.resx">
+      <DependentUpon>LanguageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StudentControl.resx">
+      <DependentUpon>StudentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CourseDetailForm.resx">
+      <DependentUpon>CourseDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\EmployeeDashboard.resx">
+    <EmbeddedResource Include="Forms\EmployeeDashboard.resx">
       <DependentUpon>EmployeeDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ManagerDashboard.resx">
+    <EmbeddedResource Include="Forms\ManagerDashboard.resx">
       <DependentUpon>ManagerDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\MDIParent1.resx">
+    <EmbeddedResource Include="Forms\MDIParent1.resx">
       <DependentUpon>MDIParent1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310161325202_redesignDbModels.resx">
-      <DependentUpon>202310161325202_redesignDbModels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -182,7 +212,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\LanguageCenterManage.DTO.CourseDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.StudentDTO.datasource" />
+    <None Include="Properties\DataSources\LanguageCenterManage.Models.Language.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
