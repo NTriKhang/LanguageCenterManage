@@ -1,4 +1,5 @@
 ﻿using LanguageCenterManage.DAL;
+using LanguageCenterManage.Forms;
 using LanguageCenterManage.Models;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,9 @@ namespace LanguageCenterManage.Controls
 {
     public partial class LanguageControl : UserControl
     {
-        private readonly AppDbContext _db;
+        private AppDbContext _db;
         public LanguageControl()
         {
-            _db = new AppDbContext();
             InitializeComponent();
         }
 
@@ -28,12 +28,38 @@ namespace LanguageCenterManage.Controls
 
         private void LanguageControl_Load(object sender, EventArgs e)
         {
-            var listLanguage = _db.Languages.Select(x => new Language
-            {
-                Id = x.Id,
-                Name = x.Name,
-            });
-            languageBindingSource.DataSource = listLanguage;
+            Reload();
+        }
+
+        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var languageId = (languageBindingSource.DataSource as List<Language>).ElementAt(e.RowIndex).Id;
+            var languageDetailForm = new LanguageDetailForm(languageId);
+
+            languageDetailForm.FormClosed += LanguageDetailForm_FormClosed;
+
+            languageDetailForm.ShowDialog();
+        }
+
+        private void LanguageDetailForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Reload();
+            dataGridView1.Refresh();
+        }
+        private void Reload()
+        {
+            _db = new AppDbContext();
+            languageBindingSource.DataSource = null;
+            languageBindingSource.DataSource = _db.Languages.ToList();
+        }
+
+        private void btnNew_Click_1(object sender, EventArgs e)
+        {
+            var languageDetailForm = new LanguageDetailForm();
+
+            languageDetailForm.FormClosed += LanguageDetailForm_FormClosed;
+
+            languageDetailForm.ShowDialog();
         }
     }
 }

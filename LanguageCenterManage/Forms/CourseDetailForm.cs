@@ -77,7 +77,7 @@ namespace LanguageCenterManage.Forms
             newCourse.DateStart = DateStartPicker.Value;
             newCourse.DateEnd = DateEndPicker.Value;
 
-            DialogResult box = MessageBox.Show("Create successfully", "New Course have added to db", MessageBoxButtons.OK);
+            DialogResult box = MessageBox.Show("Create successfully", "New Course was added to db", MessageBoxButtons.OK);
 
             _db.Courses.Add(newCourse);
             _db.SaveChanges();
@@ -96,14 +96,14 @@ namespace LanguageCenterManage.Forms
             course.DateEnd = DateEndPicker.Value;
 
             _db.SaveChanges();
-            DialogResult box = MessageBox.Show("Update successfully", "Course have updated to db", MessageBoxButtons.OK);
+            DialogResult box = MessageBox.Show("Update successfully", "Course was updated to db", MessageBoxButtons.OK);
             Close();
 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult box = MessageBox.Show("Sure ?", "Do you sure for delete it ?", MessageBoxButtons.YesNo);
+            DialogResult box = MessageBox.Show("Sure ?", "Are you sure to delete it ?", MessageBoxButtons.YesNo);
 
             if (box == DialogResult.Yes)
             {

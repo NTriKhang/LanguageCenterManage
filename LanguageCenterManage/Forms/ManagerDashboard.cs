@@ -36,5 +36,11 @@ namespace LanguageCenterManage
             CourseControl courseControl = new CourseControl();
             showControl(courseControl);
         }
+
+        private void btnLanguage_Click(object sender, EventArgs e)
+        {
+            LanguageControl languageControl = new LanguageControl();
+            showControl(languageControl);
+        }
     }
 }
