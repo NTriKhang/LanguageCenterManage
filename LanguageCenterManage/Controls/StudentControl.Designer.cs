@@ -36,6 +36,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAddStudent = new MaterialSkin.Controls.MaterialRaisedButton();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,6 +110,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnAddStudent);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -126,10 +128,12 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1501, 610);
             this.panel2.TabIndex = 4;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -147,7 +151,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(1501, 610);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
+            // 
+            // btnAddStudent
+            // 
+            this.btnAddStudent.AutoSize = true;
+            this.btnAddStudent.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAddStudent.Depth = 0;
+            this.btnAddStudent.Icon = null;
+            this.btnAddStudent.Location = new System.Drawing.Point(1324, 33);
+            this.btnAddStudent.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAddStudent.Name = "btnAddStudent";
+            this.btnAddStudent.Primary = true;
+            this.btnAddStudent.Size = new System.Drawing.Size(136, 36);
+            this.btnAddStudent.TabIndex = 3;
+            this.btnAddStudent.Text = "Add Student";
+            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -194,6 +214,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDTOBindingSource)).EndInit();
@@ -215,5 +236,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource studentDTOBindingSource;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAddStudent;
     }
 }

@@ -52,7 +52,6 @@ namespace LanguageCenterManage.Forms
             {
                 textBoxId.Text = course.Id;
                 textBoxName.Text = course.Name;
-                textBoxQuantity.Text = course.Quanlity.ToString();
                 comboBoxLanguageId.Text = course.LanguageId;
                 textBoxLanguageName.Text = listLanguage.Where(x => x.Id == course.LanguageId).SingleOrDefault().Name;
                 descriptionBox.Text = course.Description;
@@ -70,7 +69,6 @@ namespace LanguageCenterManage.Forms
             var newCourse = new Course();
             newCourse.Id = textBoxId.Text;
             newCourse.Name = textBoxName.Text;
-            newCourse.Quanlity = Convert.ToInt16(textBoxQuantity.Text);
             newCourse.LanguageId = comboBoxLanguageId.Text;
             newCourse.Description = descriptionBox.Text;
             newCourse.Status = comboBoxStatus.Text;
@@ -88,7 +86,6 @@ namespace LanguageCenterManage.Forms
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             course.Name = textBoxName.Text;
-            course.Quanlity = Convert.ToInt16(textBoxQuantity.Text);
             course.LanguageId = comboBoxLanguageId.Text;
             course.Description = descriptionBox.Text;
             course.Status = comboBoxStatus.Text;
