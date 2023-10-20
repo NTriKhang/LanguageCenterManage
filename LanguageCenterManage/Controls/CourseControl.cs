@@ -54,7 +54,9 @@ namespace LanguageCenterManage.Controls
         private void btnNew_Click(object sender, EventArgs e)
         {
             var courseDetailForm = new CourseDetailForm();
+
             courseDetailForm.FormClosed += CourseDetailForm_FormClosed;
+
             courseDetailForm.ShowDialog();
             
         }

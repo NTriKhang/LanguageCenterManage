@@ -48,12 +48,12 @@ namespace LanguageCenterManage
             this.btnCourse = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.btnLanguage = new MaterialSkin.Controls.MaterialFlatButton();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.btnLanguage = new MaterialSkin.Controls.MaterialFlatButton();
             this.Navbar.SuspendLayout();
             this.Sidebar.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -69,8 +69,8 @@ namespace LanguageCenterManage
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
@@ -292,6 +292,17 @@ namespace LanguageCenterManage
             this.panel5.Size = new System.Drawing.Size(344, 76);
             this.panel5.TabIndex = 3;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.Image = global::LanguageCenterManage.Properties.Resources.salary;
+            this.pictureBox5.Location = new System.Drawing.Point(3, 564);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(344, 36);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 3;
+            this.pictureBox5.TabStop = false;
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -321,17 +332,6 @@ namespace LanguageCenterManage
             this.materialFlatButton2.Text = "Salary";
             this.materialFlatButton2.UseVisualStyleBackColor = true;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.Image = global::LanguageCenterManage.Properties.Resources.salary;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 564);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(344, 36);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
-            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.pictureBox6);
@@ -341,6 +341,17 @@ namespace LanguageCenterManage
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(344, 76);
             this.panel9.TabIndex = 4;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.Image = global::LanguageCenterManage.Properties.Resources.salary;
+            this.pictureBox6.Location = new System.Drawing.Point(21, 21);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(60, 36);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 4;
+            this.pictureBox6.TabStop = false;
             // 
             // btnLanguage
             // 
@@ -358,17 +369,7 @@ namespace LanguageCenterManage
             this.btnLanguage.TabIndex = 0;
             this.btnLanguage.Text = "Language";
             this.btnLanguage.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.Image = global::LanguageCenterManage.Properties.Resources.salary;
-            this.pictureBox6.Location = new System.Drawing.Point(21, 21);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(60, 36);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
+            this.btnLanguage.Click += new System.EventHandler(this.btnLanguage_Click);
             // 
             // ManagerDashboard
             // 
@@ -397,8 +398,8 @@ namespace LanguageCenterManage
             this.panel7.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
