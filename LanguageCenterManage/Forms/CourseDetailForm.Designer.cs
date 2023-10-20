@@ -34,8 +34,6 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.descriptionBox = new System.Windows.Forms.RichTextBox();
-            this.textBoxQuantity = new System.Windows.Forms.TextBox();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
@@ -113,26 +111,6 @@
             this.descriptionBox.TabIndex = 5;
             this.descriptionBox.Text = "";
             // 
-            // textBoxQuantity
-            // 
-            this.textBoxQuantity.Location = new System.Drawing.Point(626, 307);
-            this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(264, 22);
-            this.textBoxQuantity.TabIndex = 6;
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(468, 305);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(79, 24);
-            this.materialLabel4.TabIndex = 7;
-            this.materialLabel4.Text = "Quantity";
-            // 
             // materialLabel5
             // 
             this.materialLabel5.AutoSize = true;
@@ -174,7 +152,7 @@
             // 
             // textBoxLanguageName
             // 
-            this.textBoxLanguageName.Location = new System.Drawing.Point(626, 364);
+            this.textBoxLanguageName.Location = new System.Drawing.Point(626, 307);
             this.textBoxLanguageName.Name = "textBoxLanguageName";
             this.textBoxLanguageName.ReadOnly = true;
             this.textBoxLanguageName.Size = new System.Drawing.Size(264, 22);
@@ -186,7 +164,7 @@
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel7.Location = new System.Drawing.Point(468, 362);
+            this.materialLabel7.Location = new System.Drawing.Point(468, 305);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
             this.materialLabel7.Size = new System.Drawing.Size(148, 24);
@@ -228,7 +206,7 @@
             this.materialLabel9.Depth = 0;
             this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel9.Location = new System.Drawing.Point(468, 417);
+            this.materialLabel9.Location = new System.Drawing.Point(468, 360);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
             this.materialLabel9.Size = new System.Drawing.Size(91, 24);
@@ -237,7 +215,7 @@
             // 
             // DateEndPicker
             // 
-            this.DateEndPicker.Location = new System.Drawing.Point(626, 419);
+            this.DateEndPicker.Location = new System.Drawing.Point(626, 362);
             this.DateEndPicker.Name = "DateEndPicker";
             this.DateEndPicker.Size = new System.Drawing.Size(264, 22);
             this.DateEndPicker.TabIndex = 18;
@@ -308,8 +286,6 @@
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.comboBoxStatus);
             this.Controls.Add(this.materialLabel5);
-            this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.textBoxQuantity);
             this.Controls.Add(this.descriptionBox);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.textBoxName);
@@ -332,8 +308,6 @@
         private System.Windows.Forms.TextBox textBoxName;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.RichTextBox descriptionBox;
-        private System.Windows.Forms.TextBox textBoxQuantity;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private System.Windows.Forms.ComboBox comboBoxStatus;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;

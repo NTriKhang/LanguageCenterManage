@@ -160,6 +160,16 @@
     <Compile Include="Forms\MDIParent1.Designer.cs">
       <DependentUpon>MDIParent1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StudentDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentDetailForm.designer.cs">
+      <DependentUpon>StudentDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310200604014_editCourseClass.cs" />
+    <Compile Include="Migrations\202310200604014_editCourseClass.designer.cs">
+      <DependentUpon>202310200604014_editCourseClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Course.cs" />
@@ -209,6 +219,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MDIParent1.resx">
       <DependentUpon>MDIParent1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentDetailForm.resx">
+      <DependentUpon>StudentDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310200604014_editCourseClass.resx">
+      <DependentUpon>202310200604014_editCourseClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -280,13 +296,13 @@
     <None Include="Resources\employee.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\search.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\sort_descending.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sort_Ascending.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

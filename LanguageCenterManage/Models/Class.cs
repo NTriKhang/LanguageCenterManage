@@ -15,6 +15,6 @@ namespace LanguageCenterManage.Models
         public string CourseId { get; set; }
         [ForeignKey(nameof(CourseId))]
         public Course Course { get; set; }
-        public decimal TuiTion { set; get; }
+        public int Quantity { set; get; }
     }
 }
