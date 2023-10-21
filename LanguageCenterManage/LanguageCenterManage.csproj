@@ -130,6 +130,12 @@
     <Compile Include="Forms\Dashboard.designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmailForm.Designer.cs">
+      <DependentUpon>EmailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmployeeDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,9 +172,9 @@
     <Compile Include="Forms\StudentDetailForm.designer.cs">
       <DependentUpon>StudentDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202310200604014_editCourseClass.cs" />
-    <Compile Include="Migrations\202310200604014_editCourseClass.designer.cs">
-      <DependentUpon>202310200604014_editCourseClass.cs</DependentUpon>
+    <Compile Include="Migrations\202310201427022_editCourseClass.cs" />
+    <Compile Include="Migrations\202310201427022_editCourseClass.designer.cs">
+      <DependentUpon>202310201427022_editCourseClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class.cs" />
@@ -205,6 +211,9 @@
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmailForm.resx">
+      <DependentUpon>EmailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeDashboard.resx">
       <DependentUpon>EmployeeDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,8 +232,8 @@
     <EmbeddedResource Include="Forms\StudentDetailForm.resx">
       <DependentUpon>StudentDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310200604014_editCourseClass.resx">
-      <DependentUpon>202310200604014_editCourseClass.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202310201427022_editCourseClass.resx">
+      <DependentUpon>202310201427022_editCourseClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
