@@ -72,5 +72,6 @@ namespace LanguageCenterManage.Controls
                 studentDetailForm.ShowDialog();
             }
         }
+
     }
 }

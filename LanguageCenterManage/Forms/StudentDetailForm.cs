@@ -13,6 +13,7 @@ using LanguageCenterManage.Models;
 using LanguageCenterManage.DAL;
 using LanguageCenterManage.Controls;
 using System.Runtime.CompilerServices;
+using LanguageCenterManage.Forms;
 
 namespace LanguageCenterManage
 {
@@ -37,7 +38,7 @@ namespace LanguageCenterManage
                 txtLastName.Text = student.LastName;
                 dtBirth.Value = student.Birth;
                 txtPhone.Text = student.Phone;
-
+                addressTextBox.Text = student.Address;
                 btnAdd.Visible = false;
             }
             else
@@ -59,6 +60,7 @@ namespace LanguageCenterManage
             stu.Email = txtEmailStudent.Text;
             stu.Birth = dtBirth.Value;
             stu.Phone = txtPhone.Text;
+            stu.Address = addressTextBox.Text;
             db.Students.Add(stu);
             db.SaveChanges();
         }
@@ -70,12 +72,13 @@ namespace LanguageCenterManage
             student.Email = txtEmailStudent.Text;
             student.Birth = dtBirth.Value;
             student.Phone = txtPhone.Text;
+            student.Address = addressTextBox.Text;
             db.SaveChanges();
         }
         private bool isModelValid()
         {
             if (txtFirstName.Text == "" || txtLastName.Text == "" || txtEmailStudent.Text == ""
-                || txtPhone.Text == "")
+                || txtPhone.Text == "" || addressTextBox.Text == "")
             {
                 MessageBox.Show("Enter missing fields", "400", MessageBoxButtons.OK);
                 return false;
@@ -122,6 +125,14 @@ namespace LanguageCenterManage
                 db.SaveChanges();
                 Close();
             }
+        }
+
+        private void btnSendEmail_Click(object sender, EventArgs e)
+        {
+            
+            EmailForm emailForm = new EmailForm(txtEmailStudent.Text);
+            emailForm.TopMost = true;
+            emailForm.ShowDialog();
         }
     }
 }

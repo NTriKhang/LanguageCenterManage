@@ -68,7 +68,7 @@
             this.textBoxId.Location = new System.Drawing.Point(153, 98);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(241, 22);
-            this.textBoxId.TabIndex = 1;
+            this.textBoxId.TabIndex = 0;
             // 
             // materialLabel2
             // 
@@ -88,7 +88,7 @@
             this.textBoxName.Location = new System.Drawing.Point(615, 98);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(275, 22);
-            this.textBoxName.TabIndex = 3;
+            this.textBoxName.TabIndex = 1;
             // 
             // materialLabel3
             // 
@@ -108,7 +108,7 @@
             this.descriptionBox.Location = new System.Drawing.Point(42, 171);
             this.descriptionBox.Name = "descriptionBox";
             this.descriptionBox.Size = new System.Drawing.Size(848, 104);
-            this.descriptionBox.TabIndex = 5;
+            this.descriptionBox.TabIndex = 2;
             this.descriptionBox.Text = "";
             // 
             // materialLabel5
@@ -135,7 +135,7 @@
             this.comboBoxStatus.Location = new System.Drawing.Point(172, 305);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(241, 24);
-            this.comboBoxStatus.TabIndex = 10;
+            this.comboBoxStatus.TabIndex = 3;
             // 
             // materialLabel6
             // 
@@ -177,7 +177,7 @@
             this.comboBoxLanguageId.Location = new System.Drawing.Point(172, 362);
             this.comboBoxLanguageId.Name = "comboBoxLanguageId";
             this.comboBoxLanguageId.Size = new System.Drawing.Size(241, 24);
-            this.comboBoxLanguageId.TabIndex = 14;
+            this.comboBoxLanguageId.TabIndex = 4;
             this.comboBoxLanguageId.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguageId_SelectedIndexChanged);
             // 
             // materialLabel8
@@ -198,7 +198,7 @@
             this.DateStartPicker.Location = new System.Drawing.Point(172, 417);
             this.DateStartPicker.Name = "DateStartPicker";
             this.DateStartPicker.Size = new System.Drawing.Size(241, 22);
-            this.DateStartPicker.TabIndex = 16;
+            this.DateStartPicker.TabIndex = 6;
             // 
             // materialLabel9
             // 
@@ -218,7 +218,7 @@
             this.DateEndPicker.Location = new System.Drawing.Point(626, 362);
             this.DateEndPicker.Name = "DateEndPicker";
             this.DateEndPicker.Size = new System.Drawing.Size(264, 22);
-            this.DateEndPicker.TabIndex = 18;
+            this.DateEndPicker.TabIndex = 5;
             // 
             // btnCreate
             // 
