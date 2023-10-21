@@ -34,9 +34,9 @@
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAddStudent = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnAddStudent = new MaterialSkin.Controls.MaterialRaisedButton();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,6 +118,22 @@
             this.panel1.Size = new System.Drawing.Size(1501, 89);
             this.panel1.TabIndex = 3;
             // 
+            // btnAddStudent
+            // 
+            this.btnAddStudent.AutoSize = true;
+            this.btnAddStudent.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAddStudent.Depth = 0;
+            this.btnAddStudent.Icon = null;
+            this.btnAddStudent.Location = new System.Drawing.Point(1324, 33);
+            this.btnAddStudent.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAddStudent.Name = "btnAddStudent";
+            this.btnAddStudent.Primary = true;
+            this.btnAddStudent.Size = new System.Drawing.Size(136, 36);
+            this.btnAddStudent.TabIndex = 3;
+            this.btnAddStudent.Text = "Add Student";
+            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
+            // 
             // panel2
             // 
             this.panel2.AutoSize = true;
@@ -150,24 +166,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1501, 610);
             this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
-            // 
-            // btnAddStudent
-            // 
-            this.btnAddStudent.AutoSize = true;
-            this.btnAddStudent.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAddStudent.Depth = 0;
-            this.btnAddStudent.Icon = null;
-            this.btnAddStudent.Location = new System.Drawing.Point(1324, 33);
-            this.btnAddStudent.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Primary = true;
-            this.btnAddStudent.Size = new System.Drawing.Size(136, 36);
-            this.btnAddStudent.TabIndex = 3;
-            this.btnAddStudent.Text = "Add Student";
-            this.btnAddStudent.UseVisualStyleBackColor = true;
-            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 

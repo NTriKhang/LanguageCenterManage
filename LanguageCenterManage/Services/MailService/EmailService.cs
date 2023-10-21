@@ -10,7 +10,7 @@ namespace LanguageCenterManage.Services.MailService
 {
     public interface IEmailService
     {
-        Task SendEmailAsync(MailRequest mailRequest);
+        void SendEmail(MailRequest mailRequest);
     }
 
     public class EmailService : IEmailService
@@ -20,23 +20,32 @@ namespace LanguageCenterManage.Services.MailService
         {
             emailSetting = new EmailSetting();
         }
-        async Task IEmailService.SendEmailAsync(MailRequest mailRequest)
+        void IEmailService.SendEmail(MailRequest mailRequest)
         {
-            var email = new MimeMessage();
-            email.Sender = MailboxAddress.Parse(emailSetting.Email);
-            email.To.Add(MailboxAddress.Parse(mailRequest.ToEmail));
-            email.Subject = mailRequest.Subject;
-
-            var body = new BodyBuilder();
-            body.HtmlBody = mailRequest.Body;
-            email.Body = body.ToMessageBody();
-                            
-            using (var smtp = new SmtpClient())
+            try
             {
-                await smtp.ConnectAsync(emailSetting.Host, emailSetting.Port, MailKit.Security.SecureSocketOptions.StartTls);
-                smtp.Authenticate(emailSetting.Email, emailSetting.Password);
-                await smtp.SendAsync(email);
-                smtp.Disconnect(true);
+                var email = new MimeMessage();
+                
+                email.From.Add(new MailboxAddress(emailSetting.DisplayName, emailSetting.Email));
+                email.To.Add(MailboxAddress.Parse(mailRequest.ToEmail));
+                email.Subject = mailRequest.Subject;
+                
+                var body = new BodyBuilder();
+                body.HtmlBody = mailRequest.Body;
+                email.Body = body.ToMessageBody();
+
+                using (var smtp = new SmtpClient())
+                {
+                    smtp.Connect(emailSetting.Host, emailSetting.Port, MailKit.Security.SecureSocketOptions.StartTls);
+                    smtp.Authenticate(emailSetting.Email, emailSetting.Password);
+                    smtp.Send(email);
+                    smtp.Disconnect(true);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }

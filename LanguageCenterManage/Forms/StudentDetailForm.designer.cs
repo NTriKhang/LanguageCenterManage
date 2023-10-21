@@ -44,13 +44,15 @@
             this.btnSendEmail = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.addressTextBox = new System.Windows.Forms.RichTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(72, 102);
+            this.label1.Location = new System.Drawing.Point(49, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 23);
             this.label1.TabIndex = 0;
@@ -62,14 +64,14 @@
             this.txtIdStudent.Location = new System.Drawing.Point(143, 103);
             this.txtIdStudent.Multiline = true;
             this.txtIdStudent.Name = "txtIdStudent";
-            this.txtIdStudent.Size = new System.Drawing.Size(171, 22);
-            this.txtIdStudent.TabIndex = 1;
+            this.txtIdStudent.Size = new System.Drawing.Size(224, 22);
+            this.txtIdStudent.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(513, 102);
+            this.label2.Location = new System.Drawing.Point(495, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 23);
             this.label2.TabIndex = 0;
@@ -80,14 +82,14 @@
             this.txtEmailStudent.Location = new System.Drawing.Point(584, 103);
             this.txtEmailStudent.Multiline = true;
             this.txtEmailStudent.Name = "txtEmailStudent";
-            this.txtEmailStudent.Size = new System.Drawing.Size(171, 22);
+            this.txtEmailStudent.Size = new System.Drawing.Size(251, 22);
             this.txtEmailStudent.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(49, 189);
+            this.label3.Location = new System.Drawing.Point(49, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 23);
             this.label3.TabIndex = 0;
@@ -95,17 +97,17 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(143, 190);
+            this.txtFirstName.Location = new System.Drawing.Point(143, 165);
             this.txtFirstName.Multiline = true;
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(171, 22);
-            this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.Size = new System.Drawing.Size(224, 22);
+            this.txtFirstName.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(495, 189);
+            this.label4.Location = new System.Drawing.Point(495, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 23);
             this.label4.TabIndex = 0;
@@ -113,17 +115,17 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(584, 190);
+            this.txtLastName.Location = new System.Drawing.Point(584, 166);
             this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(171, 22);
-            this.txtLastName.TabIndex = 1;
+            this.txtLastName.Size = new System.Drawing.Size(251, 22);
+            this.txtLastName.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(49, 266);
+            this.label5.Location = new System.Drawing.Point(49, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 23);
             this.label5.TabIndex = 0;
@@ -133,7 +135,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(509, 265);
+            this.label6.Location = new System.Drawing.Point(495, 224);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 23);
             this.label6.TabIndex = 0;
@@ -141,19 +143,19 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(584, 266);
+            this.txtPhone.Location = new System.Drawing.Point(584, 225);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(171, 22);
-            this.txtPhone.TabIndex = 1;
+            this.txtPhone.Size = new System.Drawing.Size(251, 22);
+            this.txtPhone.TabIndex = 5;
             // 
             // dtBirth
             // 
             this.dtBirth.CustomFormat = "dd/MM/yyy";
-            this.dtBirth.Location = new System.Drawing.Point(143, 266);
+            this.dtBirth.Location = new System.Drawing.Point(143, 222);
             this.dtBirth.Name = "dtBirth";
-            this.dtBirth.Size = new System.Drawing.Size(179, 22);
-            this.dtBirth.TabIndex = 2;
+            this.dtBirth.Size = new System.Drawing.Size(224, 22);
+            this.dtBirth.TabIndex = 4;
             this.dtBirth.Value = new System.DateTime(2023, 10, 19, 0, 0, 0, 0);
             // 
             // btnUpdate
@@ -162,7 +164,7 @@
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(160, 350);
+            this.btnUpdate.Location = new System.Drawing.Point(646, 441);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(109, 44);
             this.btnUpdate.TabIndex = 3;
@@ -176,12 +178,13 @@
             this.btnSendEmail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSendEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSendEmail.ForeColor = System.Drawing.Color.White;
-            this.btnSendEmail.Location = new System.Drawing.Point(357, 350);
+            this.btnSendEmail.Location = new System.Drawing.Point(143, 441);
             this.btnSendEmail.Name = "btnSendEmail";
-            this.btnSendEmail.Size = new System.Drawing.Size(117, 44);
+            this.btnSendEmail.Size = new System.Drawing.Size(100, 44);
             this.btnSendEmail.TabIndex = 3;
             this.btnSendEmail.Text = "Notify";
             this.btnSendEmail.UseVisualStyleBackColor = false;
+            this.btnSendEmail.Click += new System.EventHandler(this.btnSendEmail_Click);
             // 
             // btnDelete
             // 
@@ -189,7 +192,7 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(545, 350);
+            this.btnDelete.Location = new System.Drawing.Point(768, 441);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 44);
             this.btnDelete.TabIndex = 3;
@@ -199,25 +202,46 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.AutoSize = true;
             this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Depth = 0;
             this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(682, 350);
+            this.btnAdd.Location = new System.Drawing.Point(53, 447);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Primary = true;
-            this.btnAdd.Size = new System.Drawing.Size(73, 44);
-            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Size = new System.Drawing.Size(56, 36);
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // addressTextBox
+            // 
+            this.addressTextBox.Location = new System.Drawing.Point(134, 288);
+            this.addressTextBox.Name = "addressTextBox";
+            this.addressTextBox.Size = new System.Drawing.Size(701, 96);
+            this.addressTextBox.TabIndex = 6;
+            this.addressTextBox.Text = "";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(49, 279);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 23);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Address";
             // 
             // StudentDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 445);
+            this.ClientSize = new System.Drawing.Size(922, 510);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.addressTextBox);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSendEmail);
@@ -263,5 +287,7 @@
         private System.Windows.Forms.Button btnSendEmail;
         private System.Windows.Forms.Button btnDelete;
         private MaterialSkin.Controls.MaterialRaisedButton btnAdd;
+        private System.Windows.Forms.RichTextBox addressTextBox;
+        private System.Windows.Forms.Label label7;
     }
 }
