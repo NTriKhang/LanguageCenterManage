@@ -31,37 +31,17 @@ namespace LanguageCenterManage
         {
             Content.Controls.Clear();
         }
-        private void Navbar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_MouseLeave(object sender, EventArgs e)
-        {
-            btnStudent.BackColor = Color.LightSteelBlue;
-        }
-
-        private void btnMStudent_MouseEnter(object sender, EventArgs e)
-        {
-            btnStudent.BackColor = Color.Blue;
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnStudent_Click(object sender, EventArgs e)
         {
             StudentControl studentCtr = new StudentControl();
             showControl(studentCtr);
         }
-
+        private void btnTeacher_Click(object sender, EventArgs e)
+        {
+            TeacherControl teacherCtr = new TeacherControl();
+            showControl(teacherCtr);
+        }
         private void btnSwitchDashboard_Click(object sender, EventArgs e)
         {
             AppDbContext dbContext = new AppDbContext();

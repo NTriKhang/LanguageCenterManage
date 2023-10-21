@@ -115,9 +115,16 @@
     <Compile Include="Controls\StudentControl.Designer.cs">
       <DependentUpon>StudentControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TeacherControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TeacherControl.Designer.cs">
+      <DependentUpon>TeacherControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\AppDbContext.cs" />
     <Compile Include="DTO\CourseDTO.cs" />
     <Compile Include="DTO\StudentDTO.cs" />
+    <Compile Include="DTO\TeacherDTO.cs" />
     <Compile Include="Forms\CourseDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,11 +179,12 @@
     <Compile Include="Forms\StudentDetailForm.designer.cs">
       <DependentUpon>StudentDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202310201427022_editCourseClass.cs" />
-    <Compile Include="Migrations\202310201427022_editCourseClass.designer.cs">
-      <DependentUpon>202310201427022_editCourseClass.cs</DependentUpon>
+    <Compile Include="Forms\TeacherDetailForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Forms\TeacherDetailForm.Designer.cs">
+      <DependentUpon>TeacherDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Human.cs" />
@@ -205,6 +213,9 @@
     <EmbeddedResource Include="Controls\StudentControl.resx">
       <DependentUpon>StudentControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TeacherControl.resx">
+      <DependentUpon>TeacherControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CourseDetailForm.resx">
       <DependentUpon>CourseDetailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,8 +243,8 @@
     <EmbeddedResource Include="Forms\StudentDetailForm.resx">
       <DependentUpon>StudentDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310201427022_editCourseClass.resx">
-      <DependentUpon>202310201427022_editCourseClass.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\TeacherDetailForm.resx">
+      <DependentUpon>TeacherDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -248,6 +259,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.CourseDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.StudentDTO.datasource" />
+    <None Include="Properties\DataSources\LanguageCenterManage.DTO.TeacherDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.Models.Language.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

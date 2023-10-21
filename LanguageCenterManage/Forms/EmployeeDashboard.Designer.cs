@@ -73,7 +73,6 @@
             // Navbar
             // 
             this.Navbar.Size = new System.Drawing.Size(1337, 67);
-            this.Navbar.Paint += new System.Windows.Forms.PaintEventHandler(this.Navbar_Paint);
             // 
             // Sidebar
             // 
@@ -285,6 +284,7 @@
             this.btnTeacher.TabIndex = 2;
             this.btnTeacher.Text = "teacher";
             this.btnTeacher.UseVisualStyleBackColor = true;
+            this.btnTeacher.Click += new System.EventHandler(this.btnTeacher_Click);
             // 
             // panel5
             // 
