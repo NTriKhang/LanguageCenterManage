@@ -42,5 +42,11 @@ namespace LanguageCenterManage
             LanguageControl languageControl = new LanguageControl();
             showControl(languageControl);
         }
+
+        private void btnClass_Click(object sender, EventArgs e)
+        {
+            ClassControl classControl = new ClassControl();
+            showControl(classControl);
+        }
     }
 }

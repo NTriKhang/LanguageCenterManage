@@ -1,6 +1,6 @@
 ﻿namespace LanguageCenterManage.Controls
 {
-    partial class TeacherControl
+    partial class UsersControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,25 +29,52 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNew = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btnAddTeacher = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.userDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacherDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherDTOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDTOBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnNew);
+            this.panel1.Controls.Add(this.tableLayoutPanel3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1501, 100);
+            this.panel1.TabIndex = 0;
+            // 
+            // btnNew
+            // 
+            this.btnNew.AutoSize = true;
+            this.btnNew.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNew.Depth = 0;
+            this.btnNew.Icon = null;
+            this.btnNew.Location = new System.Drawing.Point(1334, 40);
+            this.btnNew.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Primary = true;
+            this.btnNew.Size = new System.Drawing.Size(59, 36);
+            this.btnNew.TabIndex = 9;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -55,12 +82,12 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(115, 29);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(85, 31);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(335, 40);
-            this.tableLayoutPanel3.TabIndex = 2;
+            this.tableLayoutPanel3.TabIndex = 6;
             // 
             // panel3
             // 
@@ -75,7 +102,6 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.Image = global::LanguageCenterManage.Properties.Resources.search;
             this.btnSearch.Location = new System.Drawing.Point(194, -3);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(0);
             this.btnSearch.Name = "btnSearch";
@@ -102,34 +128,7 @@
             this.txtSearch.Size = new System.Drawing.Size(244, 28);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TabStop = false;
-            this.txtSearch.Text = "Search";
             this.txtSearch.UseSystemPasswordChar = false;
-            // 
-            // btnAddTeacher
-            // 
-            this.btnAddTeacher.AutoSize = true;
-            this.btnAddTeacher.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAddTeacher.Depth = 0;
-            this.btnAddTeacher.Icon = null;
-            this.btnAddTeacher.Location = new System.Drawing.Point(1360, 29);
-            this.btnAddTeacher.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAddTeacher.Name = "btnAddTeacher";
-            this.btnAddTeacher.Primary = true;
-            this.btnAddTeacher.Size = new System.Drawing.Size(136, 36);
-            this.btnAddTeacher.TabIndex = 4;
-            this.btnAddTeacher.Text = "Add Teacher";
-            this.btnAddTeacher.UseVisualStyleBackColor = true;
-            this.btnAddTeacher.Click += new System.EventHandler(this.btnAddTeacher_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnAddTeacher);
-            this.panel1.Controls.Add(this.tableLayoutPanel3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1522, 89);
-            this.panel1.TabIndex = 5;
             // 
             // dataGridView1
             // 
@@ -142,17 +141,21 @@
             this.idDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
-            this.birthDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.teacherDTOBindingSource;
+            this.emailDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.userDTOBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 89);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 100);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1522, 417);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.Size = new System.Drawing.Size(1501, 406);
+            this.dataGridView1.TabIndex = 1;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
+            // 
+            // userDTOBindingSource
+            // 
+            this.userDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.UserDTO);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -160,7 +163,6 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -168,7 +170,6 @@
             this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
             this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
@@ -176,53 +177,55 @@
             this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
             this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // birthDataGridViewTextBoxColumn
+            // emailDataGridViewTextBoxColumn
             // 
-            this.birthDataGridViewTextBoxColumn.DataPropertyName = "Birth";
-            this.birthDataGridViewTextBoxColumn.HeaderText = "Birth";
-            this.birthDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.birthDataGridViewTextBoxColumn.Name = "birthDataGridViewTextBoxColumn";
-            this.birthDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             // 
-            // teacherDTOBindingSource
+            // phoneDataGridViewTextBoxColumn
             // 
-            this.teacherDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.TeacherDTO);
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
             // 
-            // TeacherControl
+            // UsersControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Name = "TeacherControl";
-            this.Size = new System.Drawing.Size(1522, 506);
-            this.Load += new System.EventHandler(this.TeacherControl_Load);
+            this.Name = "UsersControl";
+            this.Size = new System.Drawing.Size(1501, 506);
+            this.Load += new System.EventHandler(this.UsersControl_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherDTOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.BindingSource teacherDTOBindingSource;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox btnSearch;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
-        private MaterialSkin.Controls.MaterialRaisedButton btnAddTeacher;
-        private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnNew;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource userDTOBindingSource;
     }
 }

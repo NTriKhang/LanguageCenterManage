@@ -16,6 +16,7 @@ namespace LanguageCenterManage.Models
         public Teacher Teacher { get; set; }
         [Key, Column(Order = 1)]
         public DateTime DatePay { get; set; }
-        public decimal Amount { get; set; }
+        public decimal Basic { get; set; }
+        public decimal Bonus { get; set; }
     }
 }
