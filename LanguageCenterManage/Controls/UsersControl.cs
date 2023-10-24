@@ -1,5 +1,6 @@
 ﻿using LanguageCenterManage.DAL;
 using LanguageCenterManage.DTO;
+using LanguageCenterManage.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,12 +45,18 @@ namespace LanguageCenterManage.Controls
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            
+            UserDetailForm userDetailForm = new UserDetailForm();
+            userDetailForm.FormClosed += UserDetailForm_FormClosed;
+            userDetailForm.ShowDialog();
         }
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            var userSelectedId = (userDTOBindingSource.DataSource as List<UserDTO>).ElementAtOrDefault(e.RowIndex).Id;
 
+            UserDetailForm userDetailForm = new UserDetailForm(userSelectedId);
+            userDetailForm.FormClosed += UserDetailForm_FormClosed;
+            userDetailForm.ShowDialog();
         }
     }
 }
