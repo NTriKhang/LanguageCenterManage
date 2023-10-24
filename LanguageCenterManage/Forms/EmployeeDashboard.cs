@@ -68,5 +68,11 @@ namespace LanguageCenterManage
         {
 
         }
+
+        private void btnRoom_Click(object sender, EventArgs e)
+        {
+            RoomControl rc = new RoomControl();
+            showControl(rc);
+        }
     }
 }
