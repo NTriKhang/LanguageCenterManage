@@ -99,7 +99,7 @@ namespace LanguageCenterManage.Forms
             if(isModelValid())
             {
                 insertTeacher();
-                MessageBox.Show("Create successfully", "Course have added to db", MessageBoxButtons.OK);
+                MessageBox.Show("Create successfully", "Teacher was added to db", MessageBoxButtons.OK);
                 Close();
             }
         }
@@ -109,7 +109,7 @@ namespace LanguageCenterManage.Forms
             if(isModelValid())
             {
                 updateTeacher();
-                MessageBox.Show("Update successfully", "Teacher have updated to db", MessageBoxButtons.OK);
+                MessageBox.Show("Update successfully", "Teacher was updated to db", MessageBoxButtons.OK);
                 Close();
             }
         }
