@@ -48,5 +48,11 @@ namespace LanguageCenterManage
             ClassControl classControl = new ClassControl();
             showControl(classControl);
         }
+
+        private void userBtn_Click(object sender, EventArgs e)
+        {
+            UsersControl usersControl = new UsersControl();
+            showControl(usersControl);
+        }
     }
 }
