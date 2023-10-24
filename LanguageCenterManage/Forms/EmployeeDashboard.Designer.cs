@@ -156,6 +156,7 @@
             this.btnRoom.TabIndex = 0;
             this.btnRoom.Text = "Room";
             this.btnRoom.UseVisualStyleBackColor = true;
+            this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
             // 
             // panel2
             // 

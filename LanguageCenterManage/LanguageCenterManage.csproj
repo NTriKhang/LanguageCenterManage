@@ -115,6 +115,12 @@
     <Compile Include="Controls\LanguageControl.Designer.cs">
       <DependentUpon>LanguageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\RoomControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RoomControl.Designer.cs">
+      <DependentUpon>RoomControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StudentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -193,6 +199,12 @@
     <Compile Include="Forms\MDIParent1.Designer.cs">
       <DependentUpon>MDIParent1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RoomDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RoomDetailForm.Designer.cs">
+      <DependentUpon>RoomDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StudentDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +250,9 @@
     <EmbeddedResource Include="Controls\LanguageControl.resx">
       <DependentUpon>LanguageControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RoomControl.resx">
+      <DependentUpon>RoomControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\StudentControl.resx">
       <DependentUpon>StudentControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +289,9 @@
     <EmbeddedResource Include="Forms\MDIParent1.resx">
       <DependentUpon>MDIParent1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RoomDetailForm.resx">
+      <DependentUpon>RoomDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentDetailForm.resx">
       <DependentUpon>StudentDetailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,10 +313,12 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.CourseDTO.datasource" />
+    <None Include="Properties\DataSources\LanguageCenterManage.DTO.RoomDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.StudentDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.TeacherDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.UserDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.Models.Language.datasource" />
+    <None Include="Properties\DataSources\LanguageCenterManage.Models.Room.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
