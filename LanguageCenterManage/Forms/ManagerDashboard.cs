@@ -39,7 +39,7 @@ namespace LanguageCenterManage
 
         private void btnLanguage_Click(object sender, EventArgs e)
         {
-            LanguageControl languageControl = new LanguageControl();
+            CouseTypeControl languageControl = new CouseTypeControl();
             showControl(languageControl);
         }
 
@@ -53,6 +53,12 @@ namespace LanguageCenterManage
         {
             UsersControl usersControl = new UsersControl();
             showControl(usersControl);
+        }
+
+        private void btnSchedule_Click(object sender, EventArgs e)
+        {
+            ScheduleControl scheduleControl = new ScheduleControl();
+            showControl(scheduleControl);
         }
     }
 }

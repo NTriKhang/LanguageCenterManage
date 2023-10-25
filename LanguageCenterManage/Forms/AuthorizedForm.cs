@@ -27,7 +27,7 @@ namespace LanguageCenterManage.Forms
 
         private void AuthorizedForm_Load(object sender, EventArgs e)
         {
-            //SendAuthorizedMessage();
+            SendAuthorizedMessage();
         }
         private void SendAuthorizedMessage()
         {

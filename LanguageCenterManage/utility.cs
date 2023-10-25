@@ -8,9 +8,9 @@ namespace LanguageCenterManage
 {
     public class utility
     {
-        public static string CourseOpen { get; } = "CourseOpen";
-        public static string CourseProcessing { get; } = "CourseProcessing";
-        public static string CourseClose { get; } = "CourseClose";
+        public static string CourseOpen { get; } = "Open";
+        public static string CourseProcessing { get; } = "Processing";
+        public static string CourseClose { get; } = "Close";
 
         public static string Manager = "Manager";
         public static string Employee = "Employee";

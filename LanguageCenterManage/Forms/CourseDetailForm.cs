@@ -18,7 +18,7 @@ namespace LanguageCenterManage.Forms
     public partial class CourseDetailForm : MaterialForm
     {
         private readonly AppDbContext _db;
-        List<Language> listLanguage;
+        List<CourseType> listLanguage;
         private Course course;
         public CourseDetailForm()
         {
