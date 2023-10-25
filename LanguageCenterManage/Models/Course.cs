@@ -18,8 +18,9 @@ namespace LanguageCenterManage.Models
         public DateTime DateEnd { set; get; }
         public string LanguageId { set; get; }
         [ForeignKey(nameof(LanguageId))]
-        public Language Language { set; get; }
+        public CourseType Language { set; get; }
         public string Status { set; get; }
         public decimal TuiTion { set; get; }
+        public double Band { set; get; }
     }
 }

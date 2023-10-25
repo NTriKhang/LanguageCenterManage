@@ -1,6 +1,6 @@
 ﻿namespace LanguageCenterManage.Forms
 {
-    partial class LanguageDetailForm
+    partial class CourseTypeForm
     {
         /// <summary>
         /// Required designer variable.

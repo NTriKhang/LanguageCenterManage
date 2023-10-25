@@ -16,7 +16,7 @@ namespace LanguageCenterManage.DAL
         }
         public DbSet<Class> Classes { get; set; }
         public DbSet<Course> Courses { get; set; }
-        public DbSet<Language> Languages { get; set; }
+        public DbSet<CourseType> Languages { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<SalaryInfo> SalaryInfos { get; set;}

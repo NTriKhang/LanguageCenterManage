@@ -14,16 +14,16 @@ using System.Windows.Forms;
 
 namespace LanguageCenterManage.Forms
 {
-    public partial class LanguageDetailForm : MaterialForm
+    public partial class CourseTypeForm : MaterialForm
     {
-        private Language _language;
+        private CourseType _language;
         private readonly AppDbContext _db;
-        public LanguageDetailForm()
+        public CourseTypeForm()
         {
             _db = new AppDbContext();
             InitializeComponent();
         }
-        public LanguageDetailForm(string languageId)
+        public CourseTypeForm(string languageId)
         {
             _db = new AppDbContext();
             _language = _db.Languages.SingleOrDefault(x => x.Id == languageId);
@@ -54,7 +54,7 @@ namespace LanguageCenterManage.Forms
             {
                 if (isModelValid())
                 {
-                    var language = new Language()
+                    var language = new CourseType()
                     {
                         Id = idTextbox.Text,
                         Name = nameTextbox.Text,
@@ -78,7 +78,7 @@ namespace LanguageCenterManage.Forms
             {
                 if (isModelValid())
                 {
-                    var language = new Language() { Id = idTextbox.Text, Name = nameTextbox.Text };
+                    var language = new CourseType() { Id = idTextbox.Text, Name = nameTextbox.Text };
                     _db.Languages.AddOrUpdate(language);
                     _db.SaveChanges();
                     DialogResult box = MessageBox.Show("Language was updated to db", "Update successfully", MessageBoxButtons.OK);

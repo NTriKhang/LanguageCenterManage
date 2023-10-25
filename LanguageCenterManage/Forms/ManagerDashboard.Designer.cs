@@ -58,8 +58,8 @@ namespace LanguageCenterManage
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.btnClass = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.userBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.userBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.Navbar.SuspendLayout();
             this.Sidebar.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -178,6 +178,7 @@ namespace LanguageCenterManage
             this.btnSchedule.TabIndex = 0;
             this.btnSchedule.Text = "Schedule";
             this.btnSchedule.UseVisualStyleBackColor = true;
+            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
             // panel2
             // 
@@ -434,6 +435,17 @@ namespace LanguageCenterManage
             this.panel11.Size = new System.Drawing.Size(344, 60);
             this.panel11.TabIndex = 6;
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox9.Image = global::LanguageCenterManage.Properties.Resources.salary;
+            this.pictureBox9.Location = new System.Drawing.Point(21, 12);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(60, 36);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 6;
+            this.pictureBox9.TabStop = false;
+            // 
             // userBtn
             // 
             this.userBtn.AutoSize = true;
@@ -451,17 +463,6 @@ namespace LanguageCenterManage
             this.userBtn.Text = "User";
             this.userBtn.UseVisualStyleBackColor = true;
             this.userBtn.Click += new System.EventHandler(this.userBtn_Click);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox9.Image = global::LanguageCenterManage.Properties.Resources.salary;
-            this.pictureBox9.Location = new System.Drawing.Point(21, 12);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(60, 36);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 6;
-            this.pictureBox9.TabStop = false;
             // 
             // ManagerDashboard
             // 
