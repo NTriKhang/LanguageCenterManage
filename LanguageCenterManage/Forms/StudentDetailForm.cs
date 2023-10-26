@@ -134,5 +134,13 @@ namespace LanguageCenterManage
             emailForm.TopMost = true;
             emailForm.ShowDialog();
         }
+
+        private void btnJoin_Click(object sender, EventArgs e)
+        {
+            JoinControl JoinControl = new JoinControl();
+            JoinControl.TopMost = true;
+            JoinControl.Id = student.Id;
+            JoinControl.ShowDialog();
+        }
     }
 }

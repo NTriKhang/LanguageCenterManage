@@ -103,6 +103,12 @@
     <Compile Include="Controls\ClassControl.designer.cs">
       <DependentUpon>ClassControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ClassEmployeeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ClassEmployeeControl.Designer.cs">
+      <DependentUpon>ClassEmployeeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CourseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,6 +117,12 @@
     </Compile>
     <Compile Include="Controls\CouseTypeControl.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\JoinControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\JoinControl.Designer.cs">
+      <DependentUpon>JoinControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\CouseTypeControl.Designer.cs">
       <DependentUpon>CouseTypeControl.cs</DependentUpon>
@@ -149,6 +161,7 @@
     <Compile Include="DTO\ClassDTO.cs" />
     <Compile Include="DTO\CourseDTO.cs" />
     <Compile Include="DTO\ScheduleDTO.cs" />
+    <Compile Include="DTO\JoinDTO.cs" />
     <Compile Include="DTO\StudentDTO.cs" />
     <Compile Include="DTO\TeacherDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
@@ -188,11 +201,23 @@
     <Compile Include="Forms\EmployeeDashboard.designer.cs">
       <DependentUpon>EmployeeDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\JoinDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\JoinDetailForm.Designer.cs">
+      <DependentUpon>JoinDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CourseTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\CourseTypeForm.Designer.cs">
       <DependentUpon>CourseTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListClassForm.Designer.cs">
+      <DependentUpon>ListClassForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -283,8 +308,14 @@
     <EmbeddedResource Include="Controls\ClassControl.resx">
       <DependentUpon>ClassControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ClassEmployeeControl.resx">
+      <DependentUpon>ClassEmployeeControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CourseControl.resx">
       <DependentUpon>CourseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\JoinControl.resx">
+      <DependentUpon>JoinControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CouseTypeControl.resx">
       <DependentUpon>CouseTypeControl.cs</DependentUpon>
@@ -322,8 +353,14 @@
     <EmbeddedResource Include="Forms\EmployeeDashboard.resx">
       <DependentUpon>EmployeeDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JoinDetailForm.resx">
+      <DependentUpon>JoinDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CourseTypeForm.resx">
       <DependentUpon>CourseTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListClassForm.resx">
+      <DependentUpon>ListClassForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -372,7 +409,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\LanguageCenterManage.DTO.ClassDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.CourseDTO.datasource" />
+    <None Include="Properties\DataSources\LanguageCenterManage.DTO.JoinDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.RoomDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.ScheduleDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.StudentDTO.datasource" />

@@ -46,6 +46,7 @@
             this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
             this.addressTextBox = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnJoin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -235,6 +236,20 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Address";
             // 
+            // btnJoin
+            // 
+            this.btnJoin.BackColor = System.Drawing.Color.SlateGray;
+            this.btnJoin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnJoin.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJoin.ForeColor = System.Drawing.Color.White;
+            this.btnJoin.Location = new System.Drawing.Point(499, 441);
+            this.btnJoin.Name = "btnJoin";
+            this.btnJoin.Size = new System.Drawing.Size(109, 44);
+            this.btnJoin.TabIndex = 3;
+            this.btnJoin.Text = "Join";
+            this.btnJoin.UseVisualStyleBackColor = false;
+            this.btnJoin.Click += new System.EventHandler(this.btnJoin_Click);
+            // 
             // StudentDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -245,6 +260,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSendEmail);
+            this.Controls.Add(this.btnJoin);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dtBirth);
             this.Controls.Add(this.txtLastName);
@@ -289,5 +305,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnAdd;
         private System.Windows.Forms.RichTextBox addressTextBox;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnJoin;
     }
 }
