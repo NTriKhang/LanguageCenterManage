@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LanguageCenterManage.Models
 {
-    public class Language
+    public class CourseType
     {
         [Key]
         public string Id { get; set; }

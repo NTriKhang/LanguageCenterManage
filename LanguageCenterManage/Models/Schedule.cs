@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LanguageCenterManage.Models
 {
@@ -16,6 +17,8 @@ namespace LanguageCenterManage.Models
         public Room Room { get; set; }
         [Key, Column(Order = 1)]
         public DateTime DateTime { set; get; }
+        [Key, Column(Order = 2)]
+        public int Shift { set; get; }
 
         public string TeacherId { get; set; }
         [ForeignKey(nameof(TeacherId))]

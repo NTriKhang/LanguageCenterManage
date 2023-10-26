@@ -115,23 +115,29 @@
     <Compile Include="Controls\CourseControl.Designer.cs">
       <DependentUpon>CourseControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CouseTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\JoinControl.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controls\JoinControl.Designer.cs">
       <DependentUpon>JoinControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\LanguageControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\LanguageControl.Designer.cs">
-      <DependentUpon>LanguageControl.cs</DependentUpon>
+    <Compile Include="Controls\CouseTypeControl.Designer.cs">
+      <DependentUpon>CouseTypeControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\RoomControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\RoomControl.Designer.cs">
       <DependentUpon>RoomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ScheduleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ScheduleControl.Designer.cs">
+      <DependentUpon>ScheduleControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\StudentControl.cs">
       <SubType>UserControl</SubType>
@@ -154,6 +160,7 @@
     <Compile Include="DAL\AppDbContext.cs" />
     <Compile Include="DTO\ClassDTO.cs" />
     <Compile Include="DTO\CourseDTO.cs" />
+    <Compile Include="DTO\ScheduleDTO.cs" />
     <Compile Include="DTO\JoinDTO.cs" />
     <Compile Include="DTO\StudentDTO.cs" />
     <Compile Include="DTO\TeacherDTO.cs" />
@@ -200,11 +207,11 @@
     <Compile Include="Forms\JoinDetailForm.Designer.cs">
       <DependentUpon>JoinDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LanguageDetailForm.cs">
+    <Compile Include="Forms\CourseTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LanguageDetailForm.Designer.cs">
-      <DependentUpon>LanguageDetailForm.cs</DependentUpon>
+    <Compile Include="Forms\CourseTypeForm.Designer.cs">
+      <DependentUpon>CourseTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ListClassForm.cs">
       <SubType>Form</SubType>
@@ -236,11 +243,23 @@
     <Compile Include="Forms\RoomDetailForm.Designer.cs">
       <DependentUpon>RoomDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ScheduleDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScheduleDetailForm.Designer.cs">
+      <DependentUpon>ScheduleDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StudentDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\StudentDetailForm.designer.cs">
       <DependentUpon>StudentDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubForm\RoomAvailableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubForm\RoomAvailableForm.Designer.cs">
+      <DependentUpon>RoomAvailableForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TeacherDetailForm.cs">
       <SubType>Form</SubType>
@@ -258,12 +277,20 @@
     <Compile Include="Migrations\202310230622061_addBasicAndBonusToSalary.designer.cs">
       <DependentUpon>202310230622061_addBasicAndBonusToSalary.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202310250232230_addShiftToSchedule.cs" />
+    <Compile Include="Migrations\202310250232230_addShiftToSchedule.designer.cs">
+      <DependentUpon>202310250232230_addShiftToSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310251352316_changeLanguageToCourseType.cs" />
+    <Compile Include="Migrations\202310251352316_changeLanguageToCourseType.designer.cs">
+      <DependentUpon>202310251352316_changeLanguageToCourseType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Human.cs" />
     <Compile Include="Models\Join.cs" />
-    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\CourseType.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\SalaryInfo.cs" />
@@ -290,11 +317,14 @@
     <EmbeddedResource Include="Controls\JoinControl.resx">
       <DependentUpon>JoinControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\LanguageControl.resx">
-      <DependentUpon>LanguageControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\CouseTypeControl.resx">
+      <DependentUpon>CouseTypeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\RoomControl.resx">
       <DependentUpon>RoomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ScheduleControl.resx">
+      <DependentUpon>ScheduleControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\StudentControl.resx">
       <DependentUpon>StudentControl.cs</DependentUpon>
@@ -326,8 +356,8 @@
     <EmbeddedResource Include="Forms\JoinDetailForm.resx">
       <DependentUpon>JoinDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LanguageDetailForm.resx">
-      <DependentUpon>LanguageDetailForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CourseTypeForm.resx">
+      <DependentUpon>CourseTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListClassForm.resx">
       <DependentUpon>ListClassForm.cs</DependentUpon>
@@ -344,8 +374,14 @@
     <EmbeddedResource Include="Forms\RoomDetailForm.resx">
       <DependentUpon>RoomDetailForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScheduleDetailForm.resx">
+      <DependentUpon>ScheduleDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentDetailForm.resx">
       <DependentUpon>StudentDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubForm\RoomAvailableForm.resx">
+      <DependentUpon>RoomAvailableForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TeacherDetailForm.resx">
       <DependentUpon>TeacherDetailForm.cs</DependentUpon>
@@ -355,6 +391,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310230622061_addBasicAndBonusToSalary.resx">
       <DependentUpon>202310230622061_addBasicAndBonusToSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310250232230_addShiftToSchedule.resx">
+      <DependentUpon>202310250232230_addShiftToSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310251352316_changeLanguageToCourseType.resx">
+      <DependentUpon>202310251352316_changeLanguageToCourseType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -371,6 +413,7 @@
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.CourseDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.JoinDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.RoomDTO.datasource" />
+    <None Include="Properties\DataSources\LanguageCenterManage.DTO.ScheduleDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.StudentDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.TeacherDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.UserDTO.datasource" />
