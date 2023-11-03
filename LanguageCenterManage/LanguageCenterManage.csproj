@@ -86,6 +86,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -139,6 +140,12 @@
     <Compile Include="Controls\ScheduleControl.Designer.cs">
       <DependentUpon>ScheduleControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\StatisticControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StatisticControl.Designer.cs">
+      <DependentUpon>StatisticControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StudentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -163,6 +170,7 @@
     <Compile Include="DTO\ScheduleDTO.cs" />
     <Compile Include="DTO\JoinDTO.cs" />
     <Compile Include="DTO\StudentDTO.cs" />
+    <Compile Include="DTO\StudentEachYearDTO.cs" />
     <Compile Include="DTO\TeacherDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Forms\AuthorizedForm.cs">
@@ -285,7 +293,12 @@
     <Compile Include="Migrations\202310251352316_changeLanguageToCourseType.designer.cs">
       <DependentUpon>202310251352316_changeLanguageToCourseType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311030307032_addBillModel.cs" />
+    <Compile Include="Migrations\202311030307032_addBillModel.designer.cs">
+      <DependentUpon>202311030307032_addBillModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Human.cs" />
@@ -300,6 +313,40 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Kmean\Elbow\ElbowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\Kmean\Elbow\ElbowForm.Designer.cs">
+      <DependentUpon>ElbowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Kmean\Entities\Cluster.cs" />
+    <Compile Include="Services\Kmean\Entities\DataPoint.cs" />
+    <Compile Include="Services\Kmean\Entities\DPLimit.cs" />
+    <Compile Include="Services\Kmean\KmeanClustering.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\Kmean\KmeanClustering.designer.cs">
+      <DependentUpon>KmeanClustering.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Kmean\Silhouette\Silhouette.cs" />
+    <Compile Include="Services\Kmean\Silhouette\SilhouetteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\Kmean\Silhouette\SilhouetteForm.Designer.cs">
+      <DependentUpon>SilhouetteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Kmean\StudentEachYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\Kmean\StudentEachYear.Designer.cs">
+      <DependentUpon>StudentEachYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Kmean\UserByGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\Kmean\UserByGroupForm.Designer.cs">
+      <DependentUpon>UserByGroupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\MailService\EmailService.cs" />
     <Compile Include="Services\MailService\EmailSetting.cs" />
     <Compile Include="Services\MailService\MailRequest.cs" />
@@ -325,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ScheduleControl.resx">
       <DependentUpon>ScheduleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StatisticControl.resx">
+      <DependentUpon>StatisticControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\StudentControl.resx">
       <DependentUpon>StudentControl.cs</DependentUpon>
@@ -398,6 +448,9 @@
     <EmbeddedResource Include="Migrations\202310251352316_changeLanguageToCourseType.resx">
       <DependentUpon>202310251352316_changeLanguageToCourseType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311030307032_addBillModel.resx">
+      <DependentUpon>202311030307032_addBillModel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -408,6 +461,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Services\Kmean\Elbow\ElbowForm.resx">
+      <DependentUpon>ElbowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\Kmean\KmeanClustering.resx">
+      <DependentUpon>KmeanClustering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\Kmean\Silhouette\SilhouetteForm.resx">
+      <DependentUpon>SilhouetteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\Kmean\StudentEachYear.resx">
+      <DependentUpon>StudentEachYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\Kmean\UserByGroupForm.resx">
+      <DependentUpon>UserByGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.ClassDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.CourseDTO.datasource" />
@@ -415,6 +483,7 @@
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.RoomDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.ScheduleDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.StudentDTO.datasource" />
+    <None Include="Properties\DataSources\LanguageCenterManage.DTO.StudentEachYearDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.TeacherDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.UserDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.Models.Language.datasource" />

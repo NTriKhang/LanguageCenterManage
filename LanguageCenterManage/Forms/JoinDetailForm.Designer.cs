@@ -34,7 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkBoxTuiTion = new System.Windows.Forms.CheckBox();
             this.txtStudentId = new System.Windows.Forms.TextBox();
             this.txtSecondGrade = new System.Windows.Forms.TextBox();
             this.txtFistGrade = new System.Windows.Forms.TextBox();
@@ -101,17 +100,6 @@
             this.label5.Size = new System.Drawing.Size(89, 23);
             this.label5.TabIndex = 22;
             this.label5.Text = "FinalGrade";
-            // 
-            // checkBoxTuiTion
-            // 
-            this.checkBoxTuiTion.BackColor = System.Drawing.Color.White;
-            this.checkBoxTuiTion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxTuiTion.Location = new System.Drawing.Point(549, 270);
-            this.checkBoxTuiTion.Name = "checkBoxTuiTion";
-            this.checkBoxTuiTion.Size = new System.Drawing.Size(240, 70);
-            this.checkBoxTuiTion.TabIndex = 31;
-            this.checkBoxTuiTion.Text = "TuiTionState";
-            this.checkBoxTuiTion.UseVisualStyleBackColor = false;
             // 
             // txtStudentId
             // 
@@ -224,7 +212,6 @@
             this.Controls.Add(this.txtFistGrade);
             this.Controls.Add(this.txtStudentId);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.checkBoxTuiTion);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label5);
@@ -246,7 +233,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBoxTuiTion;
         private System.Windows.Forms.TextBox txtStudentId;
         private System.Windows.Forms.TextBox txtSecondGrade;
         private System.Windows.Forms.TextBox txtFistGrade;

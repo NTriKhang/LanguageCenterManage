@@ -246,6 +246,7 @@ namespace LanguageCenterManage
             this.btnStudentStatistics.TabIndex = 0;
             this.btnStudentStatistics.Text = "Statistics";
             this.btnStudentStatistics.UseVisualStyleBackColor = true;
+            this.btnStudentStatistics.Click += new System.EventHandler(this.btnStudentStatistics_Click);
             // 
             // panel6
             // 
@@ -382,7 +383,7 @@ namespace LanguageCenterManage
             this.btnLanguage.Primary = false;
             this.btnLanguage.Size = new System.Drawing.Size(344, 60);
             this.btnLanguage.TabIndex = 0;
-            this.btnLanguage.Text = "Language";
+            this.btnLanguage.Text = "Course Type";
             this.btnLanguage.UseVisualStyleBackColor = true;
             this.btnLanguage.Click += new System.EventHandler(this.btnLanguage_Click);
             // 

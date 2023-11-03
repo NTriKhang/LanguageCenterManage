@@ -47,6 +47,8 @@
             this.btnCreate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.Bandtxt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -76,7 +78,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(468, 98);
+            this.materialLabel2.Location = new System.Drawing.Point(447, 98);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(61, 24);
@@ -87,7 +89,7 @@
             // 
             this.textBoxName.Location = new System.Drawing.Point(615, 98);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(275, 22);
+            this.textBoxName.Size = new System.Drawing.Size(285, 22);
             this.textBoxName.TabIndex = 1;
             // 
             // materialLabel3
@@ -107,7 +109,7 @@
             // 
             this.descriptionBox.Location = new System.Drawing.Point(42, 171);
             this.descriptionBox.Name = "descriptionBox";
-            this.descriptionBox.Size = new System.Drawing.Size(848, 104);
+            this.descriptionBox.Size = new System.Drawing.Size(858, 104);
             this.descriptionBox.TabIndex = 2;
             this.descriptionBox.Text = "";
             // 
@@ -117,7 +119,7 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(38, 303);
+            this.materialLabel5.Location = new System.Drawing.Point(445, 361);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(63, 24);
@@ -132,10 +134,10 @@
             "Process",
             "Pending",
             "End"});
-            this.comboBoxStatus.Location = new System.Drawing.Point(172, 305);
+            this.comboBoxStatus.Location = new System.Drawing.Point(636, 363);
             this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(241, 24);
-            this.comboBoxStatus.TabIndex = 3;
+            this.comboBoxStatus.Size = new System.Drawing.Size(264, 24);
+            this.comboBoxStatus.TabIndex = 5;
             // 
             // materialLabel6
             // 
@@ -143,16 +145,16 @@
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(38, 360);
+            this.materialLabel6.Location = new System.Drawing.Point(38, 307);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(113, 24);
+            this.materialLabel6.Size = new System.Drawing.Size(131, 24);
             this.materialLabel6.TabIndex = 11;
-            this.materialLabel6.Text = "Language Id";
+            this.materialLabel6.Text = "Course type Id";
             // 
             // textBoxLanguageName
             // 
-            this.textBoxLanguageName.Location = new System.Drawing.Point(626, 307);
+            this.textBoxLanguageName.Location = new System.Drawing.Point(636, 307);
             this.textBoxLanguageName.Name = "textBoxLanguageName";
             this.textBoxLanguageName.ReadOnly = true;
             this.textBoxLanguageName.Size = new System.Drawing.Size(264, 22);
@@ -164,20 +166,20 @@
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel7.Location = new System.Drawing.Point(468, 305);
+            this.materialLabel7.Location = new System.Drawing.Point(445, 305);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(148, 24);
+            this.materialLabel7.Size = new System.Drawing.Size(162, 24);
             this.materialLabel7.TabIndex = 13;
-            this.materialLabel7.Text = "Language Name";
+            this.materialLabel7.Text = "Course type name";
             // 
             // comboBoxLanguageId
             // 
             this.comboBoxLanguageId.FormattingEnabled = true;
-            this.comboBoxLanguageId.Location = new System.Drawing.Point(172, 362);
+            this.comboBoxLanguageId.Location = new System.Drawing.Point(172, 309);
             this.comboBoxLanguageId.Name = "comboBoxLanguageId";
             this.comboBoxLanguageId.Size = new System.Drawing.Size(241, 24);
-            this.comboBoxLanguageId.TabIndex = 4;
+            this.comboBoxLanguageId.TabIndex = 3;
             this.comboBoxLanguageId.SelectedIndexChanged += new System.EventHandler(this.comboBoxLanguageId_SelectedIndexChanged);
             // 
             // materialLabel8
@@ -206,19 +208,19 @@
             this.materialLabel9.Depth = 0;
             this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel9.Location = new System.Drawing.Point(468, 360);
+            this.materialLabel9.Location = new System.Drawing.Point(445, 415);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
-            this.materialLabel9.Size = new System.Drawing.Size(91, 24);
+            this.materialLabel9.Size = new System.Drawing.Size(84, 24);
             this.materialLabel9.TabIndex = 17;
-            this.materialLabel9.Text = "Date start";
+            this.materialLabel9.Text = "Date end";
             // 
             // DateEndPicker
             // 
-            this.DateEndPicker.Location = new System.Drawing.Point(626, 362);
+            this.DateEndPicker.Location = new System.Drawing.Point(636, 419);
             this.DateEndPicker.Name = "DateEndPicker";
             this.DateEndPicker.Size = new System.Drawing.Size(264, 22);
-            this.DateEndPicker.TabIndex = 5;
+            this.DateEndPicker.TabIndex = 6;
             // 
             // btnCreate
             // 
@@ -268,11 +270,33 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(38, 361);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(53, 24);
+            this.materialLabel4.TabIndex = 22;
+            this.materialLabel4.Text = "Band";
+            // 
+            // Bandtxt
+            // 
+            this.Bandtxt.Location = new System.Drawing.Point(172, 365);
+            this.Bandtxt.Name = "Bandtxt";
+            this.Bandtxt.Size = new System.Drawing.Size(241, 22);
+            this.Bandtxt.TabIndex = 23;
+            // 
             // CourseDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 532);
+            this.Controls.Add(this.Bandtxt);
+            this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCreate);
@@ -321,5 +345,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnCreate;
         private MaterialSkin.Controls.MaterialRaisedButton btnDelete;
         private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private System.Windows.Forms.TextBox Bandtxt;
     }
 }
