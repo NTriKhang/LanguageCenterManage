@@ -24,7 +24,7 @@ namespace LanguageCenterManage.Forms
         {
             _db = new AppDbContext();
 
-            listLanguage = _db.Languages.ToList();
+            listLanguage = _db.CourseType.ToList();
 
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace LanguageCenterManage.Forms
         {
             _db = new AppDbContext();
 
-            listLanguage = _db.Languages.ToList();
+            listLanguage = _db.CourseType.ToList();
 
             course = _db.Courses.SingleOrDefault(x => x.Id == courseId);
 
@@ -58,6 +58,7 @@ namespace LanguageCenterManage.Forms
                 comboBoxStatus.Text = course.Status;
                 DateStartPicker.Value = course.DateStart;
                 DateEndPicker.Value = course.DateEnd;
+                Bandtxt.Text = course.Band.ToString();
 
                 btnCreate.Visible = false;
 
@@ -72,8 +73,9 @@ namespace LanguageCenterManage.Forms
             newCourse.LanguageId = comboBoxLanguageId.Text;
             newCourse.Description = descriptionBox.Text;
             newCourse.Status = comboBoxStatus.Text;
-            newCourse.DateStart = DateStartPicker.Value;
-            newCourse.DateEnd = DateEndPicker.Value;
+            newCourse.DateStart = DateStartPicker.Value.Date;
+            newCourse.DateEnd = DateEndPicker.Value.Date;
+            newCourse.Band = Convert.ToDouble(Bandtxt.Text);
 
             DialogResult box = MessageBox.Show("Create successfully", "New Course was added to db", MessageBoxButtons.OK);
 
@@ -89,8 +91,9 @@ namespace LanguageCenterManage.Forms
             course.LanguageId = comboBoxLanguageId.Text;
             course.Description = descriptionBox.Text;
             course.Status = comboBoxStatus.Text;
-            course.DateStart = DateStartPicker.Value;
-            course.DateEnd = DateEndPicker.Value;
+            course.DateStart = DateStartPicker.Value.Date;
+            course.DateEnd = DateEndPicker.Value.Date;
+            course.Band = Convert.ToDouble(Bandtxt.Text);
 
             _db.SaveChanges();
             DialogResult box = MessageBox.Show("Update successfully", "Course was updated to db", MessageBoxButtons.OK);
@@ -102,11 +105,18 @@ namespace LanguageCenterManage.Forms
         {
             DialogResult box = MessageBox.Show("Sure ?", "Are you sure to delete it ?", MessageBoxButtons.YesNo);
 
-            if (box == DialogResult.Yes)
+            try
             {
-                _db.Courses.Remove(course);
-                _db.SaveChanges();
-                Close();
+                if (box == DialogResult.Yes)
+                {
+                    _db.Courses.Remove(course);
+                    _db.SaveChanges();
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Can't delete", "409", MessageBoxButtons.OK);
             }
         }
 

@@ -36,11 +36,12 @@
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.courseDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.languageNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -141,7 +142,8 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.languageNameDataGridViewTextBoxColumn,
+            this.courseTypeDataGridViewTextBoxColumn,
+            this.bandDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.courseDTOBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -153,6 +155,10 @@
             this.dataGridView1.Size = new System.Drawing.Size(1501, 510);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
+            // 
+            // courseDTOBindingSource
+            // 
+            this.courseDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.CourseDTO);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -170,13 +176,21 @@
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // languageNameDataGridViewTextBoxColumn
+            // courseTypeDataGridViewTextBoxColumn
             // 
-            this.languageNameDataGridViewTextBoxColumn.DataPropertyName = "LanguageName";
-            this.languageNameDataGridViewTextBoxColumn.HeaderText = "LanguageName";
-            this.languageNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.languageNameDataGridViewTextBoxColumn.Name = "languageNameDataGridViewTextBoxColumn";
-            this.languageNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.courseTypeDataGridViewTextBoxColumn.DataPropertyName = "CourseType";
+            this.courseTypeDataGridViewTextBoxColumn.HeaderText = "CourseType";
+            this.courseTypeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.courseTypeDataGridViewTextBoxColumn.Name = "courseTypeDataGridViewTextBoxColumn";
+            this.courseTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bandDataGridViewTextBoxColumn
+            // 
+            this.bandDataGridViewTextBoxColumn.DataPropertyName = "Band";
+            this.bandDataGridViewTextBoxColumn.HeaderText = "Band";
+            this.bandDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.bandDataGridViewTextBoxColumn.Name = "bandDataGridViewTextBoxColumn";
+            this.bandDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // statusDataGridViewTextBoxColumn
             // 
@@ -185,10 +199,6 @@
             this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // courseDTOBindingSource
-            // 
-            this.courseDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.CourseDTO);
             // 
             // CourseControl
             // 
@@ -218,11 +228,13 @@
         private System.Windows.Forms.PictureBox btnSearch;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnNew;
+        private System.Windows.Forms.DataGridViewTextBoxColumn languageNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn languageNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bandDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource courseDTOBindingSource;
-        private MaterialSkin.Controls.MaterialRaisedButton btnNew;
     }
 }

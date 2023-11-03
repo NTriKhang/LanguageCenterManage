@@ -60,5 +60,11 @@ namespace LanguageCenterManage
             ScheduleControl scheduleControl = new ScheduleControl();
             showControl(scheduleControl);
         }
+
+        private void btnStudentStatistics_Click(object sender, EventArgs e)
+        {
+            StatisticControl statisticsControl = new StatisticControl();
+            showControl(statisticsControl);
+        }
     }
 }

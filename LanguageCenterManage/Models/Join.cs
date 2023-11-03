@@ -21,7 +21,10 @@ namespace LanguageCenterManage.Models
         public decimal FirstGrade { get; set; }
         public decimal SecondGrade { get; set; }
         public decimal FinalGrade { get; set; }
-        public bool TuiTionState { set; get; }
-
+        //[Index(IsUnique = true)]
+        //[Required]
+        public string BillId { get; set; }
+        [ForeignKey(nameof(BillId))]
+        public Bill Bill { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace LanguageCenterManage.Forms
 {
     public partial class CourseTypeForm : MaterialForm
     {
-        private CourseType _language;
+        private CourseType _courseType;
         private readonly AppDbContext _db;
         public CourseTypeForm()
         {
@@ -26,16 +26,16 @@ namespace LanguageCenterManage.Forms
         public CourseTypeForm(string languageId)
         {
             _db = new AppDbContext();
-            _language = _db.Languages.SingleOrDefault(x => x.Id == languageId);
+            _courseType = _db.CourseType.SingleOrDefault(x => x.Id == languageId);
             InitializeComponent();
         }
 
         private void LanguageDetail_Load(object sender, EventArgs e)
         {
-            if (_language != null)
+            if (_courseType != null)
             {
-                idTextbox.Text = _language.Id;
-                nameTextbox.Text = _language.Name;
+                idTextbox.Text = _courseType.Id;
+                nameTextbox.Text = _courseType.Name;
                 btnCreate.Visible = false;
             }
             else
@@ -59,7 +59,7 @@ namespace LanguageCenterManage.Forms
                         Id = idTextbox.Text,
                         Name = nameTextbox.Text,
                     };
-                    _db.Languages.Add(language);
+                    _db.CourseType.Add(language);
                     _db.SaveChanges();
                     DialogResult box = MessageBox.Show("New Language was added to db", "Create successfully", MessageBoxButtons.OK);
                     Close();
@@ -79,7 +79,7 @@ namespace LanguageCenterManage.Forms
                 if (isModelValid())
                 {
                     var language = new CourseType() { Id = idTextbox.Text, Name = nameTextbox.Text };
-                    _db.Languages.AddOrUpdate(language);
+                    _db.CourseType.AddOrUpdate(language);
                     _db.SaveChanges();
                     DialogResult box = MessageBox.Show("Language was updated to db", "Update successfully", MessageBoxButtons.OK);
                     Close();
@@ -100,7 +100,7 @@ namespace LanguageCenterManage.Forms
                 return false;
             }
 
-            else if (_db.Languages.Any(x => x.Name == nameTextbox.Text.Trim()))
+            else if (_db.CourseType.Any(x => x.Name == nameTextbox.Text.Trim()))
             {
                 DialogResult box = MessageBox.Show("This language have already exist", "Conflict", MessageBoxButtons.OK);
                 return false;
@@ -114,7 +114,7 @@ namespace LanguageCenterManage.Forms
 
             if (box == DialogResult.Yes)
             {
-                _db.Languages.Remove(_language);
+                _db.CourseType.Remove(_courseType);
                 _db.SaveChanges();
                 Close();
             }

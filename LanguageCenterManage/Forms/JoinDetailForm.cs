@@ -44,7 +44,7 @@ namespace LanguageCenterManage.Forms
                 txtSecondGrade.Text = join.SecondGrade.ToString();
                 txtFinalGrade.Text = join.FinalGrade.ToString();
                 txtClassId.Text = join.ClassId;
-                checkBoxTuiTion.Checked = join.TuiTionState;
+               // checkBoxTuiTion.Checked = join.TuiTionState;
 
                 btnAdd.Visible = false;
             }
@@ -54,7 +54,7 @@ namespace LanguageCenterManage.Forms
                 txtFistGrade.Text = "0";
                 txtSecondGrade.Text = "0";
                 txtFinalGrade.Text = "0";
-                checkBoxTuiTion.Checked = false;
+                //checkBoxTuiTion.Checked = false;
 
                 btnUpdate.Visible= false;
                 btnDelete.Visible= false;
@@ -78,7 +78,7 @@ namespace LanguageCenterManage.Forms
             j.FirstGrade = Decimal.Parse(txtFistGrade.Text);
             j.SecondGrade = Decimal.Parse(txtSecondGrade.Text);
             j.FinalGrade = Decimal.Parse(txtFinalGrade.Text);
-            j.TuiTionState = checkBoxTuiTion.Checked;
+            //j.TuiTionState = checkBoxTuiTion.Checked;
             db.Joins.Add(j);
             db.SaveChanges();
         }
@@ -91,7 +91,7 @@ namespace LanguageCenterManage.Forms
             j.FirstGrade = Decimal.Parse(txtFistGrade.Text);
             j.SecondGrade = Decimal.Parse(txtSecondGrade.Text);
             j.FinalGrade = Decimal.Parse(txtFinalGrade.Text);
-            j.TuiTionState = checkBoxTuiTion.Checked;
+            //j.TuiTionState = checkBoxTuiTion.Checked;
             db.Joins.Add(j);
             db.SaveChanges();
         }

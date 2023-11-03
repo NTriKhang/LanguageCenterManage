@@ -30,7 +30,7 @@ namespace LanguageCenterManage.Controls
             {
                 ClassId = x.ClassId,
                 StudentId = x.StudentId,
-                TuiTionState = x.TuiTionState,
+                //TuiTionState = x.TuiTionState,
             }).ToList();
         }
         private void JoinControl_Load(object sender, EventArgs e)

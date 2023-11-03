@@ -50,7 +50,7 @@ namespace LanguageCenterManage.Controls
         {
             _db = new AppDbContext();
             languageBindingSource.DataSource = null;
-            languageBindingSource.DataSource = _db.Languages.ToList();
+            languageBindingSource.DataSource = _db.CourseType.ToList();
         }
 
         private void btnNew_Click_1(object sender, EventArgs e)

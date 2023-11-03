@@ -29,7 +29,7 @@ namespace LanguageCenterManage.Forms
         {
             _db = new AppDbContext();
             _class = _db.Classes.Where(x => x.Id == classId).SingleOrDefault();
-            _courses = _db.Courses.ToList();
+            _courses = _db.Courses.Where(x => x.Status == utility.CourseOpen).ToList();
             InitializeComponent();
         }
 

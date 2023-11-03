@@ -41,13 +41,16 @@ namespace LanguageCenterManage.Controls
 
             var listCourse = _db.Courses
                     .Include(nameof(Course.Language))
+                    .OrderBy(x => x.DateStart).ThenBy(x => x.Band)
                     .Select(x => new CourseDTO
                     {
                         Id = x.Id,
                         Name = x.Name,
-                        LanguageName = x.Language.Name,
+                        CourseType = x.Language.Name,
+                        Band = x.Band,  
                         Status = x.Status,
-                    }).ToList();
+                    })
+                    .ToList();
 
             courseDTOBindingSource.DataSource = listCourse;
         }
