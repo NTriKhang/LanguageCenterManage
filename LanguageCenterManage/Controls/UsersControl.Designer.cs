@@ -36,17 +36,19 @@
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.userDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,36 +88,38 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(335, 40);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(363, 40);
             this.tableLayoutPanel3.TabIndex = 6;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.btnSearch);
             this.panel3.Controls.Add(this.txtSearch);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(244, 34);
+            this.panel3.Size = new System.Drawing.Size(272, 34);
             this.panel3.TabIndex = 2;
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.Location = new System.Drawing.Point(194, -3);
+            this.btnSearch.Location = new System.Drawing.Point(234, -3);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(0);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(38, 36);
             this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnSearch.TabIndex = 0;
             this.btnSearch.TabStop = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Depth = 0;
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtSearch.Hint = "";
+            this.txtSearch.Hint = "Id, First name, Last name";
             this.txtSearch.Location = new System.Drawing.Point(0, 6);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.MaxLength = 32767;
@@ -125,7 +129,7 @@
             this.txtSearch.SelectedText = "";
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
-            this.txtSearch.Size = new System.Drawing.Size(244, 28);
+            this.txtSearch.Size = new System.Drawing.Size(272, 28);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TabStop = false;
             this.txtSearch.UseSystemPasswordChar = false;
@@ -153,9 +157,18 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
-            // userDTOBindingSource
+            // pictureBox1
             // 
-            this.userDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.UserDTO);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::LanguageCenterManage.Properties.Resources.search;
+            this.pictureBox1.Location = new System.Drawing.Point(234, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -192,6 +205,10 @@
             this.phoneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
             // 
+            // userDTOBindingSource
+            // 
+            this.userDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.UserDTO);
+            // 
             // UsersControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -207,6 +224,7 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -227,5 +245,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource userDTOBindingSource;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

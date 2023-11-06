@@ -7,6 +7,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LanguageCenterManage;
+using LanguageCenterManage.Forms;
+using LanguageCenterManage.Controls;
+using MaterialSkin.Controls;
 
 namespace LanguageCenterManage
 {

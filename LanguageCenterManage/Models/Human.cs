@@ -18,5 +18,6 @@ namespace LanguageCenterManage.Models
         public string Email { get; set; }
         public DateTime Birth { get; set; }
         public string Phone { set; get; }
+        public string ImagePath { get; set; }
     }
 }
