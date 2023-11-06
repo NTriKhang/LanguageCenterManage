@@ -38,7 +38,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.scheduleDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roomIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shiftDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -68,9 +70,9 @@
             this.btnNew.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNew.Name = "btnNew";
             this.btnNew.Primary = true;
-            this.btnNew.Size = new System.Drawing.Size(59, 36);
+            this.btnNew.Size = new System.Drawing.Size(94, 36);
             this.btnNew.TabIndex = 8;
-            this.btnNew.Text = "New";
+            this.btnNew.Text = "Add one";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -136,7 +138,9 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.roomIdDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
             this.dateTimeDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn2,
             this.shiftDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.scheduleDTOBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -159,12 +163,26 @@
             this.roomIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.roomIdDataGridViewTextBoxColumn.Name = "roomIdDataGridViewTextBoxColumn";
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "RoomName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "RoomName";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
             // dateTimeDataGridViewTextBoxColumn
             // 
             this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
             this.dateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime";
             this.dateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CourseName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "CourseName";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // shiftDataGridViewTextBoxColumn
             // 
@@ -207,7 +225,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn courseNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn teacherNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn shiftDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource scheduleDTOBindingSource;
     }

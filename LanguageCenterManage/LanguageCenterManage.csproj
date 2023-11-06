@@ -297,6 +297,26 @@
     <Compile Include="Migrations\202311030307032_addBillModel.designer.cs">
       <DependentUpon>202311030307032_addBillModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311030406540_updateUniqueForBillId.cs" />
+    <Compile Include="Migrations\202311030406540_updateUniqueForBillId.designer.cs">
+      <DependentUpon>202311030406540_updateUniqueForBillId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311051444142_addImagePathToHuman.cs" />
+    <Compile Include="Migrations\202311051444142_addImagePathToHuman.designer.cs">
+      <DependentUpon>202311051444142_addImagePathToHuman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311051538056_modifyRelationBetweenJoinAndBill.cs" />
+    <Compile Include="Migrations\202311051538056_modifyRelationBetweenJoinAndBill.designer.cs">
+      <DependentUpon>202311051538056_modifyRelationBetweenJoinAndBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311051614463_editBillJoinModel.cs" />
+    <Compile Include="Migrations\202311051614463_editBillJoinModel.designer.cs">
+      <DependentUpon>202311051614463_editBillJoinModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311051618402_addUniqueToJoinId.cs" />
+    <Compile Include="Migrations\202311051618402_addUniqueToJoinId.designer.cs">
+      <DependentUpon>202311051618402_addUniqueToJoinId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\Class.cs" />
@@ -450,6 +470,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311030307032_addBillModel.resx">
       <DependentUpon>202311030307032_addBillModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311030406540_updateUniqueForBillId.resx">
+      <DependentUpon>202311030406540_updateUniqueForBillId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311051444142_addImagePathToHuman.resx">
+      <DependentUpon>202311051444142_addImagePathToHuman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311051538056_modifyRelationBetweenJoinAndBill.resx">
+      <DependentUpon>202311051538056_modifyRelationBetweenJoinAndBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311051614463_editBillJoinModel.resx">
+      <DependentUpon>202311051614463_editBillJoinModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311051618402_addUniqueToJoinId.resx">
+      <DependentUpon>202311051618402_addUniqueToJoinId.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

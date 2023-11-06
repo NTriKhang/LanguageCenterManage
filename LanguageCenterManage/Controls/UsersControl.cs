@@ -58,5 +58,62 @@ namespace LanguageCenterManage.Controls
             userDetailForm.FormClosed += UserDetailForm_FormClosed;
             userDetailForm.ShowDialog();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string stringSearch = txtSearch.Text.Trim();
+            if(stringSearch.Length == 0)
+            {
+                MessageBox.Show("Lack of information", "404", MessageBoxButtons.OK);
+            }
+            else
+            {
+                var userDtos = _db.Users.Where(x => x.Id.Contains(stringSearch) ||
+                x.FirstName.Contains(stringSearch) ||
+                x.LastName.Contains(stringSearch))
+                .Select(x => new UserDTO
+                {
+                    Id = x.Id,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    Email = x.Email,
+                    Phone = x.Phone,
+                })
+                .ToList();
+                userDTOBindingSource.DataSource = userDtos;
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string stringSearch = txtSearch.Text.Trim();
+            if (stringSearch.Length == 0)
+            {
+                userDTOBindingSource.DataSource = _db.Users.Select(x => new UserDTO
+                {
+                    Id = x.Id,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    Email = x.Email,
+                    Phone = x.Phone,
+                }).ToList();
+            }
+            else
+            {
+                var userDtos = _db.Users.Where(x => x.Id.Contains(stringSearch) ||
+                x.FirstName.Contains(stringSearch) ||
+                x.LastName.Contains(stringSearch))
+                .Select(x => new UserDTO
+                {
+                    Id = x.Id,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    Email = x.Email,
+                    Phone = x.Phone,
+                })
+                .ToList();
+                userDTOBindingSource.DataSource = userDtos;
+            }
+        }
     }
 }
