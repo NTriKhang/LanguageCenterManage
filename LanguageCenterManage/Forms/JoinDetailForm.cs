@@ -13,6 +13,7 @@ using LanguageCenterManage.DAL;
 using LanguageCenterManage.Models;
 using System.Data.Entity;
 using LanguageCenterManage.DTO;
+using LanguageCenterManage.Controls;
 
 namespace LanguageCenterManage.Forms
 {
@@ -23,6 +24,7 @@ namespace LanguageCenterManage.Forms
         public string ClassId { get; set; }
         Join join = new Join();
         List<Class> listClasses;
+        BillDetail billDetail = new BillDetail();
         public JoinDetailForm()
         {
             listClasses = db.Classes.ToList();
@@ -39,6 +41,7 @@ namespace LanguageCenterManage.Forms
             join = db.Joins.Where(x => x.StudentId == StudentId && x.ClassId == ClassId).FirstOrDefault();
             if(join != null)
             {
+                txtJoinId.Text = join.Id;
                 txtStudentId.Text = StudentId;
                 txtFistGrade.Text = join.FirstGrade.ToString();
                 txtSecondGrade.Text = join.SecondGrade.ToString();
@@ -50,6 +53,7 @@ namespace LanguageCenterManage.Forms
             }
             else
             {
+                txtJoinId.Text = Guid.NewGuid().ToString().Substring(0, 7);
                 txtStudentId.Text = StudentId;
                 txtFistGrade.Text = "0";
                 txtSecondGrade.Text = "0";
@@ -58,6 +62,7 @@ namespace LanguageCenterManage.Forms
 
                 btnUpdate.Visible= false;
                 btnDelete.Visible= false;
+                btnBill.Visible = false;
             }
         }
         bool isModelValid()
@@ -73,6 +78,7 @@ namespace LanguageCenterManage.Forms
         public void InsertJoin()
         {
             Join j = new Join();
+            j.Id = txtJoinId.Text;
             j.StudentId = txtStudentId.Text;
             j.ClassId = txtClassId.Text;
             j.FirstGrade = Decimal.Parse(txtFistGrade.Text);
@@ -119,6 +125,7 @@ namespace LanguageCenterManage.Forms
                 MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
+                billDetail.deleteBill(txtJoinId.Text);
                 db.Joins.Remove(join);
                 db.SaveChanges();
                 Close();
@@ -130,9 +137,18 @@ namespace LanguageCenterManage.Forms
             if (isModelValid())
             {
                 InsertJoin();
+                billDetail.initBill(txtJoinId.Text);
                 MessageBox.Show("Create successfully", "Join have added to db", MessageBoxButtons.OK);
                 Close();
             }
+        }
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            BillDetail billDetail = new BillDetail();
+            billDetail.StudentId = StudentId;
+            billDetail.JoinId = txtJoinId.Text;
+            billDetail.TopMost = true;
+            billDetail.ShowDialog();
         }
     }
 }

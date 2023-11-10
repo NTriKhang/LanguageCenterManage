@@ -56,5 +56,36 @@ namespace LanguageCenterManage.Controls
             classDetailForm.FormClosed += ClassDetailForm_Closed;
             classDetailForm.ShowDialog();
         }
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            if(txtSearch.Text.Trim() == "Enter Id, CoursName")
+            {
+                txtSearch.Clear();
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            _db = new AppDbContext();
+            string stringSearch = txtSearch.Text.Trim();
+            if (!string.IsNullOrEmpty(stringSearch))
+            {
+                classDTOBindingSource.DataSource = _db.Classes
+                                                        .Include(nameof(Class.Course))
+                                                        .Where(x => x.Id.Contains(stringSearch) ||
+                                                               x.Course.Name.Contains(stringSearch))
+                                                        .Select(x => new ClassDTO
+                                                        {
+                                                            Id = x.Id,
+                                                            CourseName = x.Course.Name,
+                                                            Quantity = x.Quantity
+                                                        }).ToList();
+            }
+            else
+            {
+                LoadData();
+            }
+        }
     }
 }

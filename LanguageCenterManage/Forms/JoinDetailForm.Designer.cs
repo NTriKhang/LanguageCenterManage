@@ -43,6 +43,9 @@
             this.txtClassId = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtJoinId = new System.Windows.Forms.TextBox();
+            this.btnBill = new MaterialSkin.Controls.MaterialRaisedButton();
             this.classDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.classDTOBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +56,7 @@
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(487, 471);
+            this.btnUpdate.Location = new System.Drawing.Point(506, 471);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(109, 44);
             this.btnUpdate.TabIndex = 24;
@@ -65,7 +68,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(58, 135);
+            this.label1.Location = new System.Drawing.Point(448, 144);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 23);
             this.label1.TabIndex = 22;
@@ -75,7 +78,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(435, 137);
+            this.label3.Location = new System.Drawing.Point(45, 221);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 23);
             this.label3.TabIndex = 22;
@@ -85,7 +88,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(29, 218);
+            this.label4.Location = new System.Drawing.Point(419, 219);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 23);
             this.label4.TabIndex = 20;
@@ -95,7 +98,7 @@
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(435, 220);
+            this.label5.Location = new System.Drawing.Point(45, 300);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 23);
             this.label5.TabIndex = 22;
@@ -104,43 +107,42 @@
             // txtStudentId
             // 
             this.txtStudentId.Enabled = false;
-            this.txtStudentId.Location = new System.Drawing.Point(159, 135);
+            this.txtStudentId.Location = new System.Drawing.Point(549, 144);
             this.txtStudentId.Name = "txtStudentId";
             this.txtStudentId.Size = new System.Drawing.Size(194, 22);
             this.txtStudentId.TabIndex = 33;
             // 
             // txtSecondGrade
             // 
-            this.txtSecondGrade.Location = new System.Drawing.Point(159, 220);
+            this.txtSecondGrade.Location = new System.Drawing.Point(549, 221);
             this.txtSecondGrade.Name = "txtSecondGrade";
             this.txtSecondGrade.Size = new System.Drawing.Size(194, 22);
             this.txtSecondGrade.TabIndex = 33;
             // 
             // txtFistGrade
             // 
-            this.txtFistGrade.Location = new System.Drawing.Point(549, 135);
+            this.txtFistGrade.Location = new System.Drawing.Point(159, 219);
             this.txtFistGrade.Name = "txtFistGrade";
             this.txtFistGrade.Size = new System.Drawing.Size(194, 22);
             this.txtFistGrade.TabIndex = 33;
             // 
             // txtFinalGrade
             // 
-            this.txtFinalGrade.Location = new System.Drawing.Point(549, 218);
+            this.txtFinalGrade.Location = new System.Drawing.Point(159, 298);
             this.txtFinalGrade.Name = "txtFinalGrade";
             this.txtFinalGrade.Size = new System.Drawing.Size(194, 22);
             this.txtFinalGrade.TabIndex = 33;
             // 
             // btnShowListClass
             // 
-            this.btnShowListClass.AutoSize = true;
             this.btnShowListClass.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnShowListClass.Depth = 0;
             this.btnShowListClass.Icon = null;
-            this.btnShowListClass.Location = new System.Drawing.Point(159, 356);
+            this.btnShowListClass.Location = new System.Drawing.Point(159, 366);
             this.btnShowListClass.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnShowListClass.Name = "btnShowListClass";
             this.btnShowListClass.Primary = true;
-            this.btnShowListClass.Size = new System.Drawing.Size(110, 36);
+            this.btnShowListClass.Size = new System.Drawing.Size(105, 37);
             this.btnShowListClass.TabIndex = 35;
             this.btnShowListClass.Text = "ListClass";
             this.btnShowListClass.UseVisualStyleBackColor = true;
@@ -150,7 +152,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(62, 291);
+            this.label2.Location = new System.Drawing.Point(452, 298);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 23);
             this.label2.TabIndex = 20;
@@ -159,7 +161,7 @@
             // txtClassId
             // 
             this.txtClassId.Enabled = false;
-            this.txtClassId.Location = new System.Drawing.Point(159, 293);
+            this.txtClassId.Location = new System.Drawing.Point(530, 301);
             this.txtClassId.Name = "txtClassId";
             this.txtClassId.Size = new System.Drawing.Size(194, 22);
             this.txtClassId.TabIndex = 33;
@@ -170,7 +172,7 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(326, 471);
+            this.btnDelete.Location = new System.Drawing.Point(360, 471);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 44);
             this.btnDelete.TabIndex = 37;
@@ -180,19 +182,51 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.AutoSize = true;
             this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdd.Depth = 0;
             this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(653, 471);
+            this.btnAdd.Location = new System.Drawing.Point(657, 471);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Primary = true;
-            this.btnAdd.Size = new System.Drawing.Size(56, 36);
+            this.btnAdd.Size = new System.Drawing.Size(86, 41);
             this.btnAdd.TabIndex = 38;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(58, 144);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 23);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Id";
+            // 
+            // txtJoinId
+            // 
+            this.txtJoinId.Enabled = false;
+            this.txtJoinId.Location = new System.Drawing.Point(159, 144);
+            this.txtJoinId.Name = "txtJoinId";
+            this.txtJoinId.Size = new System.Drawing.Size(194, 22);
+            this.txtJoinId.TabIndex = 33;
+            // 
+            // btnBill
+            // 
+            this.btnBill.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBill.Depth = 0;
+            this.btnBill.Icon = null;
+            this.btnBill.Location = new System.Drawing.Point(207, 472);
+            this.btnBill.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBill.Name = "btnBill";
+            this.btnBill.Primary = true;
+            this.btnBill.Size = new System.Drawing.Size(106, 40);
+            this.btnBill.TabIndex = 35;
+            this.btnBill.Text = "Bill";
+            this.btnBill.UseVisualStyleBackColor = true;
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
             // classDTOBindingSource
             // 
@@ -202,19 +236,22 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 547);
+            this.ClientSize = new System.Drawing.Size(845, 553);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnBill);
             this.Controls.Add(this.btnShowListClass);
             this.Controls.Add(this.txtClassId);
             this.Controls.Add(this.txtSecondGrade);
             this.Controls.Add(this.txtFinalGrade);
             this.Controls.Add(this.txtFistGrade);
+            this.Controls.Add(this.txtJoinId);
             this.Controls.Add(this.txtStudentId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "JoinDetailForm";
@@ -243,5 +280,8 @@
         private System.Windows.Forms.BindingSource classDTOBindingSource;
         private System.Windows.Forms.Button btnDelete;
         private MaterialSkin.Controls.MaterialRaisedButton btnAdd;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtJoinId;
+        private MaterialSkin.Controls.MaterialRaisedButton btnBill;
     }
 }

@@ -17,11 +17,11 @@ namespace LanguageCenterManage.Models
         [ForeignKey(nameof(UserConfirmId))]
         public User User { get; set; }
         public decimal Cost { get; set; }
-        public bool State {  get; set; }
+        public bool State { get; set; }
         [Index(IsUnique = true)]
         [Required]
         public string JoinId { get; set; }
         [ForeignKey(nameof(JoinId))]
-        public Join Join { get; set; }
+        public Join Join { get; set; }  
     }
 }

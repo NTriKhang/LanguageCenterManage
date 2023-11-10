@@ -67,8 +67,6 @@ namespace LanguageCenterManage
                 btnUpdate.Visible = false;
                 btnSendEmail.Visible = false;
                 btnJoin.Visible = false;
-
-
             }
         }
         public void InsertStudent()
