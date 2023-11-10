@@ -59,33 +59,35 @@ namespace LanguageCenterManage.Controls
             userDetailForm.ShowDialog();
         }
 
-        private void txtSearch_Click(object sender, EventArgs e)
-        {
-            if(txtSearch.Text.Trim() == "Enter Id, FirstName, Phone")
-            {
-                txtSearch.Clear();
-            }
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string stringSearch = txtSearch.Text.Trim();
-            if(stringSearch != null)
+            if(stringSearch.Length == 0)
             {
-                _db = new AppDbContext();
-                var listUser = _db.Users
-                    .Where(x => x.Id.Contains(stringSearch) ||
-                    x.FirstName.Contains(stringSearch) ||
-                    x.Phone.Contains(stringSearch))
-                    .Select(x => new UserDTO
+                MessageBox.Show("Lack of information", "404", MessageBoxButtons.OK);
+            }
+            else
+            {
+                var userDtos = _db.Users.Where(x => x.Id.Contains(stringSearch) ||
+                x.FirstName.Contains(stringSearch) ||
+                x.LastName.Contains(stringSearch))
+                .Select(x => new UserDTO
                 {
                     Id = x.Id,
                     FirstName = x.FirstName,
                     LastName = x.LastName,
                     Email = x.Email,
                     Phone = x.Phone,
-                }).ToList();
-                userDTOBindingSource.DataSource = listUser;
+                })
+                .ToList();
+                userDTOBindingSource.DataSource = userDtos;
+            }
+        }
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            if(txtSearch.Text.Trim() == "Enter Id, FirstName, Phone")
+            {
+                txtSearch.Clear();
             }
         }
     }

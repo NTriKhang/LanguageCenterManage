@@ -34,26 +34,102 @@ namespace LanguageCenterManage.Forms
 
         private void ShowRoomBtn_Click(object sender, EventArgs e)
         {
-            var date = dateTimePicker1.Value.Date;
-            var shift = Convert.ToInt16(ShiftTxt.Text);
-            RoomAvailableForm roomAvailableForm = new RoomAvailableForm(date, shift);
-            roomAvailableForm.ShowDialog();
-            RoomIdTxt.Text = roomAvailableForm.roomId;
-            roomNameTxt.Text = roomAvailableForm.roomName;
+            if (singleRadio.Checked)
+            {
+                var date = dateTimePicker1.Value.Date;
+                var shift = Convert.ToInt16(shiftCb.Text);
+                RoomAvailableForm roomAvailableForm = new RoomAvailableForm(date, shift);
+                roomAvailableForm.ShowDialog();
+                RoomIdTxt.Text = roomAvailableForm.roomId;
+                roomNameTxt.Text = roomAvailableForm.roomName;
+            }
+            else
+            {
+                var dateStart = dateTimePicker1.Value.Date;
+                var dateEnd = dateTimePicker2.Value.Date;
+                if(dateEnd < dateStart)
+                {
+                    MessageBox.Show("Date start must before Date end", "400", MessageBoxButtons.OK);
+                    return;
+                }
+                List<string> checkedDate = new List<string>();
+                foreach(var date in DatesOfWeekCheck.CheckedItems)
+                {
+                    checkedDate.Add(date.ToString());
+                }
+                if(checkedDate.Count == 0)
+                {
+                    MessageBox.Show("Lack of date of week", "400", MessageBoxButtons.OK);
+                    return;
+                }
+                var shift = Convert.ToInt16(shiftCb.Text);
+                RoomAvailableForm roomAvailableForm = new RoomAvailableForm(dateStart, dateEnd, shift, checkedDate);
+                roomAvailableForm.ShowDialog();
+                RoomIdTxt.Text = roomAvailableForm.roomId;
+                roomNameTxt.Text = roomAvailableForm.roomName;
+            }
         }
-
+        private bool isValid()
+        {
+            if (shiftCb.Text == "" || RoomIdTxt.Text == "" || roomNameTxt.Text == ""
+                || ClassIdtxt.Text == "" || CourseNameTxt.Text == ""
+                || TeacherCb.Text == "" || TeacherNametxt.Text == ""
+                || (DatesOfWeekCheck.CheckedItems.Count == 0 && ListRadio.Checked))
+                return false;
+            return true;
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Schedule schedule = new Schedule()
+            if (isValid())
             {
-                RoomId = RoomIdTxt.Text,
-                ClassId = ClassIdCb.Text,
-                TeacherId = TeacherCb.Text,
-                DateTime = dateTimePicker1.Value.Date,
-                Shift = Convert.ToInt32(ShiftTxt.Text),
-            };
-            _db.Schedules.Add(schedule);
-            _db.SaveChanges();
+                if(singleRadio.Checked)
+                {
+                    Schedule schedule = new Schedule()
+                    {
+                        RoomId = RoomIdTxt.Text,
+                        ClassId = ClassIdCb.Text,
+                        TeacherId = TeacherCb.Text,
+                        DateTime = dateTimePicker1.Value.Date,
+                        Shift = Convert.ToInt32(shiftCb.Text),
+                    };
+                    _db.Schedules.Add(schedule);
+                    _db.SaveChanges();
+                }
+                else
+                {
+                    List<string> checkedDate = new List<string>();
+                    foreach (var dateOfWeek in DatesOfWeekCheck.CheckedItems)
+                    {
+                        checkedDate.Add(dateOfWeek.ToString());
+                    }
+                    List<Schedule> schedules = new List<Schedule>();
+                    for(var date = dateTimePicker1.Value.Date; date <= dateTimePicker2.Value.Date; date = date.AddDays(1))
+                    {
+                        var dateOfWeek = date.DayOfWeek.ToString();
+
+                        if (checkedDate.Contains(dateOfWeek))
+                        {
+                            schedules.Add(new Schedule
+                            {
+                                ClassId = ClassIdCb.Text,
+                                RoomId = RoomIdTxt.Text,
+                                TeacherId = TeacherCb.Text,
+                                DateTime = date.Date,
+                                Shift = Convert.ToInt32(shiftCb.Text),
+                            });
+                        }
+                    }
+                    _db.Schedules.AddRange(schedules);
+                    _db.SaveChanges();
+
+                }
+                MessageBox.Show("Add successfully");
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Lack of information");
+            }
         }
 
         private void ScheduleDetailForm_Load(object sender, EventArgs e)
@@ -63,17 +139,20 @@ namespace LanguageCenterManage.Forms
                                                 .Select(x => x.Id)
                                                 .ToArray());
             TeacherCb.Items.AddRange(_db.Teachers.Select(x => x.Id).ToArray());
+            ListSection.Visible = false;
             if(_schedule == null)
             {
                 DeleteBtn.Visible = false;
                 UpdateBtn.Visible = false;
-                ShiftTxt.Text = "1";
             }
             else
             {
+                groupBox1.Visible = false;
+                singleRadio.Visible = false;
+                ListRadio.Visible = false;
                 btnAdd.Visible = false;
                 dateTimePicker1.Value = _schedule.DateTime;
-                ShiftTxt.Text = _schedule.Shift.ToString();
+                shiftCb.Text = _schedule.Shift.ToString();
                 RoomIdTxt.Text = _schedule.RoomId;
                 roomNameTxt.Text = _db.Rooms.Where(x => x.Id == _schedule.RoomId).Select(x => x.Name).SingleOrDefault();
                 CourseNameTxt.Text = _db.Classes.Where(x => x.Id == _schedule.RoomId)
@@ -121,12 +200,44 @@ namespace LanguageCenterManage.Forms
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            _schedule.RoomId = RoomIdTxt.Text;
-            _schedule.ClassId = ClassIdCb.Text;
-            _schedule.TeacherId = TeacherCb.Text;
-            _schedule.DateTime = dateTimePicker1.Value.Date;
-            _schedule.Shift = Convert.ToInt32(ShiftTxt.Text);
-            _db.SaveChanges();
+            if (isValid())
+            {
+                _schedule.RoomId = RoomIdTxt.Text;
+                _schedule.ClassId = ClassIdCb.Text;
+                _schedule.TeacherId = TeacherCb.Text;
+                _schedule.DateTime = dateTimePicker1.Value.Date;
+                _schedule.Shift = Convert.ToInt32(shiftCb.Text);
+                _db.SaveChanges();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Lack of information");
+            }
+        }
+
+        private void ListRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ListRadio.Checked)
+            {
+                ListSection.Visible = true;
+            }
+            else
+            {
+                ListSection.Visible = false;
+            }
+        }
+
+        private void shiftCb_SelectedValueChanged(object sender, EventArgs e)
+        {
+            roomNameTxt.Clear();
+            RoomIdTxt.Clear();
+        }
+
+        private void DatesOfWeekCheck_SelectedValueChanged(object sender, EventArgs e)
+        {
+            roomNameTxt.Clear();
+            RoomIdTxt.Clear();
         }
     }
 }

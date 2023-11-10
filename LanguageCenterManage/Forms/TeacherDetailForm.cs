@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LanguageCenterManage.DAL;
 using LanguageCenterManage.Models;
+using LanguageCenterManage.Services.PdfService;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -28,6 +30,7 @@ namespace LanguageCenterManage.Forms
         }
         public void showTeacher()
         {
+            var resourePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", "ProfileImage");
             teacher = db.Teachers.Where(x => x.Id == Id).FirstOrDefault();
             if(teacher != null)
             {
@@ -37,13 +40,21 @@ namespace LanguageCenterManage.Forms
                 txtAddress.Text = teacher.Address;
                 txtEmailTeacher.Text = teacher.Email;
                 txtPhone.Text = teacher.Phone;
-
+                if (teacher.ImagePath != null)
+                {
+                    ImageNameTxt.Text = teacher.ImagePath;
+                    profileImageBox.ImageLocation = Path.Combine(resourePath, teacher.ImagePath);
+                }
+                else
+                {
+                    profileImageBox.ImageLocation = Path.Combine(resourePath, "UserNoImage", "UserNoImage.jpg");
+                }
                 btnAdd.Visible = false;
             }
             else
             {
                 txtIdTeacher.Text = Guid.NewGuid().ToString().Substring(0, 7);
-                
+                ExportIDCbtn.Visible = false;
                 btnDelete.Visible = false;
                 btnUpdate.Visible = false;
             }
@@ -58,7 +69,12 @@ namespace LanguageCenterManage.Forms
             teacher.Birth = dtBirth.Value;
             teacher.Address = txtAddress.Text;
             teacher.Phone = txtPhone.Text;
-
+            teacher.ImagePath = ImageNameTxt.Text;
+            if (ImageNameTxt.Text.Length > 0)
+            {
+                var resourePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", "ProfileImage");
+                File.Copy(ImageLocation, Path.Combine(resourePath, ImageNameTxt.Text), true);
+            }
             db.Teachers.Add(teacher);
             db.SaveChanges();
         }
@@ -72,6 +88,23 @@ namespace LanguageCenterManage.Forms
             teacher.Address = txtAddress.Text;
             teacher.Phone = txtPhone.Text;
 
+            if (ImageNameTxt.Text != "" && teacher.ImagePath != ImageNameTxt.Text)
+            {
+                var resourePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", "ProfileImage");
+                var oldImageName = db.Students.Where(x => x.Id == teacher.Id)
+                                    .Select(x => x.ImagePath)
+                                    .SingleOrDefault();
+                if (oldImageName != null)
+                {
+                    var oldImagePath = Path.Combine(resourePath, oldImageName);
+                    if (File.Exists(oldImagePath))
+                    {
+                        File.Delete(oldImagePath);
+                    }
+                }
+                teacher.ImagePath = ImageNameTxt.Text;
+                File.Copy(ImageLocation, Path.Combine(resourePath, ImageNameTxt.Text), true);
+            }
             db.SaveChanges();
         }
         private bool isModelValid()
@@ -123,6 +156,50 @@ namespace LanguageCenterManage.Forms
                 db.Teachers.Remove(teacher);
                 db.SaveChanges();
                 Close();
+            }
+        }
+
+        private void ExportIDCbtn_Click(object sender, EventArgs e)
+        {
+            PdfService pdfService = new PdfService();
+            var response = pdfService.ExportIDC(teacher, "Teacher");
+            if (response == 200)
+            {
+                Close();
+                MessageBox.Show("Export successfully", "200", MessageBoxButtons.OK);
+            }
+            else if (response == 400)
+            {
+                Close();
+                MessageBox.Show("Lack of information", "400", MessageBoxButtons.OK);
+            }
+            else if (response == 500)
+            {
+                Close();
+                MessageBox.Show("System error", "500", MessageBoxButtons.OK);
+            }
+        }
+        private string ImageLocation = "";
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var resourePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", "ProfileImage");
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                fileDialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png";
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ImageLocation = fileDialog.FileName;
+                    string imageName = fileDialog.SafeFileName;
+
+                    ImageNameTxt.Text = Guid.NewGuid() + imageName;
+
+                    profileImageBox.ImageLocation = ImageLocation;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error have occured", "400", MessageBoxButtons.OK);
             }
         }
     }
