@@ -53,13 +53,18 @@
             this.updateBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.showpasswordBtn = new MaterialSkin.Controls.MaterialCheckBox();
             this.ChangePasswordBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.ImageNameTxt = new System.Windows.Forms.TextBox();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.profileImageBox = new System.Windows.Forms.PictureBox();
+            this.ExportIDCbtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            ((System.ComponentModel.ISupportInitialize)(this.profileImageBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(26, 270);
+            this.label7.Location = new System.Drawing.Point(23, 458);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 23);
             this.label7.TabIndex = 19;
@@ -67,7 +72,7 @@
             // 
             // addressTextBox
             // 
-            this.addressTextBox.Location = new System.Drawing.Point(134, 270);
+            this.addressTextBox.Location = new System.Drawing.Point(131, 458);
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(683, 96);
             this.addressTextBox.TabIndex = 5;
@@ -76,25 +81,25 @@
             // dtBirth
             // 
             this.dtBirth.CustomFormat = "dd/MM/yyy";
-            this.dtBirth.Location = new System.Drawing.Point(134, 201);
+            this.dtBirth.Location = new System.Drawing.Point(575, 312);
             this.dtBirth.Name = "dtBirth";
-            this.dtBirth.Size = new System.Drawing.Size(224, 22);
+            this.dtBirth.Size = new System.Drawing.Size(242, 22);
             this.dtBirth.TabIndex = 3;
             this.dtBirth.Value = new System.DateTime(2023, 10, 19, 0, 0, 0, 0);
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(566, 146);
+            this.txtLastName.Location = new System.Drawing.Point(575, 257);
             this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(251, 22);
+            this.txtLastName.Size = new System.Drawing.Size(239, 22);
             this.txtLastName.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(471, 146);
+            this.label4.Location = new System.Drawing.Point(471, 257);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 23);
             this.label4.TabIndex = 7;
@@ -102,25 +107,25 @@
             // 
             // txtEmailStudent
             // 
-            this.txtEmailStudent.Location = new System.Drawing.Point(566, 85);
+            this.txtEmailStudent.Location = new System.Drawing.Point(575, 159);
             this.txtEmailStudent.Multiline = true;
             this.txtEmailStudent.Name = "txtEmailStudent";
-            this.txtEmailStudent.Size = new System.Drawing.Size(251, 22);
+            this.txtEmailStudent.Size = new System.Drawing.Size(239, 22);
             this.txtEmailStudent.TabIndex = 0;
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(134, 147);
+            this.txtFirstName.Location = new System.Drawing.Point(575, 207);
             this.txtFirstName.Multiline = true;
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(224, 22);
+            this.txtFirstName.Size = new System.Drawing.Size(239, 22);
             this.txtFirstName.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(471, 84);
+            this.label2.Location = new System.Drawing.Point(471, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 23);
             this.label2.TabIndex = 8;
@@ -130,7 +135,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(26, 147);
+            this.label3.Location = new System.Drawing.Point(471, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 23);
             this.label3.TabIndex = 9;
@@ -139,17 +144,17 @@
             // txtIdStudent
             // 
             this.txtIdStudent.Enabled = false;
-            this.txtIdStudent.Location = new System.Drawing.Point(134, 84);
+            this.txtIdStudent.Location = new System.Drawing.Point(575, 108);
             this.txtIdStudent.Multiline = true;
             this.txtIdStudent.Name = "txtIdStudent";
-            this.txtIdStudent.Size = new System.Drawing.Size(224, 22);
+            this.txtIdStudent.Size = new System.Drawing.Size(239, 22);
             this.txtIdStudent.TabIndex = 10;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(30, 85);
+            this.label1.Location = new System.Drawing.Point(471, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 23);
             this.label1.TabIndex = 11;
@@ -157,17 +162,17 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(566, 203);
+            this.txtPhone.Location = new System.Drawing.Point(575, 368);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(251, 22);
+            this.txtPhone.Size = new System.Drawing.Size(242, 22);
             this.txtPhone.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(471, 206);
+            this.label6.Location = new System.Drawing.Point(471, 368);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 23);
             this.label6.TabIndex = 12;
@@ -177,7 +182,7 @@
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(26, 201);
+            this.label5.Location = new System.Drawing.Point(471, 312);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 23);
             this.label5.TabIndex = 13;
@@ -187,7 +192,7 @@
             // 
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(26, 429);
+            this.label8.Location = new System.Drawing.Point(26, 578);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 23);
             this.label8.TabIndex = 21;
@@ -196,7 +201,7 @@
             // roleIdCb
             // 
             this.roleIdCb.FormattingEnabled = true;
-            this.roleIdCb.Location = new System.Drawing.Point(134, 428);
+            this.roleIdCb.Location = new System.Drawing.Point(134, 577);
             this.roleIdCb.Name = "roleIdCb";
             this.roleIdCb.Size = new System.Drawing.Size(224, 24);
             this.roleIdCb.TabIndex = 6;
@@ -206,7 +211,7 @@
             // 
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(471, 430);
+            this.label9.Location = new System.Drawing.Point(471, 579);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 23);
             this.label9.TabIndex = 23;
@@ -215,7 +220,7 @@
             // roleNameTb
             // 
             this.roleNameTb.Enabled = false;
-            this.roleNameTb.Location = new System.Drawing.Point(566, 430);
+            this.roleNameTb.Location = new System.Drawing.Point(566, 579);
             this.roleNameTb.Multiline = true;
             this.roleNameTb.Name = "roleNameTb";
             this.roleNameTb.Size = new System.Drawing.Size(251, 22);
@@ -225,7 +230,7 @@
             // 
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(26, 498);
+            this.label10.Location = new System.Drawing.Point(26, 647);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(88, 23);
             this.label10.TabIndex = 25;
@@ -233,7 +238,7 @@
             // 
             // passwordTb
             // 
-            this.passwordTb.Location = new System.Drawing.Point(134, 499);
+            this.passwordTb.Location = new System.Drawing.Point(134, 648);
             this.passwordTb.Multiline = true;
             this.passwordTb.Name = "passwordTb";
             this.passwordTb.PasswordChar = '*';
@@ -246,7 +251,7 @@
             this.createBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.createBtn.Depth = 0;
             this.createBtn.Icon = null;
-            this.createBtn.Location = new System.Drawing.Point(34, 595);
+            this.createBtn.Location = new System.Drawing.Point(34, 744);
             this.createBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.createBtn.Name = "createBtn";
             this.createBtn.Primary = true;
@@ -262,7 +267,7 @@
             this.deleteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.deleteBtn.Depth = 0;
             this.deleteBtn.Icon = null;
-            this.deleteBtn.Location = new System.Drawing.Point(732, 595);
+            this.deleteBtn.Location = new System.Drawing.Point(732, 744);
             this.deleteBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Primary = true;
@@ -278,7 +283,7 @@
             this.updateBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.updateBtn.Depth = 0;
             this.updateBtn.Icon = null;
-            this.updateBtn.Location = new System.Drawing.Point(630, 595);
+            this.updateBtn.Location = new System.Drawing.Point(630, 744);
             this.updateBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Primary = true;
@@ -293,7 +298,7 @@
             this.showpasswordBtn.AutoSize = true;
             this.showpasswordBtn.Depth = 0;
             this.showpasswordBtn.Font = new System.Drawing.Font("Roboto", 10F);
-            this.showpasswordBtn.Location = new System.Drawing.Point(134, 524);
+            this.showpasswordBtn.Location = new System.Drawing.Point(134, 673);
             this.showpasswordBtn.Margin = new System.Windows.Forms.Padding(0);
             this.showpasswordBtn.MouseLocation = new System.Drawing.Point(-1, -1);
             this.showpasswordBtn.MouseState = MaterialSkin.MouseState.HOVER;
@@ -311,7 +316,7 @@
             this.ChangePasswordBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ChangePasswordBtn.Depth = 0;
             this.ChangePasswordBtn.Icon = null;
-            this.ChangePasswordBtn.Location = new System.Drawing.Point(134, 595);
+            this.ChangePasswordBtn.Location = new System.Drawing.Point(134, 744);
             this.ChangePasswordBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ChangePasswordBtn.Name = "ChangePasswordBtn";
             this.ChangePasswordBtn.Primary = true;
@@ -321,11 +326,65 @@
             this.ChangePasswordBtn.UseVisualStyleBackColor = true;
             this.ChangePasswordBtn.Click += new System.EventHandler(this.ChangePasswordBtn_Click);
             // 
+            // ImageNameTxt
+            // 
+            this.ImageNameTxt.Location = new System.Drawing.Point(30, 398);
+            this.ImageNameTxt.Name = "ImageNameTxt";
+            this.ImageNameTxt.Size = new System.Drawing.Size(160, 22);
+            this.ImageNameTxt.TabIndex = 34;
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.AutoSize = true;
+            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Icon = null;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(211, 398);
+            this.materialRaisedButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(88, 36);
+            this.materialRaisedButton1.TabIndex = 33;
+            this.materialRaisedButton1.Text = "Upload";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            // 
+            // profileImageBox
+            // 
+            this.profileImageBox.Location = new System.Drawing.Point(30, 109);
+            this.profileImageBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.profileImageBox.Name = "profileImageBox";
+            this.profileImageBox.Size = new System.Drawing.Size(269, 263);
+            this.profileImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.profileImageBox.TabIndex = 32;
+            this.profileImageBox.TabStop = false;
+            // 
+            // ExportIDCbtn
+            // 
+            this.ExportIDCbtn.AutoSize = true;
+            this.ExportIDCbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ExportIDCbtn.Depth = 0;
+            this.ExportIDCbtn.Icon = null;
+            this.ExportIDCbtn.Location = new System.Drawing.Point(496, 744);
+            this.ExportIDCbtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ExportIDCbtn.Name = "ExportIDCbtn";
+            this.ExportIDCbtn.Primary = true;
+            this.ExportIDCbtn.Size = new System.Drawing.Size(118, 36);
+            this.ExportIDCbtn.TabIndex = 35;
+            this.ExportIDCbtn.Text = "Export IDC";
+            this.ExportIDCbtn.UseVisualStyleBackColor = true;
+            this.ExportIDCbtn.Click += new System.EventHandler(this.ExportIDCbtn_Click);
+            // 
             // UserDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 654);
+            this.ClientSize = new System.Drawing.Size(896, 801);
+            this.Controls.Add(this.ExportIDCbtn);
+            this.Controls.Add(this.ImageNameTxt);
+            this.Controls.Add(this.materialRaisedButton1);
+            this.Controls.Add(this.profileImageBox);
             this.Controls.Add(this.ChangePasswordBtn);
             this.Controls.Add(this.showpasswordBtn);
             this.Controls.Add(this.updateBtn);
@@ -354,6 +413,7 @@
             this.Name = "UserDetailForm";
             this.Text = "UserDetailForm";
             this.Load += new System.EventHandler(this.UserDetailForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.profileImageBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,5 +446,9 @@
         private MaterialSkin.Controls.MaterialRaisedButton updateBtn;
         private MaterialSkin.Controls.MaterialCheckBox showpasswordBtn;
         private MaterialSkin.Controls.MaterialRaisedButton ChangePasswordBtn;
+        private System.Windows.Forms.TextBox ImageNameTxt;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private System.Windows.Forms.PictureBox profileImageBox;
+        private MaterialSkin.Controls.MaterialRaisedButton ExportIDCbtn;
     }
 }

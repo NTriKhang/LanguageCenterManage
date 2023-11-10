@@ -1,11 +1,13 @@
 ﻿using LanguageCenterManage.DAL;
 using LanguageCenterManage.Models;
+using LanguageCenterManage.Services.PdfService;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,12 +55,14 @@ namespace LanguageCenterManage.Forms
                 deleteBtn.Visible = false;
                 ChangePasswordBtn.Visible = false;
                 txtIdStudent.Text = Guid.NewGuid().ToString().Substring(0, 8);
+
             }
             else
             {
                 createBtn.Visible = false;
                 passwordTb.Enabled = false;
-                showpasswordBtn.Enabled = false;
+                showpasswordBtn.Visible = false;
+                var resourePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", "ProfileImage");
 
                 passwordTb.Text = _user.PasswordHash;
                 txtIdStudent.Text = _user.Id;
@@ -70,6 +74,15 @@ namespace LanguageCenterManage.Forms
                 addressTextBox.Text = _user.Address;
                 roleIdCb.Text = _user.RoleId;
                 roleNameTb.Text = _roles.Where(x => x.Id == _user.RoleId).Select(x => x.Name).SingleOrDefault();
+                if (_user.ImagePath != null)
+                {
+                    ImageNameTxt.Text = _user.ImagePath;
+                    profileImageBox.ImageLocation = Path.Combine(resourePath, _user.ImagePath);
+                }
+                else
+                {
+                    profileImageBox.ImageLocation = Path.Combine(resourePath, "UserNoImage", "UserNoImage.jpg");
+                }
             }
         }
 
@@ -121,7 +134,13 @@ namespace LanguageCenterManage.Forms
                     Phone = txtPhone.Text,
                     PasswordHash = BCrypt.Net.BCrypt.HashPassword(passwordTb.Text),
                     RoleId = roleIdCb.Text,
+                    ImagePath = ImageNameTxt.Text
                 };
+                if (ImageNameTxt.Text.Length > 0)
+                {
+                    var resourePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", "ProfileImage");
+                    File.Copy(ImageLocation, Path.Combine(resourePath, ImageNameTxt.Text), true);
+                }
                 _db.Users.Add(user);
                 _db.SaveChanges();
                 MessageBox.Show("Create successfully", "User was added to db", MessageBoxButtons.OK);
@@ -141,6 +160,23 @@ namespace LanguageCenterManage.Forms
                 _user.Birth = dtBirth.Value;
                 _user.Phone = txtPhone.Text;
                 _user.RoleId = roleIdCb.Text;
+                if (ImageNameTxt.Text != "" && _user.ImagePath != ImageNameTxt.Text)
+                {
+                    var resourePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", "ProfileImage");
+                    var oldImageName = _db.Students.Where(x => x.Id == _user.Id)
+                                        .Select(x => x.ImagePath)
+                                        .SingleOrDefault();
+                    if (oldImageName != null)
+                    {
+                        var oldImagePath = Path.Combine(resourePath, oldImageName);
+                        if (File.Exists(oldImagePath))
+                        {
+                            File.Delete(oldImagePath);
+                        }
+                    }
+                    _user.ImagePath = ImageNameTxt.Text;
+                    File.Copy(ImageLocation, Path.Combine(resourePath, ImageNameTxt.Text), true);
+                }
                 _db.SaveChanges();
                 MessageBox.Show("Update successfully", "User was updated to db", MessageBoxButtons.OK);
                 Close();
@@ -156,6 +192,52 @@ namespace LanguageCenterManage.Forms
                 _db.Users.Remove(_user);
                 _db.SaveChanges();
                 Close();
+            }
+        }
+        private string ImageLocation = "";
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var resourePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", "ProfileImage");
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                fileDialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png";
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ImageLocation = fileDialog.FileName;
+                    string imageName = fileDialog.SafeFileName;
+
+                    ImageNameTxt.Text = Guid.NewGuid() + imageName;
+
+                    profileImageBox.ImageLocation = ImageLocation;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error have occured", "400", MessageBoxButtons.OK);
+            }
+        }
+
+        private void ExportIDCbtn_Click(object sender, EventArgs e)
+        {
+            PdfService pdfService = new PdfService();
+            var response = pdfService.ExportIDC(_user, _db.Roles.Where(x => x.Id == _user.RoleId)
+                                                                 .Select(x => x.Name)
+                                                                 .SingleOrDefault());
+            if (response == 200)
+            {
+                Close();
+                MessageBox.Show("Export successfully", "200", MessageBoxButtons.OK);
+            }
+            else if (response == 400)
+            {
+                Close();
+                MessageBox.Show("Lack of information", "400", MessageBoxButtons.OK);
+            }
+            else if (response == 500)
+            {
+                Close();
+                MessageBox.Show("System error", "500", MessageBoxButtons.OK);
             }
         }
     }
