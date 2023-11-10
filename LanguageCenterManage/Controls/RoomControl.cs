@@ -53,5 +53,30 @@ namespace LanguageCenterManage.Controls
             roomDetailForm.FormClosed += RoomDetailForm_FormClosed;
             roomDetailForm.ShowDialog();
         }
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Enter Id, Name")
+            {
+                txtSearch.Clear();
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchString = txtSearch.Text.Trim();
+            if (txtSearch != null)
+            {
+                var listStudent = db.Rooms.Where(
+                    x => x.Id.Contains(searchString) ||
+                    x.Name.Contains(searchString)
+                ).ToList();
+                dataGridView1.DataSource = listStudent;
+            }
+            else
+            {
+                LoadRoom();
+            }
+        }
     }
 }

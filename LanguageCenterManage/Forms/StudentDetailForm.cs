@@ -47,6 +47,7 @@ namespace LanguageCenterManage
                 btnDelete.Visible = false;
                 btnUpdate.Visible = false;
                 btnSendEmail.Visible = false;
+                btnJoin.Visible = false;
                 
             }
         }

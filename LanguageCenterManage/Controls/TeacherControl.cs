@@ -57,5 +57,30 @@ namespace LanguageCenterManage.Controls
             teacherDetailForm.FormClosed += TeacherDetailForm_FormClosed;
             teacherDetailForm.ShowDialog();
         }
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Enter Id, Lastname")
+            {
+                txtSearch.Clear();
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchString = txtSearch.Text.Trim();
+            if (txtSearch != null)
+            {
+                var listStudent = db.Teachers.Where(
+                    x => x.Id.Contains(searchString) ||
+                    x.LastName.Contains(searchString)
+                ).ToList();
+                dataGridView1.DataSource = listStudent;
+            }
+            else
+            {
+                LoadTeacher();
+            }
+        }
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -79,6 +80,18 @@ namespace LanguageCenterManage
         {
             ClassEmployeeControl classControl = new ClassEmployeeControl();
             showControl(classControl);
+        }
+
+        private void btnRoom_Click_1(object sender, EventArgs e)
+        {
+            RoomControl classControl = new RoomControl();
+            showControl(classControl);
+        }
+
+        private void btnSchedule_Click(object sender, EventArgs e)
+        {
+            ScheduleEmployeeControl scheduleControl = new ScheduleEmployeeControl();
+            showControl(scheduleControl);
         }
     }
 }

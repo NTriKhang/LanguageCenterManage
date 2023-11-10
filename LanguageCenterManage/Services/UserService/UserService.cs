@@ -16,7 +16,7 @@ namespace LanguageCenterManage.Services.UserService
                 return null;
             var user = _db.Users.SingleOrDefault(u => u.Email == email);
             if(user == null) 
-                return null;
+                return null;    
 
             if(!BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
                 return null;

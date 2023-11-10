@@ -15,10 +15,10 @@ using LanguageCenterManage.Forms;
 
 namespace LanguageCenterManage.Controls
 {
-    public partial class ScheduleControl : UserControl
+    public partial class ScheduleEmployeeControl : UserControl
     {
-        private AppDbContext _db;
-        public ScheduleControl()
+        AppDbContext _db;
+        public ScheduleEmployeeControl()
         {
             InitializeComponent();
         }
@@ -39,27 +39,10 @@ namespace LanguageCenterManage.Controls
 
             scheduleDTOBindingSource.DataSource = listSchedule;
         }
-        private void ScheduleControl_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
-        private void btnNew_Click(object sender, EventArgs e)
-        {
-            ScheduleDetailForm scheduleDetailForm = new ScheduleDetailForm();
-            scheduleDetailForm.ShowDialog();
-        }
-
-        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            var schedule = (scheduleDTOBindingSource.DataSource as List<ScheduleDTO>).ElementAt(e.RowIndex);
-            ScheduleDetailForm scheduleDetailForm = new ScheduleDetailForm(schedule.RoomId, schedule.DateTime, schedule.Shift);
-            scheduleDetailForm.ShowDialog();
-        }
 
         private void txtSearch_Click(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "Search")
+            if (txtSearch.Text == "Enter RoomID")
             {
                 txtSearch.Clear();
             }
@@ -67,18 +50,23 @@ namespace LanguageCenterManage.Controls
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //string searchString = txtSearch.Text.Trim();
-            //if (txtSearch != null)
-            //{
-            //    var listStudent = _db.Students.Where(
-            //        x => x.Id.Contains(searchString)
-            //    ).ToList();
-            //    dataGridView1.DataSource = listStudent;
-            //}
-            //else
-            //{
-            //    LoadStudentLoad();
-            //}
+            string searchString = txtSearch.Text.Trim();
+            if (txtSearch != null)
+            {
+                var listStudent = _db.Schedules.Where(
+                    x => x.RoomId.Contains(searchString)
+                ).ToList();
+                dataGridView1.DataSource = listStudent;
+            }
+            else
+            {
+                LoadData();
+            }
+        }
+
+        private void ScheduleEmployeeControl_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

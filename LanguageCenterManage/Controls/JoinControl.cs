@@ -27,11 +27,11 @@ namespace LanguageCenterManage.Controls
             joinDTOBindingSource.DataSource = db.Joins
                 .Where(x => x.StudentId == Id)
                 .Select(x => new JoinDTO
-            {
-                ClassId = x.ClassId,
-                StudentId = x.StudentId,
-                //TuiTionState = x.TuiTionState,
-            }).ToList();
+                {
+                    ClassId = x.ClassId,
+                    StudentId = x.StudentId,
+                    //TuiTionState = x.TuiTionState,
+                }).ToList();
         }
         private void JoinControl_Load(object sender, EventArgs e)
         {
