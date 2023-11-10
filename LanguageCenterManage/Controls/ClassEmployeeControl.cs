@@ -37,5 +37,38 @@ namespace LanguageCenterManage.Controls
         {
             LoadClass();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchString = txtSearch.Text.Trim();
+            if (txtSearch != null)
+            {
+                var listStudent = db.Classes
+                    .Include(nameof(Class.Course))
+                    .Where(
+                    x => x.Id.Contains(searchString) ||
+                    x.Course.Name.Contains(searchString)
+                ).Select(x => new ClassDTO
+                {
+                    Id = x.Id,
+                    CourseName = x.Course.Name,
+                    Quantity = x.Quantity
+                })
+                .ToList();
+                dataGridView1.DataSource = listStudent;
+            }
+            else
+            {
+                LoadClass();
+            }
+        }
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Enter Id, Coursname")
+            {
+                txtSearch.Clear();
+            }
+        }
     }
 }

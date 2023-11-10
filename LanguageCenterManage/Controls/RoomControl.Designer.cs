@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSearch = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.btnAddStudent = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -42,8 +42,8 @@
             this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
@@ -58,41 +58,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1593, 89);
             this.panel1.TabIndex = 5;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(115, 29);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(335, 40);
-            this.tableLayoutPanel3.TabIndex = 2;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.Image = global::LanguageCenterManage.Properties.Resources.search;
-            this.btnSearch.Location = new System.Drawing.Point(194, -3);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(38, 36);
-            this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnSearch.TabIndex = 0;
-            this.btnSearch.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnSearch);
-            this.panel3.Controls.Add(this.txtSearch);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(244, 34);
-            this.panel3.TabIndex = 2;
             // 
             // btnAddStudent
             // 
@@ -109,6 +74,43 @@
             this.btnAddStudent.Text = "Add Student";
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(115, 29);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(335, 40);
+            this.tableLayoutPanel3.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnSearch);
+            this.panel3.Controls.Add(this.txtSearch);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(244, 34);
+            this.panel3.TabIndex = 2;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Image = global::LanguageCenterManage.Properties.Resources.search;
+            this.btnSearch.Location = new System.Drawing.Point(194, -3);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(38, 36);
+            this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.TabStop = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -128,8 +130,9 @@
             this.txtSearch.Size = new System.Drawing.Size(244, 28);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TabStop = false;
-            this.txtSearch.Text = "Search";
+            this.txtSearch.Text = "Enter Id, Name";
             this.txtSearch.UseSystemPasswordChar = false;
+            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             // 
             // panel2
             // 
@@ -193,8 +196,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();

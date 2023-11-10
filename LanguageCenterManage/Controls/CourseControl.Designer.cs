@@ -36,12 +36,12 @@
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.courseDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -102,6 +102,7 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.Image = global::LanguageCenterManage.Properties.Resources.search;
             this.btnSearch.Location = new System.Drawing.Point(194, -3);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(0);
@@ -110,6 +111,7 @@
             this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnSearch.TabIndex = 0;
             this.btnSearch.TabStop = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -129,6 +131,7 @@
             this.txtSearch.Size = new System.Drawing.Size(244, 28);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TabStop = false;
+            this.txtSearch.Text = "Enter Id, Name";
             this.txtSearch.UseSystemPasswordChar = false;
             this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             // 
@@ -155,10 +158,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1501, 510);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
-            // 
-            // courseDTOBindingSource
-            // 
-            this.courseDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.CourseDTO);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -199,6 +198,10 @@
             this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // courseDTOBindingSource
+            // 
+            this.courseDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.CourseDTO);
             // 
             // CourseControl
             // 

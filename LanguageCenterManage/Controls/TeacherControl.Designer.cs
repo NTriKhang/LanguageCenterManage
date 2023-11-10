@@ -83,6 +83,7 @@
             this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnSearch.TabIndex = 0;
             this.btnSearch.TabStop = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -102,8 +103,9 @@
             this.txtSearch.Size = new System.Drawing.Size(244, 28);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TabStop = false;
-            this.txtSearch.Text = "Search";
+            this.txtSearch.Text = "Enter Id, Lastname";
             this.txtSearch.UseSystemPasswordChar = false;
+            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             // 
             // btnAddTeacher
             // 

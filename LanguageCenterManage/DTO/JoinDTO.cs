@@ -10,6 +10,5 @@ namespace LanguageCenterManage.DTO
     {
         public string ClassId { get; set; }
         public string StudentId { get; set; }
-        public bool TuiTionState { set; get; }
     }
 }

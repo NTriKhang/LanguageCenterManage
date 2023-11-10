@@ -65,5 +65,29 @@ namespace LanguageCenterManage.Controls
             scheduleDetailForm.ShowDialog();
             scheduleDetailForm.FormClosed += scheduleDetailForm_Closed;
         }
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search")
+            {
+                txtSearch.Clear();
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //string searchString = txtSearch.Text.Trim();
+            //if (txtSearch != null)
+            //{
+            //    var listStudent = _db.Students.Where(
+            //        x => x.Id.Contains(searchString)
+            //    ).ToList();
+            //    dataGridView1.DataSource = listStudent;
+            //}
+            //else
+            //{
+            //    LoadStudentLoad();
+            //}
+        }
     }
 }

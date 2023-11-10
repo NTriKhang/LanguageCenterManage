@@ -31,10 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnNew = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.joinDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.classIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tuiTionStateDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.joinDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.joinDTOBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -48,8 +47,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.classIdDataGridViewTextBoxColumn,
-            this.studentIdDataGridViewTextBoxColumn,
-            this.tuiTionStateDataGridViewCheckBoxColumn});
+            this.studentIdDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.joinDTOBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(-2, 63);
             this.dataGridView1.Name = "dataGridView1";
@@ -76,6 +74,10 @@
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
+            // joinDTOBindingSource
+            // 
+            this.joinDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.JoinDTO);
+            // 
             // classIdDataGridViewTextBoxColumn
             // 
             this.classIdDataGridViewTextBoxColumn.DataPropertyName = "ClassId";
@@ -91,18 +93,6 @@
             this.studentIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
             this.studentIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tuiTionStateDataGridViewCheckBoxColumn
-            // 
-            this.tuiTionStateDataGridViewCheckBoxColumn.DataPropertyName = "TuiTionState";
-            this.tuiTionStateDataGridViewCheckBoxColumn.HeaderText = "TuiTionState";
-            this.tuiTionStateDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.tuiTionStateDataGridViewCheckBoxColumn.Name = "tuiTionStateDataGridViewCheckBoxColumn";
-            this.tuiTionStateDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // joinDTOBindingSource
-            // 
-            this.joinDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.JoinDTO);
             // 
             // JoinControl
             // 
@@ -125,7 +115,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnNew;
         private System.Windows.Forms.DataGridViewTextBoxColumn classIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn tuiTionStateDataGridViewCheckBoxColumn;
         private System.Windows.Forms.BindingSource joinDTOBindingSource;
     }
 }

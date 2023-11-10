@@ -23,7 +23,7 @@ namespace LanguageCenterManage.Controls
         }
         private void txtSearch_Click(object sender, EventArgs e)
         {
-            if(txtSearch.Text == "Search")
+            if (txtSearch.Text == "Enter Id, Lastname")
             {
                 txtSearch.Clear();
             }
@@ -73,5 +73,21 @@ namespace LanguageCenterManage.Controls
             }
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchString = txtSearch.Text.Trim();
+            if(txtSearch != null)
+            {
+                var listStudent = db.Students.Where(
+                    x => x.Id.Contains(searchString) ||
+                    x.LastName.Contains(searchString)
+                ).ToList();
+                dataGridView1.DataSource = listStudent;
+            }
+            else
+            {
+                LoadStudentLoad();
+            }
+        }
     }
 }

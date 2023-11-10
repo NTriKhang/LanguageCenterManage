@@ -61,5 +61,30 @@ namespace LanguageCenterManage.Controls
 
             languageDetailForm.ShowDialog();
         }
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            if(txtSearch.Text.Trim() == "Enter Id, Name")
+            {
+                txtSearch.Clear();
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            _db = new AppDbContext();
+            var stringSearch = txtSearch.Text.Trim();
+            if(!string.IsNullOrEmpty(stringSearch))
+            {
+                languageBindingSource.DataSource = _db.CourseType
+                    .Where(x => x.Id.Contains(stringSearch) ||
+                    x.Name.Contains(stringSearch))
+                    .ToList();
+            }
+            else
+            {
+                Reload();
+            }
+        }
     }
 }

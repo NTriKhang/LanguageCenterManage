@@ -27,7 +27,10 @@ namespace LanguageCenterManage.Controls
 
         private void txtSearch_Click(object sender, EventArgs e)
         {
-
+            if(txtSearch.Text.Trim() == "Enter Id, Name")
+            {
+                txtSearch.Clear();
+            }
         }
 
         private void CourseControl_Load(object sender, EventArgs e)
@@ -77,6 +80,31 @@ namespace LanguageCenterManage.Controls
             courseDetail.FormClosed += CourseDetailForm_FormClosed;
             courseDetail.ShowDialog();
            
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            _db = new AppDbContext();
+            string stringSearch = txtSearch.Text.Trim();
+            if(stringSearch != null)
+            {
+                var listCourse = _db.Courses
+                    .Where(x => x.Id.Contains(stringSearch) || x.Name.Contains(stringSearch))
+                    .Include(nameof(Course.Language))
+                    .Select(x => new CourseDTO
+                    {
+                        Id = x.Id,
+                        Name = x.Name,
+                        CourseType = x.Language.Name,
+                        Band = x.Band,
+                        Status = x.Status,
+                    }).ToList();
+                courseDTOBindingSource.DataSource = listCourse;
+            }
+            else
+            {
+                LoadCourseData();
+            }
         }
     }
 }

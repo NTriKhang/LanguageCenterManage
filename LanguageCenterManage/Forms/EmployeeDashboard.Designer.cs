@@ -156,6 +156,7 @@
             this.btnRoom.TabIndex = 0;
             this.btnRoom.Text = "Room";
             this.btnRoom.UseVisualStyleBackColor = true;
+            this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click_1);
             // 
             // panel2
             // 
@@ -193,6 +194,7 @@
             this.btnSchedule.TabIndex = 0;
             this.btnSchedule.Text = "schedule";
             this.btnSchedule.UseVisualStyleBackColor = true;
+            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
             // panel1
             // 

@@ -146,6 +146,12 @@
     <Compile Include="Controls\ScheduleControl.Designer.cs">
       <DependentUpon>ScheduleControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ScheduleEmployeeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ScheduleEmployeeControl.Designer.cs">
+      <DependentUpon>ScheduleEmployeeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StatisticControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -184,6 +190,12 @@
     </Compile>
     <Compile Include="Forms\AuthorizedForm.Designer.cs">
       <DependentUpon>AuthorizedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BillDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BillDetail.Designer.cs">
+      <DependentUpon>BillDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ClassDetailForm.cs">
       <SubType>Form</SubType>
@@ -303,6 +315,7 @@
     <Compile Include="Migrations\202311030307032_addBillModel.designer.cs">
       <DependentUpon>202311030307032_addBillModel.cs</DependentUpon>
     </Compile>
+
     <Compile Include="Migrations\202311030406540_updateUniqueForBillId.cs" />
     <Compile Include="Migrations\202311030406540_updateUniqueForBillId.designer.cs">
       <DependentUpon>202311030406540_updateUniqueForBillId.cs</DependentUpon>
@@ -322,6 +335,7 @@
     <Compile Include="Migrations\202311051618402_addUniqueToJoinId.cs" />
     <Compile Include="Migrations\202311051618402_addUniqueToJoinId.designer.cs">
       <DependentUpon>202311051618402_addUniqueToJoinId.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bill.cs" />
@@ -400,6 +414,9 @@
     <EmbeddedResource Include="Controls\ScheduleControl.resx">
       <DependentUpon>ScheduleControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ScheduleEmployeeControl.resx">
+      <DependentUpon>ScheduleEmployeeControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\StatisticControl.resx">
       <DependentUpon>StatisticControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AuthorizedForm.resx">
       <DependentUpon>AuthorizedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BillDetail.resx">
+      <DependentUpon>BillDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClassDetailForm.resx">
       <DependentUpon>ClassDetailForm.cs</DependentUpon>
@@ -492,6 +512,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311051618402_addUniqueToJoinId.resx">
       <DependentUpon>202311051618402_addUniqueToJoinId.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
