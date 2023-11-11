@@ -116,7 +116,14 @@ namespace LanguageCenterManage.Forms
             listJoinForm.TopMost = true;
             listJoinForm.StudentId = txtStudentId.Text;
             listJoinForm.ShowDialog();
-            txtClassId.Text = listJoinForm.ClassId;
+            if(listJoinForm.ClassId != null)
+            {
+                txtClassId.Text = listJoinForm.ClassId;
+            }
+            else
+            {
+                txtClassId.Text = join.ClassId;
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

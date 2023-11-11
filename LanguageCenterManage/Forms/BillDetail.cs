@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -101,6 +102,7 @@ namespace LanguageCenterManage.Forms
                                        .Where(x => x.Id == StudentId)
                                        .Select(x => x.LastName + " " + x.FirstName)
                                        .FirstOrDefault().ToString();
+                CheckBoxState.Checked = bill.State;
             }
         }
 
@@ -130,6 +132,37 @@ namespace LanguageCenterManage.Forms
             updateBill();
             MessageBox.Show("Update successfully", "Bill have updated to db", MessageBoxButtons.OK);
             Close();
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            Bitmap bmp = new Bitmap(PanelBill.Width, PanelBill.Height);
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                PanelBill.DrawToBitmap(bmp, new Rectangle(0, 0, PanelBill.Width, PanelBill.Height));
+            }
+
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "PNG Files (*.png)|*png|All Files (*.*)|*.*";
+                saveDialog.DefaultExt = "png";
+                saveDialog.AddExtension = true;
+
+                if(saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    bmp.Save(saveDialog.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                    MessageBox.Show("The image has been exported");
+                }
+            }
+        }
+
+        private void PanelBill_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 }
