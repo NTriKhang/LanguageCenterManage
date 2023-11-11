@@ -91,6 +91,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ListClassForm";
             this.Text = "ListClass";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ListClassForm_FormClosed);
             this.Load += new System.EventHandler(this.ListClassForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classDTOBindingSource)).EndInit();

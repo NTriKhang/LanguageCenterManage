@@ -50,5 +50,10 @@ namespace LanguageCenterManage.Forms
             ClassId = selectId;
             Close();
         }
+
+        private void ListClassForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+         
+        }
     }
 }
