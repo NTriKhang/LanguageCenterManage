@@ -16,6 +16,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace LanguageCenterManage.Services.Kmean
 {
+
     public partial class KmeanForm : Form
     {
         private AppDbContext _db;
@@ -103,27 +104,46 @@ namespace LanguageCenterManage.Services.Kmean
                                   && joins.ClassId == classes.Id
                                   && classes.CourseId == courses.Id
                                   && courses.DateStart.Year == year
-                                  select new
+                                  select new AgeAndBand
                                   {
                                       studentId = student.Id,
                                       Age = DateTime.Now.Year - student.Birth.Year,
                                       Band = courses.Band
-                                  }).ToList();
+                                  }).GroupBy(x => x.studentId)
+                                    .ToList(); ;
 
-            int largestAge = listAgeAndBand.Max(x => x.Age);
-            double largestBand = listAgeAndBand.Max(x => x.Band);
+            List<AgeAndBand> listAgeAndBandDistinct = new List<AgeAndBand>();
+            foreach(var ageAndBand in listAgeAndBand)
+            {
+                AgeAndBand a = new AgeAndBand()
+                {
+                    Age = 0,
+                    studentId = "",
+                    Band = -1,
+                };
+                foreach(var student in ageAndBand)
+                {
+                    if(student.Band > a.Band)
+                    {
+                        a = student;
+                    }
+                }
+                listAgeAndBandDistinct.Add(a);
+            }
+            int largestAge = listAgeAndBandDistinct.Max(x => x.Age);
+            double largestBand = listAgeAndBandDistinct.Max(x => x.Band);
             //panel1.Padding = new Padding(50);
             // Create datapoints and add to list
-            int panelWidth = panel1.Size.Width - 40;
-            int panelHeight = panel1.Size.Height - 40;
+            int panelWidth = panel1.Size.Width - 100;
+            int panelHeight = panel1.Size.Height - 100;
 
-            for (int i = 0; i < listAgeAndBand.Count; i++)
+            for (int i = 0; i < listAgeAndBandDistinct.Count; i++)
             {
-                int xPoint = (listAgeAndBand[i].Age * panelWidth / largestAge) + 20;
-                int yPoint = (Convert.ToInt32(listAgeAndBand[i].Band * panelHeight / largestBand)) + 20;
+                int xPoint = (listAgeAndBandDistinct[i].Age * panelWidth / largestAge) + 50;
+                int yPoint = (Convert.ToInt32(listAgeAndBandDistinct[i].Band * panelHeight / largestBand)) + 50;
 
                 DataPoint dataPoint = new DataPoint(i + 1, xPoint, yPoint, null);
-                dataPoint.UserId = listAgeAndBand[i].studentId;
+                dataPoint.UserId = listAgeAndBandDistinct[i].studentId;
 
                 listDataPoint.Add(dataPoint);
             }
@@ -470,5 +490,12 @@ namespace LanguageCenterManage.Services.Kmean
         {
 
         }
+    }
+    public class AgeAndBand
+    {
+        public string studentId { set; get; }
+        public int Age { set; get; }
+        public double Band { set; get; }
+
     }
 }
