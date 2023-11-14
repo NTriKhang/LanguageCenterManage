@@ -32,11 +32,12 @@ namespace LanguageCenterManage.Services.Kmean
                                    from courses in _db.Courses
                                    where joins.ClassId == classes.Id
                                          && classes.CourseId == courses.Id
-                                   group courses by courses.DateStart.Year into courseGroup
+                                   group courses by new { courses.DateStart.Year, joins.StudentId } into courseGroup
+                                   group courseGroup by courseGroup.Key.Year into courseGroupKey
                                    select new StudentEachYearDTO
                                    {
-                                       Year = courseGroup.Key,
-                                       Quantity = courseGroup.Count()
+                                       Year = courseGroupKey.Key,
+                                       Quantity = courseGroupKey.Count()
                                    }).ToList();
 
             studentEachYearDTOBindingSource.DataSource = studentEachYear;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using LanguageCenterManage.DAL;
 using LanguageCenterManage.DTO;
+using LanguageCenterManage.Services.ExcelService;
 using LanguageCenterManage.Services.Kmean.Elbow;
 using LanguageCenterManage.Services.Kmean.Entities;
 using LanguageCenterManage.Services.Kmean.Silhouette;
@@ -395,6 +396,7 @@ namespace LanguageCenterManage.Services.Kmean
 
         private void okBtn_Click(object sender, EventArgs e)
         {
+            List<List<UserDTO>> listUserDtos = new List<List<UserDTO>>(); 
             for (int i = 0; i < numberOfClusters; i++)
             {
                 List<UserDTO> users = new List<UserDTO>();
@@ -417,6 +419,16 @@ namespace LanguageCenterManage.Services.Kmean
                 }
                 UserByGroupForm userByGroupForm = new UserByGroupForm(users);
                 userByGroupForm.ShowDialog();
+                listUserDtos.Add(users);
+            }
+            if(MessageBox.Show("Do you want to save this", "Notify", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                ExcelService.ExcelService excelService = new ExcelService.ExcelService();
+                bool response = excelService.ExportUserDto(listUserDtos);
+                if(response == true)
+                {
+                    MessageBox.Show("Save successfully","200", MessageBoxButtons.OK);
+                }
             }
         }
         bool elbowCheck = false;
