@@ -1,6 +1,7 @@
 ﻿using LanguageCenterManage.DAL;
 using LanguageCenterManage.DTO;
 using LanguageCenterManage.Forms;
+using LanguageCenterManage.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,14 +17,16 @@ namespace LanguageCenterManage.Controls
     public partial class RoomControl : UserControl
     {
         AppDbContext db = new AppDbContext();
+        List<Room> ListRoom;
         public RoomControl()
         {
             InitializeComponent();
+            ListRoom = new List<Room>();
         }
         void LoadRoom()
         {
-            var lisRoom = db.Rooms.AsNoTracking().ToList();
-            roomBindingSource.DataSource = lisRoom;
+            ListRoom = db.Rooms.AsNoTracking().ToList();
+            roomBindingSource.DataSource = ListRoom;
         }
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
@@ -54,29 +57,41 @@ namespace LanguageCenterManage.Controls
             roomDetailForm.ShowDialog();
         }
 
-        private void txtSearch_Click(object sender, EventArgs e)
-        {
-            if (txtSearch.Text == "Enter Id, Name")
-            {
-                txtSearch.Clear();
-            }
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchString = txtSearch.Text.Trim();
-            if (txtSearch != null)
+            if (searchString != null)
             {
-                var listStudent = db.Rooms.Where(
+                ListRoom = db.Rooms.Where(
                     x => x.Id.Contains(searchString) ||
                     x.Name.Contains(searchString)
                 ).ToList();
-                dataGridView1.DataSource = listStudent;
+                dataGridView1.DataSource = ListRoom;
             }
             else
             {
                 LoadRoom();
             }
+            SortDG(Sort_Combobox.SelectedItem.ToString());
+        }
+        public void SortDG(string value)
+        {
+            string stringSort = Sort_Combobox.Text;
+            if (!string.IsNullOrEmpty(stringSort))
+            {
+                ListRoom = ListRoom.OrderBy(x => x.GetType()
+                                         .GetProperty(value)
+                                         .GetValue(x, null)).ToList();
+                dataGridView1.DataSource = ListRoom;
+            }
+            else
+            {
+                LoadRoom();
+            }
+        }
+        private void Sort_Combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortDG(Sort_Combobox.SelectedItem.ToString());
         }
     }
 }

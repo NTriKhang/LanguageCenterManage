@@ -17,21 +17,24 @@ namespace LanguageCenterManage.Controls
     public partial class ClassControl : UserControl
     {
         private AppDbContext _db;
+        List<ClassDTO> ListClass;
         public ClassControl()
         {
             InitializeComponent();
+            ListClass = new List<ClassDTO>();
         }
         private void LoadData()
         {
             _db = new AppDbContext();
-            classDTOBindingSource.DataSource = _db.Classes
-                                                    .Include(nameof(Class.Course))
-                                                    .Select(x => new ClassDTO
-                                                    {
-                                                        Id = x.Id,
-                                                        CourseName = x.Course.Name,
-                                                        Quantity = x.Quantity
-                                                    }).ToList();
+            ListClass = _db.Classes
+                            .Include(nameof(Class.Course))
+                            .Select(x => new ClassDTO
+                            {
+                                Id = x.Id,
+                                CourseName = x.Course.Name,
+                                Quantity = x.Quantity
+                            }).ToList();
+            classDTOBindingSource.DataSource = ListClass;
         }
         private void ClassControl_Load(object sender, EventArgs e)
         {
@@ -71,21 +74,42 @@ namespace LanguageCenterManage.Controls
             string stringSearch = txtSearch.Text.Trim();
             if (!string.IsNullOrEmpty(stringSearch))
             {
-                classDTOBindingSource.DataSource = _db.Classes
-                                                        .Include(nameof(Class.Course))
-                                                        .Where(x => x.Id.Contains(stringSearch) ||
-                                                               x.Course.Name.Contains(stringSearch))
-                                                        .Select(x => new ClassDTO
-                                                        {
-                                                            Id = x.Id,
-                                                            CourseName = x.Course.Name,
-                                                            Quantity = x.Quantity
-                                                        }).ToList();
+                ListClass = _db.Classes
+                                    .Include(nameof(Class.Course))
+                                    .Where(x => x.Id.Contains(stringSearch) ||
+                                            x.Course.Name.Contains(stringSearch))
+                                    .Select(x => new ClassDTO
+                                    {
+                                        Id = x.Id,
+                                        CourseName = x.Course.Name,
+                                        Quantity = x.Quantity
+                                    }).ToList();
+                dataGridView1.DataSource = ListClass;
             }
             else
             {
                 LoadData();
             }
+            SortDG(Sort_Combobox.SelectedItem.ToString());
+        }
+        public void SortDG(string value)
+        {
+            string stringSort = Sort_Combobox.Text;
+            if (!string.IsNullOrEmpty(stringSort))
+            {
+                ListClass = ListClass.OrderBy(x => x.GetType()
+                                         .GetProperty(value)
+                                         .GetValue(x, null)).ToList();
+                dataGridView1.DataSource = ListClass;
+            }
+            else
+            {
+                LoadData();
+            }
+        }
+        private void Sort_Combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortDG(Sort_Combobox.SelectedItem.ToString());
         }
     }
 }

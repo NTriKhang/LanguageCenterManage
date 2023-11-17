@@ -36,6 +36,8 @@
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Sort_Combobox = new System.Windows.Forms.ComboBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +54,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.Sort_Combobox);
             this.panel1.Controls.Add(this.btnNew);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -118,7 +122,7 @@
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Depth = 0;
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtSearch.Hint = "";
+            this.txtSearch.Hint = "Enter Id, Name";
             this.txtSearch.Location = new System.Drawing.Point(0, 6);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.MaxLength = 32767;
@@ -131,7 +135,6 @@
             this.txtSearch.Size = new System.Drawing.Size(244, 28);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TabStop = false;
-            this.txtSearch.Text = "Enter Id, Name";
             this.txtSearch.UseSystemPasswordChar = false;
             this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             // 
@@ -158,6 +161,30 @@
             this.dataGridView1.Size = new System.Drawing.Size(1501, 510);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(672, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Sort by";
+            // 
+            // Sort_Combobox
+            // 
+            this.Sort_Combobox.FormattingEnabled = true;
+            this.Sort_Combobox.Items.AddRange(new object[] {
+            "Id",
+            "Name",
+            "CourseType",
+            "Band",
+            "Status"});
+            this.Sort_Combobox.Location = new System.Drawing.Point(739, 48);
+            this.Sort_Combobox.Name = "Sort_Combobox";
+            this.Sort_Combobox.Size = new System.Drawing.Size(121, 24);
+            this.Sort_Combobox.TabIndex = 14;
+            this.Sort_Combobox.SelectedIndexChanged += new System.EventHandler(this.Sort_Combobox_SelectedIndexChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -239,5 +266,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bandDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource courseDTOBindingSource;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox Sort_Combobox;
     }
 }

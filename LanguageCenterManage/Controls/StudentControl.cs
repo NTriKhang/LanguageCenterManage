@@ -11,15 +11,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LanguageCenterManage.Controls;
 using LanguageCenterManage.DTO;
+using System.Data.SqlTypes;
 
 namespace LanguageCenterManage.Controls
 {
     public partial class StudentControl : UserControl
     {
         AppDbContext db = new AppDbContext();
+        List<StudentDTO> ListStudent;
         public StudentControl()
         {
             InitializeComponent();
+            ListStudent = new List<StudentDTO>();
         }
         private void txtSearch_Click(object sender, EventArgs e)
         {
@@ -35,14 +38,14 @@ namespace LanguageCenterManage.Controls
         }
         private void LoadStudentLoad()
         {
-            var listStudent = db.Students.Select(m => new StudentDTO
+            ListStudent = db.Students.Select(m => new StudentDTO
             {
                 Id = m.Id,
                 FirstName = m.FirstName,
                 LastName = m.LastName,
                 Birth = m.Birth,
             }).ToList();
-            studentDTOBindingSource.DataSource = listStudent;
+            studentDTOBindingSource.DataSource = ListStudent;
         }
         private void StudentDetailForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -76,18 +79,45 @@ namespace LanguageCenterManage.Controls
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchString = txtSearch.Text.Trim();
-            if(txtSearch != null)
+            if(searchString != null)
             {
-                var listStudent = db.Students.Where(
+                ListStudent = db.Students.Select(m => new StudentDTO
+                {
+                    Id = m.Id,
+                    FirstName = m.FirstName,
+                    LastName = m.LastName,
+                    Birth = m.Birth,
+                }).Where(
                     x => x.Id.Contains(searchString) ||
                     x.LastName.Contains(searchString)
                 ).ToList();
-                dataGridView1.DataSource = listStudent;
+                dataGridView1.DataSource = ListStudent;
             }
             else
             {
                 LoadStudentLoad();
             }
+            SortDG(Sort_Combobox.SelectedItem.ToString());
+        }
+        public void SortDG(string value)
+        {
+            string stringSort = Sort_Combobox.Text;
+            if(!string.IsNullOrEmpty(stringSort))
+            {
+                ListStudent = ListStudent.OrderBy(x => x.GetType()
+                                         .GetProperty(value)
+                                         .GetValue(x, null)).ToList();
+                dataGridView1.DataSource = ListStudent;
+            }
+            else
+            {
+                LoadStudentLoad();
+            }
+        }
+
+        private void Sort_Combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortDG(Sort_Combobox.SelectedItem.ToString());
         }
     }
 }

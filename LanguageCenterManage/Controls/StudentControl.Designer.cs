@@ -37,6 +37,8 @@
             this.btnAddStudent = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Sort_Combobox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +58,7 @@
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Depth = 0;
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtSearch.Hint = "";
+            this.txtSearch.Hint = "Enter Id, Lastname";
             this.txtSearch.Location = new System.Drawing.Point(0, 6);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.MaxLength = 32767;
@@ -69,9 +71,7 @@
             this.txtSearch.Size = new System.Drawing.Size(244, 28);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TabStop = false;
-            this.txtSearch.Text = "Enter Id, Lastname";
             this.txtSearch.UseSystemPasswordChar = false;
-            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             // 
             // panel3
             // 
@@ -112,6 +112,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.Sort_Combobox);
             this.panel1.Controls.Add(this.btnAddStudent);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -169,6 +171,28 @@
             this.dataGridView1.Size = new System.Drawing.Size(1501, 610);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
+            // 
+            // Sort_Combobox
+            // 
+            this.Sort_Combobox.FormattingEnabled = true;
+            this.Sort_Combobox.Items.AddRange(new object[] {
+            "Id",
+            "FirstName",
+            "LastName"});
+            this.Sort_Combobox.Location = new System.Drawing.Point(749, 38);
+            this.Sort_Combobox.Name = "Sort_Combobox";
+            this.Sort_Combobox.Size = new System.Drawing.Size(121, 24);
+            this.Sort_Combobox.TabIndex = 4;
+            this.Sort_Combobox.SelectedIndexChanged += new System.EventHandler(this.Sort_Combobox_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(682, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Sort by";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -238,5 +262,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn birthDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource studentDTOBindingSource;
         private MaterialSkin.Controls.MaterialRaisedButton btnAddStudent;
+        private System.Windows.Forms.ComboBox Sort_Combobox;
+        private System.Windows.Forms.Label label1;
     }
 }
