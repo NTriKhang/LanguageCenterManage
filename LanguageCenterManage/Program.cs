@@ -10,6 +10,7 @@ using LanguageCenterManage;
 using LanguageCenterManage.Forms;
 using LanguageCenterManage.Controls;
 using MaterialSkin.Controls;
+using LanguageCenterManage.Services.Kmean;
 
 namespace LanguageCenterManage
 {

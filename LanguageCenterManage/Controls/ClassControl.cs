@@ -26,15 +26,18 @@ namespace LanguageCenterManage.Controls
         private void LoadData()
         {
             _db = new AppDbContext();
-            ListClass = _db.Classes
-                            .Include(nameof(Class.Course))
-                            .Select(x => new ClassDTO
-                            {
-                                Id = x.Id,
-                                CourseName = x.Course.Name,
-                                Quantity = x.Quantity
-                            }).ToList();
-            classDTOBindingSource.DataSource = ListClass;
+            classDTOBindingSource.DataSource = _db.Classes
+                                                    .Include(nameof(Class.Course))
+                                                    .Select(x => new ClassDTO
+                                                    {
+                                                        Id = x.Id,
+                                                        CourseName = x.Course.Name,
+                                                        Quantity = x.Quantity,
+                                                        DateTime = x.Course.DateStart,
+                                                        Status = x.Course.Status,
+                                                    })
+                                                    .OrderByDescending(x => x.DateTime)
+                                                    .ToList();
         }
         private void ClassControl_Load(object sender, EventArgs e)
         {
