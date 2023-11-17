@@ -16,14 +16,16 @@ namespace LanguageCenterManage.Controls
     public partial class UsersControl : UserControl
     {
         private AppDbContext _db;
+        List<UserDTO> ListUser;
         public UsersControl()
         {
             InitializeComponent();
+            ListUser = new List<UserDTO>();
         }
         private void LoadData()
         {
             _db = new AppDbContext();
-            var listUser = _db.Users.Select(x => new UserDTO
+            ListUser = _db.Users.Select(x => new UserDTO
             {
                 Id = x.Id,
                 FirstName = x.FirstName,
@@ -31,7 +33,7 @@ namespace LanguageCenterManage.Controls
                 Email = x.Email,
                 Phone = x.Phone,
             }).ToList();
-            userDTOBindingSource.DataSource = listUser;
+            userDTOBindingSource.DataSource = ListUser;
         }
         private void UsersControl_Load(object sender, EventArgs e)
         {
@@ -62,13 +64,9 @@ namespace LanguageCenterManage.Controls
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string stringSearch = txtSearch.Text.Trim();
-            if(stringSearch.Length == 0)
+            if(stringSearch != null)
             {
-                MessageBox.Show("Lack of information", "404", MessageBoxButtons.OK);
-            }
-            else
-            {
-                var userDtos = _db.Users.Where(x => x.Id.Contains(stringSearch) ||
+                ListUser = _db.Users.Where(x => x.Id.Contains(stringSearch) ||
                 x.FirstName.Contains(stringSearch) ||
                 x.LastName.Contains(stringSearch))
                 .Select(x => new UserDTO
@@ -80,15 +78,32 @@ namespace LanguageCenterManage.Controls
                     Phone = x.Phone,
                 })
                 .ToList();
-                userDTOBindingSource.DataSource = userDtos;
+                userDTOBindingSource.DataSource = ListUser;
+                SortDG(Sort_Combobox.SelectedItem.ToString());
+            }
+            else
+            {
+                LoadData();
             }
         }
-        private void txtSearch_Click(object sender, EventArgs e)
+        public void SortDG(string value)
         {
-            if(txtSearch.Text.Trim() == "Enter Id, FirstName, Phone")
+            string stringSort = Sort_Combobox.Text;
+            if (!string.IsNullOrEmpty(stringSort))
             {
-                txtSearch.Clear();
+                ListUser = ListUser.OrderBy(x => x.GetType()
+                                                  .GetProperty(value)
+                                                  .GetValue(x, null)).ToList();
+                dataGridView1.DataSource = ListUser;
             }
+            else
+            {
+                LoadData();
+            }
+        }
+        private void Sort_Combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortDG(Sort_Combobox.SelectedItem.ToString());
         }
     }
 }

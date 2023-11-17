@@ -16,9 +16,11 @@ namespace LanguageCenterManage.Controls
     public partial class CouseTypeControl : UserControl
     {
         private AppDbContext _db;
+        List<CourseType> ListCourseType;
         public CouseTypeControl()
         {
             InitializeComponent();
+            ListCourseType = new List<CourseType>();    
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -50,7 +52,8 @@ namespace LanguageCenterManage.Controls
         {
             _db = new AppDbContext();
             languageBindingSource.DataSource = null;
-            languageBindingSource.DataSource = _db.CourseType.ToList();
+            ListCourseType = _db.CourseType.ToList();
+            languageBindingSource.DataSource = ListCourseType;
         }
 
         private void btnNew_Click_1(object sender, EventArgs e)
@@ -62,29 +65,42 @@ namespace LanguageCenterManage.Controls
             languageDetailForm.ShowDialog();
         }
 
-        private void txtSearch_Click(object sender, EventArgs e)
-        {
-            if(txtSearch.Text.Trim() == "Enter Id, Name")
-            {
-                txtSearch.Clear();
-            }
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             _db = new AppDbContext();
             var stringSearch = txtSearch.Text.Trim();
             if(!string.IsNullOrEmpty(stringSearch))
             {
-                languageBindingSource.DataSource = _db.CourseType
+                ListCourseType = _db.CourseType
                     .Where(x => x.Id.Contains(stringSearch) ||
-                    x.Name.Contains(stringSearch))
+                                x.Name.Contains(stringSearch))
                     .ToList();
+                dataGridView1.DataSource = ListCourseType;
             }
             else
             {
                 Reload();
             }
+            SortDG(Sort_Combobox.SelectedItem.ToString());
+        }
+        public void SortDG(string value)
+        {
+            string stringSort = Sort_Combobox.Text;
+            if (!string.IsNullOrEmpty(stringSort))
+            {
+                ListCourseType = ListCourseType.OrderBy(x => x.GetType()
+                                         .GetProperty(value)
+                                         .GetValue(x, null)).ToList();
+                dataGridView1.DataSource = ListCourseType;
+            }
+            else
+            {
+                Reload();
+            }
+        }
+        private void Sort_Combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortDG(Sort_Combobox.SelectedItem.ToString());
         }
     }
 }

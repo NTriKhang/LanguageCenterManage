@@ -36,6 +36,8 @@
             this.btnAddTeacher = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Sort_Combobox = new System.Windows.Forms.ComboBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +77,7 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.Image = global::LanguageCenterManage.Properties.Resources.search;
             this.btnSearch.Location = new System.Drawing.Point(194, -3);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(0);
@@ -90,7 +93,7 @@
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Depth = 0;
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtSearch.Hint = "";
+            this.txtSearch.Hint = "Enter Id, Lastname";
             this.txtSearch.Location = new System.Drawing.Point(0, 6);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.MaxLength = 32767;
@@ -103,9 +106,7 @@
             this.txtSearch.Size = new System.Drawing.Size(244, 28);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TabStop = false;
-            this.txtSearch.Text = "Enter Id, Lastname";
             this.txtSearch.UseSystemPasswordChar = false;
-            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             // 
             // btnAddTeacher
             // 
@@ -125,6 +126,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.Sort_Combobox);
             this.panel1.Controls.Add(this.btnAddTeacher);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -155,6 +158,28 @@
             this.dataGridView1.Size = new System.Drawing.Size(1522, 417);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(698, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Sort by";
+            // 
+            // Sort_Combobox
+            // 
+            this.Sort_Combobox.FormattingEnabled = true;
+            this.Sort_Combobox.Items.AddRange(new object[] {
+            "Id",
+            "FirstName",
+            "LastName"});
+            this.Sort_Combobox.Location = new System.Drawing.Point(765, 41);
+            this.Sort_Combobox.Name = "Sort_Combobox";
+            this.Sort_Combobox.Size = new System.Drawing.Size(121, 24);
+            this.Sort_Combobox.TabIndex = 6;
+            this.Sort_Combobox.SelectedIndexChanged += new System.EventHandler(this.Sort_Combobox_SelectedIndexChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -226,5 +251,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox Sort_Combobox;
     }
 }

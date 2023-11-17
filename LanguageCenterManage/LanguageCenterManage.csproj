@@ -303,43 +303,12 @@
     <Compile Include="Forms\UserDetailForm.Designer.cs">
       <DependentUpon>UserDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202310230622061_addBasicAndBonusToSalary.cs" />
-    <Compile Include="Migrations\202310230622061_addBasicAndBonusToSalary.designer.cs">
-      <DependentUpon>202310230622061_addBasicAndBonusToSalary.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310250232230_addShiftToSchedule.cs" />
-    <Compile Include="Migrations\202310250232230_addShiftToSchedule.designer.cs">
-      <DependentUpon>202310250232230_addShiftToSchedule.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202310251352316_changeLanguageToCourseType.cs" />
-    <Compile Include="Migrations\202310251352316_changeLanguageToCourseType.designer.cs">
-      <DependentUpon>202310251352316_changeLanguageToCourseType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311030307032_addBillModel.cs" />
-    <Compile Include="Migrations\202311030307032_addBillModel.designer.cs">
-      <DependentUpon>202311030307032_addBillModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311030406540_updateUniqueForBillId.cs" />
-    <Compile Include="Migrations\202311030406540_updateUniqueForBillId.designer.cs">
-      <DependentUpon>202311030406540_updateUniqueForBillId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311051444142_addImagePathToHuman.cs" />
-    <Compile Include="Migrations\202311051444142_addImagePathToHuman.designer.cs">
-      <DependentUpon>202311051444142_addImagePathToHuman.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311051538056_modifyRelationBetweenJoinAndBill.cs" />
-    <Compile Include="Migrations\202311051538056_modifyRelationBetweenJoinAndBill.designer.cs">
-      <DependentUpon>202311051538056_modifyRelationBetweenJoinAndBill.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311051614463_editBillJoinModel.cs" />
-    <Compile Include="Migrations\202311051614463_editBillJoinModel.designer.cs">
-      <DependentUpon>202311051614463_editBillJoinModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311051618402_addUniqueToJoinId.cs" />
-    <Compile Include="Migrations\202311051618402_addUniqueToJoinId.designer.cs">
-      <DependentUpon>202311051618402_addUniqueToJoinId.cs</DependentUpon>
+    <Compile Include="Migrations\202311170820551_addBandTable.cs" />
+    <Compile Include="Migrations\202311170820551_addBandTable.designer.cs">
+      <DependentUpon>202311170820551_addBandTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Band.cs" />
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Course.cs" />
@@ -488,32 +457,8 @@
     <EmbeddedResource Include="Forms\UserDetailForm.resx">
       <DependentUpon>UserDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310230622061_addBasicAndBonusToSalary.resx">
-      <DependentUpon>202310230622061_addBasicAndBonusToSalary.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310250232230_addShiftToSchedule.resx">
-      <DependentUpon>202310250232230_addShiftToSchedule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202310251352316_changeLanguageToCourseType.resx">
-      <DependentUpon>202310251352316_changeLanguageToCourseType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311030307032_addBillModel.resx">
-      <DependentUpon>202311030307032_addBillModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311030406540_updateUniqueForBillId.resx">
-      <DependentUpon>202311030406540_updateUniqueForBillId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311051444142_addImagePathToHuman.resx">
-      <DependentUpon>202311051444142_addImagePathToHuman.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311051538056_modifyRelationBetweenJoinAndBill.resx">
-      <DependentUpon>202311051538056_modifyRelationBetweenJoinAndBill.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311051614463_editBillJoinModel.resx">
-      <DependentUpon>202311051614463_editBillJoinModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311051618402_addUniqueToJoinId.resx">
-      <DependentUpon>202311051618402_addUniqueToJoinId.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311170820551_addBandTable.resx">
+      <DependentUpon>202311170820551_addBandTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

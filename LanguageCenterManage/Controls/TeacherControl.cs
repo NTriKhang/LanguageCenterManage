@@ -16,20 +16,22 @@ namespace LanguageCenterManage.Controls
     public partial class TeacherControl : UserControl
     {
         AppDbContext db = new AppDbContext();
+        List<TeacherDTO> ListTeacher;
         public TeacherControl()
         {
             InitializeComponent();
+            ListTeacher= new List<TeacherDTO>();
         }
         void LoadTeacher()
         {
-            var listTeacher = db.Teachers.Select(m => new StudentDTO
+            ListTeacher = db.Teachers.Select(m => new TeacherDTO
             {
                 Id = m.Id,
                 FirstName = m.FirstName,
                 LastName = m.LastName,
                 Birth = m.Birth,
             }).ToList();
-            teacherDTOBindingSource.DataSource = listTeacher;
+            teacherDTOBindingSource.DataSource = ListTeacher;
         }
 
         private void TeacherControl_Load(object sender, EventArgs e)
@@ -60,27 +62,51 @@ namespace LanguageCenterManage.Controls
 
         private void txtSearch_Click(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "Enter Id, Lastname")
-            {
-                txtSearch.Clear();
-            }
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchString = txtSearch.Text.Trim();
-            if (txtSearch != null)
+            if (searchString != null)
             {
-                var listStudent = db.Teachers.Where(
+                ListTeacher = db.Teachers.
+                    Select(m => new TeacherDTO
+                {
+                    Id = m.Id,
+                    FirstName = m.FirstName,
+                    LastName = m.LastName,
+                    Birth = m.Birth,
+                }).Where(
                     x => x.Id.Contains(searchString) ||
                     x.LastName.Contains(searchString)
                 ).ToList();
-                dataGridView1.DataSource = listStudent;
+                dataGridView1.DataSource = ListTeacher;
             }
             else
             {
                 LoadTeacher();
             }
+            SortDG(Sort_Combobox.SelectedItem.ToString());
+        }
+        public void SortDG(string value)
+        {
+            string stringSort = Sort_Combobox.Text;
+            if (!string.IsNullOrEmpty(stringSort))
+            {
+                ListTeacher = ListTeacher.OrderBy(x => x.GetType()
+                                                        .GetProperty(value)
+                                                        .GetValue(x, null)).ToList();
+                dataGridView1.DataSource = ListTeacher;
+            }
+            else
+            {
+                LoadTeacher();
+            }
+        }
+        private void Sort_Combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortDG(Sort_Combobox.SelectedItem.ToString());
         }
     }
 }
