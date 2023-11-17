@@ -30,8 +30,12 @@ namespace LanguageCenterManage.Controls
                                                     {
                                                         Id = x.Id,
                                                         CourseName = x.Course.Name,
-                                                        Quantity = x.Quantity
-                                                    }).ToList();
+                                                        Quantity = x.Quantity,
+                                                        DateTime = x.Course.DateStart,
+                                                        Status = x.Course.Status,
+                                                    })
+                                                    .OrderByDescending(x => x.DateTime)
+                                                    .ToList();
         }
         private void ClassControl_Load(object sender, EventArgs e)
         {

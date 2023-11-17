@@ -11,5 +11,7 @@ namespace LanguageCenterManage.DTO
         public string Id { get; set; }
         public string CourseName { get; set; }
         public int Quantity { get; set; }
+        public DateTime DateTime { get; set; }
+        public string Status { get; set; }
     }
 }

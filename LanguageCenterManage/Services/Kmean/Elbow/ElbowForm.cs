@@ -13,6 +13,7 @@ namespace LanguageCenterManage.Services.Kmean.Elbow
 {
     public partial class ElbowForm : Form
     {
+        //points is contain list of result of k-mean from k in range 1-7
         private List<List<DataPoint>> points;
         public int numberOfCluster { set; get; } = 0;
         public ElbowForm(List<List<DataPoint>> points)
@@ -35,7 +36,7 @@ namespace LanguageCenterManage.Services.Kmean.Elbow
 
             objChart.AxisY.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
             objChart.AxisY.Minimum = 0;
-            double maxYAxisValue = 100; // Adjust this value as needed
+            double maxYAxisValue = 100;
             objChart.AxisY.Maximum = maxYAxisValue;
 
 
@@ -77,5 +78,11 @@ namespace LanguageCenterManage.Services.Kmean.Elbow
             numberOfCluster = res;
             textBox1.Text = res.ToString();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            numberOfCluster = Convert.ToInt32(textBox1.Text);
+        }
     }
+
 }

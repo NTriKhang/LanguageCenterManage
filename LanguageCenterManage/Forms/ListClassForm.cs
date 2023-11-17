@@ -29,7 +29,7 @@ namespace LanguageCenterManage.Forms
                                                 where !(from j in db.Joins
                                                         where j.StudentId == StudentId
                                                         select j.ClassId)
-                                                       .Contains(c.Id)
+                                                       .Contains(c.Id) && c.Course.Status == utility.CourseOpen
                                                 select new ClassDTO
                                                 {
                                                     Id = c.Id,

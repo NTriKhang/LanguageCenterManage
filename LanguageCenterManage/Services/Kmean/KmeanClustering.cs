@@ -22,9 +22,6 @@ namespace LanguageCenterManage.Services.Kmean
 
         private bool isFinished;
 
-        private int iterationNumber;
-
-
         private List<DataPoint> listDataPoint;
 
 
@@ -132,11 +129,9 @@ namespace LanguageCenterManage.Services.Kmean
 
         private void CreateClusters()
         {
-            // Recreate list of cluster for reset
             listCluster = new List<Cluster>();
             Random rand = new Random();
 
-            // Create clusters and add to list
             for (int i = 0; i < numberOfClusters; i++)
             {
                 int xPoint = rand.Next(panel1.Size.Width);
@@ -186,8 +181,6 @@ namespace LanguageCenterManage.Services.Kmean
 
         private void InitializeCluster()
         {
-            // Set iteration number to 0
-            iterationNumber = 0;
             int kLimit = 7;
 
             if (elbowRadio.Checked)
@@ -248,7 +241,6 @@ namespace LanguageCenterManage.Services.Kmean
         }
         private void AssignDataPointsToCloserCluster()
         {
-            iterationNumber++;
             foreach (DataPoint dataPoint in listDataPoint)
             {
                 Cluster nearestCluster = null;
@@ -303,16 +295,6 @@ namespace LanguageCenterManage.Services.Kmean
             if (isSame)
             {
                 isFinished = true;
-                //string msg = "Finished" + Environment.NewLine;
-
-                //foreach (Cluster cluster in listCluster)
-                //{
-                //    msg += "Cluster " + cluster.Number + "(" + cluster.ColorOfPoint.ToString() + ")" +
-                //        " = " + cluster.OldTotalDataPoints.ToString() + "datapoints" + Environment.NewLine;
-                //}
-
-                //msg += "Iteration Number : " + iterationNumber.ToString();
-                //MessageBox.Show(msg);
             }
 
 

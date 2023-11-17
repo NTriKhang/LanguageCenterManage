@@ -21,7 +21,7 @@ namespace LanguageCenterManage.Forms
         public ClassDetailForm()
         {
             _db = new AppDbContext();
-            _courses = _db.Courses.ToList();
+            _courses = _db.Courses.Where(x => x.Status == utility.CourseOpen).OrderBy(x => x.Band).ToList();
             InitializeComponent();
 
         }
@@ -29,7 +29,7 @@ namespace LanguageCenterManage.Forms
         {
             _db = new AppDbContext();
             _class = _db.Classes.Where(x => x.Id == classId).SingleOrDefault();
-            _courses = _db.Courses.Where(x => x.Status == utility.CourseOpen).ToList();
+            _courses = _db.Courses.Where(x => x.Status == utility.CourseOpen).OrderBy(x => x.Band).ToList();
             InitializeComponent();
         }
 

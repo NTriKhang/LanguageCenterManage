@@ -364,7 +364,6 @@
     </Compile>
     <Compile Include="Services\Kmean\Entities\Cluster.cs" />
     <Compile Include="Services\Kmean\Entities\DataPoint.cs" />
-    <Compile Include="Services\Kmean\Entities\DPLimit.cs" />
     <Compile Include="Services\Kmean\KmeanClustering.cs">
       <SubType>Form</SubType>
     </Compile>
