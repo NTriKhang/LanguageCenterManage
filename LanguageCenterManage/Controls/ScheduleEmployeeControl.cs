@@ -18,26 +18,30 @@ namespace LanguageCenterManage.Controls
     public partial class ScheduleEmployeeControl : UserControl
     {
         AppDbContext _db;
+        List<ScheduleDTO> ListSchedule;
         public ScheduleEmployeeControl()
         {
             InitializeComponent();
+            ListSchedule = new List<ScheduleDTO>();
         }
         private void LoadData()
         {
             _db = new AppDbContext();
-            var listSchedule = _db.Schedules
+            ListSchedule = _db.Schedules
                                   .OrderBy(x => x.DateTime)
                                   .Include(nameof(Schedule.Room))
                                   .Include(nameof(Schedule.Teacher))
                                   .Include(nameof(Schedule.Class))
                                   .Select(x => new ScheduleDTO
                                   {
+                                      RoomName = x.Room.Name,
                                       RoomId = x.RoomId,
                                       DateTime = x.DateTime,
                                       Shift = x.Shift,
+                                      CourseName = x.Class.Course.Name
                                   }).ToList();
 
-            scheduleDTOBindingSource.DataSource = listSchedule;
+            scheduleDTOBindingSource.DataSource = ListSchedule;
         }
 
         private void txtSearch_Click(object sender, EventArgs e)
@@ -53,20 +57,54 @@ namespace LanguageCenterManage.Controls
             string searchString = txtSearch.Text.Trim();
             if (txtSearch != null)
             {
-                var listStudent = _db.Schedules.Where(
-                    x => x.RoomId.Contains(searchString)
+                ListSchedule = _db.Schedules
+                    .Include(nameof(Schedule.Room))
+                    .Include(nameof(Schedule.Teacher))
+                    .Include(nameof(Schedule.Class))
+                    .Select(x => new ScheduleDTO
+                    {
+                        RoomName = x.Room.Name,
+                        RoomId = x.RoomId,
+                        DateTime = x.DateTime,
+                        Shift = x.Shift,
+                        CourseName = x.Class.Course.Name
+                    })
+                    .Where(
+                    x => x.RoomId.Contains(searchString) ||
+                    x.RoomName.Contains(searchString) ||
+                    x.CourseName.Contains(searchString)
                 ).ToList();
-                dataGridView1.DataSource = listStudent;
+                scheduleDTOBindingSource.DataSource = ListSchedule;
+            }
+            else
+            {
+                LoadData();
+            }
+            SortDG(Sort_Combobox.SelectedItem.ToString());
+        }
+
+        private void ScheduleEmployeeControl_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        public void SortDG(string value)
+        {
+            string stringSort = Sort_Combobox.Text;
+            if (!string.IsNullOrEmpty(stringSort))
+            {
+                ListSchedule = ListSchedule.OrderBy(x => x.GetType()
+                                         .GetProperty(value)
+                                         .GetValue(x, null)).ToList();
+                dataGridView1.DataSource = ListSchedule;
             }
             else
             {
                 LoadData();
             }
         }
-
-        private void ScheduleEmployeeControl_Load(object sender, EventArgs e)
+        private void Sort_Combobox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadData();
+            SortDG(Sort_Combobox.SelectedItem.ToString());
         }
     }
 }

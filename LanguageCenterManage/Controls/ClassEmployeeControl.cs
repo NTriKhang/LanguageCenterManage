@@ -16,21 +16,24 @@ namespace LanguageCenterManage.Controls
     public partial class ClassEmployeeControl : UserControl
     {
         AppDbContext db = new AppDbContext();
+        List<ClassDTO> ListClass;
         public ClassEmployeeControl()
         {
             InitializeComponent();
+            ListClass = new List<ClassDTO>();
         }
         public void LoadClass()
         {
             db = new AppDbContext();
-            classDTOBindingSource.DataSource = db.Classes
-                                                    .Include(nameof(Class.Course))
-                                                    .Select(x => new ClassDTO
-                                                    {
-                                                        Id = x.Id,
-                                                        CourseName = x.Course.Name,
-                                                        Quantity = x.Quantity
-                                                    }).ToList();
+            ListClass = db.Classes
+                            .Include(nameof(Class.Course))
+                            .Select(x => new ClassDTO
+                            {
+                                Id = x.Id,
+                                CourseName = x.Course.Name,
+                                Quantity = x.Quantity
+                            }).ToList();
+            classDTOBindingSource.DataSource = ListClass;
         }
 
         private void ClassEmployeeControl_Load(object sender, EventArgs e)
@@ -43,7 +46,7 @@ namespace LanguageCenterManage.Controls
             string searchString = txtSearch.Text.Trim();
             if (txtSearch != null)
             {
-                var listStudent = db.Classes
+                ListClass = db.Classes
                     .Include(nameof(Class.Course))
                     .Where(
                     x => x.Id.Contains(searchString) ||
@@ -55,20 +58,32 @@ namespace LanguageCenterManage.Controls
                     Quantity = x.Quantity
                 })
                 .ToList();
-                dataGridView1.DataSource = listStudent;
+                dataGridView1.DataSource = ListClass;
+                SortDG(Sort_Combobox.SelectedItem.ToString());
             }
             else
             {
                 LoadClass();
             }
         }
-
-        private void txtSearch_Click(object sender, EventArgs e)
+        public void SortDG(string value)
         {
-            if (txtSearch.Text == "Enter Id, Coursname")
+            string stringSort = Sort_Combobox.Text;
+            if (!string.IsNullOrEmpty(stringSort))
             {
-                txtSearch.Clear();
+                ListClass = ListClass.OrderBy(x => x.GetType()
+                                         .GetProperty(value)
+                                         .GetValue(x, null)).ToList();
+                dataGridView1.DataSource = ListClass;
             }
+            else
+            {
+                LoadClass();
+            }
+        }
+        private void Sort_Combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortDG(Sort_Combobox.SelectedItem.ToString());
         }
     }
 }

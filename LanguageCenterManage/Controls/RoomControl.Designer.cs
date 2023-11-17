@@ -37,6 +37,8 @@
             this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Sort_Combobox = new System.Windows.Forms.ComboBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -51,6 +53,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.Sort_Combobox);
             this.panel1.Controls.Add(this.btnAddStudent);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -69,9 +73,9 @@
             this.btnAddStudent.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Primary = true;
-            this.btnAddStudent.Size = new System.Drawing.Size(136, 36);
+            this.btnAddStudent.Size = new System.Drawing.Size(110, 36);
             this.btnAddStudent.TabIndex = 3;
-            this.btnAddStudent.Text = "Add Student";
+            this.btnAddStudent.Text = "Add Room";
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
@@ -117,7 +121,7 @@
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Depth = 0;
             this.txtSearch.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtSearch.Hint = "";
+            this.txtSearch.Hint = "Enter Id, Name";
             this.txtSearch.Location = new System.Drawing.Point(0, 6);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.MaxLength = 32767;
@@ -130,9 +134,7 @@
             this.txtSearch.Size = new System.Drawing.Size(244, 28);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TabStop = false;
-            this.txtSearch.Text = "Enter Id, Name";
             this.txtSearch.UseSystemPasswordChar = false;
-            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             // 
             // panel2
             // 
@@ -163,6 +165,27 @@
             this.dataGridView1.Size = new System.Drawing.Size(1593, 497);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(695, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Sort by";
+            // 
+            // Sort_Combobox
+            // 
+            this.Sort_Combobox.FormattingEnabled = true;
+            this.Sort_Combobox.Items.AddRange(new object[] {
+            "Id",
+            "Name"});
+            this.Sort_Combobox.Location = new System.Drawing.Point(762, 40);
+            this.Sort_Combobox.Name = "Sort_Combobox";
+            this.Sort_Combobox.Size = new System.Drawing.Size(121, 24);
+            this.Sort_Combobox.TabIndex = 12;
+            this.Sort_Combobox.SelectedIndexChanged += new System.EventHandler(this.Sort_Combobox_SelectedIndexChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -218,5 +241,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource roomBindingSource;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox Sort_Combobox;
     }
 }

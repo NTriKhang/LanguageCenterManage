@@ -20,9 +20,11 @@ namespace LanguageCenterManage.Controls
     public partial class CourseControl : UserControl
     {
         private AppDbContext _db;
+        List<CourseDTO> ListCourse;
         public CourseControl()
         {
             InitializeComponent();
+            ListCourse = new List<CourseDTO>();
         }
 
         private void txtSearch_Click(object sender, EventArgs e)
@@ -42,7 +44,7 @@ namespace LanguageCenterManage.Controls
             _db = new AppDbContext();
             courseDTOBindingSource.DataSource = null;
 
-            var listCourse = _db.Courses
+            ListCourse = _db.Courses
                     .Include(nameof(Course.Language))
                     .OrderBy(x => x.DateStart).ThenBy(x => x.Band)
                     .Select(x => new CourseDTO
@@ -50,12 +52,12 @@ namespace LanguageCenterManage.Controls
                         Id = x.Id,
                         Name = x.Name,
                         CourseType = x.Language.Name,
-                        Band = x.Band,  
+                        Band = x.Band,
                         Status = x.Status,
                     })
                     .ToList();
 
-            courseDTOBindingSource.DataSource = listCourse;
+            courseDTOBindingSource.DataSource = ListCourse;
         }
         private void btnNew_Click(object sender, EventArgs e)
         {
@@ -88,8 +90,7 @@ namespace LanguageCenterManage.Controls
             string stringSearch = txtSearch.Text.Trim();
             if(stringSearch != null)
             {
-                var listCourse = _db.Courses
-                    .Where(x => x.Id.Contains(stringSearch) || x.Name.Contains(stringSearch))
+                ListCourse = _db.Courses
                     .Include(nameof(Course.Language))
                     .Select(x => new CourseDTO
                     {
@@ -98,13 +99,35 @@ namespace LanguageCenterManage.Controls
                         CourseType = x.Language.Name,
                         Band = x.Band,
                         Status = x.Status,
-                    }).ToList();
-                courseDTOBindingSource.DataSource = listCourse;
+                    })
+                    .Where(x => x.Id.Contains(stringSearch) || x.Name.Contains(stringSearch))
+                    .ToList();
+                courseDTOBindingSource.DataSource = ListCourse;
             }
             else
             {
                 LoadCourseData();
             }
+            SortDG(Sort_Combobox.SelectedItem.ToString());
+        }
+        public void SortDG(string value)
+        {
+            string stringSort = Sort_Combobox.Text;
+            if (!string.IsNullOrEmpty(stringSort))
+            {
+                ListCourse = ListCourse.OrderBy(x => x.GetType()
+                                         .GetProperty(value)
+                                         .GetValue(x, null)).ToList();
+                courseDTOBindingSource.DataSource = ListCourse;
+            }
+            else
+            {
+                LoadCourseData();
+            }
+        }
+        private void Sort_Combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortDG(Sort_Combobox.SelectedItem.ToString());
         }
     }
 }
