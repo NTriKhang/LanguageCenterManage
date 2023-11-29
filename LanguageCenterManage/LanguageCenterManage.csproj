@@ -286,6 +286,12 @@
     <Compile Include="Forms\StudentDetailForm.designer.cs">
       <DependentUpon>StudentDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SubForm\BandsSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubForm\BandsSForm.Designer.cs">
+      <DependentUpon>BandsSForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SubForm\RoomAvailableForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,7 +308,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\UserDetailForm.Designer.cs">
-      <DependentUpon>UserDetailForm.cs</DependentUpon>
+      <DependentUpon>202311170842294__addBandTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Band.cs" />
@@ -445,6 +451,9 @@
     <EmbeddedResource Include="Forms\StudentDetailForm.resx">
       <DependentUpon>StudentDetailForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubForm\BandsSForm.resx">
+      <DependentUpon>BandsSForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubForm\RoomAvailableForm.resx">
       <DependentUpon>RoomAvailableForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -480,6 +489,7 @@
       <DependentUpon>UserByGroupForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\LanguageCenterManage.DTO.BandDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.ClassDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.CourseDTO.datasource" />
     <None Include="Properties\DataSources\LanguageCenterManage.DTO.JoinDTO.datasource" />

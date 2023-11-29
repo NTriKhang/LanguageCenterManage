@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LanguageCenterManage.DTO
-{
-    internal class BandDTO
+
+    public class BandDTO
     {
-        public string StudentId { get; set; }
-        public decimal BandNumber { get; set; }
+        public decimal Band { set; get; }
     }
 }

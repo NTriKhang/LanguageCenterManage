@@ -27,6 +27,7 @@ namespace LanguageCenterManage.Controls
         {
             _db = new AppDbContext();
             ListClass = _db.Classes
+            updateJoinSortSearch
                             .Include(nameof(Class.Course))
                             .Select(x => new ClassDTO
                             {
@@ -37,7 +38,6 @@ namespace LanguageCenterManage.Controls
                                 Status = x.Course.Status,
                             })
                             .OrderByDescending(x => x.DateTime)
-                            .ToList();
             classDTOBindingSource.DataSource = ListClass;
         }
         private void ClassControl_Load(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace LanguageCenterManage.Controls
                                         CourseName = x.Course.Name,
                                         Quantity = x.Quantity
                                     }).ToList();
-                dataGridView1.DataSource = ListClass;
+                classDTOBindingSource.DataSource = ListClass;
             }
             else
             {
@@ -105,7 +105,7 @@ namespace LanguageCenterManage.Controls
                 ListClass = ListClass.OrderBy(x => x.GetType()
                                          .GetProperty(value)
                                          .GetValue(x, null)).ToList();
-                dataGridView1.DataSource = ListClass;
+                classDTOBindingSource.DataSource = ListClass;
             }
             else
             {

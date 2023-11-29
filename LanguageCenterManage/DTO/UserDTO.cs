@@ -13,5 +13,7 @@ namespace LanguageCenterManage.DTO
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
+        public DateTime Birth {  get; set; }
+        public double Band { get; set; }
     }
 }

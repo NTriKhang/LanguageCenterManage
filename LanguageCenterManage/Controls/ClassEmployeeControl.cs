@@ -36,7 +36,6 @@ namespace LanguageCenterManage.Controls
                             Status = x.Course.Status,
                         }).ToList();
             classDTOBindingSource.DataSource = ListClass;
-
         }
 
         private void ClassEmployeeControl_Load(object sender, EventArgs e)
@@ -62,13 +61,14 @@ namespace LanguageCenterManage.Controls
                     Quantity = x.Quantity
                 })
                 .ToList();
-                dataGridView1.DataSource = ListClass;
-                SortDG(Sort_Combobox.SelectedItem.ToString());
+                classDTOBindingSource.DataSource = ListClass;
             }
             else
             {
                 LoadClass();
             }
+            SortDG(Sort_Combobox.SelectedItem.ToString());
+
         }
         public void SortDG(string value)
         {
@@ -78,7 +78,7 @@ namespace LanguageCenterManage.Controls
                 ListClass = ListClass.OrderBy(x => x.GetType()
                                          .GetProperty(value)
                                          .GetValue(x, null)).ToList();
-                dataGridView1.DataSource = ListClass;
+                classDTOBindingSource.DataSource = ListClass;
             }
             else
             {
