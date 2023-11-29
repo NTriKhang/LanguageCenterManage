@@ -181,6 +181,7 @@
       <DependentUpon>UsersControl.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\AppDbContext.cs" />
+    <Compile Include="DTO\BandDTO.cs" />
     <Compile Include="DTO\ClassDTO.cs" />
     <Compile Include="DTO\CourseDTO.cs" />
     <Compile Include="DTO\ScheduleDTO.cs" />
@@ -302,10 +303,6 @@
     </Compile>
     <Compile Include="Forms\UserDetailForm.Designer.cs">
       <DependentUpon>UserDetailForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311170820551_addBandTable.cs" />
-    <Compile Include="Migrations\202311170820551_addBandTable.designer.cs">
-      <DependentUpon>202311170820551_addBandTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Band.cs" />
@@ -456,9 +453,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserDetailForm.resx">
       <DependentUpon>UserDetailForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311170820551_addBandTable.resx">
-      <DependentUpon>202311170820551_addBandTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

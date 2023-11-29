@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Sort_Combobox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Sort_Combobox = new System.Windows.Forms.ComboBox();
             this.roomIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +81,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1474, 100);
             this.panel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(736, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Sort by";
+            // 
+            // Sort_Combobox
+            // 
+            this.Sort_Combobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Sort_Combobox.FormattingEnabled = true;
+            this.Sort_Combobox.Items.AddRange(new object[] {
+            "RoomId",
+            "RoomName",
+            "DateTime",
+            "CourseName",
+            "Shift"});
+            this.Sort_Combobox.Location = new System.Drawing.Point(803, 41);
+            this.Sort_Combobox.Name = "Sort_Combobox";
+            this.Sort_Combobox.Size = new System.Drawing.Size(121, 24);
+            this.Sort_Combobox.TabIndex = 10;
+            this.Sort_Combobox.SelectedIndexChanged += new System.EventHandler(this.Sort_Combobox_SelectedIndexChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -140,30 +165,6 @@
             this.txtSearch.TabStop = false;
             this.txtSearch.UseSystemPasswordChar = false;
             this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(736, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Sort by";
-            // 
-            // Sort_Combobox
-            // 
-            this.Sort_Combobox.FormattingEnabled = true;
-            this.Sort_Combobox.Items.AddRange(new object[] {
-            "RoomId",
-            "RoomName",
-            "DateTime",
-            "CourseName",
-            "Shift"});
-            this.Sort_Combobox.Location = new System.Drawing.Point(803, 41);
-            this.Sort_Combobox.Name = "Sort_Combobox";
-            this.Sort_Combobox.Size = new System.Drawing.Size(121, 24);
-            this.Sort_Combobox.TabIndex = 10;
-            this.Sort_Combobox.SelectedIndexChanged += new System.EventHandler(this.Sort_Combobox_SelectedIndexChanged);
             // 
             // roomIdDataGridViewTextBoxColumn
             // 

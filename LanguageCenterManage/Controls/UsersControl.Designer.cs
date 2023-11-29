@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Sort_Combobox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.PictureBox();
@@ -42,8 +44,6 @@
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.Sort_Combobox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -63,6 +63,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1501, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(698, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Sort by";
+            // 
+            // Sort_Combobox
+            // 
+            this.Sort_Combobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Sort_Combobox.FormattingEnabled = true;
+            this.Sort_Combobox.Items.AddRange(new object[] {
+            "Id",
+            "FirstName",
+            "LastName"});
+            this.Sort_Combobox.Location = new System.Drawing.Point(765, 52);
+            this.Sort_Combobox.Name = "Sort_Combobox";
+            this.Sort_Combobox.Size = new System.Drawing.Size(121, 24);
+            this.Sort_Combobox.TabIndex = 11;
+            this.Sort_Combobox.SelectedIndexChanged += new System.EventHandler(this.Sort_Combobox_SelectedIndexChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -198,28 +221,6 @@
             // userDTOBindingSource
             // 
             this.userDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.UserDTO);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(698, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Sort by";
-            // 
-            // Sort_Combobox
-            // 
-            this.Sort_Combobox.FormattingEnabled = true;
-            this.Sort_Combobox.Items.AddRange(new object[] {
-            "Id",
-            "FirstName",
-            "LastName"});
-            this.Sort_Combobox.Location = new System.Drawing.Point(765, 52);
-            this.Sort_Combobox.Name = "Sort_Combobox";
-            this.Sort_Combobox.Size = new System.Drawing.Size(121, 24);
-            this.Sort_Combobox.TabIndex = 11;
-            this.Sort_Combobox.SelectedIndexChanged += new System.EventHandler(this.Sort_Combobox_SelectedIndexChanged);
             // 
             // UsersControl
             // 

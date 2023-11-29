@@ -31,6 +31,7 @@ namespace LanguageCenterManage.Controls
         private void LanguageControl_Load(object sender, EventArgs e)
         {
             Reload();
+            Sort_Combobox.SelectedIndex = 0;
         }
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

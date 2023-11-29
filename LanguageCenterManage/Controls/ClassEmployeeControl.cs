@@ -25,23 +25,24 @@ namespace LanguageCenterManage.Controls
         public void LoadClass()
         {
             db = new AppDbContext();
-
-            classDTOBindingSource.DataSource = db.Classes
-                                                    .Include(nameof(Class.Course))
-                                                    .Select(x => new ClassDTO
-                                                    {
-                                                        Id = x.Id,
-                                                        CourseName = x.Course.Name,
-                                                        Quantity = x.Quantity,
-                                                        DateTime = x.Course.DateStart,
-                                                        Status = x.Course.Status,
-                                                    }).ToList();
+            ListClass = db.Classes
+                        .Include(nameof(Class.Course))
+                        .Select(x => new ClassDTO
+                        {
+                            Id = x.Id,
+                            CourseName = x.Course.Name,
+                            Quantity = x.Quantity,
+                            DateTime = x.Course.DateStart,
+                            Status = x.Course.Status,
+                        }).ToList();
+            classDTOBindingSource.DataSource = ListClass;
 
         }
 
         private void ClassEmployeeControl_Load(object sender, EventArgs e)
         {
             LoadClass();
+            Sort_Combobox.SelectedIndex = 0;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
