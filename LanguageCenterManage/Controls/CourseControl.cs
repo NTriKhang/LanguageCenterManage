@@ -38,6 +38,7 @@ namespace LanguageCenterManage.Controls
         private void CourseControl_Load(object sender, EventArgs e)
         {
             LoadCourseData();
+            Sort_Combobox.SelectedIndex = 0;
         }
         private void LoadCourseData()
         {

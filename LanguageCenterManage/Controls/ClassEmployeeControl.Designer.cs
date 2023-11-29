@@ -31,21 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Sort_Combobox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
-
-            this.classDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
-            this.label1 = new System.Windows.Forms.Label();
-            this.Sort_Combobox = new System.Windows.Forms.ComboBox();
-
+            this.classDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -86,6 +83,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1544, 104);
             this.panel1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(676, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Sort by";
+            // 
+            // Sort_Combobox
+            // 
+            this.Sort_Combobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Sort_Combobox.FormattingEnabled = true;
+            this.Sort_Combobox.Items.AddRange(new object[] {
+            "Id",
+            "CourseName",
+            "Quantity"});
+            this.Sort_Combobox.Location = new System.Drawing.Point(743, 51);
+            this.Sort_Combobox.Name = "Sort_Combobox";
+            this.Sort_Combobox.Size = new System.Drawing.Size(121, 24);
+            this.Sort_Combobox.TabIndex = 8;
+            this.Sort_Combobox.SelectedIndexChanged += new System.EventHandler(this.Sort_Combobox_SelectedIndexChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -144,57 +164,6 @@
             this.txtSearch.TabStop = false;
             this.txtSearch.UseSystemPasswordChar = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(676, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Sort by";
-            // 
-            // Sort_Combobox
-            // 
-            this.Sort_Combobox.FormattingEnabled = true;
-            this.Sort_Combobox.Items.AddRange(new object[] {
-            "Id",
-            "CourseName",
-            "Quantity"});
-            this.Sort_Combobox.Location = new System.Drawing.Point(743, 51);
-            this.Sort_Combobox.Name = "Sort_Combobox";
-            this.Sort_Combobox.Size = new System.Drawing.Size(121, 24);
-            this.Sort_Combobox.TabIndex = 8;
-            this.Sort_Combobox.SelectedIndexChanged += new System.EventHandler(this.Sort_Combobox_SelectedIndexChanged);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // courseNameDataGridViewTextBoxColumn
-            // 
-            this.courseNameDataGridViewTextBoxColumn.DataPropertyName = "CourseName";
-            this.courseNameDataGridViewTextBoxColumn.HeaderText = "CourseName";
-            this.courseNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.courseNameDataGridViewTextBoxColumn.Name = "courseNameDataGridViewTextBoxColumn";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // classDTOBindingSource
-            // 
-            this.classDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.ClassDTO);
-            // 
-            // classDTOBindingSource
-            // 
-            this.classDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.ClassDTO);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -229,6 +198,10 @@
             this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
             this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // classDTOBindingSource
+            // 
+            this.classDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.ClassDTO);
             // 
             // ClassEmployeeControl
             // 

@@ -47,6 +47,7 @@ namespace LanguageCenterManage.Controls
         private void ScheduleControl_Load(object sender, EventArgs e)
         {
             LoadData();
+            Sort_Combobox.SelectedIndex = 0;
         }
         
         private void btnNew_Click(object sender, EventArgs e)

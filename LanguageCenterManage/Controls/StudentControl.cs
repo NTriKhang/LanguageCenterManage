@@ -55,6 +55,7 @@ namespace LanguageCenterManage.Controls
         private void StudentControl_Load(object sender, EventArgs e)
         {
             LoadStudentLoad();
+            Sort_Combobox.SelectedIndex = 0;
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
@@ -79,7 +80,7 @@ namespace LanguageCenterManage.Controls
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchString = txtSearch.Text.Trim();
-            if(searchString != null)
+            if (searchString != null)
             {
                 ListStudent = db.Students.Select(m => new StudentDTO
                 {
@@ -89,7 +90,8 @@ namespace LanguageCenterManage.Controls
                     Birth = m.Birth,
                 }).Where(
                     x => x.Id.Contains(searchString) ||
-                    x.LastName.Contains(searchString)
+                    x.LastName.Contains(searchString) ||
+                    x.FirstName.Contains(searchString)
                 ).ToList();
                 dataGridView1.DataSource = ListStudent;
             }
@@ -97,7 +99,10 @@ namespace LanguageCenterManage.Controls
             {
                 LoadStudentLoad();
             }
-            SortDG(Sort_Combobox.SelectedItem.ToString());
+            if(Sort_Combobox.Text != null)
+            {
+                SortDG(Sort_Combobox.SelectedItem.ToString());
+            }
         }
         public void SortDG(string value)
         {

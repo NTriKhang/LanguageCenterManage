@@ -49,8 +49,6 @@ namespace LanguageCenterManage
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnLanguage = new MaterialSkin.Controls.MaterialFlatButton();
@@ -60,6 +58,8 @@ namespace LanguageCenterManage
             this.panel11 = new System.Windows.Forms.Panel();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.userBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.Navbar.SuspendLayout();
             this.Sidebar.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -76,13 +76,13 @@ namespace LanguageCenterManage
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // Navbar
@@ -228,7 +228,6 @@ namespace LanguageCenterManage
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // btnStudentStatistics
             // 
@@ -318,35 +317,6 @@ namespace LanguageCenterManage
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 3;
             this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = global::LanguageCenterManage.Properties.Resources.salary;
-            this.pictureBox4.Location = new System.Drawing.Point(21, 11);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(60, 36);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // materialFlatButton2
-            // 
-            this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton2.Depth = 0;
-            this.materialFlatButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialFlatButton2.Icon = null;
-            this.materialFlatButton2.Location = new System.Drawing.Point(0, 0);
-            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton2.Name = "materialFlatButton2";
-            this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(344, 60);
-            this.materialFlatButton2.TabIndex = 0;
-            this.materialFlatButton2.Text = "Salary";
-            this.materialFlatButton2.UseVisualStyleBackColor = true;
             // 
             // panel9
             // 
@@ -465,6 +435,35 @@ namespace LanguageCenterManage
             this.userBtn.UseVisualStyleBackColor = true;
             this.userBtn.Click += new System.EventHandler(this.userBtn_Click);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Image = global::LanguageCenterManage.Properties.Resources.salary;
+            this.pictureBox4.Location = new System.Drawing.Point(21, 11);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(60, 36);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // materialFlatButton2
+            // 
+            this.materialFlatButton2.AutoSize = true;
+            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton2.Depth = 0;
+            this.materialFlatButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialFlatButton2.Icon = null;
+            this.materialFlatButton2.Location = new System.Drawing.Point(0, 0);
+            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton2.Name = "materialFlatButton2";
+            this.materialFlatButton2.Primary = false;
+            this.materialFlatButton2.Size = new System.Drawing.Size(344, 60);
+            this.materialFlatButton2.TabIndex = 0;
+            this.materialFlatButton2.Text = "Salary";
+            this.materialFlatButton2.UseVisualStyleBackColor = true;
+            // 
             // ManagerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -493,7 +492,6 @@ namespace LanguageCenterManage
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -503,6 +501,7 @@ namespace LanguageCenterManage
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -520,13 +519,11 @@ namespace LanguageCenterManage
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox7;
         private MaterialSkin.Controls.MaterialFlatButton btnCourse;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
         private MaterialSkin.Controls.MaterialFlatButton btnStudentStatistics;
         private System.Windows.Forms.PictureBox pictureBox2;
         private MaterialSkin.Controls.MaterialFlatButton btnSchedule;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private PictureBox pictureBox4;
         private PictureBox pictureBox5;
         private Panel panel9;
         private PictureBox pictureBox6;
@@ -537,5 +534,7 @@ namespace LanguageCenterManage
         private Panel panel11;
         private PictureBox pictureBox9;
         private MaterialFlatButton userBtn;
+        private PictureBox pictureBox4;
+        private MaterialFlatButton materialFlatButton2;
     }
 }

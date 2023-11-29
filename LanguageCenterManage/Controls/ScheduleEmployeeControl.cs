@@ -86,6 +86,7 @@ namespace LanguageCenterManage.Controls
         private void ScheduleEmployeeControl_Load(object sender, EventArgs e)
         {
             LoadData();
+            Sort_Combobox.SelectedIndex = 0;
         }
         public void SortDG(string value)
         {

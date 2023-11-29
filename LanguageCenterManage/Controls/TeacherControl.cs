@@ -37,6 +37,7 @@ namespace LanguageCenterManage.Controls
         private void TeacherControl_Load(object sender, EventArgs e)
         {
             LoadTeacher();
+            Sort_Combobox.SelectedIndex = 0;
         }
         private void TeacherDetailForm_FormClosed(object sender, FormClosedEventArgs e)
         {

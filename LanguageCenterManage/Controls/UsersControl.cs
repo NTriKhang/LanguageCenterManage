@@ -38,6 +38,7 @@ namespace LanguageCenterManage.Controls
         private void UsersControl_Load(object sender, EventArgs e)
         {
             LoadData();
+            Sort_Combobox.SelectedIndex = 0;
         }
         private void UserDetailForm_FormClosed(object sender, FormClosedEventArgs e)
         {

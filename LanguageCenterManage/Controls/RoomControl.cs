@@ -40,6 +40,7 @@ namespace LanguageCenterManage.Controls
         private void RoomControl_Load(object sender, EventArgs e)
         {
             LoadRoom();
+            Sort_Combobox.SelectedIndex = 0;
         }
         private void btnAddStudent_Click(object sender, EventArgs e)
         {

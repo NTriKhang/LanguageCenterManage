@@ -27,22 +27,23 @@ namespace LanguageCenterManage.Controls
         {
             _db = new AppDbContext();
             ListClass = _db.Classes
-                                                    .Include(nameof(Class.Course))
-                                                    .Select(x => new ClassDTO
-                                                    {
-                                                        Id = x.Id,
-                                                        CourseName = x.Course.Name,
-                                                        Quantity = x.Quantity,
-                                                        DateTime = x.Course.DateStart,
-                                                        Status = x.Course.Status,
-                                                    })
-                                                    .OrderByDescending(x => x.DateTime)
-                                                    .ToList();
+            updateJoinSortSearch
+                            .Include(nameof(Class.Course))
+                            .Select(x => new ClassDTO
+                            {
+                                Id = x.Id,
+                                CourseName = x.Course.Name,
+                                Quantity = x.Quantity,
+                                DateTime = x.Course.DateStart,
+                                Status = x.Course.Status,
+                            })
+                            .OrderByDescending(x => x.DateTime)
             classDTOBindingSource.DataSource = ListClass;
         }
         private void ClassControl_Load(object sender, EventArgs e)
         {
             LoadData();
+            Sort_Combobox.SelectedIndex = 0;
         }
         private void ClassDetailForm_Closed(object sender, EventArgs e)
         {

@@ -308,10 +308,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\UserDetailForm.Designer.cs">
-      <DependentUpon>UserDetailForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311170842294__addBandTable.cs" />
-    <Compile Include="Migrations\202311170842294__addBandTable.designer.cs">
       <DependentUpon>202311170842294__addBandTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
@@ -466,9 +462,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserDetailForm.resx">
       <DependentUpon>UserDetailForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311170842294__addBandTable.resx">
-      <DependentUpon>202311170842294__addBandTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

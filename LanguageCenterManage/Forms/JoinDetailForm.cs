@@ -14,6 +14,7 @@ using LanguageCenterManage.Models;
 using System.Data.Entity;
 using LanguageCenterManage.DTO;
 using LanguageCenterManage.Controls;
+using System.Data.Entity.Migrations;
 
 namespace LanguageCenterManage.Forms
 {
@@ -90,15 +91,15 @@ namespace LanguageCenterManage.Forms
         }
         public void UpdateJoin()
         {
-            db.Joins.Remove(join);
             Join j = new Join();
+            j.Id = txtJoinId.Text;
             j.StudentId = txtStudentId.Text;
             j.ClassId = txtClassId.Text;
             j.FirstGrade = Decimal.Parse(txtFistGrade.Text);
             j.SecondGrade = Decimal.Parse(txtSecondGrade.Text);
             j.FinalGrade = Decimal.Parse(txtFinalGrade.Text);
             //j.TuiTionState = checkBoxTuiTion.Checked;
-            db.Joins.Add(j);
+            db.Joins.AddOrUpdate(j);
             db.SaveChanges();
         }
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -143,6 +144,21 @@ namespace LanguageCenterManage.Forms
         {
             if (isModelValid())
             {
+                if(db.Joins.Any(x => x.StudentId == StudentId))
+                {
+                    var grade = (from stu in db.Students
+                                 join j in db.Joins on stu.Id equals j.StudentId
+                                 join c in db.Classes on j.ClassId equals c.Id
+                                 join cs in db.Courses on c.CourseId equals cs.Id
+                                 where stu.Id == StudentId
+                                 orderby cs.Band descending
+                                 select j.FinalGrade).Take(1).FirstOrDefault();
+                    if (grade < 5)
+                    {
+                        MessageBox.Show("You are not eligible to register", "Fail", MessageBoxButtons.OK);
+                        return;
+                    }
+                }
                 InsertJoin();
                 billDetail.initBill(txtJoinId.Text);
                 MessageBox.Show("Create successfully", "Join have added to db", MessageBoxButtons.OK);
