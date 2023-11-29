@@ -27,7 +27,6 @@ namespace LanguageCenterManage.Controls
         {
             _db = new AppDbContext();
             ListClass = _db.Classes
-            updateJoinSortSearch
                             .Include(nameof(Class.Course))
                             .Select(x => new ClassDTO
                             {
@@ -38,6 +37,7 @@ namespace LanguageCenterManage.Controls
                                 Status = x.Course.Status,
                             })
                             .OrderByDescending(x => x.DateTime)
+                            .ToList();
             classDTOBindingSource.DataSource = ListClass;
         }
         private void ClassControl_Load(object sender, EventArgs e)
