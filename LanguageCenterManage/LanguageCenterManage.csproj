@@ -569,6 +569,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\language.png" />
+    <None Include="Resources\group.png" />
     <Content Include="Resources\ProfileImage\UserNoImage\UserNoImage.jpg" />
   </ItemGroup>
   <ItemGroup />
