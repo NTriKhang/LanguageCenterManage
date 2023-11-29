@@ -22,7 +22,7 @@ namespace LanguageCenterManage.Services.Kmean
         private AppDbContext _db;
 
         private bool isFinished;
-
+        private int iterationNumber;
         private List<DataPoint> listDataPoint;
 
 
@@ -141,7 +141,7 @@ namespace LanguageCenterManage.Services.Kmean
 
                 DataPoint dataPoint = new DataPoint(i + 1, xPoint, yPoint, null);
                 dataPoint.UserId = listAgeAndBandDistinct[i].studentId;
-
+                dataPoint.Band = listAgeAndBandDistinct[i].Band;
                 listDataPoint.Add(dataPoint);
             }
 
@@ -202,7 +202,7 @@ namespace LanguageCenterManage.Services.Kmean
         private void InitializeCluster()
         {
             int kLimit = 7;
-
+            iterationNumber = 0;
             if (elbowRadio.Checked)
             {
                 List<List<DataPoint>> res = new List<List<DataPoint>>();
@@ -261,6 +261,7 @@ namespace LanguageCenterManage.Services.Kmean
         }
         private void AssignDataPointsToCloserCluster()
         {
+            iterationNumber++;
             foreach (DataPoint dataPoint in listDataPoint)
             {
                 Cluster nearestCluster = null;
@@ -315,6 +316,19 @@ namespace LanguageCenterManage.Services.Kmean
             if (isSame)
             {
                 isFinished = true;
+                if(!elbowCheck && !sihouetteCheck)
+                {
+                    string msg = "Finished" + Environment.NewLine;
+
+                    foreach (Cluster cluster in listCluster)
+                    {
+                        msg += "Cluster " + cluster.Number + "(" + cluster.ColorOfPoint.ToString() + ")" +
+                            " = " + cluster.OldTotalDataPoints.ToString() + "datapoints" + Environment.NewLine;
+                    }
+
+                    msg += "Iteration Number : " + iterationNumber.ToString();
+                    MessageBox.Show(msg);
+                }
             }
 
 
@@ -414,6 +428,8 @@ namespace LanguageCenterManage.Services.Kmean
                                                 LastName = x.LastName,
                                                 Email = x.Email,
                                                 Phone = x.Phone,
+                                                Birth = x.Birth,
+                                                Band = point.Band
                                             })
                                             .SingleOrDefault();
                         users.Add(user);

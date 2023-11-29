@@ -8,6 +8,7 @@ namespace LanguageCenterManage.Services.Kmean.Entities
     public class DataPoint
     {
         public string UserId { get; set; }
+        public double Band { get; set; }
         public int Number { get; set; }
         public int XPoint { get; set; }
         public int YPoint { get; set; }

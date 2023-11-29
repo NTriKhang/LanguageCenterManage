@@ -30,13 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.userDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.birthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userDTOBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +53,9 @@
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
-            this.phoneDataGridViewTextBoxColumn});
+            this.phoneDataGridViewTextBoxColumn,
+            this.birthDataGridViewTextBoxColumn,
+            this.bandDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.userDTOBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -60,6 +64,16 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(800, 376);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(685, 393);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 45);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Next";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // userDTOBindingSource
             // 
@@ -100,15 +114,19 @@
             this.phoneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
             // 
-            // button1
+            // birthDataGridViewTextBoxColumn
             // 
-            this.button1.Location = new System.Drawing.Point(685, 393);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 45);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Next";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.birthDataGridViewTextBoxColumn.DataPropertyName = "Birth";
+            this.birthDataGridViewTextBoxColumn.HeaderText = "Birth";
+            this.birthDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.birthDataGridViewTextBoxColumn.Name = "birthDataGridViewTextBoxColumn";
+            // 
+            // bandDataGridViewTextBoxColumn
+            // 
+            this.bandDataGridViewTextBoxColumn.DataPropertyName = "Band";
+            this.bandDataGridViewTextBoxColumn.HeaderText = "Band";
+            this.bandDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.bandDataGridViewTextBoxColumn.Name = "bandDataGridViewTextBoxColumn";
             // 
             // UserByGroupForm
             // 
@@ -129,12 +147,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bandDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource userDTOBindingSource;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.idTextbox = new System.Windows.Forms.TextBox();
@@ -35,18 +36,25 @@
             this.btnCreate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.EditBandBtn = new System.Windows.Forms.Button();
+            this.bandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bandDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bandDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(68, 135);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(26, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(25, 24);
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "Id";
             // 
@@ -54,9 +62,9 @@
             // 
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(68, 222);
+            this.materialLabel2.Location = new System.Drawing.Point(68, 179);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(61, 24);
@@ -73,7 +81,7 @@
             // 
             // nameTextbox
             // 
-            this.nameTextbox.Location = new System.Drawing.Point(149, 224);
+            this.nameTextbox.Location = new System.Drawing.Point(149, 179);
             this.nameTextbox.Name = "nameTextbox";
             this.nameTextbox.Size = new System.Drawing.Size(241, 22);
             this.nameTextbox.TabIndex = 3;
@@ -126,11 +134,63 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // LanguageDetailForm
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(66, 220);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(63, 24);
+            this.materialLabel3.TabIndex = 7;
+            this.materialLabel3.Text = "Bands";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bandDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.bandDTOBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(149, 220);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // EditBandBtn
+            // 
+            this.EditBandBtn.Location = new System.Drawing.Point(412, 220);
+            this.EditBandBtn.Name = "EditBandBtn";
+            this.EditBandBtn.Size = new System.Drawing.Size(75, 23);
+            this.EditBandBtn.TabIndex = 9;
+            this.EditBandBtn.Text = "Edit";
+            this.EditBandBtn.UseVisualStyleBackColor = true;
+            this.EditBandBtn.Click += new System.EventHandler(this.EditBandBtn_Click);
+            // 
+            // bandDataGridViewTextBoxColumn
+            // 
+            this.bandDataGridViewTextBoxColumn.DataPropertyName = "Band";
+            this.bandDataGridViewTextBoxColumn.HeaderText = "Band";
+            this.bandDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.bandDataGridViewTextBoxColumn.Name = "bandDataGridViewTextBoxColumn";
+            // 
+            // bandDTOBindingSource
+            // 
+            this.bandDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.BandDTO);
+            // 
+            // CourseTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.EditBandBtn);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCreate);
@@ -138,9 +198,11 @@
             this.Controls.Add(this.idTextbox);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Name = "LanguageDetailForm";
+            this.Name = "CourseTypeForm";
             this.Text = "LanguageDetail";
             this.Load += new System.EventHandler(this.LanguageDetail_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bandDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,5 +217,10 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnCreate;
         private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
         private MaterialSkin.Controls.MaterialRaisedButton btnDelete;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bandDTOBindingSource;
+        private System.Windows.Forms.Button EditBandBtn;
     }
 }

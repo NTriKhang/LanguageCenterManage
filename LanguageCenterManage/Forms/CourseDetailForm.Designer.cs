@@ -48,7 +48,7 @@
             this.btnDelete = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.Bandtxt = new System.Windows.Forms.TextBox();
+            this.Bandtxt = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -128,6 +128,7 @@
             // 
             // comboBoxStatus
             // 
+            this.comboBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatus.FormattingEnabled = true;
             this.comboBoxStatus.Items.AddRange(new object[] {
             "Open",
@@ -138,6 +139,7 @@
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(264, 24);
             this.comboBoxStatus.TabIndex = 5;
+            this.comboBoxStatus.SelectedIndexChanged += new System.EventHandler(this.comboBoxStatus_SelectedIndexChanged);
             // 
             // materialLabel6
             // 
@@ -175,6 +177,7 @@
             // 
             // comboBoxLanguageId
             // 
+            this.comboBoxLanguageId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLanguageId.FormattingEnabled = true;
             this.comboBoxLanguageId.Location = new System.Drawing.Point(172, 309);
             this.comboBoxLanguageId.Name = "comboBoxLanguageId";
@@ -285,10 +288,13 @@
             // 
             // Bandtxt
             // 
-            this.Bandtxt.Location = new System.Drawing.Point(172, 365);
+            this.Bandtxt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Bandtxt.FormattingEnabled = true;
+            this.Bandtxt.Location = new System.Drawing.Point(172, 361);
             this.Bandtxt.Name = "Bandtxt";
-            this.Bandtxt.Size = new System.Drawing.Size(241, 22);
-            this.Bandtxt.TabIndex = 23;
+            this.Bandtxt.Size = new System.Drawing.Size(241, 24);
+            this.Bandtxt.TabIndex = 24;
+            this.Bandtxt.SelectedIndexChanged += new System.EventHandler(this.Bandtxt_SelectedIndexChanged);
             // 
             // CourseDetailForm
             // 
@@ -346,6 +352,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnDelete;
         private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.TextBox Bandtxt;
+        private System.Windows.Forms.ComboBox Bandtxt;
     }
 }
