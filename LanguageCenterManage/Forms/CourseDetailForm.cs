@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LanguageCenterManage.Forms
 {
@@ -40,11 +41,13 @@ namespace LanguageCenterManage.Forms
         }
         private void CourseDetail_Load(object sender, EventArgs e)
         {
-            comboBoxLanguageId.Items.Clear();
-            comboBoxLanguageId.Items.AddRange(listLanguage.Select(x => x.Id).ToArray());
+
             if (course == null)
             {
+                comboBoxLanguageId.Items.Clear();
+                comboBoxLanguageId.Items.AddRange(listLanguage.Select(x => x.Id).ToArray());
                 textBoxId.Text = Guid.NewGuid().ToString().Substring(0, 7);
+                
                 btnDelete.Visible = false;
                 btnUpdate.Visible = false;
             }
@@ -52,19 +55,50 @@ namespace LanguageCenterManage.Forms
             {
                 textBoxId.Text = course.Id;
                 textBoxName.Text = course.Name;
-                comboBoxLanguageId.Text = course.LanguageId;
                 textBoxLanguageName.Text = listLanguage.Where(x => x.Id == course.LanguageId).SingleOrDefault().Name;
                 descriptionBox.Text = course.Description;
                 comboBoxStatus.Text = course.Status;
                 DateStartPicker.Value = course.DateStart;
                 DateEndPicker.Value = course.DateEnd;
-                Bandtxt.Text = course.Band.ToString();
+
+                LoadLanguage();
+
+                LoadBand();
 
                 btnCreate.Visible = false;
 
             }
         }
-
+        private void LoadBand()
+        {
+            int currentBandIndex = 0;
+            int i = 0;
+            _db.Bands.Where(x => x.CourseTypeId == course.LanguageId).OrderBy(x => x.BandNumber).ToList().ForEach(x =>
+            {
+                if (x.BandNumber == Convert.ToDecimal(course.Band))
+                {
+                    currentBandIndex = i;
+                }
+                i++;
+                Bandtxt.Items.Add(x.BandNumber);
+            });
+            Bandtxt.SelectedItem = Bandtxt.Items[currentBandIndex];
+        }
+        private void LoadLanguage()
+        {
+            int currentLanguageIndex = 0;
+            int i = 0;
+            listLanguage.ForEach(x =>
+            {
+                if (x.Id == course.LanguageId)
+                {
+                    currentLanguageIndex = i;
+                }
+                i++;
+                comboBoxLanguageId.Items.Add(x.Id);
+            });
+            comboBoxLanguageId.SelectedItem = comboBoxLanguageId.Items[currentLanguageIndex];
+        }
         private void btnCreate_Click(object sender, EventArgs e)
         {
             var newCourse = new Course();
@@ -122,13 +156,27 @@ namespace LanguageCenterManage.Forms
 
         private void comboBoxLanguageId_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Bandtxt.Items.Clear();
             var languageId = comboBoxLanguageId.Text;
             string languageName = listLanguage.Where(x => x.Id == languageId).FirstOrDefault().Name;
             if (languageName != null)
             {
                 textBoxLanguageName.Text = languageName;
             }
+            _db.Bands.Where(x => x.CourseTypeId == languageId).OrderBy(x => x.BandNumber).ToList().ForEach(x =>
+            {
+                Bandtxt.Items.Add(x.BandNumber);
+            });
         }
 
+        private void Bandtxt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
