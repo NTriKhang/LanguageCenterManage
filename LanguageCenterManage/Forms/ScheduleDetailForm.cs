@@ -91,6 +91,7 @@ namespace LanguageCenterManage.Forms
                         TeacherId = TeacherCb.Text,
                         DateTime = dateTimePicker1.Value.Date,
                         Shift = Convert.ToInt32(shiftCb.Text),
+                        IsActive = true
                     };
                     _db.Schedules.Add(schedule);
                     _db.SaveChanges();
@@ -116,6 +117,7 @@ namespace LanguageCenterManage.Forms
                                 TeacherId = TeacherCb.Text,
                                 DateTime = date.Date,
                                 Shift = Convert.ToInt32(shiftCb.Text),
+                                IsActive = true
                             });
                         }
                     }
@@ -144,6 +146,7 @@ namespace LanguageCenterManage.Forms
             {
                 DeleteBtn.Visible = false;
                 UpdateBtn.Visible = false;
+                comboBox1.SelectedItem = comboBox1.Items[0];
             }
             else
             {
@@ -151,11 +154,16 @@ namespace LanguageCenterManage.Forms
                 singleRadio.Visible = false;
                 ListRadio.Visible = false;
                 btnAdd.Visible = false;
+                shiftCb.Enabled = false;
+                ShowRoomBtn.Visible = false;
+
                 dateTimePicker1.Value = _schedule.DateTime;
+                dateTimePicker1.Enabled = false;
+
                 shiftCb.Text = _schedule.Shift.ToString();
                 RoomIdTxt.Text = _schedule.RoomId;
                 roomNameTxt.Text = _db.Rooms.Where(x => x.Id == _schedule.RoomId).Select(x => x.Name).SingleOrDefault();
-                CourseNameTxt.Text = _db.Classes.Where(x => x.Id == _schedule.RoomId)
+                CourseNameTxt.Text = _db.Classes.Where(x => x.Id == _schedule.ClassId)
                                                 .Include(x => x.Course)
                                                 .Select(x => x.Course.Name)
                                                 .SingleOrDefault();
@@ -163,6 +171,10 @@ namespace LanguageCenterManage.Forms
                 TeacherCb.Text = _schedule.TeacherId;
                 TeacherNametxt.Text = _db.Teachers.Where(x => x.Id == _schedule.TeacherId)
                                                     .Select(x => x.FirstName + " " + x.LastName).SingleOrDefault();
+                if (_schedule.IsActive)
+                    comboBox1.SelectedItem = comboBox1.Items[0];
+                else
+                    comboBox1.SelectedItem = comboBox1.Items[1];
             }
         }
 
@@ -202,12 +214,11 @@ namespace LanguageCenterManage.Forms
         {
             if (isValid())
             {
-                _schedule.RoomId = RoomIdTxt.Text;
                 _schedule.ClassId = ClassIdCb.Text;
                 _schedule.TeacherId = TeacherCb.Text;
-                _schedule.DateTime = dateTimePicker1.Value.Date;
-                _schedule.Shift = Convert.ToInt32(shiftCb.Text);
+                _schedule.IsActive = (comboBox1.SelectedIndex == 0) ? true : false;
                 _db.SaveChanges();
+                MessageBox.Show("Update successfully");
                 Close();
             }
             else

@@ -56,6 +56,8 @@
             this.ListSection = new System.Windows.Forms.Panel();
             this.ListRadio = new MaterialSkin.Controls.MaterialRadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.ListSection.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -212,7 +214,7 @@
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Depth = 0;
             this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(47, 648);
+            this.btnAdd.Location = new System.Drawing.Point(43, 693);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Primary = true;
@@ -262,7 +264,7 @@
             this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DeleteBtn.Depth = 0;
             this.DeleteBtn.Icon = null;
-            this.DeleteBtn.Location = new System.Drawing.Point(660, 648);
+            this.DeleteBtn.Location = new System.Drawing.Point(656, 693);
             this.DeleteBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Primary = true;
@@ -279,7 +281,7 @@
             this.UpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UpdateBtn.Depth = 0;
             this.UpdateBtn.Icon = null;
-            this.UpdateBtn.Location = new System.Drawing.Point(763, 648);
+            this.UpdateBtn.Location = new System.Drawing.Point(759, 693);
             this.UpdateBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Primary = true;
@@ -388,7 +390,7 @@
             // 
             this.ListRadio.AutoSize = true;
             this.ListRadio.Depth = 0;
-            this.ListRadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ListRadio.Font = new System.Drawing.Font("Roboto", 10F);
             this.ListRadio.Location = new System.Drawing.Point(3, 50);
             this.ListRadio.Margin = new System.Windows.Forms.Padding(0);
             this.ListRadio.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -411,11 +413,38 @@
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.comboBox1.Location = new System.Drawing.Point(147, 632);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 30;
+            // 
+            // materialLabel9
+            // 
+            this.materialLabel9.AutoSize = true;
+            this.materialLabel9.Depth = 0;
+            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel9.Location = new System.Drawing.Point(43, 630);
+            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel9.Name = "materialLabel9";
+            this.materialLabel9.Size = new System.Drawing.Size(62, 24);
+            this.materialLabel9.TabIndex = 31;
+            this.materialLabel9.Text = "Active";
+            // 
             // ScheduleDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 766);
+            this.Controls.Add(this.materialLabel9);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ListSection);
             this.Controls.Add(this.shiftCb);
@@ -480,5 +509,7 @@
         private System.Windows.Forms.Panel ListSection;
         private MaterialSkin.Controls.MaterialRadioButton ListRadio;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel9;
     }
 }
