@@ -55,6 +55,7 @@ namespace LanguageCenterManage.Controls
             languageBindingSource.DataSource = null;
             ListCourseType = _db.CourseType.ToList();
             languageBindingSource.DataSource = ListCourseType;
+            dataGridView1.DataSource = languageBindingSource;
         }
 
         private void btnNew_Click_1(object sender, EventArgs e)
@@ -76,7 +77,9 @@ namespace LanguageCenterManage.Controls
                     .Where(x => x.Id.Contains(stringSearch) ||
                                 x.Name.Contains(stringSearch))
                     .ToList();
+                languageBindingSource.DataSource = ListCourseType;
                 dataGridView1.DataSource = ListCourseType;
+                
             }
             else
             {
@@ -92,6 +95,7 @@ namespace LanguageCenterManage.Controls
                 ListCourseType = ListCourseType.OrderBy(x => x.GetType()
                                          .GetProperty(value)
                                          .GetValue(x, null)).ToList();
+                languageBindingSource.DataSource = ListCourseType;
                 dataGridView1.DataSource = ListCourseType;
             }
             else

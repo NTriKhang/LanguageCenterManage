@@ -80,7 +80,7 @@ namespace LanguageCenterManage
             stu.Birth = dtBirth.Value;
             stu.Phone = txtPhone.Text;
             stu.Address = addressTextBox.Text;
-            stu.ImagePath = ImageNameTxt.Text;
+            stu.ImagePath = (ImageNameTxt.Text == string.Empty) ? null : ImageNameTxt.Text;
             if (ImageNameTxt.Text.Length > 0)
             {
                 var resourePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", "ProfileImage");
@@ -136,11 +136,6 @@ namespace LanguageCenterManage
                 MessageBox.Show("Update successfully", "Course have updated to db", MessageBoxButtons.OK);
                 Close();
             }
-        }
-
-        private void StudentDetailForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
         }
 
         private void StudentDetailForm_Load(object sender, EventArgs e)

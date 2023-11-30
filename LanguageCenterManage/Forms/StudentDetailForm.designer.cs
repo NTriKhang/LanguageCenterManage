@@ -351,7 +351,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DetailStudent";
             this.TopMost = true;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StudentDetailForm_FormClosed);
             this.Load += new System.EventHandler(this.StudentDetailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profileImageBox)).EndInit();
             this.ResumeLayout(false);

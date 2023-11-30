@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,17 +17,21 @@ namespace LanguageCenterManage.Controls
 {
     public partial class RoomControl : UserControl
     {
-        AppDbContext db = new AppDbContext();
+        AppDbContext db;
         List<Room> ListRoom;
         public RoomControl()
         {
             InitializeComponent();
             ListRoom = new List<Room>();
+
+            dataGridView1.DataSource = roomBindingSource;
         }
         void LoadRoom()
         {
-            ListRoom = db.Rooms.AsNoTracking().ToList();
+            db = new AppDbContext();
+            ListRoom = db.Rooms.ToList();
             roomBindingSource.DataSource = ListRoom;
+            dataGridView1.DataSource = roomBindingSource;
         }
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
@@ -35,6 +40,7 @@ namespace LanguageCenterManage.Controls
         private void RoomDetailForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             LoadRoom();
+            Debug.WriteLine("refresh");
             dataGridView1.Refresh();
         }
         private void RoomControl_Load(object sender, EventArgs e)

@@ -12,15 +12,18 @@ using System.Windows.Forms;
 using LanguageCenterManage.Controls;
 using LanguageCenterManage.DTO;
 using System.Data.SqlTypes;
+using System.Diagnostics;
 
 namespace LanguageCenterManage.Controls
 {
     public partial class StudentControl : UserControl
     {
-        AppDbContext db = new AppDbContext();
+        AppDbContext db;
         List<StudentDTO> ListStudent;
         public StudentControl()
         {
+            db = new AppDbContext();
+
             InitializeComponent();
             ListStudent = new List<StudentDTO>();
         }
@@ -38,6 +41,7 @@ namespace LanguageCenterManage.Controls
         }
         private void LoadStudentLoad()
         {
+            studentDTOBindingSource.DataSource = null;
             ListStudent = db.Students.Select(m => new StudentDTO
             {
                 Id = m.Id,
@@ -45,6 +49,7 @@ namespace LanguageCenterManage.Controls
                 LastName = m.LastName,
                 Birth = m.Birth,
             }).ToList();
+            Debug.WriteLine(ListStudent[0].Birth);
             studentDTOBindingSource.DataSource = ListStudent;
         }
         private void StudentDetailForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -123,6 +128,11 @@ namespace LanguageCenterManage.Controls
         private void Sort_Combobox_SelectedIndexChanged(object sender, EventArgs e)
         {
             SortDG(Sort_Combobox.SelectedItem.ToString());
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

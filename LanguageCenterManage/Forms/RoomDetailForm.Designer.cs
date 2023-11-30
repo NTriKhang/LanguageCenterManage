@@ -39,6 +39,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.AutoSize = true;
             this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Depth = 0;
@@ -47,7 +48,7 @@
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Primary = true;
-            this.btnAdd.Size = new System.Drawing.Size(95, 44);
+            this.btnAdd.Size = new System.Drawing.Size(56, 36);
             this.btnAdd.TabIndex = 25;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -132,7 +133,6 @@
             this.Controls.Add(this.txtRoomId);
             this.Name = "RoomDetailForm";
             this.Text = "RoomDetail";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RoomDetailForm_FormClosed);
             this.Load += new System.EventHandler(this.RoomDetailForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

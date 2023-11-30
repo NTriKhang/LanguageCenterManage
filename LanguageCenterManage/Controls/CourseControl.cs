@@ -59,6 +59,7 @@ namespace LanguageCenterManage.Controls
                     .ToList();
 
             courseDTOBindingSource.DataSource = ListCourse;
+            dataGridView1.DataSource = courseDTOBindingSource;
         }
         private void btnNew_Click(object sender, EventArgs e)
         {
@@ -104,6 +105,7 @@ namespace LanguageCenterManage.Controls
                     .Where(x => x.Id.Contains(stringSearch) || x.Name.Contains(stringSearch))
                     .ToList();
                 courseDTOBindingSource.DataSource = ListCourse;
+                dataGridView1.DataSource = courseDTOBindingSource;
             }
             else
             {
@@ -120,6 +122,7 @@ namespace LanguageCenterManage.Controls
                                          .GetProperty(value)
                                          .GetValue(x, null)).ToList();
                 courseDTOBindingSource.DataSource = ListCourse;
+                dataGridView1.DataSource = courseDTOBindingSource;
             }
             else
             {
