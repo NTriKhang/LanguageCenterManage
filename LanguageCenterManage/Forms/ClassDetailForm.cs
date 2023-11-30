@@ -49,7 +49,7 @@ namespace LanguageCenterManage.Forms
                 Idtextbox.Text = _class.Id;
                 quanlityTextbox.Text = _class.Quantity.ToString();
                 CourseIdCB.Text = _class.CourseId;
-                CourseName.Text = _courses.Where(x => x.Id == _class.CourseId).Select(x => x.Name).SingleOrDefault();
+                CourseName.Text = _db.Courses.Where(x => x.Id == _class.CourseId).Select(x => x.Name).SingleOrDefault();
             }
         }
 
