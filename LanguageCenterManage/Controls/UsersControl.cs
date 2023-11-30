@@ -49,9 +49,19 @@ namespace LanguageCenterManage.Controls
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            UserDetailForm userDetailForm = new UserDetailForm();
-            userDetailForm.FormClosed += UserDetailForm_FormClosed;
-            userDetailForm.ShowDialog();
+            string RoleName = _db.Users
+                .Where(m => m.Id == USER.UserId)
+                .Select(m => m.Role.Name).FirstOrDefault();
+            if (RoleName != utility.Admin)
+            {
+                MessageBox.Show("Bạn không có quyền", "409");
+            }
+            else
+            {
+                UserDetailForm userDetailForm = new UserDetailForm();
+                userDetailForm.FormClosed += UserDetailForm_FormClosed;
+                userDetailForm.ShowDialog();
+            }
         }
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

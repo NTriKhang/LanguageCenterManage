@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -48,7 +49,7 @@ namespace LanguageCenterManage.Forms
 
         private void UserDetailForm_Load(object sender, EventArgs e)
         {
-            roleIdCb.Items.AddRange(_roles.Select(x => x.Id).ToArray());
+            roleIdCb.Items.AddRange(_roles.Where(x => x.Name != utility.Admin).Select(x => x.Id).ToArray());
             if (_user == null)
             {
                 updateBtn.Visible = false;
@@ -82,6 +83,13 @@ namespace LanguageCenterManage.Forms
                 else
                 {
                     profileImageBox.ImageLocation = Path.Combine(resourePath, "UserNoImage", "UserNoImage.jpg");
+                }
+                string RoleName = _db.Users
+                .Where(m => m.Id == USER.UserId) 
+                .Select(m => m.Role.Name).FirstOrDefault();
+                if (RoleName != utility.Admin)
+                {
+                    roleIdCb.Enabled = false;
                 }
             }
         }

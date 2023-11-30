@@ -569,6 +569,7 @@
   <ItemGroup>
     <None Include="Resources\language.png" />
     <None Include="Resources\group.png" />
+    <None Include="Resources\logout.png" />
     <Content Include="Resources\ProfileImage\UserNoImage\UserNoImage.jpg" />
   </ItemGroup>
   <ItemGroup />

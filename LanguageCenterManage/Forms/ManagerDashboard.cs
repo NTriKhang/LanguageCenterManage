@@ -66,5 +66,21 @@ namespace LanguageCenterManage
             StatisticControl statisticsControl = new StatisticControl();
             showControl(statisticsControl);
         }
+        private void btnSwitchDashboard_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if(this.MdiParent is MDIParent1 mdiForm)
+            {
+                mdiForm.CloseActiveChildForm();
+            }
+        }
+
+        private void btnLogout_Click_1(object sender, EventArgs e)
+        {
+        }
     }
 }
