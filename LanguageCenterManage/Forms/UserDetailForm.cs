@@ -134,7 +134,7 @@ namespace LanguageCenterManage.Forms
                     Phone = txtPhone.Text,
                     PasswordHash = BCrypt.Net.BCrypt.HashPassword(passwordTb.Text),
                     RoleId = roleIdCb.Text,
-                    ImagePath = ImageNameTxt.Text
+                    ImagePath = (ImageNameTxt.Text == string.Empty) ? null : ImageNameTxt.Text,
                 };
                 if (ImageNameTxt.Text.Length > 0)
                 {

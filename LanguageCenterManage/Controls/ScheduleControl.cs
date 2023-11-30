@@ -133,6 +133,7 @@ namespace LanguageCenterManage.Controls
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             var schedule = (scheduleDTOBindingSource.DataSource as List<ScheduleDTO>).ElementAt(e.RowIndex);
+            Debug.WriteLine(schedule.RoomId);
             ScheduleDetailForm scheduleDetailForm = new ScheduleDetailForm(schedule.RoomId, schedule.DateTime, schedule.Shift);
             scheduleDetailForm.FormClosed += scheduleDetailForm_Closed;
 
@@ -177,7 +178,8 @@ namespace LanguageCenterManage.Controls
                 ListSchedule = ListSchedule.OrderBy(x => x.GetType()
                                          .GetProperty(value)
                                          .GetValue(x, null)).ToList();
-                dataGridView1.DataSource = ListSchedule;
+                scheduleDTOBindingSource.DataSource = ListSchedule;
+                dataGridView1.DataSource = scheduleDTOBindingSource;
             }
             else
             {
