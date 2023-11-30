@@ -34,6 +34,7 @@ namespace LanguageCenterManage.Controls
                 Phone = x.Phone,
             }).ToList();
             userDTOBindingSource.DataSource = ListUser;
+            dataGridView1.DataSource = userDTOBindingSource;
         }
         private void UsersControl_Load(object sender, EventArgs e)
         {
@@ -80,6 +81,7 @@ namespace LanguageCenterManage.Controls
                 })
                 .ToList();
                 userDTOBindingSource.DataSource = ListUser;
+                dataGridView1.DataSource = userDTOBindingSource;
                 SortDG(Sort_Combobox.SelectedItem.ToString());
             }
             else
@@ -95,7 +97,8 @@ namespace LanguageCenterManage.Controls
                 ListUser = ListUser.OrderBy(x => x.GetType()
                                                   .GetProperty(value)
                                                   .GetValue(x, null)).ToList();
-                dataGridView1.DataSource = ListUser;
+                userDTOBindingSource.DataSource = ListUser;
+                dataGridView1.DataSource = userDTOBindingSource;
             }
             else
             {

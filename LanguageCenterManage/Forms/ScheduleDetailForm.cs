@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,8 +28,9 @@ namespace LanguageCenterManage.Forms
         public ScheduleDetailForm(string roomId, DateTime date, int shift)
         {
             _db = new AppDbContext();
+            Debug.WriteLine(roomId);
             _schedule = _db.Schedules.Where(x => x.RoomId == roomId && x.DateTime == date && x.Shift == shift).FirstOrDefault();
-
+            Debug.WriteLine(_schedule.RoomId);
             InitializeComponent();
         }
 

@@ -74,10 +74,6 @@ namespace LanguageCenterManage.Forms
             db.Rooms.Remove(room);
             db.SaveChanges();
         }
-        private void RoomDetailForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
-        }
         private void RoomDetailForm_Load(object sender, EventArgs e)
         {
             showRoom();
