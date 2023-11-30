@@ -12,17 +12,20 @@ using System.Windows.Forms;
 using LanguageCenterManage.Controls;
 using LanguageCenterManage.DTO;
 using System.Data.SqlTypes;
+using System.Data.Entity;
 
 namespace LanguageCenterManage.Controls
 {
     public partial class StudentControl : UserControl
     {
-        AppDbContext db = new AppDbContext();
+        AppDbContext db;
         List<StudentDTO> ListStudent;
         public StudentControl()
         {
             InitializeComponent();
             ListStudent = new List<StudentDTO>();
+
+            dataGridView1.DataSource = studentDTOBindingSource;
         }
         private void txtSearch_Click(object sender, EventArgs e)
         {
@@ -38,6 +41,8 @@ namespace LanguageCenterManage.Controls
         }
         private void LoadStudentLoad()
         {
+            dataGridView1.DataSource = studentDTOBindingSource;
+            db = new AppDbContext();
             ListStudent = db.Students.Select(m => new StudentDTO
             {
                 Id = m.Id,
@@ -93,7 +98,8 @@ namespace LanguageCenterManage.Controls
                     x.LastName.Contains(searchString) ||
                     x.FirstName.Contains(searchString)
                 ).ToList();
-                dataGridView1.DataSource = ListStudent;
+                studentDTOBindingSource.DataSource = ListStudent;
+                dataGridView1.DataSource = studentDTOBindingSource;
             }
             else
             {
@@ -112,7 +118,8 @@ namespace LanguageCenterManage.Controls
                 ListStudent = ListStudent.OrderBy(x => x.GetType()
                                          .GetProperty(value)
                                          .GetValue(x, null)).ToList();
-                dataGridView1.DataSource = ListStudent;
+                studentDTOBindingSource.DataSource = ListStudent;
+                dataGridView1.DataSource = studentDTOBindingSource;
             }
             else
             {

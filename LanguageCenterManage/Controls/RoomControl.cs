@@ -16,17 +16,21 @@ namespace LanguageCenterManage.Controls
 {
     public partial class RoomControl : UserControl
     {
-        AppDbContext db = new AppDbContext();
+        AppDbContext db;
         List<Room> ListRoom;
         public RoomControl()
         {
             InitializeComponent();
             ListRoom = new List<Room>();
+
+            dataGridView1.DataSource = roomBindingSource;
         }
         void LoadRoom()
         {
-            ListRoom = db.Rooms.AsNoTracking().ToList();
+            db = new AppDbContext();
+            ListRoom = db.Rooms.ToList();
             roomBindingSource.DataSource = ListRoom;
+            dataGridView1.DataSource = roomBindingSource;
         }
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
@@ -67,7 +71,8 @@ namespace LanguageCenterManage.Controls
                     x => x.Id.Contains(searchString) ||
                     x.Name.Contains(searchString)
                 ).ToList();
-                dataGridView1.DataSource = ListRoom;
+                roomBindingSource.DataSource = ListRoom;
+                dataGridView1.DataSource = roomBindingSource;
             }
             else
             {
@@ -83,7 +88,8 @@ namespace LanguageCenterManage.Controls
                 ListRoom = ListRoom.OrderBy(x => x.GetType()
                                          .GetProperty(value)
                                          .GetValue(x, null)).ToList();
-                dataGridView1.DataSource = ListRoom;
+                roomBindingSource.DataSource = ListRoom;
+                dataGridView1.DataSource = roomBindingSource;
             }
             else
             {

@@ -138,11 +138,6 @@ namespace LanguageCenterManage
             }
         }
 
-        private void StudentDetailForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
-        }
-
         private void StudentDetailForm_Load(object sender, EventArgs e)
         {
             ShowStudent();
