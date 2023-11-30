@@ -13,5 +13,6 @@ namespace LanguageCenterManage.DTO
         public DateTime DateTime { get; set; }
         public string CourseName { get; set; }
         public int Shift { get; set; }
+        public bool IsActive { get; set; }
     }
 }

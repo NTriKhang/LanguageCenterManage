@@ -26,6 +26,7 @@ namespace LanguageCenterManage.Models
         public string ClassId { set; get; }
         [ForeignKey(nameof(ClassId))]
         public Class Class { get; set; }
+        public bool IsActive { set; get; } = true;
 
     }
 }
