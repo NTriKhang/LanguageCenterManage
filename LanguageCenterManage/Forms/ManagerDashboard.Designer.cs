@@ -34,45 +34,53 @@ namespace LanguageCenterManage
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.iconLogout = new System.Windows.Forms.PictureBox();
+            this.btnLogout = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnSchedule = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnSwitchDashboard = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnStudentStatistics = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btnCourse = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnLanguage = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnClass = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.userBtn = new MaterialSkin.Controls.MaterialFlatButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.userBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.Navbar.SuspendLayout();
             this.Sidebar.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconLogout)).BeginInit();
             this.panel8.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,6 +115,7 @@ namespace LanguageCenterManage
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.panel8, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
@@ -130,6 +139,47 @@ namespace LanguageCenterManage
             this.tableLayoutPanel1.Size = new System.Drawing.Size(350, 707);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.iconLogout);
+            this.panel7.Controls.Add(this.btnLogout);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(3, 632);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(344, 72);
+            this.panel7.TabIndex = 8;
+            // 
+            // iconLogout
+            // 
+            this.iconLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconLogout.Image = global::LanguageCenterManage.Properties.Resources.logout;
+            this.iconLogout.Location = new System.Drawing.Point(39, 13);
+            this.iconLogout.Name = "iconLogout";
+            this.iconLogout.Size = new System.Drawing.Size(43, 45);
+            this.iconLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconLogout.TabIndex = 4;
+            this.iconLogout.TabStop = false;
+            this.iconLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.AutoSize = true;
+            this.btnLogout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLogout.Depth = 0;
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Icon = null;
+            this.btnLogout.Location = new System.Drawing.Point(0, 0);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnLogout.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Primary = false;
+            this.btnLogout.Size = new System.Drawing.Size(344, 72);
+            this.btnLogout.TabIndex = 7;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.pictureBox3);
@@ -139,6 +189,18 @@ namespace LanguageCenterManage
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(344, 67);
             this.panel8.TabIndex = 3;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = global::LanguageCenterManage.Properties.Resources.calendar;
+            this.pictureBox3.Location = new System.Drawing.Point(42, 8);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(48, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // btnSchedule
             // 
@@ -160,6 +222,7 @@ namespace LanguageCenterManage
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -167,6 +230,41 @@ namespace LanguageCenterManage
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(344, 185);
             this.panel2.TabIndex = 3;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btnSwitchDashboard);
+            this.panel5.Location = new System.Drawing.Point(192, 60);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(139, 72);
+            this.panel5.TabIndex = 0;
+            // 
+            // btnSwitchDashboard
+            // 
+            this.btnSwitchDashboard.AutoSize = true;
+            this.btnSwitchDashboard.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSwitchDashboard.Depth = 0;
+            this.btnSwitchDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSwitchDashboard.Icon = null;
+            this.btnSwitchDashboard.Location = new System.Drawing.Point(0, 0);
+            this.btnSwitchDashboard.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSwitchDashboard.Name = "btnSwitchDashboard";
+            this.btnSwitchDashboard.Primary = true;
+            this.btnSwitchDashboard.Size = new System.Drawing.Size(139, 72);
+            this.btnSwitchDashboard.TabIndex = 3;
+            this.btnSwitchDashboard.Text = "Employee Dashboard";
+            this.btnSwitchDashboard.UseVisualStyleBackColor = true;
+            this.btnSwitchDashboard.Click += new System.EventHandler(this.btnSwitchDashboard_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LanguageCenterManage.Properties.Resources.unauthorized_person;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(153, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label5
             // 
@@ -185,6 +283,17 @@ namespace LanguageCenterManage
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(344, 67);
             this.panel3.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::LanguageCenterManage.Properties.Resources.statistics;
+            this.pictureBox2.Location = new System.Drawing.Point(42, 8);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 49);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // btnStudentStatistics
             // 
@@ -213,6 +322,17 @@ namespace LanguageCenterManage
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(344, 67);
             this.panel6.TabIndex = 3;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox7.Image = global::LanguageCenterManage.Properties.Resources.course;
+            this.pictureBox7.Location = new System.Drawing.Point(42, 7);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(62, 48);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 2;
+            this.pictureBox7.TabStop = false;
             // 
             // btnCourse
             // 
@@ -243,6 +363,17 @@ namespace LanguageCenterManage
             this.panel9.Size = new System.Drawing.Size(344, 67);
             this.panel9.TabIndex = 4;
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.Image = global::LanguageCenterManage.Properties.Resources.language;
+            this.pictureBox6.Location = new System.Drawing.Point(42, 9);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(51, 46);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 4;
+            this.pictureBox6.TabStop = false;
+            // 
             // btnLanguage
             // 
             this.btnLanguage.AutoSize = true;
@@ -270,6 +401,17 @@ namespace LanguageCenterManage
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(344, 67);
             this.panel10.TabIndex = 5;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Image = global::LanguageCenterManage.Properties.Resources._class;
+            this.pictureBox4.Location = new System.Drawing.Point(39, 9);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(51, 46);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
             // 
             // btnClass
             // 
@@ -299,6 +441,17 @@ namespace LanguageCenterManage
             this.panel11.Size = new System.Drawing.Size(344, 67);
             this.panel11.TabIndex = 6;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.Image = global::LanguageCenterManage.Properties.Resources.group;
+            this.pictureBox5.Location = new System.Drawing.Point(39, 10);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(51, 46);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
+            // 
             // userBtn
             // 
             this.userBtn.AutoSize = true;
@@ -317,83 +470,6 @@ namespace LanguageCenterManage
             this.userBtn.UseVisualStyleBackColor = true;
             this.userBtn.Click += new System.EventHandler(this.userBtn_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = global::LanguageCenterManage.Properties.Resources.calendar;
-            this.pictureBox3.Location = new System.Drawing.Point(42, 8);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(48, 44);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LanguageCenterManage.Properties.Resources.unauthorized_person;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(153, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::LanguageCenterManage.Properties.Resources.statistics;
-            this.pictureBox2.Location = new System.Drawing.Point(42, 8);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 49);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox7.Image = global::LanguageCenterManage.Properties.Resources.course;
-            this.pictureBox7.Location = new System.Drawing.Point(42, 7);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(62, 48);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 2;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.Image = global::LanguageCenterManage.Properties.Resources.language;
-            this.pictureBox6.Location = new System.Drawing.Point(42, 9);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(51, 46);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = global::LanguageCenterManage.Properties.Resources._class;
-            this.pictureBox4.Location = new System.Drawing.Point(39, 9);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(51, 46);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.Image = global::LanguageCenterManage.Properties.Resources.group;
-            this.pictureBox5.Location = new System.Drawing.Point(39, 10);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(51, 46);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
-            // 
             // ManagerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -407,25 +483,30 @@ namespace LanguageCenterManage
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconLogout)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
@@ -456,5 +537,10 @@ namespace LanguageCenterManage
         private MaterialFlatButton userBtn;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
+        private Panel panel5;
+        private MaterialRaisedButton btnSwitchDashboard;
+        private PictureBox iconLogout;
+        private Panel panel7;
+        private MaterialFlatButton btnLogout;
     }
 }

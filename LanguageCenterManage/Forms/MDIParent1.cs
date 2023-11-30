@@ -104,7 +104,16 @@ namespace LanguageCenterManage
                 childForm.Close();
             }
         }
-
+        public void CloseActiveChildForm()
+        {
+            foreach(Form childForm in this.MdiChildren)
+            {
+                if(childForm is EmployeeDashboard || childForm is ManagerDashboard)
+                {
+                    childForm.Close();
+                }
+            }
+        }
         private void MDIParent1_Load(object sender, EventArgs e)
         {
             LoginForm dbd = new LoginForm();

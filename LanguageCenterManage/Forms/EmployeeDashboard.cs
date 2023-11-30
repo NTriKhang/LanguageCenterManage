@@ -52,7 +52,10 @@ namespace LanguageCenterManage
             string RoleIdManager = dbContext.Roles
                 .Where(m => m.Name == utility.Manager)
                 .Select(m => m.Id).FirstOrDefault();
-            if(RoleIdUser == RoleIdManager)
+            string RoleIdAdmin = dbContext.Roles
+                .Where(m => m.Name == utility.Admin)
+                .Select(m => m.Id).FirstOrDefault();
+            if (RoleIdUser == RoleIdManager || RoleIdUser == RoleIdAdmin)
             {
                 ManagerDashboard MDashboard = new ManagerDashboard();
                 MDashboard.Show();
@@ -92,6 +95,16 @@ namespace LanguageCenterManage
         {
             ScheduleEmployeeControl scheduleControl = new ScheduleEmployeeControl();
             showControl(scheduleControl);
+        }
+
+        private void EmployeeDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+           Close(); 
         }
     }
 }
