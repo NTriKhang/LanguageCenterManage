@@ -69,7 +69,7 @@ namespace LanguageCenterManage.Forms
             teacher.Birth = dtBirth.Value;
             teacher.Address = txtAddress.Text;
             teacher.Phone = txtPhone.Text;
-            teacher.ImagePath = ImageNameTxt.Text;
+            teacher.ImagePath = (ImageNameTxt.Text == string.Empty) ? null : ImageNameTxt.Text;
             if (ImageNameTxt.Text.Length > 0)
             {
                 var resourePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", "ProfileImage");

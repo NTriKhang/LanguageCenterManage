@@ -62,6 +62,7 @@ namespace LanguageCenterManage.Controls
                 })
                 .ToList();
                 classDTOBindingSource.DataSource = ListClass;
+                dataGridView1.DataSource = classDTOBindingSource;
             }
             else
             {
@@ -79,6 +80,7 @@ namespace LanguageCenterManage.Controls
                                          .GetProperty(value)
                                          .GetValue(x, null)).ToList();
                 classDTOBindingSource.DataSource = ListClass;
+                dataGridView1.DataSource = classDTOBindingSource;
             }
             else
             {

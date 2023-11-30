@@ -73,7 +73,8 @@ namespace LanguageCenterManage.Controls
                     x => x.Id.Contains(searchString) ||
                     x.Name.Contains(searchString)
                 ).ToList();
-                dataGridView1.DataSource = ListRoom;
+                roomBindingSource.DataSource = ListRoom;
+                dataGridView1.DataSource = roomBindingSource;
             }
             else
             {
@@ -89,7 +90,8 @@ namespace LanguageCenterManage.Controls
                 ListRoom = ListRoom.OrderBy(x => x.GetType()
                                          .GetProperty(value)
                                          .GetValue(x, null)).ToList();
-                dataGridView1.DataSource = ListRoom;
+                roomBindingSource.DataSource = ListRoom;
+                dataGridView1.DataSource = roomBindingSource;
             }
             else
             {

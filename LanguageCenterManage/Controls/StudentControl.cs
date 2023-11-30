@@ -12,7 +12,11 @@ using System.Windows.Forms;
 using LanguageCenterManage.Controls;
 using LanguageCenterManage.DTO;
 using System.Data.SqlTypes;
+
+using System.Data.Entity;
+
 using System.Diagnostics;
+
 
 namespace LanguageCenterManage.Controls
 {
@@ -26,6 +30,8 @@ namespace LanguageCenterManage.Controls
 
             InitializeComponent();
             ListStudent = new List<StudentDTO>();
+
+            dataGridView1.DataSource = studentDTOBindingSource;
         }
         private void txtSearch_Click(object sender, EventArgs e)
         {
@@ -41,6 +47,7 @@ namespace LanguageCenterManage.Controls
         }
         private void LoadStudentLoad()
         {
+            db = new AppDbContext();
             studentDTOBindingSource.DataSource = null;
             ListStudent = db.Students.Select(m => new StudentDTO
             {
@@ -51,6 +58,7 @@ namespace LanguageCenterManage.Controls
             }).ToList();
             Debug.WriteLine(ListStudent[0].Birth);
             studentDTOBindingSource.DataSource = ListStudent;
+            dataGridView1.DataSource = studentDTOBindingSource;
         }
         private void StudentDetailForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -98,7 +106,8 @@ namespace LanguageCenterManage.Controls
                     x.LastName.Contains(searchString) ||
                     x.FirstName.Contains(searchString)
                 ).ToList();
-                dataGridView1.DataSource = ListStudent;
+                studentDTOBindingSource.DataSource = ListStudent;
+                dataGridView1.DataSource = studentDTOBindingSource;
             }
             else
             {
@@ -117,7 +126,8 @@ namespace LanguageCenterManage.Controls
                 ListStudent = ListStudent.OrderBy(x => x.GetType()
                                          .GetProperty(value)
                                          .GetValue(x, null)).ToList();
-                dataGridView1.DataSource = ListStudent;
+                studentDTOBindingSource.DataSource = ListStudent;
+                dataGridView1.DataSource = studentDTOBindingSource;
             }
             else
             {

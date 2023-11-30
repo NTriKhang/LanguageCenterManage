@@ -21,9 +21,12 @@ namespace LanguageCenterManage.Controls
         {
             InitializeComponent();
             ListTeacher= new List<TeacherDTO>();
+
+            dataGridView1.DataSource = teacherDTOBindingSource;
         }
         void LoadTeacher()
         {
+            dataGridView1.DataSource = teacherDTOBindingSource;
             ListTeacher = db.Teachers.Select(m => new TeacherDTO
             {
                 Id = m.Id,
@@ -31,7 +34,7 @@ namespace LanguageCenterManage.Controls
                 LastName = m.LastName,
                 Birth = m.Birth,
             }).ToList();
-            teacherDTOBindingSource.DataSource = ListTeacher;
+            dataGridView1.DataSource = ListTeacher;
         }
 
         private void TeacherControl_Load(object sender, EventArgs e)
@@ -82,7 +85,8 @@ namespace LanguageCenterManage.Controls
                     x => x.Id.Contains(searchString) ||
                     x.LastName.Contains(searchString)
                 ).ToList();
-                dataGridView1.DataSource = ListTeacher;
+                teacherDTOBindingSource.DataSource = ListTeacher;
+                dataGridView1.DataSource = teacherDTOBindingSource;
             }
             else
             {
@@ -98,7 +102,8 @@ namespace LanguageCenterManage.Controls
                 ListTeacher = ListTeacher.OrderBy(x => x.GetType()
                                                         .GetProperty(value)
                                                         .GetValue(x, null)).ToList();
-                dataGridView1.DataSource = ListTeacher;
+                teacherDTOBindingSource.DataSource = ListTeacher;
+                dataGridView1.DataSource = teacherDTOBindingSource;
             }
             else
             {

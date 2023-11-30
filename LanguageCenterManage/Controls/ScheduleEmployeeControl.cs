@@ -126,6 +126,7 @@ namespace LanguageCenterManage.Controls
                     x.CourseName.Contains(searchString)
                 ).ToList();
                 scheduleDTOBindingSource.DataSource = ListSchedule;
+                dataGridView1.DataSource = scheduleDTOBindingSource;
             }
             else
             {
@@ -159,7 +160,8 @@ namespace LanguageCenterManage.Controls
                 ListSchedule = ListSchedule.OrderBy(x => x.GetType()
                                          .GetProperty(value)
                                          .GetValue(x, null)).ToList();
-                dataGridView1.DataSource = ListSchedule;
+                scheduleDTOBindingSource.DataSource = ListSchedule;
+                dataGridView1.DataSource = scheduleDTOBindingSource;
             }
             else
             {
