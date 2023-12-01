@@ -109,16 +109,17 @@ namespace LanguageCenterManage.Forms
             
             if (box == DialogResult.Yes)
             {
-                if (!_db.Schedules.Any(x => x.ClassId == _class.Id))
+                if (_db.Schedules.Any(x => x.ClassId == _class.Id) || _db.Joins.Any(x => x.ClassId == x.ClassId))
+                {
+                    MessageBox.Show("Conflict foreign key !", "Error");
+                    return;
+
+                }
+                else
                 {
                     _db.Classes.Remove(_class);
                     _db.SaveChanges();
                     Close();
-                }
-                else
-                {
-                    MessageBox.Show("Schedule exists !", "Error");
-                    return;
                 }
             }
         }
