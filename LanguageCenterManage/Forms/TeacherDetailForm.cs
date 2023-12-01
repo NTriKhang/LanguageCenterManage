@@ -153,9 +153,17 @@ namespace LanguageCenterManage.Forms
                 MessageBoxButtons.YesNo);
             if(dr == DialogResult.Yes)
             {
-                db.Teachers.Remove(teacher);
-                db.SaveChanges();
-                Close();
+                if(!db.Schedules.Any(x => x.TeacherId == Id))
+                {
+                    db.Teachers.Remove(teacher);
+                    db.SaveChanges();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Shedule exists", "error");
+                    return;
+                }
             }
         }
 

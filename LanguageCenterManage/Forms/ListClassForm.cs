@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,12 +49,23 @@ namespace LanguageCenterManage.Forms
         {
             var selectId = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             ClassId = selectId;
-            Close();
+            var quantity = db.Joins
+                             .Include(nameof(Join.Class))
+                             .Where(x => x.ClassId == ClassId)
+                             .Select(x => x.Class.Quantity)
+                             .FirstOrDefault();
+            if(quantity >= 40)
+            {
+                MessageBox.Show("The number of classes is enough", "error");
+                return;
+            }
+            else
+                Close();
         }
 
         private void ListClassForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-         
+
         }
     }
 }

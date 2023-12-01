@@ -197,9 +197,17 @@ namespace LanguageCenterManage.Forms
                 MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
-                _db.Users.Remove(_user);
-                _db.SaveChanges();
-                Close();
+                if(!_db.Bills.Any(x => x.UserConfirmId == _user.Id))
+                {
+                    _db.Users.Remove(_user);
+                    _db.SaveChanges();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Conflict bill");
+                    return;
+                }
             }
         }
         private string ImageLocation = "";

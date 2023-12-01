@@ -54,6 +54,7 @@ namespace LanguageCenterManage.Forms
                // checkBoxTuiTion.Checked = join.TuiTionState;
 
                 btnAdd.Visible = false;
+                btnShowListClass.Visible = false;
             }
             else
             {
@@ -116,17 +117,24 @@ namespace LanguageCenterManage.Forms
         }
         private void btnShowListClass_Click(object sender, EventArgs e)
         {
-            ListClassForm listJoinForm = new ListClassForm();
-            listJoinForm.TopMost = true;
-            listJoinForm.StudentId = txtStudentId.Text;
-            listJoinForm.ShowDialog();
-            if(listJoinForm.ClassId != null)
+            try
             {
-                txtClassId.Text = listJoinForm.ClassId;
+                ListClassForm listJoinForm = new ListClassForm();
+                listJoinForm.TopMost = true;
+                listJoinForm.StudentId = txtStudentId.Text;
+                listJoinForm.ShowDialog();
+                if (listJoinForm.ClassId != null)
+                {
+                    txtClassId.Text = listJoinForm.ClassId;
+                }
+                else
+                {
+                    txtClassId.Text = join.ClassId;
+                }
             }
-            else
+            catch
             {
-                txtClassId.Text = join.ClassId;
+                Close();
             }
         }
 

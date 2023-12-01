@@ -159,16 +159,24 @@ namespace LanguageCenterManage
                 MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                if (student.ImagePath != null)
+                if (!db.Joins.Any(x => x.StudentId == Id))
                 {
-                    var resourePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", "ProfileImage");
-                    var imagePath = Path.Combine(resourePath, student.ImagePath);
-                    if (File.Exists(imagePath))
-                        File.Delete(imagePath);
+                    if (student.ImagePath != null)
+                    {
+                        var resourePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", "ProfileImage");
+                        var imagePath = Path.Combine(resourePath, student.ImagePath);
+                        if (File.Exists(imagePath))
+                            File.Delete(imagePath);
+                    }
+                    db.Students.Remove(student);
+                    db.SaveChanges();
+                    Close();
                 }
-                db.Students.Remove(student);
-                db.SaveChanges();
-                Close();
+                else
+                {
+                    MessageBox.Show("students are jointing in the course", "Error");
+                    return;
+                }
             }
         }
 
