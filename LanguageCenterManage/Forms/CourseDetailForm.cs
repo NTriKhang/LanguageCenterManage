@@ -111,10 +111,18 @@ namespace LanguageCenterManage.Forms
             newCourse.DateEnd = DateEndPicker.Value.Date;
             newCourse.Band = Convert.ToDouble(Bandtxt.Text);
 
-            DialogResult box = MessageBox.Show("Create successfully", "New Course was added to db", MessageBoxButtons.OK);
+            if(newCourse.DateStart < newCourse.DateEnd)
+            {
+                DialogResult box = MessageBox.Show("Create successfully", "New Course was added to db", MessageBoxButtons.OK);
 
-            _db.Courses.Add(newCourse);
-            _db.SaveChanges();
+                _db.Courses.Add(newCourse);
+                _db.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("Date start must be greater than the date end", "Error");
+                return;
+            }
 
             Close();
         }
@@ -129,9 +137,17 @@ namespace LanguageCenterManage.Forms
             course.DateEnd = DateEndPicker.Value.Date;
             course.Band = Convert.ToDouble(Bandtxt.Text);
 
-            _db.SaveChanges();
-            DialogResult box = MessageBox.Show("Update successfully", "Course was updated to db", MessageBoxButtons.OK);
-            Close();
+            if(course.DateStart < course.DateEnd)
+            {
+                _db.SaveChanges();
+                DialogResult box = MessageBox.Show("Update successfully", "Course was updated to db", MessageBoxButtons.OK);
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Date start must be greater than the date end", "Error");
+                return;
+            }
 
         }
 
@@ -143,9 +159,17 @@ namespace LanguageCenterManage.Forms
             {
                 if (box == DialogResult.Yes)
                 {
-                    _db.Courses.Remove(course);
-                    _db.SaveChanges();
-                    Close();
+                    if(!_db.Classes.Any(x => x.CourseId == course.Id))
+                    {
+                        _db.Courses.Remove(course);
+                        _db.SaveChanges();
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Classes exists", "error");
+                        return;
+                    }
                 }
             }
             catch (Exception ex)

@@ -106,12 +106,20 @@ namespace LanguageCenterManage.Forms
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             DialogResult box = MessageBox.Show("Sure ?", "Are you sure to delete it ?", MessageBoxButtons.YesNo);
-
+            
             if (box == DialogResult.Yes)
             {
-                _db.Classes.Remove(_class);
-                _db.SaveChanges();
-                Close();
+                if (!_db.Schedules.Any(x => x.ClassId == _class.Id))
+                {
+                    _db.Classes.Remove(_class);
+                    _db.SaveChanges();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Schedule exists !", "Error");
+                    return;
+                }
             }
         }
     }

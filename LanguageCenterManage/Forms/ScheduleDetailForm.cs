@@ -123,9 +123,21 @@ namespace LanguageCenterManage.Forms
                             });
                         }
                     }
-                    _db.Schedules.AddRange(schedules);
-                    _db.SaveChanges();
-
+                    //DateTime dateStartCourse = _db.Classes
+                    //                              .Include(nameof(Class.Course))
+                    //                              .Where(x => x.Id == ClassIdCb.Text)
+                    //                              .Select(x => x.Course.DateStart)
+                    //                              .FirstOrDefault();
+                    //if (dateTimePicker1.Value >= dateStartCourse)
+                    //{
+                    //    _db.Schedules.AddRange(schedules);
+                    //    _db.SaveChanges();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Datetime must be after the course start date", "Error");
+                    //    return;
+                    //}
                 }
                 MessageBox.Show("Add successfully");
                 Close();
