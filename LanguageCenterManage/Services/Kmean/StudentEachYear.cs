@@ -5,7 +5,9 @@ using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,20 +29,27 @@ namespace LanguageCenterManage.Services.Kmean
 
         private void StudentEachYear_Load(object sender, EventArgs e)
         {
-            var studentEachYear = (from joins in _db.Joins
-                                   from classes in _db.Classes
-                                   from courses in _db.Courses
-                                   where joins.ClassId == classes.Id
-                                         && classes.CourseId == courses.Id
-                                   group courses by new { courses.DateStart.Year, joins.StudentId } into courseGroup
-                                   group courseGroup by courseGroup.Key.Year into courseGroupKey
-                                   select new StudentEachYearDTO
-                                   {
-                                       Year = courseGroupKey.Key,
-                                       Quantity = courseGroupKey.Count()
-                                   }).ToList();
-
-            studentEachYearDTOBindingSource.DataSource = studentEachYear;
+            string connectionString = ConfigurationManager.ConnectionStrings["CenterConnectionString"].ConnectionString;
+            var studentEachYears = new List<StudentEachYearDTO>();
+            using (var sqlConn = new SqlConnection(connectionString))
+            {
+                var sqlcmd = new SqlCommand("GetQuantityByYear", sqlConn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlConn.Open();
+                var sdr = sqlcmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    var studentEachYear = new StudentEachYearDTO
+                    {
+                        Quantity = Convert.ToInt32(sdr["quantity"]),
+                        Year = Convert.ToInt32(sdr["year"])
+                    };
+                    studentEachYears.Add(studentEachYear);
+                }
+            }
+            studentEachYearDTOBindingSource.DataSource = studentEachYears;
         }
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
