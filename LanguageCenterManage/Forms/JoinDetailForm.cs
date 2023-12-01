@@ -15,6 +15,9 @@ using System.Data.Entity;
 using LanguageCenterManage.DTO;
 using LanguageCenterManage.Controls;
 using System.Data.Entity.Migrations;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace LanguageCenterManage.Forms
 {
@@ -152,25 +155,58 @@ namespace LanguageCenterManage.Forms
         {
             if (isModelValid())
             {
-                if(db.Joins.Any(x => x.StudentId == StudentId))
+                string connectionString = ConfigurationManager.ConnectionStrings["CenterConnectionString"].ConnectionString;
+                double currentBand = 0, FinalGrade = 0;
+                using(var sqlConn = new SqlConnection(connectionString))
                 {
-                    var grade = (from stu in db.Students
-                                 join j in db.Joins on stu.Id equals j.StudentId
-                                 join c in db.Classes on j.ClassId equals c.Id
-                                 join cs in db.Courses on c.CourseId equals cs.Id
-                                 where stu.Id == StudentId
-                                 orderby cs.Band descending
-                                 select j.FinalGrade).Take(1).FirstOrDefault();
-                    if (grade < 5)
+                    var sqlcmd = new SqlCommand("GetMaxBandForFinalGrade", sqlConn)
                     {
-                        MessageBox.Show("You are not eligible to register", "Fail", MessageBoxButtons.OK);
-                        return;
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    var param1 = new SqlParameter()
+                    {
+                        ParameterName = "@StudentId",
+                        SqlDbType = SqlDbType.NVarChar,
+                        Value = StudentId.ToString(),
+                        Direction = ParameterDirection.Input,
+                    };
+                    sqlcmd.Parameters.Add(param1);
+                    sqlConn.Open();
+                    var sdr = sqlcmd.ExecuteReader();
+                    while (sdr.Read())
+                    {
+                        currentBand = Convert.ToDouble(sdr[nameof(Course.Band)]);
+                        FinalGrade = Convert.ToDouble(sdr[nameof(Join.FinalGrade)]);
                     }
                 }
-                InsertJoin();
-                billDetail.initBill(txtJoinId.Text);
-                MessageBox.Show("Create successfully", "Join have added to db", MessageBoxButtons.OK);
-                Close();
+                var classBand = db.Classes.Where(x => x.Id == txtClassId.Text).Include(x => x.Course).Select(x => x.Course.Band).SingleOrDefault();
+                if(FinalGrade < 5 && classBand > currentBand)
+                {
+                    MessageBox.Show("You are not eligible to register", "Fail", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    InsertJoin();
+                    billDetail.initBill(txtJoinId.Text);
+                    MessageBox.Show("Create successfully", "Join have added to db", MessageBoxButtons.OK);
+                    Close();
+                }
+                //if(db.Joins.Any(x => x.StudentId == StudentId))
+                //{
+                //    var grade = (from stu in db.Students
+                //                 join j in db.Joins on stu.Id equals j.StudentId
+                //                 join c in db.Classes on j.ClassId equals c.Id
+                //                 join cs in db.Courses on c.CourseId equals cs.Id
+                //                 where stu.Id == StudentId
+                //                 orderby cs.Band descending
+                //                 select j.FinalGrade).Take(1).FirstOrDefault();
+                //    if (grade < 5)
+                //    {
+                //        MessageBox.Show("You are not eligible to register", "Fail", MessageBoxButtons.OK);
+                //        return;
+                //    }
+                //}
+
             }
         }
         private void btnBill_Click(object sender, EventArgs e)

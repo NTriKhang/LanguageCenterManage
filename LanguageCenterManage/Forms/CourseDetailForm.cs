@@ -62,26 +62,26 @@ namespace LanguageCenterManage.Forms
                 DateEndPicker.Value = course.DateEnd;
 
                 LoadLanguage();
-
-                LoadBand();
-
+              
                 btnCreate.Visible = false;
 
             }
         }
         private void LoadBand()
         {
+            Bandtxt.Items.Clear();
             int currentBandIndex = 0;
             int i = 0;
-            _db.Bands.Where(x => x.CourseTypeId == course.LanguageId).OrderBy(x => x.BandNumber).ToList().ForEach(x =>
+            var bands = _db.Bands.Where(x => x.CourseTypeId == comboBoxLanguageId.Text).OrderBy(x => x.BandNumber).ToList();
+            foreach(var band in bands)
             {
-                if (x.BandNumber == Convert.ToDecimal(course.Band))
+                if (course != null && band.BandNumber == Convert.ToDecimal(course.Band))
                 {
                     currentBandIndex = i;
                 }
                 i++;
-                Bandtxt.Items.Add(x.BandNumber);
-            });
+                Bandtxt.Items.Add(band.BandNumber);
+            }
             Bandtxt.SelectedItem = Bandtxt.Items[currentBandIndex];
         }
         private void LoadLanguage()
@@ -187,10 +187,11 @@ namespace LanguageCenterManage.Forms
             {
                 textBoxLanguageName.Text = languageName;
             }
-            _db.Bands.Where(x => x.CourseTypeId == languageId).OrderBy(x => x.BandNumber).ToList().ForEach(x =>
-            {
-                Bandtxt.Items.Add(x.BandNumber);
-            });
+            LoadBand();
+            //_db.Bands.Where(x => x.CourseTypeId == languageId).OrderBy(x => x.BandNumber).ToList().ForEach(x =>
+            //{
+            //    Bandtxt.Items.Add(x.BandNumber);
+            //});
         }
 
         private void Bandtxt_SelectedIndexChanged(object sender, EventArgs e)
