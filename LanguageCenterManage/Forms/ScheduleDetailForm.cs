@@ -5,8 +5,10 @@ using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -149,6 +151,7 @@ namespace LanguageCenterManage.Forms
                 DeleteBtn.Visible = false;
                 UpdateBtn.Visible = false;
                 comboBox1.SelectedItem = comboBox1.Items[0];
+                shiftCb.SelectedItem = shiftCb.Items[0];
             }
             else
             {
@@ -182,17 +185,183 @@ namespace LanguageCenterManage.Forms
 
         private void ClassIdCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //ClassIdtxt.Text = _db.Classes.Where(x => x.Id == ClassIdCb.Text)
-            CourseNameTxt.Text = _db.Classes.Where(x => x.Id == ClassIdCb.Text)
-                                            .Include(x => x.Course)
-                                            .Select(x => x.Course.Name)
-                                            .SingleOrDefault();
+            string connectionString = ConfigurationManager.ConnectionStrings["CenterConnectionString"].ConnectionString;
+            using (var sqlConn = new SqlConnection(connectionString))
+            {
+                sqlConn.Open();
+
+
+                if (singleRadio.Checked)
+                {
+
+                    var sqlcmd = new SqlCommand("CheckClassSchedule", sqlConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    sqlcmd.Parameters.AddWithValue("@ClassId", ClassIdCb.Text);
+                    sqlcmd.Parameters.AddWithValue("@Shift", shiftCb.Text);
+                    sqlcmd.Parameters.AddWithValue("@DateTime", dateTimePicker1.Value.Date);
+                    var outParameter = new SqlParameter()
+                    {
+                        ParameterName = "@ConflictCount",
+                        SqlDbType = SqlDbType.Int,
+                        Direction = ParameterDirection.Output
+                    };
+                    sqlcmd.Parameters.Add(outParameter);
+                    sqlcmd.ExecuteNonQuery();
+                    Debug.WriteLine(outParameter.Value);
+                    if(Convert.ToInt32(outParameter.Value) == 0)
+                    {
+                        MessageBox.Show("This class already have schedule in this time");
+                        CourseNameTxt.Text = "";
+                    }
+                    else
+                    {
+
+                        CourseNameTxt.Text = _db.Classes.Where(x => x.Id == ClassIdCb.Text)
+                                                        .Include(x => x.Course)
+                                                        .Select(x => x.Course.Name)
+                                                        .SingleOrDefault();
+                    }
+                }
+                else
+                {
+
+                    List<string> checkedDate = new List<string>();
+
+                    foreach (var dateOfWeek in DatesOfWeekCheck.CheckedItems)
+                    {
+                        checkedDate.Add(dateOfWeek.ToString());
+                    }
+                    for (var date = dateTimePicker1.Value.Date; date <= dateTimePicker2.Value.Date; date = date.AddDays(1))
+                    {
+                        var dateOfWeek = date.DayOfWeek.ToString();
+
+                        if (checkedDate.Contains(dateOfWeek))
+                        {
+
+                            var sqlcmd = new SqlCommand("CheckClassSchedule", sqlConn)
+                            {
+                                CommandType = CommandType.StoredProcedure
+                            };
+                            sqlcmd.Parameters.AddWithValue("@ClassId", ClassIdCb.Text);
+                            sqlcmd.Parameters.AddWithValue("@Shift", shiftCb.Text);
+                            sqlcmd.Parameters.AddWithValue("@DateTime", date.Date);
+
+                            var outParameter = new SqlParameter()
+                            {
+                                ParameterName = "@ConflictCount",
+                                SqlDbType = SqlDbType.Int,
+                                Direction = ParameterDirection.Output
+                            };
+                            sqlcmd.Parameters.Add(outParameter);
+                            sqlcmd.ExecuteNonQuery();
+                            Debug.WriteLine(outParameter.Value);
+                            if (Convert.ToInt32(outParameter.Value) == 0)
+                            {
+                                MessageBox.Show("This class already have schedule in this range of time");
+                                CourseNameTxt.Text = "";
+                                return;
+                            }
+                        }
+                        
+                    }
+                    CourseNameTxt.Text = _db.Classes.Where(x => x.Id == ClassIdCb.Text)
+                                                        .Include(x => x.Course)
+                                                        .Select(x => x.Course.Name)
+                                                        .SingleOrDefault();
+                }
+            }
+
+
         }
 
         private void TeacherCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TeacherNametxt.Text = _db.Teachers.Where(x => x.Id == TeacherCb.Text)
-                                                .Select(x => x.FirstName + " " + x.LastName).SingleOrDefault();
+            string connectionString = ConfigurationManager.ConnectionStrings["CenterConnectionString"].ConnectionString;
+            using (var sqlConn = new SqlConnection(connectionString))
+            {
+                sqlConn.Open();
+
+
+                if (singleRadio.Checked)
+                {
+
+                    var sqlcmd = new SqlCommand("Check_DuplicateSchedules", sqlConn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    sqlcmd.Parameters.AddWithValue("@TeacherId", TeacherCb.Text);
+                    sqlcmd.Parameters.AddWithValue("@Shift", shiftCb.Text);
+                    sqlcmd.Parameters.AddWithValue("@date_time", dateTimePicker1.Value.Date);
+                    var outParameter = new SqlParameter()
+                    {
+                        ParameterName = "@Count",
+                        SqlDbType = SqlDbType.Int,
+                        Direction = ParameterDirection.Output
+                    };
+                    sqlcmd.Parameters.Add(outParameter);
+                    sqlcmd.ExecuteNonQuery();
+                    Debug.WriteLine(outParameter.Value);
+                    if (Convert.ToInt32(outParameter.Value) == 0)
+                    {
+                        MessageBox.Show("This teacher already have schedule in this time");
+                        TeacherNametxt.Text = "";
+                    }
+                    else
+                    {
+
+                        TeacherNametxt.Text = _db.Teachers.Where(x => x.Id == TeacherCb.Text)
+                                    .Select(x => x.FirstName + " " + x.LastName).SingleOrDefault();
+                    }
+                }
+                else
+                {
+
+                    List<string> checkedDate = new List<string>();
+
+                    foreach (var dateOfWeek in DatesOfWeekCheck.CheckedItems)
+                    {
+                        checkedDate.Add(dateOfWeek.ToString());
+                    }
+                    for (var date = dateTimePicker1.Value.Date; date <= dateTimePicker2.Value.Date; date = date.AddDays(1))
+                    {
+                        var dateOfWeek = date.DayOfWeek.ToString();
+
+                        if (checkedDate.Contains(dateOfWeek))
+                        {
+
+                            var sqlcmd = new SqlCommand("Check_DuplicateSchedules", sqlConn)
+                            {
+                                CommandType = CommandType.StoredProcedure
+                            };
+                            sqlcmd.Parameters.AddWithValue("@TeacherId", TeacherCb.Text);
+                            sqlcmd.Parameters.AddWithValue("@Shift", shiftCb.Text);
+                            sqlcmd.Parameters.AddWithValue("@date_time", date.Date);
+
+                            var outParameter = new SqlParameter()
+                            {
+                                ParameterName = "@Count",
+                                SqlDbType = SqlDbType.Int,
+                                Direction = ParameterDirection.Output
+                            };
+                            sqlcmd.Parameters.Add(outParameter);
+                            sqlcmd.ExecuteNonQuery();
+                            Debug.WriteLine(outParameter.Value);
+                            if (Convert.ToInt32(outParameter.Value) == 0)
+                            {
+                                MessageBox.Show("This teacher already have schedule in this range of time");
+                                TeacherNametxt.Text = "";
+                                return;
+                            }
+                        }
+
+                    }
+                    TeacherNametxt.Text = _db.Teachers.Where(x => x.Id == TeacherCb.Text)
+                                    .Select(x => x.FirstName + " " + x.LastName).SingleOrDefault();
+                }
+            }
+
         }
 
         private void ClassIdCb_DropDown(object sender, EventArgs e)
@@ -245,12 +414,41 @@ namespace LanguageCenterManage.Forms
         {
             roomNameTxt.Clear();
             RoomIdTxt.Clear();
+            ClassIdCb.Text = "";
+            CourseNameTxt.Text = "";
+            TeacherCb.Text = "";
+            TeacherNametxt.Text = "";
         }
 
         private void DatesOfWeekCheck_SelectedValueChanged(object sender, EventArgs e)
         {
             roomNameTxt.Clear();
             RoomIdTxt.Clear();
+            ClassIdCb.Text = "";
+            CourseNameTxt.Text = "";
+            TeacherCb.Text = "";
+            TeacherNametxt.Text = "";
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            if(dateTimePicker2.Value.Date < dateTimePicker1.Value.Date)
+            {
+                MessageBox.Show("Date end should be after date start");
+                dateTimePicker2.Value = dateTimePicker1.Value.Date;
+            }
+            ClassIdCb.Text = "";
+            CourseNameTxt.Text = "";
+            TeacherCb.Text = "";
+            TeacherNametxt.Text = "";
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            ClassIdCb.Text = "";
+            CourseNameTxt.Text = "";
+            TeacherCb.Text = "";
+            TeacherNametxt.Text = "";
         }
     }
 }
