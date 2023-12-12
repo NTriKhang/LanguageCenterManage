@@ -109,7 +109,7 @@ namespace LanguageCenterManage.Forms
             
             if (box == DialogResult.Yes)
             {
-                if (_db.Schedules.Any(x => x.ClassId == _class.Id) || _db.Joins.Any(x => x.ClassId == x.ClassId))
+                if (_db.Schedules.Any(x => x.ClassId == _class.Id) || _db.Joins.Any(x => x.ClassId == _class.Id))
                 {
                     MessageBox.Show("Conflict foreign key !", "Error");
                     return;
