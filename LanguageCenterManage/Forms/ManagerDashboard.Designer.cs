@@ -102,6 +102,11 @@ namespace LanguageCenterManage
             this.Content.Location = new System.Drawing.Point(350, 67);
             this.Content.Size = new System.Drawing.Size(801, 707);
             // 
+            // label1
+            // 
+            this.label1.Size = new System.Drawing.Size(484, 45);
+            this.label1.Text = "LANGUAGE CENTER MANAGE";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.tableLayoutPanel1);
