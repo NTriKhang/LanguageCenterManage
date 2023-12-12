@@ -55,6 +55,7 @@ namespace LanguageCenterManage.Forms
                 updateBtn.Visible = false;
                 deleteBtn.Visible = false;
                 ChangePasswordBtn.Visible = false;
+                ExportIDCbtn.Visible = false;
                 txtIdStudent.Text = Guid.NewGuid().ToString().Substring(0, 8);
 
             }
@@ -242,18 +243,19 @@ namespace LanguageCenterManage.Forms
                                                                  .SingleOrDefault());
             if (response == 200)
             {
-                Close();
                 MessageBox.Show("Export successfully", "200", MessageBoxButtons.OK);
+                Close();
             }
             else if (response == 400)
             {
-                Close();
                 MessageBox.Show("Lack of information", "400", MessageBoxButtons.OK);
+                Close();
             }
             else if (response == 500)
             {
-                Close();
                 MessageBox.Show("System error", "500", MessageBoxButtons.OK);
+                Close();
+
             }
         }
     }

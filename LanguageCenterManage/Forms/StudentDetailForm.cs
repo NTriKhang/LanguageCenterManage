@@ -67,6 +67,7 @@ namespace LanguageCenterManage
                 btnUpdate.Visible = false;
                 btnSendEmail.Visible = false;
                 btnJoin.Visible = false;
+                ExportBtn.Visible = false;
             }
         }
         public void InsertStudent()
@@ -225,18 +226,18 @@ namespace LanguageCenterManage
             var response = pdfService.ExportIDC(student, "Student");
             if(response == 200)
             {
-                Close();
                 MessageBox.Show("Export successfully", "200", MessageBoxButtons.OK);
+                Close();
             }
             else if(response == 400)
             {
-                Close();
                 MessageBox.Show("Lack of information", "400", MessageBoxButtons.OK);
+                Close();
             }
             else if(response == 500)
             {
-                Close();
                 MessageBox.Show("System error", "500", MessageBoxButtons.OK);
+                Close();
             }
         }
 
