@@ -39,7 +39,10 @@ namespace LanguageCenterManage.Forms
         {
 
         }
-
+        private void ListClassForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
         private void JoinDetailForm_Load(object sender, EventArgs e)
         {
             join = db.Joins.Where(x => x.StudentId == StudentId && x.ClassId == ClassId).FirstOrDefault();
@@ -116,20 +119,27 @@ namespace LanguageCenterManage.Forms
             }
         }
         private void btnShowListClass_Click(object sender, EventArgs e)
-        {
+            {
             try
             {
                 ListClassForm listJoinForm = new ListClassForm();
                 listJoinForm.TopMost = true;
                 listJoinForm.StudentId = txtStudentId.Text;
                 listJoinForm.ShowDialog();
-                if (listJoinForm.ClassId != null)
+                if (listJoinForm.ClassId != null && listJoinForm.isSuccess)
                 {
                     txtClassId.Text = listJoinForm.ClassId;
                 }
                 else
                 {
-                    txtClassId.Text = join.ClassId;
+                    if(join != null)
+                    {
+                        txtClassId.Text = join.ClassId;
+                    }
+                    else
+                    {
+                        txtClassId.Text = "";
+                    }
                 }
             }
             catch

@@ -20,6 +20,7 @@ namespace LanguageCenterManage.Forms
         AppDbContext db = new AppDbContext();
         public string ClassId { get; set; }
         public string StudentId { get; set; }
+        public bool isSuccess { get; set; } 
         public ListClassForm()
         {
             InitializeComponent();
@@ -49,18 +50,22 @@ namespace LanguageCenterManage.Forms
         {
             var selectId = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             ClassId = selectId;
-            var quantity = db.Joins
-                             .Include(nameof(Join.Class))
-                             .Where(x => x.ClassId == ClassId)
-                             .Select(x => x.Class.Quantity)
+            var quantity = db.Classes
+                             .Where(x => x.Id == ClassId)
+                             .Select(x => x.Quantity)
                              .FirstOrDefault();
-            if(quantity >= 40)
+            var registCnt = db.Joins.Where(x => x.ClassId == ClassId).ToList().Count;
+            if(registCnt >= quantity)
             {
+                isSuccess = false;
                 MessageBox.Show("The number of classes is enough", "error");
                 return;
             }
             else
+            {
+                isSuccess = true;
                 Close();
+            }
         }
 
         private void ListClassForm_FormClosed(object sender, FormClosedEventArgs e)
