@@ -57,6 +57,7 @@ namespace LanguageCenterManage.Forms
                 ExportIDCbtn.Visible = false;
                 btnDelete.Visible = false;
                 btnUpdate.Visible = false;
+                btnSendEmail.Visible = false;
             }
         }
         public void insertTeacher()
@@ -209,6 +210,13 @@ namespace LanguageCenterManage.Forms
             {
                 MessageBox.Show("Error have occured", "400", MessageBoxButtons.OK);
             }
+        }
+
+        private void btnSendEmail_Click(object sender, EventArgs e)
+        {
+            EmailForm emailForm = new EmailForm(txtEmailTeacher.Text);
+            emailForm.TopMost = true;
+            emailForm.ShowDialog();
         }
     }
 }

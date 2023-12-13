@@ -235,22 +235,22 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(256, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(680, 45);
+            this.label1.Size = new System.Drawing.Size(484, 45);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quản Lý Học Viên Ở Trung Tâm Ngoại Ngữ";
+            this.label1.Text = "LANGUAGE CENTER MANAGE";
             // 
             // errorProviderLogin
             // 
             this.errorProviderLogin.ContainerControl = this;
             // 
-            // Login
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1164, 777);
             this.Controls.Add(this.Content);
             this.Controls.Add(this.Navbar);
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.Text = "Login";
             this.Content.ResumeLayout(false);
             this.Sidebar.ResumeLayout(false);

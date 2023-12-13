@@ -49,6 +49,7 @@
             this.profileImageBox = new System.Windows.Forms.PictureBox();
             this.ImageNameTxt = new System.Windows.Forms.TextBox();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSendEmail = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.profileImageBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -273,11 +274,27 @@
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
+            // btnSendEmail
+            // 
+            this.btnSendEmail.BackColor = System.Drawing.Color.Green;
+            this.btnSendEmail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSendEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendEmail.ForeColor = System.Drawing.Color.White;
+            this.btnSendEmail.Location = new System.Drawing.Point(296, 610);
+            this.btnSendEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSendEmail.Name = "btnSendEmail";
+            this.btnSendEmail.Size = new System.Drawing.Size(97, 41);
+            this.btnSendEmail.TabIndex = 16;
+            this.btnSendEmail.Text = "Notify";
+            this.btnSendEmail.UseVisualStyleBackColor = false;
+            this.btnSendEmail.Click += new System.EventHandler(this.btnSendEmail_Click);
+            // 
             // TeacherDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 706);
+            this.Controls.Add(this.btnSendEmail);
             this.Controls.Add(this.ImageNameTxt);
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.profileImageBox);
@@ -333,5 +350,6 @@
         private System.Windows.Forms.PictureBox profileImageBox;
         private System.Windows.Forms.TextBox ImageNameTxt;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private System.Windows.Forms.Button btnSendEmail;
     }
 }
