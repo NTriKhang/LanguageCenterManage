@@ -1,4 +1,5 @@
 ﻿using LanguageCenterManage.DAL;
+using LanguageCenterManage.Forms.SubForm;
 using LanguageCenterManage.Models;
 using MaterialSkin.Controls;
 using System;
@@ -41,6 +42,7 @@ namespace LanguageCenterManage.Forms
             {
                 deleteBtn.Visible = false;
                 updateBtn.Visible = false;
+                ShowStudentBtn.Visible = false;
                 Idtextbox.Text = Guid.NewGuid().ToString().Substring(0, 7);
             }
             else
@@ -50,6 +52,7 @@ namespace LanguageCenterManage.Forms
                 quanlityTextbox.Text = _class.Quantity.ToString();
                 CourseIdCB.Text = _class.CourseId;
                 CourseName.Text = _db.Courses.Where(x => x.Id == _class.CourseId).Select(x => x.Name).SingleOrDefault();
+                ShowStudentBtn.Text += " (" + _db.Joins.Where(x => x.ClassId == _class.Id).Count().ToString() + ")";
             }
         }
 
@@ -57,7 +60,7 @@ namespace LanguageCenterManage.Forms
         {
             var courseId = CourseIdCB.Text;
             var courseName = _courses.Where(x => x.Id == courseId).Select(x => x.Name).SingleOrDefault();
-            if(courseName != null)
+            if (courseName != null)
             {
                 CourseName.Text = courseName;
             }
@@ -81,10 +84,10 @@ namespace LanguageCenterManage.Forms
         }
         private bool isValid()
         {
-            if(Idtextbox.Text == "" || quanlityTextbox.Text == ""
+            if (Idtextbox.Text == "" || quanlityTextbox.Text == ""
                 || CourseIdCB.Text == "" || CourseName.Text == "")
             {
-                MessageBox.Show("Lack of information","400", MessageBoxButtons.OK);
+                MessageBox.Show("Lack of information", "400", MessageBoxButtons.OK);
                 return false;
             }
             return true;
@@ -106,7 +109,7 @@ namespace LanguageCenterManage.Forms
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             DialogResult box = MessageBox.Show("Sure ?", "Are you sure to delete it ?", MessageBoxButtons.YesNo);
-            
+
             if (box == DialogResult.Yes)
             {
                 if (_db.Schedules.Any(x => x.ClassId == _class.Id) || _db.Joins.Any(x => x.ClassId == _class.Id))
@@ -122,6 +125,12 @@ namespace LanguageCenterManage.Forms
                     Close();
                 }
             }
+        }
+
+        private void ShowStudentBtn_Click(object sender, EventArgs e)
+        {
+            StudentOfClassForm studentOfClassForm = new StudentOfClassForm(_class.Id);
+            studentOfClassForm.Show();
         }
     }
 }

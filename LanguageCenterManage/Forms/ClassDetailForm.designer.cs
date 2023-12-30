@@ -39,6 +39,7 @@
             this.createBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.deleteBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.updateBtn = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.ShowStudentBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -173,11 +174,28 @@
             this.updateBtn.UseVisualStyleBackColor = true;
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
+            // ShowStudentBtn
+            // 
+            this.ShowStudentBtn.AutoSize = true;
+            this.ShowStudentBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ShowStudentBtn.Depth = 0;
+            this.ShowStudentBtn.Icon = null;
+            this.ShowStudentBtn.Location = new System.Drawing.Point(150, 293);
+            this.ShowStudentBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ShowStudentBtn.Name = "ShowStudentBtn";
+            this.ShowStudentBtn.Primary = true;
+            this.ShowStudentBtn.Size = new System.Drawing.Size(151, 36);
+            this.ShowStudentBtn.TabIndex = 12;
+            this.ShowStudentBtn.Text = "Show Student";
+            this.ShowStudentBtn.UseVisualStyleBackColor = true;
+            this.ShowStudentBtn.Click += new System.EventHandler(this.ShowStudentBtn_Click);
+            // 
             // ClassDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 352);
+            this.Controls.Add(this.ShowStudentBtn);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.createBtn);
@@ -210,5 +228,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton createBtn;
         private MaterialSkin.Controls.MaterialRaisedButton deleteBtn;
         private MaterialSkin.Controls.MaterialRaisedButton updateBtn;
+        private MaterialSkin.Controls.MaterialRaisedButton ShowStudentBtn;
     }
 }

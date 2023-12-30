@@ -58,7 +58,9 @@ namespace LanguageCenterManage.Controls
                 {
                     Id = x.Id,
                     CourseName = x.Course.Name,
-                    Quantity = x.Quantity
+                    Quantity = x.Quantity,
+                    DateTime = x.Course.DateStart,
+                    Status = x.Course.Status,
                 })
                 .ToList();
                 classDTOBindingSource.DataSource = ListClass;

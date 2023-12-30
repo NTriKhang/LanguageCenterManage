@@ -47,6 +47,8 @@
             this.txtJoinId = new System.Windows.Forms.TextBox();
             this.btnBill = new MaterialSkin.Controls.MaterialRaisedButton();
             this.classDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.StatusTxt = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.classDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +70,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(448, 144);
+            this.label1.Location = new System.Drawing.Point(452, 144);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 23);
             this.label1.TabIndex = 22;
@@ -88,7 +90,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(419, 219);
+            this.label4.Location = new System.Drawing.Point(452, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 23);
             this.label4.TabIndex = 20;
@@ -107,14 +109,14 @@
             // txtStudentId
             // 
             this.txtStudentId.Enabled = false;
-            this.txtStudentId.Location = new System.Drawing.Point(549, 144);
+            this.txtStudentId.Location = new System.Drawing.Point(569, 144);
             this.txtStudentId.Name = "txtStudentId";
             this.txtStudentId.Size = new System.Drawing.Size(194, 22);
             this.txtStudentId.TabIndex = 33;
             // 
             // txtSecondGrade
             // 
-            this.txtSecondGrade.Location = new System.Drawing.Point(549, 221);
+            this.txtSecondGrade.Location = new System.Drawing.Point(569, 219);
             this.txtSecondGrade.Name = "txtSecondGrade";
             this.txtSecondGrade.Size = new System.Drawing.Size(194, 22);
             this.txtSecondGrade.TabIndex = 33;
@@ -132,9 +134,11 @@
             this.txtFinalGrade.Name = "txtFinalGrade";
             this.txtFinalGrade.Size = new System.Drawing.Size(194, 22);
             this.txtFinalGrade.TabIndex = 33;
+            this.txtFinalGrade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFinalGrade_KeyPress);
             // 
             // btnShowListClass
             // 
+            this.btnShowListClass.AutoSize = true;
             this.btnShowListClass.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnShowListClass.Depth = 0;
             this.btnShowListClass.Icon = null;
@@ -142,7 +146,7 @@
             this.btnShowListClass.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnShowListClass.Name = "btnShowListClass";
             this.btnShowListClass.Primary = true;
-            this.btnShowListClass.Size = new System.Drawing.Size(105, 37);
+            this.btnShowListClass.Size = new System.Drawing.Size(110, 36);
             this.btnShowListClass.TabIndex = 35;
             this.btnShowListClass.Text = "ListClass";
             this.btnShowListClass.UseVisualStyleBackColor = true;
@@ -161,7 +165,7 @@
             // txtClassId
             // 
             this.txtClassId.Enabled = false;
-            this.txtClassId.Location = new System.Drawing.Point(530, 301);
+            this.txtClassId.Location = new System.Drawing.Point(569, 298);
             this.txtClassId.Name = "txtClassId";
             this.txtClassId.Size = new System.Drawing.Size(194, 22);
             this.txtClassId.TabIndex = 33;
@@ -182,6 +186,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.AutoSize = true;
             this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdd.Depth = 0;
             this.btnAdd.Icon = null;
@@ -189,7 +194,7 @@
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Primary = true;
-            this.btnAdd.Size = new System.Drawing.Size(86, 41);
+            this.btnAdd.Size = new System.Drawing.Size(56, 36);
             this.btnAdd.TabIndex = 38;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -215,6 +220,7 @@
             // 
             // btnBill
             // 
+            this.btnBill.AutoSize = true;
             this.btnBill.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBill.Depth = 0;
             this.btnBill.Icon = null;
@@ -222,7 +228,7 @@
             this.btnBill.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBill.Name = "btnBill";
             this.btnBill.Primary = true;
-            this.btnBill.Size = new System.Drawing.Size(106, 40);
+            this.btnBill.Size = new System.Drawing.Size(56, 36);
             this.btnBill.TabIndex = 35;
             this.btnBill.Text = "Bill";
             this.btnBill.UseVisualStyleBackColor = true;
@@ -232,11 +238,35 @@
             // 
             this.classDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.ClassDTO);
             // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(452, 366);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 23);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Status";
+            // 
+            // StatusTxt
+            // 
+            this.StatusTxt.FormattingEnabled = true;
+            this.StatusTxt.Items.AddRange(new object[] {
+            "Process",
+            "Pass",
+            "Fail"});
+            this.StatusTxt.Location = new System.Drawing.Point(569, 366);
+            this.StatusTxt.Name = "StatusTxt";
+            this.StatusTxt.Size = new System.Drawing.Size(194, 24);
+            this.StatusTxt.TabIndex = 40;
+            // 
             // JoinDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 553);
+            this.Controls.Add(this.StatusTxt);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnBill);
@@ -283,5 +313,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtJoinId;
         private MaterialSkin.Controls.MaterialRaisedButton btnBill;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox StatusTxt;
     }
 }

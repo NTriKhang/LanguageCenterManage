@@ -1,5 +1,6 @@
 ﻿using LanguageCenterManage.DAL;
 using LanguageCenterManage.DTO;
+using LanguageCenterManage.Forms.SubForm;
 using LanguageCenterManage.Models;
 using MaterialSkin.Controls;
 using System;
@@ -12,7 +13,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LanguageCenterManage.Forms
 {
@@ -50,6 +50,7 @@ namespace LanguageCenterManage.Forms
                 
                 btnDelete.Visible = false;
                 btnUpdate.Visible = false;
+                ShowClassBtn.Visible = false;
             }
             else
             {
@@ -60,6 +61,9 @@ namespace LanguageCenterManage.Forms
                 comboBoxStatus.Text = course.Status;
                 DateStartPicker.Value = course.DateStart;
                 DateEndPicker.Value = course.DateEnd;
+                Tuitiontxt.Text = course.TuiTion.ToString();
+
+                ShowClassBtn.Text += " (" + _db.Classes.Where(x => x.CourseId == course.Id).Count().ToString() + ")";
 
                 LoadLanguage();
               
@@ -110,6 +114,7 @@ namespace LanguageCenterManage.Forms
             newCourse.DateStart = DateStartPicker.Value.Date;
             newCourse.DateEnd = DateEndPicker.Value.Date;
             newCourse.Band = Convert.ToDouble(Bandtxt.Text);
+            newCourse.TuiTion = Convert.ToDecimal(Tuitiontxt.Text);
 
             if(newCourse.DateStart < newCourse.DateEnd)
             {
@@ -136,6 +141,7 @@ namespace LanguageCenterManage.Forms
             course.DateStart = DateStartPicker.Value.Date;
             course.DateEnd = DateEndPicker.Value.Date;
             course.Band = Convert.ToDouble(Bandtxt.Text);
+            course.TuiTion = Convert.ToDecimal(Tuitiontxt.Text);
 
             if(course.DateStart < course.DateEnd)
             {
@@ -202,6 +208,27 @@ namespace LanguageCenterManage.Forms
         private void comboBoxStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Tuitiontxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+             (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as  TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ShowClassBtn_Click(object sender, EventArgs e)
+        {
+            ClassOfCourseForm classOfCourseForm = new ClassOfCourseForm(course.Id);
+            classOfCourseForm.Show();
         }
     }
 }

@@ -286,11 +286,23 @@
     <Compile Include="Forms\StudentDetailForm.designer.cs">
       <DependentUpon>StudentDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SubForm\ClassOfCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubForm\ClassOfCourseForm.Designer.cs">
+      <DependentUpon>ClassOfCourseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SubForm\RoomAvailableForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\SubForm\RoomAvailableForm.Designer.cs">
       <DependentUpon>RoomAvailableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubForm\StudentOfClassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubForm\StudentOfClassForm.Designer.cs">
+      <DependentUpon>StudentOfClassForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TeacherDetailForm.cs">
       <SubType>Form</SubType>
@@ -307,6 +319,10 @@
     <Compile Include="Migrations\202311300249110_addIsActiveToSchedule.cs" />
     <Compile Include="Migrations\202311300249110_addIsActiveToSchedule.designer.cs">
       <DependentUpon>202311300249110_addIsActiveToSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312291442041_addStatusToJoin.cs" />
+    <Compile Include="Migrations\202312291442041_addStatusToJoin.designer.cs">
+      <DependentUpon>202312291442041_addStatusToJoin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Band.cs" />
@@ -449,8 +465,14 @@
     <EmbeddedResource Include="Forms\StudentDetailForm.resx">
       <DependentUpon>StudentDetailForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubForm\ClassOfCourseForm.resx">
+      <DependentUpon>ClassOfCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubForm\RoomAvailableForm.resx">
       <DependentUpon>RoomAvailableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubForm\StudentOfClassForm.resx">
+      <DependentUpon>StudentOfClassForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TeacherDetailForm.resx">
       <DependentUpon>TeacherDetailForm.cs</DependentUpon>
@@ -460,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311300249110_addIsActiveToSchedule.resx">
       <DependentUpon>202311300249110_addIsActiveToSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312291442041_addStatusToJoin.resx">
+      <DependentUpon>202312291442041_addStatusToJoin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

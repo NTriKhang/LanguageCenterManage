@@ -27,11 +27,9 @@ namespace LanguageCenterManage.Forms
         public string StudentId { get; set; }
         public string ClassId { get; set; }
         Join join = new Join();
-        List<Class> listClasses;
         BillDetail billDetail = new BillDetail();
         public JoinDetailForm()
         {
-            listClasses = db.Classes.ToList();
             InitializeComponent();
         }
 
@@ -54,6 +52,7 @@ namespace LanguageCenterManage.Forms
                 txtSecondGrade.Text = join.SecondGrade.ToString();
                 txtFinalGrade.Text = join.FinalGrade.ToString();
                 txtClassId.Text = join.ClassId;
+                StatusTxt.Text = join.Status.ToString();
                // checkBoxTuiTion.Checked = join.TuiTionState;
 
                 btnAdd.Visible = false;
@@ -63,22 +62,46 @@ namespace LanguageCenterManage.Forms
             {
                 txtJoinId.Text = Guid.NewGuid().ToString().Substring(0, 7);
                 txtStudentId.Text = StudentId;
+
                 txtFistGrade.Text = "0";
+                txtFistGrade.Enabled = false;
+
                 txtSecondGrade.Text = "0";
+                txtSecondGrade.Enabled = false;
+
                 txtFinalGrade.Text = "0";
+                txtFinalGrade.Enabled = false;
                 //checkBoxTuiTion.Checked = false;
 
                 btnUpdate.Visible= false;
                 btnDelete.Visible= false;
                 btnBill.Visible = false;
+                StatusTxt.Visible = false;
+                label7.Visible = false;
             }
         }
         bool isModelValid()
         {
-            if (txtFistGrade.Text.Trim() == "" || txtSecondGrade.Text.Trim() == "" 
-                || txtSecondGrade.Text.Trim() == "")
+            string firstGrade = txtFistGrade.Text.Trim();
+            string secondGrade = txtSecondGrade.Text.Trim();
+            string finalGrade = txtFinalGrade.Text.Trim();
+            if (firstGrade == "" || secondGrade == ""
+                || finalGrade == "")
             {
                 MessageBox.Show("Enter missing fields", "400", MessageBoxButtons.OK);
+                return false;
+            }
+            else if (Convert.ToDecimal(firstGrade) > 10 ||
+                Convert.ToDecimal(secondGrade) > 10 ||
+                Convert.ToDecimal(finalGrade) > 10)
+            {
+                MessageBox.Show("Invalid value", "400", MessageBoxButtons.OK);
+                return false;
+            }
+            else if (db.Bills.Include(x => x.Join).Any(x => x.Join.StudentId == StudentId
+                                                      && x.State == false))
+            {
+                MessageBox.Show("Student haven't paid for the last course yet", "400", MessageBoxButtons.OK);
                 return false;
             }
             return true;
@@ -92,6 +115,7 @@ namespace LanguageCenterManage.Forms
             j.FirstGrade = Decimal.Parse(txtFistGrade.Text);
             j.SecondGrade = Decimal.Parse(txtSecondGrade.Text);
             j.FinalGrade = Decimal.Parse(txtFinalGrade.Text);
+            j.Status = utility.JoinStatusProcess;
             //j.TuiTionState = checkBoxTuiTion.Checked;
             db.Joins.Add(j);
             db.SaveChanges();
@@ -105,6 +129,7 @@ namespace LanguageCenterManage.Forms
             j.FirstGrade = Decimal.Parse(txtFistGrade.Text);
             j.SecondGrade = Decimal.Parse(txtSecondGrade.Text);
             j.FinalGrade = Decimal.Parse(txtFinalGrade.Text);
+            j.Status = StatusTxt.Text;
             //j.TuiTionState = checkBoxTuiTion.Checked;
             db.Joins.AddOrUpdate(j);
             db.SaveChanges();
@@ -167,6 +192,7 @@ namespace LanguageCenterManage.Forms
             {
                 string connectionString = ConfigurationManager.ConnectionStrings["CenterConnectionString"].ConnectionString;
                 double currentBand = 0, FinalGrade = 0;
+                bool isLearned = false;
                 using(var sqlConn = new SqlConnection(connectionString))
                 {
                     var sqlcmd = new SqlCommand("GetMaxBandForFinalGrade", sqlConn)
@@ -187,10 +213,11 @@ namespace LanguageCenterManage.Forms
                     {
                         currentBand = Convert.ToDouble(sdr[nameof(Course.Band)]);
                         FinalGrade = Convert.ToDouble(sdr[nameof(Join.FinalGrade)]);
+                        isLearned = true;
                     }
                 }
                 var classBand = db.Classes.Where(x => x.Id == txtClassId.Text).Include(x => x.Course).Select(x => x.Course.Band).SingleOrDefault();
-                if(FinalGrade < 5 && classBand > currentBand)
+                if(isLearned && FinalGrade < 5 && classBand > currentBand)
                 {
                     MessageBox.Show("You are not eligible to register", "Fail", MessageBoxButtons.OK);
                 }
@@ -226,6 +253,24 @@ namespace LanguageCenterManage.Forms
             billDetail.JoinId = txtJoinId.Text;
             billDetail.TopMost = true;
             billDetail.ShowDialog();
+
+        }
+        private bool getBillState(string JoinId)
+        {
+            db = new AppDbContext();
+            var state = db.Bills.SingleOrDefault(x => x.JoinId == JoinId).State;
+            if(state == false)
+                return false;
+            return true;
+        }
+
+        private void txtFinalGrade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!getBillState(join.Id))
+            {
+                MessageBox.Show("Student haven't paid yet");
+                e.Handled = true;
+            }
         }
     }
 }
