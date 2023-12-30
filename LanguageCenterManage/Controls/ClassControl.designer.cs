@@ -80,7 +80,8 @@
             this.Sort_Combobox.Items.AddRange(new object[] {
             "Id",
             "CourseName",
-            "Quantity"});
+            "Quantity",
+            "DateTime"});
             this.Sort_Combobox.Location = new System.Drawing.Point(742, 49);
             this.Sort_Combobox.Name = "Sort_Combobox";
             this.Sort_Combobox.Size = new System.Drawing.Size(121, 24);

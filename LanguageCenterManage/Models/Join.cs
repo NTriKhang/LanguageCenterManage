@@ -10,6 +10,8 @@ namespace LanguageCenterManage.Models
 {
     public class Join
     {
+        [Key]
+        public string Id { get; set; }
         public string ClassId { get; set; }
         [ForeignKey(nameof(ClassId))]
         public Class Class { get; set; }
@@ -19,8 +21,6 @@ namespace LanguageCenterManage.Models
         public decimal FirstGrade { get; set; }
         public decimal SecondGrade { get; set; }
         public decimal FinalGrade { get; set; }
-        [Key]
-        public string Id { get; set; }
-
+        public string Status { get; set; }
     }
 }

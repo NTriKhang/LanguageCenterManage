@@ -49,6 +49,9 @@
             this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.Bandtxt = new System.Windows.Forms.ComboBox();
+            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
+            this.Tuitiontxt = new System.Windows.Forms.TextBox();
+            this.ShowClassBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -132,9 +135,7 @@
             this.comboBoxStatus.FormattingEnabled = true;
             this.comboBoxStatus.Items.AddRange(new object[] {
             "Open",
-            "Process",
-            "Pending",
-            "End"});
+            "Close"});
             this.comboBoxStatus.Location = new System.Drawing.Point(636, 363);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(264, 24);
@@ -231,7 +232,7 @@
             this.btnCreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCreate.Depth = 0;
             this.btnCreate.Icon = null;
-            this.btnCreate.Location = new System.Drawing.Point(42, 484);
+            this.btnCreate.Location = new System.Drawing.Point(41, 522);
             this.btnCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Primary = true;
@@ -247,7 +248,7 @@
             this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDelete.Depth = 0;
             this.btnDelete.Icon = null;
-            this.btnDelete.Location = new System.Drawing.Point(808, 484);
+            this.btnDelete.Location = new System.Drawing.Point(807, 522);
             this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Primary = true;
@@ -263,7 +264,7 @@
             this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUpdate.Depth = 0;
             this.btnUpdate.Icon = null;
-            this.btnUpdate.Location = new System.Drawing.Point(693, 484);
+            this.btnUpdate.Location = new System.Drawing.Point(692, 522);
             this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Primary = true;
@@ -296,11 +297,51 @@
             this.Bandtxt.TabIndex = 24;
             this.Bandtxt.SelectedIndexChanged += new System.EventHandler(this.Bandtxt_SelectedIndexChanged);
             // 
+            // materialLabel10
+            // 
+            this.materialLabel10.AutoSize = true;
+            this.materialLabel10.Depth = 0;
+            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel10.Location = new System.Drawing.Point(38, 473);
+            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel10.Name = "materialLabel10";
+            this.materialLabel10.Size = new System.Drawing.Size(68, 24);
+            this.materialLabel10.TabIndex = 25;
+            this.materialLabel10.Text = "Tuition";
+            // 
+            // Tuitiontxt
+            // 
+            this.Tuitiontxt.Location = new System.Drawing.Point(172, 473);
+            this.Tuitiontxt.Name = "Tuitiontxt";
+            this.Tuitiontxt.Size = new System.Drawing.Size(241, 22);
+            this.Tuitiontxt.TabIndex = 26;
+            this.Tuitiontxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tuitiontxt_KeyPress);
+            // 
+            // ShowClassBtn
+            // 
+            this.ShowClassBtn.AutoSize = true;
+            this.ShowClassBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ShowClassBtn.Depth = 0;
+            this.ShowClassBtn.Icon = null;
+            this.ShowClassBtn.Location = new System.Drawing.Point(153, 522);
+            this.ShowClassBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ShowClassBtn.Name = "ShowClassBtn";
+            this.ShowClassBtn.Primary = true;
+            this.ShowClassBtn.Size = new System.Drawing.Size(128, 36);
+            this.ShowClassBtn.TabIndex = 27;
+            this.ShowClassBtn.Text = "Show Class";
+            this.ShowClassBtn.UseVisualStyleBackColor = true;
+            this.ShowClassBtn.Click += new System.EventHandler(this.ShowClassBtn_Click);
+            // 
             // CourseDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 532);
+            this.ClientSize = new System.Drawing.Size(952, 580);
+            this.Controls.Add(this.ShowClassBtn);
+            this.Controls.Add(this.Tuitiontxt);
+            this.Controls.Add(this.materialLabel10);
             this.Controls.Add(this.Bandtxt);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.btnUpdate);
@@ -353,5 +394,8 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.ComboBox Bandtxt;
+        private MaterialSkin.Controls.MaterialLabel materialLabel10;
+        private System.Windows.Forms.TextBox Tuitiontxt;
+        private MaterialSkin.Controls.MaterialRaisedButton ShowClassBtn;
     }
 }

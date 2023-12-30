@@ -169,6 +169,7 @@ namespace LanguageCenterManage.Forms
                 _user.Birth = dtBirth.Value;
                 _user.Phone = txtPhone.Text;
                 _user.RoleId = roleIdCb.Text;
+                _user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(passwordTb.Text);
                 if (ImageNameTxt.Text != "" && _user.ImagePath != ImageNameTxt.Text)
                 {
                     var resourePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "Resources", "ProfileImage");

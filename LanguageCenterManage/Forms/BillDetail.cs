@@ -38,11 +38,11 @@ namespace LanguageCenterManage.Forms
             bill.Id = Guid.NewGuid().ToString().Substring(0, 7);
             bill.DatePay = null;
             bill.UserConfirmId = UserId;
-            bill.Cost = db.Bills.Include(nameof(Bill.Join))
+            bill.Cost = db.Joins
                                    .Include(nameof(Join.Class))
                                    .Include(nameof(Class.Course))
-                                   .Where(x => x.Join.Id == JoinId)
-                                   .Select(x => x.Join.Class.Course.TuiTion)
+                                   .Where(x => x.Id == JoinId)
+                                   .Select(x => x.Class.Course.TuiTion)
                                    .FirstOrDefault();
             bill.State = false;
             bill.JoinId = JoinId;
@@ -163,6 +163,11 @@ namespace LanguageCenterManage.Forms
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
