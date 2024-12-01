@@ -32,11 +32,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.Calender = new System.Windows.Forms.RadioButton();
             this.BasicRBtn = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.Sort_Combobox = new System.Windows.Forms.ComboBox();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtSearch = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -140,6 +138,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.Monday1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.Calender = new System.Windows.Forms.RadioButton();
             this.roomIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -210,7 +209,6 @@
             this.panel1.Controls.Add(this.BasicRBtn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.Sort_Combobox);
-            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Controls.Add(this.btnNew);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -236,17 +234,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(230, 22);
             this.dateTimePicker1.TabIndex = 16;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // Calender
-            // 
-            this.Calender.AutoSize = true;
-            this.Calender.Location = new System.Drawing.Point(653, 84);
-            this.Calender.Name = "Calender";
-            this.Calender.Size = new System.Drawing.Size(83, 20);
-            this.Calender.TabIndex = 15;
-            this.Calender.Text = "Calender";
-            this.Calender.UseVisualStyleBackColor = true;
-            this.Calender.CheckedChanged += new System.EventHandler(this.Calender_CheckedChanged);
             // 
             // BasicRBtn
             // 
@@ -285,13 +272,6 @@
             this.Sort_Combobox.Size = new System.Drawing.Size(121, 24);
             this.Sort_Combobox.TabIndex = 12;
             this.Sort_Combobox.SelectedIndexChanged += new System.EventHandler(this.Sort_Combobox_SelectedIndexChanged);
-            // 
-            // panel5
-            // 
-            this.panel5.Location = new System.Drawing.Point(564, 128);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(181, 74);
-            this.panel5.TabIndex = 3;
             // 
             // tableLayoutPanel3
             // 
@@ -392,14 +372,14 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 8;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.05729F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.75138F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.75138F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.75138F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.75138F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.75138F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.75138F));
             this.tableLayoutPanel1.Controls.Add(this.panel51, 7, 5);
             this.tableLayoutPanel1.Controls.Add(this.panel50, 7, 4);
             this.tableLayoutPanel1.Controls.Add(this.panel49, 7, 3);
@@ -451,12 +431,12 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 128);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.9559F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.9559F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.9559F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.9559F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.9559F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1501, 482);
             this.tableLayoutPanel1.TabIndex = 2;
             this.tableLayoutPanel1.Visible = false;
@@ -466,9 +446,9 @@
             this.panel51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel51.Controls.Add(this.Sunday5);
             this.panel51.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel51.Location = new System.Drawing.Point(1312, 403);
+            this.panel51.Location = new System.Drawing.Point(1295, 398);
             this.panel51.Name = "panel51";
-            this.panel51.Size = new System.Drawing.Size(186, 76);
+            this.panel51.Size = new System.Drawing.Size(203, 81);
             this.panel51.TabIndex = 12;
             // 
             // Sunday5
@@ -483,7 +463,7 @@
             this.Sunday5.MouseState = MaterialSkin.MouseState.HOVER;
             this.Sunday5.Name = "Sunday5";
             this.Sunday5.Primary = false;
-            this.Sunday5.Size = new System.Drawing.Size(184, 74);
+            this.Sunday5.Size = new System.Drawing.Size(201, 79);
             this.Sunday5.TabIndex = 34;
             this.Sunday5.UseVisualStyleBackColor = true;
             // 
@@ -492,9 +472,9 @@
             this.panel50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel50.Controls.Add(this.Sunday4);
             this.panel50.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel50.Location = new System.Drawing.Point(1312, 323);
+            this.panel50.Location = new System.Drawing.Point(1295, 311);
             this.panel50.Name = "panel50";
-            this.panel50.Size = new System.Drawing.Size(186, 74);
+            this.panel50.Size = new System.Drawing.Size(203, 81);
             this.panel50.TabIndex = 12;
             // 
             // Sunday4
@@ -509,7 +489,7 @@
             this.Sunday4.MouseState = MaterialSkin.MouseState.HOVER;
             this.Sunday4.Name = "Sunday4";
             this.Sunday4.Primary = false;
-            this.Sunday4.Size = new System.Drawing.Size(184, 72);
+            this.Sunday4.Size = new System.Drawing.Size(201, 79);
             this.Sunday4.TabIndex = 33;
             this.Sunday4.UseVisualStyleBackColor = true;
             // 
@@ -518,9 +498,9 @@
             this.panel49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel49.Controls.Add(this.Sunday3);
             this.panel49.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel49.Location = new System.Drawing.Point(1312, 243);
+            this.panel49.Location = new System.Drawing.Point(1295, 224);
             this.panel49.Name = "panel49";
-            this.panel49.Size = new System.Drawing.Size(186, 74);
+            this.panel49.Size = new System.Drawing.Size(203, 81);
             this.panel49.TabIndex = 12;
             // 
             // Sunday3
@@ -535,7 +515,7 @@
             this.Sunday3.MouseState = MaterialSkin.MouseState.HOVER;
             this.Sunday3.Name = "Sunday3";
             this.Sunday3.Primary = false;
-            this.Sunday3.Size = new System.Drawing.Size(184, 72);
+            this.Sunday3.Size = new System.Drawing.Size(201, 79);
             this.Sunday3.TabIndex = 32;
             this.Sunday3.UseVisualStyleBackColor = true;
             // 
@@ -544,9 +524,9 @@
             this.panel48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel48.Controls.Add(this.Sunday2);
             this.panel48.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel48.Location = new System.Drawing.Point(1312, 163);
+            this.panel48.Location = new System.Drawing.Point(1295, 137);
             this.panel48.Name = "panel48";
-            this.panel48.Size = new System.Drawing.Size(186, 74);
+            this.panel48.Size = new System.Drawing.Size(203, 81);
             this.panel48.TabIndex = 12;
             // 
             // Sunday2
@@ -561,7 +541,7 @@
             this.Sunday2.MouseState = MaterialSkin.MouseState.HOVER;
             this.Sunday2.Name = "Sunday2";
             this.Sunday2.Primary = false;
-            this.Sunday2.Size = new System.Drawing.Size(184, 72);
+            this.Sunday2.Size = new System.Drawing.Size(201, 79);
             this.Sunday2.TabIndex = 31;
             this.Sunday2.UseVisualStyleBackColor = true;
             // 
@@ -571,9 +551,9 @@
             this.panel47.Controls.Add(this.materialFlatButton35);
             this.panel47.Controls.Add(this.Sunday1);
             this.panel47.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel47.Location = new System.Drawing.Point(1312, 83);
+            this.panel47.Location = new System.Drawing.Point(1295, 50);
             this.panel47.Name = "panel47";
-            this.panel47.Size = new System.Drawing.Size(186, 74);
+            this.panel47.Size = new System.Drawing.Size(203, 81);
             this.panel47.TabIndex = 12;
             // 
             // materialFlatButton35
@@ -604,7 +584,7 @@
             this.Sunday1.MouseState = MaterialSkin.MouseState.HOVER;
             this.Sunday1.Name = "Sunday1";
             this.Sunday1.Primary = false;
-            this.Sunday1.Size = new System.Drawing.Size(184, 72);
+            this.Sunday1.Size = new System.Drawing.Size(201, 79);
             this.Sunday1.TabIndex = 30;
             this.Sunday1.UseVisualStyleBackColor = true;
             // 
@@ -613,9 +593,9 @@
             this.panel46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel46.Controls.Add(this.Saturday5);
             this.panel46.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel46.Location = new System.Drawing.Point(1125, 403);
+            this.panel46.Location = new System.Drawing.Point(1089, 398);
             this.panel46.Name = "panel46";
-            this.panel46.Size = new System.Drawing.Size(181, 76);
+            this.panel46.Size = new System.Drawing.Size(200, 81);
             this.panel46.TabIndex = 12;
             // 
             // Saturday5
@@ -630,7 +610,7 @@
             this.Saturday5.MouseState = MaterialSkin.MouseState.HOVER;
             this.Saturday5.Name = "Saturday5";
             this.Saturday5.Primary = false;
-            this.Saturday5.Size = new System.Drawing.Size(179, 74);
+            this.Saturday5.Size = new System.Drawing.Size(198, 79);
             this.Saturday5.TabIndex = 29;
             this.Saturday5.UseVisualStyleBackColor = true;
             // 
@@ -639,9 +619,9 @@
             this.panel45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel45.Controls.Add(this.Saturday4);
             this.panel45.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel45.Location = new System.Drawing.Point(1125, 323);
+            this.panel45.Location = new System.Drawing.Point(1089, 311);
             this.panel45.Name = "panel45";
-            this.panel45.Size = new System.Drawing.Size(181, 74);
+            this.panel45.Size = new System.Drawing.Size(200, 81);
             this.panel45.TabIndex = 12;
             // 
             // Saturday4
@@ -656,7 +636,7 @@
             this.Saturday4.MouseState = MaterialSkin.MouseState.HOVER;
             this.Saturday4.Name = "Saturday4";
             this.Saturday4.Primary = false;
-            this.Saturday4.Size = new System.Drawing.Size(179, 72);
+            this.Saturday4.Size = new System.Drawing.Size(198, 79);
             this.Saturday4.TabIndex = 28;
             this.Saturday4.UseVisualStyleBackColor = true;
             // 
@@ -665,9 +645,9 @@
             this.panel44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel44.Controls.Add(this.Saturday3);
             this.panel44.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel44.Location = new System.Drawing.Point(1125, 243);
+            this.panel44.Location = new System.Drawing.Point(1089, 224);
             this.panel44.Name = "panel44";
-            this.panel44.Size = new System.Drawing.Size(181, 74);
+            this.panel44.Size = new System.Drawing.Size(200, 81);
             this.panel44.TabIndex = 12;
             // 
             // Saturday3
@@ -682,7 +662,7 @@
             this.Saturday3.MouseState = MaterialSkin.MouseState.HOVER;
             this.Saturday3.Name = "Saturday3";
             this.Saturday3.Primary = false;
-            this.Saturday3.Size = new System.Drawing.Size(179, 72);
+            this.Saturday3.Size = new System.Drawing.Size(198, 79);
             this.Saturday3.TabIndex = 27;
             this.Saturday3.UseVisualStyleBackColor = true;
             // 
@@ -691,9 +671,9 @@
             this.panel43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel43.Controls.Add(this.Saturday2);
             this.panel43.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel43.Location = new System.Drawing.Point(1125, 163);
+            this.panel43.Location = new System.Drawing.Point(1089, 137);
             this.panel43.Name = "panel43";
-            this.panel43.Size = new System.Drawing.Size(181, 74);
+            this.panel43.Size = new System.Drawing.Size(200, 81);
             this.panel43.TabIndex = 12;
             // 
             // Saturday2
@@ -708,7 +688,7 @@
             this.Saturday2.MouseState = MaterialSkin.MouseState.HOVER;
             this.Saturday2.Name = "Saturday2";
             this.Saturday2.Primary = false;
-            this.Saturday2.Size = new System.Drawing.Size(179, 72);
+            this.Saturday2.Size = new System.Drawing.Size(198, 79);
             this.Saturday2.TabIndex = 26;
             this.Saturday2.UseVisualStyleBackColor = true;
             // 
@@ -717,9 +697,9 @@
             this.panel42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel42.Controls.Add(this.Saturday1);
             this.panel42.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel42.Location = new System.Drawing.Point(1125, 83);
+            this.panel42.Location = new System.Drawing.Point(1089, 50);
             this.panel42.Name = "panel42";
-            this.panel42.Size = new System.Drawing.Size(181, 74);
+            this.panel42.Size = new System.Drawing.Size(200, 81);
             this.panel42.TabIndex = 12;
             // 
             // Saturday1
@@ -734,7 +714,7 @@
             this.Saturday1.MouseState = MaterialSkin.MouseState.HOVER;
             this.Saturday1.Name = "Saturday1";
             this.Saturday1.Primary = false;
-            this.Saturday1.Size = new System.Drawing.Size(179, 72);
+            this.Saturday1.Size = new System.Drawing.Size(198, 79);
             this.Saturday1.TabIndex = 25;
             this.Saturday1.UseVisualStyleBackColor = true;
             // 
@@ -743,9 +723,9 @@
             this.panel41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel41.Controls.Add(this.Friday1);
             this.panel41.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel41.Location = new System.Drawing.Point(938, 83);
+            this.panel41.Location = new System.Drawing.Point(883, 50);
             this.panel41.Name = "panel41";
-            this.panel41.Size = new System.Drawing.Size(181, 74);
+            this.panel41.Size = new System.Drawing.Size(200, 81);
             this.panel41.TabIndex = 12;
             // 
             // Friday1
@@ -760,7 +740,7 @@
             this.Friday1.MouseState = MaterialSkin.MouseState.HOVER;
             this.Friday1.Name = "Friday1";
             this.Friday1.Primary = false;
-            this.Friday1.Size = new System.Drawing.Size(179, 72);
+            this.Friday1.Size = new System.Drawing.Size(198, 79);
             this.Friday1.TabIndex = 20;
             this.Friday1.UseVisualStyleBackColor = true;
             // 
@@ -769,9 +749,9 @@
             this.panel40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel40.Controls.Add(this.Friday2);
             this.panel40.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel40.Location = new System.Drawing.Point(938, 163);
+            this.panel40.Location = new System.Drawing.Point(883, 137);
             this.panel40.Name = "panel40";
-            this.panel40.Size = new System.Drawing.Size(181, 74);
+            this.panel40.Size = new System.Drawing.Size(200, 81);
             this.panel40.TabIndex = 12;
             // 
             // Friday2
@@ -786,7 +766,7 @@
             this.Friday2.MouseState = MaterialSkin.MouseState.HOVER;
             this.Friday2.Name = "Friday2";
             this.Friday2.Primary = false;
-            this.Friday2.Size = new System.Drawing.Size(179, 72);
+            this.Friday2.Size = new System.Drawing.Size(198, 79);
             this.Friday2.TabIndex = 21;
             this.Friday2.UseVisualStyleBackColor = true;
             // 
@@ -795,9 +775,9 @@
             this.panel39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel39.Controls.Add(this.Friday3);
             this.panel39.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel39.Location = new System.Drawing.Point(938, 243);
+            this.panel39.Location = new System.Drawing.Point(883, 224);
             this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(181, 74);
+            this.panel39.Size = new System.Drawing.Size(200, 81);
             this.panel39.TabIndex = 12;
             // 
             // Friday3
@@ -812,7 +792,7 @@
             this.Friday3.MouseState = MaterialSkin.MouseState.HOVER;
             this.Friday3.Name = "Friday3";
             this.Friday3.Primary = false;
-            this.Friday3.Size = new System.Drawing.Size(179, 72);
+            this.Friday3.Size = new System.Drawing.Size(198, 79);
             this.Friday3.TabIndex = 22;
             this.Friday3.UseVisualStyleBackColor = true;
             // 
@@ -821,9 +801,9 @@
             this.panel38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel38.Controls.Add(this.Friday4);
             this.panel38.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel38.Location = new System.Drawing.Point(938, 323);
+            this.panel38.Location = new System.Drawing.Point(883, 311);
             this.panel38.Name = "panel38";
-            this.panel38.Size = new System.Drawing.Size(181, 74);
+            this.panel38.Size = new System.Drawing.Size(200, 81);
             this.panel38.TabIndex = 12;
             // 
             // Friday4
@@ -838,7 +818,7 @@
             this.Friday4.MouseState = MaterialSkin.MouseState.HOVER;
             this.Friday4.Name = "Friday4";
             this.Friday4.Primary = false;
-            this.Friday4.Size = new System.Drawing.Size(179, 72);
+            this.Friday4.Size = new System.Drawing.Size(198, 79);
             this.Friday4.TabIndex = 23;
             this.Friday4.UseVisualStyleBackColor = true;
             // 
@@ -847,9 +827,9 @@
             this.panel37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel37.Controls.Add(this.Friday5);
             this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel37.Location = new System.Drawing.Point(938, 403);
+            this.panel37.Location = new System.Drawing.Point(883, 398);
             this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(181, 76);
+            this.panel37.Size = new System.Drawing.Size(200, 81);
             this.panel37.TabIndex = 12;
             // 
             // Friday5
@@ -864,7 +844,7 @@
             this.Friday5.MouseState = MaterialSkin.MouseState.HOVER;
             this.Friday5.Name = "Friday5";
             this.Friday5.Primary = false;
-            this.Friday5.Size = new System.Drawing.Size(179, 74);
+            this.Friday5.Size = new System.Drawing.Size(198, 79);
             this.Friday5.TabIndex = 24;
             this.Friday5.UseVisualStyleBackColor = true;
             // 
@@ -873,9 +853,9 @@
             this.panel36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel36.Controls.Add(this.Thursday5);
             this.panel36.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel36.Location = new System.Drawing.Point(751, 403);
+            this.panel36.Location = new System.Drawing.Point(677, 398);
             this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(181, 76);
+            this.panel36.Size = new System.Drawing.Size(200, 81);
             this.panel36.TabIndex = 12;
             // 
             // Thursday5
@@ -890,7 +870,7 @@
             this.Thursday5.MouseState = MaterialSkin.MouseState.HOVER;
             this.Thursday5.Name = "Thursday5";
             this.Thursday5.Primary = false;
-            this.Thursday5.Size = new System.Drawing.Size(179, 74);
+            this.Thursday5.Size = new System.Drawing.Size(198, 79);
             this.Thursday5.TabIndex = 19;
             this.Thursday5.UseVisualStyleBackColor = true;
             // 
@@ -899,9 +879,9 @@
             this.panel35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel35.Controls.Add(this.Wednesday4);
             this.panel35.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel35.Location = new System.Drawing.Point(564, 323);
+            this.panel35.Location = new System.Drawing.Point(471, 311);
             this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(181, 74);
+            this.panel35.Size = new System.Drawing.Size(200, 81);
             this.panel35.TabIndex = 12;
             // 
             // Wednesday4
@@ -916,7 +896,7 @@
             this.Wednesday4.MouseState = MaterialSkin.MouseState.HOVER;
             this.Wednesday4.Name = "Wednesday4";
             this.Wednesday4.Primary = false;
-            this.Wednesday4.Size = new System.Drawing.Size(179, 72);
+            this.Wednesday4.Size = new System.Drawing.Size(198, 79);
             this.Wednesday4.TabIndex = 13;
             this.Wednesday4.UseVisualStyleBackColor = true;
             // 
@@ -925,9 +905,9 @@
             this.panel34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel34.Controls.Add(this.Thursday4);
             this.panel34.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel34.Location = new System.Drawing.Point(751, 323);
+            this.panel34.Location = new System.Drawing.Point(677, 311);
             this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(181, 74);
+            this.panel34.Size = new System.Drawing.Size(200, 81);
             this.panel34.TabIndex = 12;
             // 
             // Thursday4
@@ -942,7 +922,7 @@
             this.Thursday4.MouseState = MaterialSkin.MouseState.HOVER;
             this.Thursday4.Name = "Thursday4";
             this.Thursday4.Primary = false;
-            this.Thursday4.Size = new System.Drawing.Size(179, 72);
+            this.Thursday4.Size = new System.Drawing.Size(198, 79);
             this.Thursday4.TabIndex = 18;
             this.Thursday4.UseVisualStyleBackColor = true;
             // 
@@ -951,9 +931,9 @@
             this.panel33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel33.Controls.Add(this.Thursday3);
             this.panel33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel33.Location = new System.Drawing.Point(751, 243);
+            this.panel33.Location = new System.Drawing.Point(677, 224);
             this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(181, 74);
+            this.panel33.Size = new System.Drawing.Size(200, 81);
             this.panel33.TabIndex = 12;
             // 
             // Thursday3
@@ -968,7 +948,7 @@
             this.Thursday3.MouseState = MaterialSkin.MouseState.HOVER;
             this.Thursday3.Name = "Thursday3";
             this.Thursday3.Primary = false;
-            this.Thursday3.Size = new System.Drawing.Size(179, 72);
+            this.Thursday3.Size = new System.Drawing.Size(198, 79);
             this.Thursday3.TabIndex = 17;
             this.Thursday3.UseVisualStyleBackColor = true;
             // 
@@ -977,9 +957,9 @@
             this.panel32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel32.Controls.Add(this.Thursday2);
             this.panel32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel32.Location = new System.Drawing.Point(751, 163);
+            this.panel32.Location = new System.Drawing.Point(677, 137);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(181, 74);
+            this.panel32.Size = new System.Drawing.Size(200, 81);
             this.panel32.TabIndex = 12;
             // 
             // Thursday2
@@ -994,7 +974,7 @@
             this.Thursday2.MouseState = MaterialSkin.MouseState.HOVER;
             this.Thursday2.Name = "Thursday2";
             this.Thursday2.Primary = false;
-            this.Thursday2.Size = new System.Drawing.Size(179, 72);
+            this.Thursday2.Size = new System.Drawing.Size(198, 79);
             this.Thursday2.TabIndex = 16;
             this.Thursday2.UseVisualStyleBackColor = true;
             // 
@@ -1003,9 +983,9 @@
             this.panel31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel31.Controls.Add(this.Thursday1);
             this.panel31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel31.Location = new System.Drawing.Point(751, 83);
+            this.panel31.Location = new System.Drawing.Point(677, 50);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(181, 74);
+            this.panel31.Size = new System.Drawing.Size(200, 81);
             this.panel31.TabIndex = 12;
             // 
             // Thursday1
@@ -1020,7 +1000,7 @@
             this.Thursday1.MouseState = MaterialSkin.MouseState.HOVER;
             this.Thursday1.Name = "Thursday1";
             this.Thursday1.Primary = false;
-            this.Thursday1.Size = new System.Drawing.Size(179, 72);
+            this.Thursday1.Size = new System.Drawing.Size(198, 79);
             this.Thursday1.TabIndex = 15;
             this.Thursday1.UseVisualStyleBackColor = true;
             // 
@@ -1029,9 +1009,9 @@
             this.panel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel30.Controls.Add(this.Wednesday5);
             this.panel30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel30.Location = new System.Drawing.Point(564, 403);
+            this.panel30.Location = new System.Drawing.Point(471, 398);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(181, 76);
+            this.panel30.Size = new System.Drawing.Size(200, 81);
             this.panel30.TabIndex = 12;
             // 
             // Wednesday5
@@ -1046,7 +1026,7 @@
             this.Wednesday5.MouseState = MaterialSkin.MouseState.HOVER;
             this.Wednesday5.Name = "Wednesday5";
             this.Wednesday5.Primary = false;
-            this.Wednesday5.Size = new System.Drawing.Size(179, 74);
+            this.Wednesday5.Size = new System.Drawing.Size(198, 79);
             this.Wednesday5.TabIndex = 14;
             this.Wednesday5.UseVisualStyleBackColor = true;
             // 
@@ -1056,9 +1036,9 @@
             this.panel28.Controls.Add(this.Wednesday3);
             this.panel28.Controls.Add(this.panel29);
             this.panel28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel28.Location = new System.Drawing.Point(564, 243);
+            this.panel28.Location = new System.Drawing.Point(471, 224);
             this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(181, 74);
+            this.panel28.Size = new System.Drawing.Size(200, 81);
             this.panel28.TabIndex = 12;
             // 
             // Wednesday3
@@ -1073,7 +1053,7 @@
             this.Wednesday3.MouseState = MaterialSkin.MouseState.HOVER;
             this.Wednesday3.Name = "Wednesday3";
             this.Wednesday3.Primary = false;
-            this.Wednesday3.Size = new System.Drawing.Size(179, 72);
+            this.Wednesday3.Size = new System.Drawing.Size(198, 79);
             this.Wednesday3.TabIndex = 12;
             this.Wednesday3.UseVisualStyleBackColor = true;
             // 
@@ -1089,9 +1069,9 @@
             this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel27.Controls.Add(this.Wednesday2);
             this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel27.Location = new System.Drawing.Point(564, 163);
+            this.panel27.Location = new System.Drawing.Point(471, 137);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(181, 74);
+            this.panel27.Size = new System.Drawing.Size(200, 81);
             this.panel27.TabIndex = 12;
             // 
             // Wednesday2
@@ -1106,7 +1086,7 @@
             this.Wednesday2.MouseState = MaterialSkin.MouseState.HOVER;
             this.Wednesday2.Name = "Wednesday2";
             this.Wednesday2.Primary = false;
-            this.Wednesday2.Size = new System.Drawing.Size(179, 72);
+            this.Wednesday2.Size = new System.Drawing.Size(198, 79);
             this.Wednesday2.TabIndex = 11;
             this.Wednesday2.UseVisualStyleBackColor = true;
             // 
@@ -1115,9 +1095,9 @@
             this.panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel26.Controls.Add(this.Wednesday1);
             this.panel26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel26.Location = new System.Drawing.Point(564, 83);
+            this.panel26.Location = new System.Drawing.Point(471, 50);
             this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(181, 74);
+            this.panel26.Size = new System.Drawing.Size(200, 81);
             this.panel26.TabIndex = 12;
             // 
             // Wednesday1
@@ -1135,7 +1115,7 @@
             this.Wednesday1.MouseState = MaterialSkin.MouseState.HOVER;
             this.Wednesday1.Name = "Wednesday1";
             this.Wednesday1.Primary = false;
-            this.Wednesday1.Size = new System.Drawing.Size(179, 72);
+            this.Wednesday1.Size = new System.Drawing.Size(198, 79);
             this.Wednesday1.TabIndex = 10;
             this.Wednesday1.UseVisualStyleBackColor = false;
             // 
@@ -1144,9 +1124,9 @@
             this.panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel25.Controls.Add(this.Tuesday5);
             this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel25.Location = new System.Drawing.Point(377, 403);
+            this.panel25.Location = new System.Drawing.Point(265, 398);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(181, 76);
+            this.panel25.Size = new System.Drawing.Size(200, 81);
             this.panel25.TabIndex = 12;
             // 
             // Tuesday5
@@ -1161,7 +1141,7 @@
             this.Tuesday5.MouseState = MaterialSkin.MouseState.HOVER;
             this.Tuesday5.Name = "Tuesday5";
             this.Tuesday5.Primary = false;
-            this.Tuesday5.Size = new System.Drawing.Size(179, 74);
+            this.Tuesday5.Size = new System.Drawing.Size(198, 79);
             this.Tuesday5.TabIndex = 9;
             this.Tuesday5.UseVisualStyleBackColor = true;
             // 
@@ -1170,9 +1150,9 @@
             this.panel24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel24.Controls.Add(this.Tuesday4);
             this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel24.Location = new System.Drawing.Point(377, 323);
+            this.panel24.Location = new System.Drawing.Point(265, 311);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(181, 74);
+            this.panel24.Size = new System.Drawing.Size(200, 81);
             this.panel24.TabIndex = 12;
             // 
             // Tuesday4
@@ -1187,7 +1167,7 @@
             this.Tuesday4.MouseState = MaterialSkin.MouseState.HOVER;
             this.Tuesday4.Name = "Tuesday4";
             this.Tuesday4.Primary = false;
-            this.Tuesday4.Size = new System.Drawing.Size(179, 72);
+            this.Tuesday4.Size = new System.Drawing.Size(198, 79);
             this.Tuesday4.TabIndex = 8;
             this.Tuesday4.UseVisualStyleBackColor = true;
             // 
@@ -1196,9 +1176,9 @@
             this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel23.Controls.Add(this.Tuesday3);
             this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel23.Location = new System.Drawing.Point(377, 243);
+            this.panel23.Location = new System.Drawing.Point(265, 224);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(181, 74);
+            this.panel23.Size = new System.Drawing.Size(200, 81);
             this.panel23.TabIndex = 12;
             // 
             // Tuesday3
@@ -1213,7 +1193,7 @@
             this.Tuesday3.MouseState = MaterialSkin.MouseState.HOVER;
             this.Tuesday3.Name = "Tuesday3";
             this.Tuesday3.Primary = false;
-            this.Tuesday3.Size = new System.Drawing.Size(179, 72);
+            this.Tuesday3.Size = new System.Drawing.Size(198, 79);
             this.Tuesday3.TabIndex = 7;
             this.Tuesday3.UseVisualStyleBackColor = true;
             // 
@@ -1222,9 +1202,9 @@
             this.panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel22.Controls.Add(this.Tuesday2);
             this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel22.Location = new System.Drawing.Point(377, 163);
+            this.panel22.Location = new System.Drawing.Point(265, 137);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(181, 74);
+            this.panel22.Size = new System.Drawing.Size(200, 81);
             this.panel22.TabIndex = 12;
             // 
             // Tuesday2
@@ -1239,7 +1219,7 @@
             this.Tuesday2.MouseState = MaterialSkin.MouseState.HOVER;
             this.Tuesday2.Name = "Tuesday2";
             this.Tuesday2.Primary = false;
-            this.Tuesday2.Size = new System.Drawing.Size(179, 72);
+            this.Tuesday2.Size = new System.Drawing.Size(198, 79);
             this.Tuesday2.TabIndex = 6;
             this.Tuesday2.UseVisualStyleBackColor = true;
             // 
@@ -1248,9 +1228,9 @@
             this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel21.Controls.Add(this.Tuesday1);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel21.Location = new System.Drawing.Point(377, 83);
+            this.panel21.Location = new System.Drawing.Point(265, 50);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(181, 74);
+            this.panel21.Size = new System.Drawing.Size(200, 81);
             this.panel21.TabIndex = 11;
             // 
             // Tuesday1
@@ -1266,7 +1246,7 @@
             this.Tuesday1.MouseState = MaterialSkin.MouseState.HOVER;
             this.Tuesday1.Name = "Tuesday1";
             this.Tuesday1.Primary = false;
-            this.Tuesday1.Size = new System.Drawing.Size(179, 72);
+            this.Tuesday1.Size = new System.Drawing.Size(198, 79);
             this.Tuesday1.TabIndex = 5;
             this.Tuesday1.UseVisualStyleBackColor = true;
             // 
@@ -1275,9 +1255,9 @@
             this.panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel20.Controls.Add(this.Monday5);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel20.Location = new System.Drawing.Point(190, 403);
+            this.panel20.Location = new System.Drawing.Point(54, 398);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(181, 76);
+            this.panel20.Size = new System.Drawing.Size(205, 81);
             this.panel20.TabIndex = 10;
             // 
             // Monday5
@@ -1292,7 +1272,7 @@
             this.Monday5.MouseState = MaterialSkin.MouseState.HOVER;
             this.Monday5.Name = "Monday5";
             this.Monday5.Primary = false;
-            this.Monday5.Size = new System.Drawing.Size(179, 74);
+            this.Monday5.Size = new System.Drawing.Size(203, 79);
             this.Monday5.TabIndex = 4;
             this.Monday5.UseVisualStyleBackColor = true;
             // 
@@ -1301,9 +1281,9 @@
             this.panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel19.Controls.Add(this.Monday4);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel19.Location = new System.Drawing.Point(190, 323);
+            this.panel19.Location = new System.Drawing.Point(54, 311);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(181, 74);
+            this.panel19.Size = new System.Drawing.Size(205, 81);
             this.panel19.TabIndex = 9;
             // 
             // Monday4
@@ -1318,7 +1298,7 @@
             this.Monday4.MouseState = MaterialSkin.MouseState.HOVER;
             this.Monday4.Name = "Monday4";
             this.Monday4.Primary = false;
-            this.Monday4.Size = new System.Drawing.Size(179, 72);
+            this.Monday4.Size = new System.Drawing.Size(203, 79);
             this.Monday4.TabIndex = 3;
             this.Monday4.UseVisualStyleBackColor = true;
             // 
@@ -1327,9 +1307,9 @@
             this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel18.Controls.Add(this.Monday3);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel18.Location = new System.Drawing.Point(190, 243);
+            this.panel18.Location = new System.Drawing.Point(54, 224);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(181, 74);
+            this.panel18.Size = new System.Drawing.Size(205, 81);
             this.panel18.TabIndex = 9;
             // 
             // Monday3
@@ -1344,7 +1324,7 @@
             this.Monday3.MouseState = MaterialSkin.MouseState.HOVER;
             this.Monday3.Name = "Monday3";
             this.Monday3.Primary = false;
-            this.Monday3.Size = new System.Drawing.Size(179, 72);
+            this.Monday3.Size = new System.Drawing.Size(203, 79);
             this.Monday3.TabIndex = 2;
             this.Monday3.UseVisualStyleBackColor = true;
             // 
@@ -1353,9 +1333,9 @@
             this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel17.Controls.Add(this.Monday2);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel17.Location = new System.Drawing.Point(190, 163);
+            this.panel17.Location = new System.Drawing.Point(54, 137);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(181, 74);
+            this.panel17.Size = new System.Drawing.Size(205, 81);
             this.panel17.TabIndex = 9;
             // 
             // Monday2
@@ -1370,24 +1350,25 @@
             this.Monday2.MouseState = MaterialSkin.MouseState.HOVER;
             this.Monday2.Name = "Monday2";
             this.Monday2.Primary = false;
-            this.Monday2.Size = new System.Drawing.Size(179, 72);
+            this.Monday2.Size = new System.Drawing.Size(203, 79);
             this.Monday2.TabIndex = 1;
             this.Monday2.UseVisualStyleBackColor = true;
             // 
             // panel15
             // 
+            this.panel15.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel15.Controls.Add(this.label13);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(3, 403);
+            this.panel15.Location = new System.Drawing.Point(3, 398);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(181, 76);
+            this.panel15.Size = new System.Drawing.Size(45, 81);
             this.panel15.TabIndex = 5;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(75, 31);
+            this.label13.Location = new System.Drawing.Point(15, 31);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(14, 16);
             this.label13.TabIndex = 0;
@@ -1396,18 +1377,19 @@
             // 
             // panel14
             // 
+            this.panel14.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel14.Controls.Add(this.label12);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Location = new System.Drawing.Point(3, 323);
+            this.panel14.Location = new System.Drawing.Point(3, 311);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(181, 74);
+            this.panel14.Size = new System.Drawing.Size(45, 81);
             this.panel14.TabIndex = 4;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(75, 26);
+            this.label12.Location = new System.Drawing.Point(15, 31);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(14, 16);
             this.label12.TabIndex = 0;
@@ -1416,18 +1398,19 @@
             // 
             // panel13
             // 
+            this.panel13.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel13.Controls.Add(this.label11);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(3, 243);
+            this.panel13.Location = new System.Drawing.Point(3, 224);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(181, 74);
+            this.panel13.Size = new System.Drawing.Size(45, 81);
             this.panel13.TabIndex = 3;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(75, 28);
+            this.label11.Location = new System.Drawing.Point(15, 31);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(14, 16);
             this.label11.TabIndex = 0;
@@ -1436,18 +1419,19 @@
             // 
             // panel12
             // 
+            this.panel12.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel12.Controls.Add(this.label10);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(3, 163);
+            this.panel12.Location = new System.Drawing.Point(3, 137);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(181, 74);
+            this.panel12.Size = new System.Drawing.Size(45, 81);
             this.panel12.TabIndex = 2;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(75, 27);
+            this.label10.Location = new System.Drawing.Point(15, 31);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(14, 16);
             this.label10.TabIndex = 0;
@@ -1456,18 +1440,19 @@
             // 
             // panel11
             // 
+            this.panel11.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel11.Controls.Add(this.label9);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(3, 83);
+            this.panel11.Location = new System.Drawing.Point(3, 50);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(181, 74);
+            this.panel11.Size = new System.Drawing.Size(45, 81);
             this.panel11.TabIndex = 1;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(75, 31);
+            this.label9.Location = new System.Drawing.Point(15, 31);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(14, 16);
             this.label9.TabIndex = 0;
@@ -1476,12 +1461,13 @@
             // 
             // panel10
             // 
+            this.panel10.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.label8);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(1312, 3);
+            this.panel10.Location = new System.Drawing.Point(1295, 3);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(186, 74);
+            this.panel10.Size = new System.Drawing.Size(203, 41);
             this.panel10.TabIndex = 7;
             // 
             // label8
@@ -1490,7 +1476,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(67, 28);
+            this.label8.Location = new System.Drawing.Point(84, 11);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 16);
             this.label8.TabIndex = 1;
@@ -1499,12 +1485,13 @@
             // 
             // panel9
             // 
+            this.panel9.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.label7);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(1125, 3);
+            this.panel9.Location = new System.Drawing.Point(1089, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(181, 74);
+            this.panel9.Size = new System.Drawing.Size(200, 41);
             this.panel9.TabIndex = 6;
             // 
             // label7
@@ -1513,7 +1500,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(54, 28);
+            this.label7.Location = new System.Drawing.Point(69, 11);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 16);
             this.label7.TabIndex = 1;
@@ -1522,12 +1509,13 @@
             // 
             // panel8
             // 
+            this.panel8.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.label6);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(938, 3);
+            this.panel8.Location = new System.Drawing.Point(883, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(181, 74);
+            this.panel8.Size = new System.Drawing.Size(200, 41);
             this.panel8.TabIndex = 5;
             // 
             // label6
@@ -1536,7 +1524,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(63, 28);
+            this.label6.Location = new System.Drawing.Point(77, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 16);
             this.label6.TabIndex = 1;
@@ -1545,18 +1533,21 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(190, 3);
+            this.panel2.Location = new System.Drawing.Point(54, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(181, 74);
+            this.panel2.Size = new System.Drawing.Size(205, 41);
             this.panel2.TabIndex = 0;
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 28);
+            this.label2.Location = new System.Drawing.Point(74, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 0;
@@ -1565,12 +1556,13 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(564, 3);
+            this.panel4.Location = new System.Drawing.Point(471, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(181, 74);
+            this.panel4.Size = new System.Drawing.Size(200, 41);
             this.panel4.TabIndex = 2;
             // 
             // label3
@@ -1579,7 +1571,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 28);
+            this.label3.Location = new System.Drawing.Point(69, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 16);
             this.label3.TabIndex = 1;
@@ -1589,12 +1581,13 @@
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label4);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(377, 3);
+            this.panel6.Location = new System.Drawing.Point(265, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(181, 74);
+            this.panel6.Size = new System.Drawing.Size(200, 41);
             this.panel6.TabIndex = 3;
             // 
             // label4
@@ -1603,7 +1596,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(60, 28);
+            this.label4.Location = new System.Drawing.Point(70, 11);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 16);
             this.label4.TabIndex = 1;
@@ -1612,12 +1605,13 @@
             // 
             // panel7
             // 
+            this.panel7.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.label5);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(751, 3);
+            this.panel7.Location = new System.Drawing.Point(677, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(181, 74);
+            this.panel7.Size = new System.Drawing.Size(200, 41);
             this.panel7.TabIndex = 4;
             // 
             // label5
@@ -1626,7 +1620,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(62, 28);
+            this.label5.Location = new System.Drawing.Point(69, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 16);
             this.label5.TabIndex = 1;
@@ -1638,9 +1632,9 @@
             this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel16.Controls.Add(this.Monday1);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel16.Location = new System.Drawing.Point(190, 83);
+            this.panel16.Location = new System.Drawing.Point(54, 50);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(181, 74);
+            this.panel16.Size = new System.Drawing.Size(205, 81);
             this.panel16.TabIndex = 8;
             // 
             // Monday1
@@ -1656,10 +1650,21 @@
             this.Monday1.MouseState = MaterialSkin.MouseState.HOVER;
             this.Monday1.Name = "Monday1";
             this.Monday1.Primary = false;
-            this.Monday1.Size = new System.Drawing.Size(179, 72);
+            this.Monday1.Size = new System.Drawing.Size(203, 79);
             this.Monday1.TabIndex = 0;
             this.Monday1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Monday1.UseVisualStyleBackColor = true;
+            // 
+            // Calender
+            // 
+            this.Calender.AutoSize = true;
+            this.Calender.Location = new System.Drawing.Point(653, 84);
+            this.Calender.Name = "Calender";
+            this.Calender.Size = new System.Drawing.Size(83, 20);
+            this.Calender.TabIndex = 15;
+            this.Calender.Text = "Calender";
+            this.Calender.UseVisualStyleBackColor = true;
+            this.Calender.CheckedChanged += new System.EventHandler(this.Calender_CheckedChanged);
             // 
             // roomIdDataGridViewTextBoxColumn
             // 
@@ -1843,14 +1848,12 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox Sort_Combobox;
-        private System.Windows.Forms.RadioButton Calender;
         private System.Windows.Forms.RadioButton BasicRBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel9;
@@ -1945,5 +1948,6 @@
         private MaterialSkin.Controls.MaterialFlatButton Monday1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.RadioButton Calender;
     }
 }

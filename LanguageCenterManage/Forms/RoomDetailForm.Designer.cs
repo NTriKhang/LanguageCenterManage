@@ -44,7 +44,7 @@
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Depth = 0;
             this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(97, 296);
+            this.btnAdd.Location = new System.Drawing.Point(28, 172);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Primary = true;
@@ -60,7 +60,7 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(803, 294);
+            this.btnDelete.Location = new System.Drawing.Point(233, 168);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 44);
             this.btnDelete.TabIndex = 20;
@@ -74,7 +74,7 @@
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(641, 294);
+            this.btnUpdate.Location = new System.Drawing.Point(118, 168);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(109, 44);
             this.btnUpdate.TabIndex = 18;
@@ -84,17 +84,17 @@
             // 
             // txtRoomName
             // 
-            this.txtRoomName.Location = new System.Drawing.Point(628, 98);
+            this.txtRoomName.Location = new System.Drawing.Point(118, 129);
             this.txtRoomName.Multiline = true;
             this.txtRoomName.Name = "txtRoomName";
-            this.txtRoomName.Size = new System.Drawing.Size(251, 22);
+            this.txtRoomName.Size = new System.Drawing.Size(224, 22);
             this.txtRoomName.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(539, 97);
+            this.label2.Location = new System.Drawing.Point(24, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 23);
             this.label2.TabIndex = 12;
@@ -103,7 +103,7 @@
             // txtRoomId
             // 
             this.txtRoomId.Enabled = false;
-            this.txtRoomId.Location = new System.Drawing.Point(187, 98);
+            this.txtRoomId.Location = new System.Drawing.Point(118, 92);
             this.txtRoomId.Multiline = true;
             this.txtRoomId.Name = "txtRoomId";
             this.txtRoomId.Size = new System.Drawing.Size(224, 22);
@@ -113,7 +113,7 @@
             // 
             this.label.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label.Location = new System.Drawing.Point(93, 97);
+            this.label.Location = new System.Drawing.Point(24, 91);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(65, 23);
             this.label.TabIndex = 9;
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 387);
+            this.ClientSize = new System.Drawing.Size(390, 257);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);

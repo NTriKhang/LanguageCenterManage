@@ -116,6 +116,16 @@ namespace LanguageCenterManage.Forms
                 MessageBox.Show("Enter missing fields", "400", MessageBoxButtons.OK);
                 return false;
             }
+            else if (!txtEmailTeacher.isValid)
+            {
+                MessageBox.Show("Invalid email", "400", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (!txtPhone.isValid)
+            {
+                MessageBox.Show("Invalid phone", "400", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
         private void TeacherDetailForm_FormClosed(object sender, FormClosedEventArgs e)

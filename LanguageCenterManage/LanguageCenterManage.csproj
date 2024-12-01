@@ -180,6 +180,12 @@
     <Compile Include="Controls\UsersControl.Designer.cs">
       <DependentUpon>UsersControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControl\_TextValid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\_TextValid.Designer.cs">
+      <DependentUpon>_TextValid.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\AppDbContext.cs" />
     <Compile Include="DTO\BandDTO.cs" />
     <Compile Include="DTO\ClassDTO.cs" />
@@ -292,6 +298,12 @@
     <Compile Include="Forms\SubForm\ClassOfCourseForm.Designer.cs">
       <DependentUpon>ClassOfCourseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SubForm\ListScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubForm\ListScheduleForm.Designer.cs">
+      <DependentUpon>ListScheduleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SubForm\RoomAvailableForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,7 +326,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\UserDetailForm.Designer.cs">
-      <DependentUpon>202311170842294__addBandTable.cs</DependentUpon>
+      <DependentUpon>UserDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202311300249110_addIsActiveToSchedule.cs" />
     <Compile Include="Migrations\202311300249110_addIsActiveToSchedule.designer.cs">
@@ -467,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubForm\ClassOfCourseForm.resx">
       <DependentUpon>ClassOfCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubForm\ListScheduleForm.resx">
+      <DependentUpon>ListScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubForm\RoomAvailableForm.resx">
       <DependentUpon>RoomAvailableForm.cs</DependentUpon>

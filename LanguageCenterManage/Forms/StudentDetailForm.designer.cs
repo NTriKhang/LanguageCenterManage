@@ -1,4 +1,6 @@
-﻿namespace LanguageCenterManage
+﻿using LanguageCenterManage.CustomControl;
+
+namespace LanguageCenterManage
 {
     partial class StudentDetailForm
     {
@@ -31,14 +33,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdStudent = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtEmailStudent = new System.Windows.Forms.TextBox();
+            this.txtEmailStudent = new LanguageCenterManage.CustomControl._TextValid();
             this.label3 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtPhone = new LanguageCenterManage.CustomControl._TextValid();
             this.dtBirth = new System.Windows.Forms.DateTimePicker();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSendEmail = new System.Windows.Forms.Button();
@@ -86,6 +88,9 @@
             // 
             // txtEmailStudent
             // 
+            this.txtEmailStudent._email = false;
+            this.txtEmailStudent._phone = false;
+            this.txtEmailStudent.isValid = false;
             this.txtEmailStudent.Location = new System.Drawing.Point(531, 190);
             this.txtEmailStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmailStudent.Multiline = true;
@@ -153,6 +158,9 @@
             // 
             // txtPhone
             // 
+            this.txtPhone._email = false;
+            this.txtPhone._phone = false;
+            this.txtPhone.isValid = false;
             this.txtPhone.Location = new System.Drawing.Point(531, 353);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhone.Multiline = true;
@@ -176,7 +184,7 @@
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(552, 618);
+            this.btnUpdate.Location = new System.Drawing.Point(552, 619);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(109, 44);
@@ -206,7 +214,7 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(667, 618);
+            this.btnDelete.Location = new System.Drawing.Point(667, 619);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 44);
@@ -222,7 +230,7 @@
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Depth = 0;
             this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(53, 626);
+            this.btnAdd.Location = new System.Drawing.Point(53, 623);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
@@ -258,7 +266,7 @@
             this.btnJoin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnJoin.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJoin.ForeColor = System.Drawing.Color.White;
-            this.btnJoin.Location = new System.Drawing.Point(437, 618);
+            this.btnJoin.Location = new System.Drawing.Point(437, 619);
             this.btnJoin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnJoin.Name = "btnJoin";
             this.btnJoin.Size = new System.Drawing.Size(109, 44);
@@ -363,14 +371,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIdStudent;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtEmailStudent;
+        private _TextValid txtEmailStudent;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtPhone;
+        private _TextValid txtPhone;
         private System.Windows.Forms.DateTimePicker dtBirth;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSendEmail;

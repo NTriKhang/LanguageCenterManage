@@ -41,9 +41,20 @@ namespace LanguageCenterManage.Forms
     || txtPhone.Text == "" || addressTextBox.Text == "" || roleIdCb.Text == ""
     || roleNameTb.Text == "" || passwordTb.Text == "")
             {
-                MessageBox.Show("Enter missing fields", "400", MessageBoxButtons.OK);
+                MessageBox.Show("Enter missing fields", "400", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            else if (!txtEmailStudent.isValid)
+            {
+                MessageBox.Show("Invalid email", "400", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if(!txtPhone.isValid)
+            {
+                MessageBox.Show("Invalid phone", "400", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
             return true;
         }
 

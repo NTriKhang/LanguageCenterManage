@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.Data.Entity;
 using LanguageCenterManage.Forms;
 using System.Diagnostics;
+using LanguageCenterManage.Forms.SubForm;
 
 namespace LanguageCenterManage.Controls
 {
@@ -241,23 +242,45 @@ namespace LanguageCenterManage.Controls
 
             }
         }
+        private Dictionary<string, List<ScheduleDTO>> scheduleMapping = new Dictionary<string, List<ScheduleDTO>>();
         private void LoadCalendar(DateTime mondayDateOfWeek)
         {
             var calendarList = ListSchedule.Where(x => x.DateTime >= mondayDateOfWeek && x.DateTime < mondayDateOfWeek.AddDays(7));
+            scheduleMapping.Clear();
+
             foreach (var calendar in calendarList)
             {
                 Debug.WriteLine(calendar.DateTime);
                 var nameBtn = calendar.DateTime.DayOfWeek.ToString() + "" + calendar.Shift.ToString();
                 var btn = CalenderButtons[nameBtn];
-                if(!calendar.IsActive)
+                if (!calendar.IsActive)
                 {
                     btn.Text += "Close - ";
                 }
                 btn.Text += calendar.RoomName + ' ' + calendar.CourseName + ' ' + calendar.DateTime.ToString("dd/MM/yyyy") + '\n';
-               
+                btn.Tag = nameBtn;
+                if (!scheduleMapping.ContainsKey(nameBtn))
+                {
+                    scheduleMapping[nameBtn] = new List<ScheduleDTO>();
+                }
+                scheduleMapping[nameBtn].Add(calendar);
+
+                btn.Click -= ButtonClickHandler;
+                btn.Click += ButtonClickHandler;
             }
         }
+        private void ButtonClickHandler(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null) return;
 
+            var nameBtn = button.Tag as string;
+            if (nameBtn == null || !scheduleMapping.ContainsKey(nameBtn)) return;
+
+            Debug.WriteLine("Open form for: " + nameBtn);
+            var frm = new ListScheduleForm(scheduleMapping[nameBtn]);
+            frm.ShowDialog();
+        }
         private void label3_Click(object sender, EventArgs e)
         {
 

@@ -1,4 +1,6 @@
-﻿namespace LanguageCenterManage.Forms
+﻿using LanguageCenterManage.CustomControl;
+
+namespace LanguageCenterManage.Forms
 {
     partial class TeacherDetailForm
     {
@@ -34,13 +36,11 @@
             this.dtBirth = new System.Windows.Forms.DateTimePicker();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEmailTeacher = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtIdTeacher = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.labelAddress = new System.Windows.Forms.Label();
@@ -50,6 +50,8 @@
             this.ImageNameTxt = new System.Windows.Forms.TextBox();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSendEmail = new System.Windows.Forms.Button();
+            this.txtEmailTeacher = new LanguageCenterManage.CustomControl._TextValid();
+            this.txtPhone = new LanguageCenterManage.CustomControl._TextValid();
             ((System.ComponentModel.ISupportInitialize)(this.profileImageBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Depth = 0;
             this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(59, 615);
+            this.btnAdd.Location = new System.Drawing.Point(59, 612);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Primary = true;
@@ -76,7 +78,7 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(640, 609);
+            this.btnDelete.Location = new System.Drawing.Point(640, 608);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 44);
             this.btnDelete.TabIndex = 10;
@@ -90,7 +92,7 @@
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(525, 609);
+            this.btnUpdate.Location = new System.Drawing.Point(525, 608);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(109, 44);
             this.btnUpdate.TabIndex = 9;
@@ -124,14 +126,6 @@
             this.label4.Size = new System.Drawing.Size(83, 23);
             this.label4.TabIndex = 5;
             this.label4.Text = "LastName";
-            // 
-            // txtEmailTeacher
-            // 
-            this.txtEmailTeacher.Location = new System.Drawing.Point(557, 184);
-            this.txtEmailTeacher.Multiline = true;
-            this.txtEmailTeacher.Name = "txtEmailTeacher";
-            this.txtEmailTeacher.Size = new System.Drawing.Size(216, 22);
-            this.txtEmailTeacher.TabIndex = 2;
             // 
             // txtFirstName
             // 
@@ -180,14 +174,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Id";
             // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(557, 387);
-            this.txtPhone.Multiline = true;
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(216, 22);
-            this.txtPhone.TabIndex = 6;
-            // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -232,7 +218,7 @@
             this.ExportIDCbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ExportIDCbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExportIDCbtn.ForeColor = System.Drawing.Color.White;
-            this.ExportIDCbtn.Location = new System.Drawing.Point(399, 609);
+            this.ExportIDCbtn.Location = new System.Drawing.Point(399, 608);
             this.ExportIDCbtn.Name = "ExportIDCbtn";
             this.ExportIDCbtn.Size = new System.Drawing.Size(120, 44);
             this.ExportIDCbtn.TabIndex = 12;
@@ -289,6 +275,28 @@
             this.btnSendEmail.UseVisualStyleBackColor = false;
             this.btnSendEmail.Click += new System.EventHandler(this.btnSendEmail_Click);
             // 
+            // txtEmailTeacher
+            // 
+            this.txtEmailTeacher._email = true;
+            this.txtEmailTeacher._phone = false;
+            this.txtEmailTeacher.isValid = false;
+            this.txtEmailTeacher.Location = new System.Drawing.Point(557, 184);
+            this.txtEmailTeacher.Multiline = true;
+            this.txtEmailTeacher.Name = "txtEmailTeacher";
+            this.txtEmailTeacher.Size = new System.Drawing.Size(216, 22);
+            this.txtEmailTeacher.TabIndex = 2;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone._email = false;
+            this.txtPhone._phone = true;
+            this.txtPhone.isValid = false;
+            this.txtPhone.Location = new System.Drawing.Point(557, 387);
+            this.txtPhone.Multiline = true;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(216, 22);
+            this.txtPhone.TabIndex = 6;
+            // 
             // TeacherDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -335,13 +343,11 @@
         private System.Windows.Forms.DateTimePicker dtBirth;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEmailTeacher;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtIdTeacher;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelAddress;
@@ -351,5 +357,7 @@
         private System.Windows.Forms.TextBox ImageNameTxt;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.Button btnSendEmail;
+        private _TextValid txtEmailTeacher;
+        private _TextValid txtPhone;
     }
 }

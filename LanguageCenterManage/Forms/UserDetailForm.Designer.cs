@@ -1,4 +1,6 @@
-﻿namespace LanguageCenterManage.Forms
+﻿using LanguageCenterManage.CustomControl;
+
+namespace LanguageCenterManage.Forms
 {
     partial class UserDetailForm
     {
@@ -33,13 +35,13 @@
             this.dtBirth = new System.Windows.Forms.DateTimePicker();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEmailStudent = new System.Windows.Forms.TextBox();
+            this.txtEmailStudent = new LanguageCenterManage.CustomControl._TextValid();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtIdStudent = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtPhone = new LanguageCenterManage.CustomControl._TextValid();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -107,6 +109,9 @@
             // 
             // txtEmailStudent
             // 
+            this.txtEmailStudent._email = true;
+            this.txtEmailStudent._phone = false;
+            this.txtEmailStudent.isValid = false;
             this.txtEmailStudent.Location = new System.Drawing.Point(575, 159);
             this.txtEmailStudent.Multiline = true;
             this.txtEmailStudent.Name = "txtEmailStudent";
@@ -162,6 +167,9 @@
             // 
             // txtPhone
             // 
+            this.txtPhone._email = false;
+            this.txtPhone._phone = true;
+            this.txtPhone.isValid = false;
             this.txtPhone.Location = new System.Drawing.Point(575, 368);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
@@ -426,13 +434,11 @@
         private System.Windows.Forms.DateTimePicker dtBirth;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEmailStudent;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtIdStudent;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
@@ -450,5 +456,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.PictureBox profileImageBox;
         private MaterialSkin.Controls.MaterialRaisedButton ExportIDCbtn;
+        private _TextValid txtEmailStudent;
+        private _TextValid txtPhone;
     }
 }

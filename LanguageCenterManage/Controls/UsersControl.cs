@@ -52,16 +52,17 @@ namespace LanguageCenterManage.Controls
             string RoleName = _db.Users
                 .Where(m => m.Id == USER.UserId)
                 .Select(m => m.Role.Name).FirstOrDefault();
-            if (RoleName != utility.Admin)
-            {
-                MessageBox.Show("Bạn không có quyền", "409");
-            }
-            else
-            {
-                UserDetailForm userDetailForm = new UserDetailForm();
-                userDetailForm.FormClosed += UserDetailForm_FormClosed;
-                userDetailForm.ShowDialog();
-            }
+            UserDetailForm userDetailForm = new UserDetailForm();
+            userDetailForm.FormClosed += UserDetailForm_FormClosed;
+            userDetailForm.ShowDialog();
+            //if (RoleName != utility.Admin)
+            //{
+            //    MessageBox.Show("Bạn không có quyền", "409");
+            //}
+            //else
+            //{
+        
+            //}
         }
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

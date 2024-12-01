@@ -58,9 +58,9 @@
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(506, 471);
+            this.btnUpdate.Location = new System.Drawing.Point(486, 261);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(109, 44);
+            this.btnUpdate.Size = new System.Drawing.Size(109, 36);
             this.btnUpdate.TabIndex = 24;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -70,7 +70,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(452, 144);
+            this.label1.Location = new System.Drawing.Point(408, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 23);
             this.label1.TabIndex = 22;
@@ -80,7 +80,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(45, 221);
+            this.label3.Location = new System.Drawing.Point(14, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 23);
             this.label3.TabIndex = 22;
@@ -90,7 +90,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(452, 221);
+            this.label4.Location = new System.Drawing.Point(408, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 23);
             this.label4.TabIndex = 20;
@@ -100,7 +100,7 @@
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(45, 300);
+            this.label5.Location = new System.Drawing.Point(14, 169);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 23);
             this.label5.TabIndex = 22;
@@ -109,28 +109,28 @@
             // txtStudentId
             // 
             this.txtStudentId.Enabled = false;
-            this.txtStudentId.Location = new System.Drawing.Point(569, 144);
+            this.txtStudentId.Location = new System.Drawing.Point(525, 93);
             this.txtStudentId.Name = "txtStudentId";
             this.txtStudentId.Size = new System.Drawing.Size(194, 22);
             this.txtStudentId.TabIndex = 33;
             // 
             // txtSecondGrade
             // 
-            this.txtSecondGrade.Location = new System.Drawing.Point(569, 219);
+            this.txtSecondGrade.Location = new System.Drawing.Point(525, 131);
             this.txtSecondGrade.Name = "txtSecondGrade";
             this.txtSecondGrade.Size = new System.Drawing.Size(194, 22);
             this.txtSecondGrade.TabIndex = 33;
             // 
             // txtFistGrade
             // 
-            this.txtFistGrade.Location = new System.Drawing.Point(159, 219);
+            this.txtFistGrade.Location = new System.Drawing.Point(115, 131);
             this.txtFistGrade.Name = "txtFistGrade";
             this.txtFistGrade.Size = new System.Drawing.Size(194, 22);
             this.txtFistGrade.TabIndex = 33;
             // 
             // txtFinalGrade
             // 
-            this.txtFinalGrade.Location = new System.Drawing.Point(159, 298);
+            this.txtFinalGrade.Location = new System.Drawing.Point(115, 169);
             this.txtFinalGrade.Name = "txtFinalGrade";
             this.txtFinalGrade.Size = new System.Drawing.Size(194, 22);
             this.txtFinalGrade.TabIndex = 33;
@@ -142,7 +142,7 @@
             this.btnShowListClass.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnShowListClass.Depth = 0;
             this.btnShowListClass.Icon = null;
-            this.btnShowListClass.Location = new System.Drawing.Point(159, 366);
+            this.btnShowListClass.Location = new System.Drawing.Point(199, 207);
             this.btnShowListClass.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnShowListClass.Name = "btnShowListClass";
             this.btnShowListClass.Primary = true;
@@ -156,7 +156,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(452, 298);
+            this.label2.Location = new System.Drawing.Point(408, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 23);
             this.label2.TabIndex = 20;
@@ -165,7 +165,7 @@
             // txtClassId
             // 
             this.txtClassId.Enabled = false;
-            this.txtClassId.Location = new System.Drawing.Point(569, 298);
+            this.txtClassId.Location = new System.Drawing.Point(525, 169);
             this.txtClassId.Name = "txtClassId";
             this.txtClassId.Size = new System.Drawing.Size(194, 22);
             this.txtClassId.TabIndex = 33;
@@ -176,9 +176,9 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(360, 471);
+            this.btnDelete.Location = new System.Drawing.Point(371, 261);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(109, 44);
+            this.btnDelete.Size = new System.Drawing.Size(109, 36);
             this.btnDelete.TabIndex = 37;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -190,7 +190,7 @@
             this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdd.Depth = 0;
             this.btnAdd.Icon = null;
-            this.btnAdd.Location = new System.Drawing.Point(657, 471);
+            this.btnAdd.Location = new System.Drawing.Point(601, 261);
             this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Primary = true;
@@ -204,7 +204,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(58, 144);
+            this.label6.Location = new System.Drawing.Point(14, 93);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 23);
             this.label6.TabIndex = 22;
@@ -213,7 +213,7 @@
             // txtJoinId
             // 
             this.txtJoinId.Enabled = false;
-            this.txtJoinId.Location = new System.Drawing.Point(159, 144);
+            this.txtJoinId.Location = new System.Drawing.Point(115, 93);
             this.txtJoinId.Name = "txtJoinId";
             this.txtJoinId.Size = new System.Drawing.Size(194, 22);
             this.txtJoinId.TabIndex = 33;
@@ -224,7 +224,7 @@
             this.btnBill.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBill.Depth = 0;
             this.btnBill.Icon = null;
-            this.btnBill.Location = new System.Drawing.Point(207, 472);
+            this.btnBill.Location = new System.Drawing.Point(663, 261);
             this.btnBill.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBill.Name = "btnBill";
             this.btnBill.Primary = true;
@@ -242,7 +242,7 @@
             // 
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(452, 366);
+            this.label7.Location = new System.Drawing.Point(408, 214);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 23);
             this.label7.TabIndex = 39;
@@ -255,7 +255,7 @@
             "Process",
             "Pass",
             "Fail"});
-            this.StatusTxt.Location = new System.Drawing.Point(569, 366);
+            this.StatusTxt.Location = new System.Drawing.Point(525, 214);
             this.StatusTxt.Name = "StatusTxt";
             this.StatusTxt.Size = new System.Drawing.Size(194, 24);
             this.StatusTxt.TabIndex = 40;
@@ -264,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 553);
+            this.ClientSize = new System.Drawing.Size(746, 328);
             this.Controls.Add(this.StatusTxt);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnAdd);
