@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.Navbar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.Sidebar = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Content = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.Navbar.SuspendLayout();
             this.Sidebar.SuspendLayout();
+            this.Content.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // Navbar
@@ -79,11 +83,22 @@
             // 
             // Content
             // 
+            this.Content.Controls.Add(this.pictureBox8);
             this.Content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Content.Location = new System.Drawing.Point(351, 67);
             this.Content.Name = "Content";
             this.Content.Size = new System.Drawing.Size(821, 518);
             this.Content.TabIndex = 0;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(821, 518);
+            this.pictureBox8.TabIndex = 1;
+            this.pictureBox8.TabStop = false;
             // 
             // Dashboard
             // 
@@ -98,6 +113,8 @@
             this.Navbar.ResumeLayout(false);
             this.Navbar.PerformLayout();
             this.Sidebar.ResumeLayout(false);
+            this.Content.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -109,6 +126,7 @@
         public System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.Panel Content;
         public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }
 

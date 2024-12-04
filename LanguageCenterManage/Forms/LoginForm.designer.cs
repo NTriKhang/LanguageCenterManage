@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.Content = new System.Windows.Forms.Panel();
             this.Sidebar = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -44,6 +45,7 @@
             this.Navbar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProviderLogin = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.Content.SuspendLayout();
             this.Sidebar.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -51,10 +53,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Navbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // Content
             // 
+            this.Content.Controls.Add(this.pictureBox8);
             this.Content.Controls.Add(this.Sidebar);
             this.Content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Content.Location = new System.Drawing.Point(0, 88);
@@ -243,6 +247,16 @@
             // 
             this.errorProviderLogin.ContainerControl = this;
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(607, 0);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(557, 689);
+            this.pictureBox8.TabIndex = 4;
+            this.pictureBox8.TabStop = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -261,6 +275,7 @@
             this.Navbar.ResumeLayout(false);
             this.Navbar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -282,5 +297,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProviderLogin;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }

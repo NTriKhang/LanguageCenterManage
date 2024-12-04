@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeDashboard));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.iconLogout = new System.Windows.Forms.PictureBox();
             this.btnLogout = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.btnRoom = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -53,14 +53,16 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btnClass = new MaterialSkin.Controls.MaterialFlatButton();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.Navbar.SuspendLayout();
             this.Sidebar.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.Content.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconLogout)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel1.SuspendLayout();
@@ -73,6 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // Navbar
@@ -90,6 +94,7 @@
             // 
             // Content
             // 
+            this.Content.Controls.Add(this.pictureBox9);
             this.Content.Location = new System.Drawing.Point(356, 67);
             this.Content.Size = new System.Drawing.Size(981, 756);
             // 
@@ -169,23 +174,13 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.pictureBox8);
             this.panel7.Controls.Add(this.btnRoom);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(3, 512);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(350, 71);
             this.panel7.TabIndex = 0;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::LanguageCenterManage.Properties.Resources.computer;
-            this.pictureBox8.Location = new System.Drawing.Point(68, 21);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(40, 36);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 1;
-            this.pictureBox8.TabStop = false;
+            this.panel7.Controls.SetChildIndex(this.btnRoom, 0);
             // 
             // btnRoom
             // 
@@ -420,6 +415,26 @@
             this.btnClass.UseVisualStyleBackColor = true;
             this.btnClass.Click += new System.EventHandler(this.btnClass_Click);
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::LanguageCenterManage.Properties.Resources.computer;
+            this.pictureBox8.Location = new System.Drawing.Point(68, 21);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 1;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(981, 756);
+            this.pictureBox9.TabIndex = 1;
+            this.pictureBox9.TabStop = false;
+            // 
             // EmployeeDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -432,13 +447,13 @@
             this.Navbar.PerformLayout();
             this.Sidebar.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.Content.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconLogout)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -456,6 +471,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -489,5 +506,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.PictureBox iconLogout;
         private MaterialSkin.Controls.MaterialFlatButton btnLogout;
+        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }

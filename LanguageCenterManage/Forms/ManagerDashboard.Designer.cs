@@ -32,6 +32,7 @@ namespace LanguageCenterManage
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerDashboard));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -60,9 +61,11 @@ namespace LanguageCenterManage
             this.panel11 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.userBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.Navbar.SuspendLayout();
             this.Sidebar.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.Content.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -82,6 +85,7 @@ namespace LanguageCenterManage
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // Navbar
@@ -99,6 +103,7 @@ namespace LanguageCenterManage
             // 
             // Content
             // 
+            this.Content.Controls.Add(this.pictureBox8);
             this.Content.Location = new System.Drawing.Point(350, 67);
             this.Content.Size = new System.Drawing.Size(801, 707);
             // 
@@ -475,6 +480,16 @@ namespace LanguageCenterManage
             this.userBtn.UseVisualStyleBackColor = true;
             this.userBtn.Click += new System.EventHandler(this.userBtn_Click);
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(801, 707);
+            this.pictureBox8.TabIndex = 0;
+            this.pictureBox8.TabStop = false;
+            // 
             // ManagerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -486,6 +501,7 @@ namespace LanguageCenterManage
             this.Navbar.PerformLayout();
             this.Sidebar.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.Content.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -513,6 +529,7 @@ namespace LanguageCenterManage
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -547,5 +564,6 @@ namespace LanguageCenterManage
         private PictureBox iconLogout;
         private Panel panel7;
         private MaterialFlatButton btnLogout;
+        private PictureBox pictureBox8;
     }
 }
