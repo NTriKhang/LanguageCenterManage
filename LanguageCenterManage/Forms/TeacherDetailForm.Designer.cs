@@ -33,7 +33,7 @@ namespace LanguageCenterManage.Forms
             this.btnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.dtBirth = new System.Windows.Forms.DateTimePicker();
+            this.dtBirth = new _DateTimePickerValid();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
@@ -326,7 +326,7 @@ namespace LanguageCenterManage.Forms
             this.Controls.Add(this.label5);
             this.Name = "TeacherDetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "TeacherDetail";
+            this.Text = "Teacher Detail";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TeacherDetailForm_FormClosed);
             this.Load += new System.EventHandler(this.TeacherDetailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profileImageBox)).EndInit();
@@ -340,7 +340,7 @@ namespace LanguageCenterManage.Forms
         private MaterialSkin.Controls.MaterialRaisedButton btnAdd;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.DateTimePicker dtBirth;
+        private _DateTimePickerValid dtBirth;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtFirstName;

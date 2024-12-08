@@ -97,6 +97,7 @@
             this.Content.Controls.Add(this.pictureBox9);
             this.Content.Location = new System.Drawing.Point(356, 67);
             this.Content.Size = new System.Drawing.Size(981, 756);
+            this.Content.Controls.SetChildIndex(this.pictureBox9, 0);
             // 
             // label1
             // 
@@ -180,7 +181,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(350, 71);
             this.panel7.TabIndex = 0;
-            this.panel7.Controls.SetChildIndex(this.btnRoom, 0);
             // 
             // btnRoom
             // 

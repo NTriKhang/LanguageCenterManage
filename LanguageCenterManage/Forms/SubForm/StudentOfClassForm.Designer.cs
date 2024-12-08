@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.studentDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDTOBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -60,10 +60,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // studentDTOBindingSource
-            // 
-            this.studentDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.StudentDTO);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -97,6 +93,10 @@
             this.birthDataGridViewTextBoxColumn.Name = "birthDataGridViewTextBoxColumn";
             this.birthDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // studentDTOBindingSource
+            // 
+            this.studentDTOBindingSource.DataSource = typeof(LanguageCenterManage.DTO.StudentDTO);
+            // 
             // StudentOfClassForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -104,7 +104,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Name = "StudentOfClassForm";
-            this.Text = "StudentOfClassForm";
+            this.Text = "Class Students";
             this.Load += new System.EventHandler(this.StudentOfClassForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDTOBindingSource)).EndInit();

@@ -364,7 +364,7 @@
             this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.materialLabel1);
             this.Name = "CourseDetailForm";
-            this.Text = "CourseDetail";
+            this.Text = "Course Detail";
             this.Load += new System.EventHandler(this.CourseDetail_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

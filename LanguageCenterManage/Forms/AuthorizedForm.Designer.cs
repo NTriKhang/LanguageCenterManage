@@ -58,6 +58,7 @@
             // 
             // ConfirmBtn
             // 
+            this.ConfirmBtn.AutoSize = true;
             this.ConfirmBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ConfirmBtn.Depth = 0;
             this.ConfirmBtn.Icon = null;
@@ -65,7 +66,7 @@
             this.ConfirmBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.ConfirmBtn.Name = "ConfirmBtn";
             this.ConfirmBtn.Primary = true;
-            this.ConfirmBtn.Size = new System.Drawing.Size(286, 36);
+            this.ConfirmBtn.Size = new System.Drawing.Size(97, 36);
             this.ConfirmBtn.TabIndex = 2;
             this.ConfirmBtn.Text = "Confirm";
             this.ConfirmBtn.UseVisualStyleBackColor = true;
@@ -80,7 +81,7 @@
             this.Controls.Add(this.SendAgainBtn);
             this.Controls.Add(this.codeTextbox);
             this.Name = "AuthorizedForm";
-            this.Text = "AuthorizedForm";
+            this.Text = "Authorized";
             this.Load += new System.EventHandler(this.AuthorizedForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

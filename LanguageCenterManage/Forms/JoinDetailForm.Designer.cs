@@ -285,7 +285,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "JoinDetailForm";
-            this.Text = "JoinDetail";
+            this.Text = "Join Detail";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.JoinDetailForm_FormClosed);
             this.Load += new System.EventHandler(this.JoinDetailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.classDTOBindingSource)).EndInit();

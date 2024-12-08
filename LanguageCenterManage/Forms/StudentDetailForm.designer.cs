@@ -41,7 +41,7 @@ namespace LanguageCenterManage
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPhone = new LanguageCenterManage.CustomControl._TextValid();
-            this.dtBirth = new System.Windows.Forms.DateTimePicker();
+            this.dtBirth = new LanguageCenterManage.CustomControl._DateTimePickerValid();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSendEmail = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -88,7 +88,7 @@ namespace LanguageCenterManage
             // 
             // txtEmailStudent
             // 
-            this.txtEmailStudent._email = false;
+            this.txtEmailStudent._email = true;
             this.txtEmailStudent._phone = false;
             this.txtEmailStudent.isValid = false;
             this.txtEmailStudent.Location = new System.Drawing.Point(531, 190);
@@ -159,7 +159,7 @@ namespace LanguageCenterManage
             // txtPhone
             // 
             this.txtPhone._email = false;
-            this.txtPhone._phone = false;
+            this.txtPhone._phone = true;
             this.txtPhone.isValid = false;
             this.txtPhone.Location = new System.Drawing.Point(531, 353);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -171,6 +171,7 @@ namespace LanguageCenterManage
             // dtBirth
             // 
             this.dtBirth.CustomFormat = "dd/MM/yyy";
+            this.dtBirth.isValid = false;
             this.dtBirth.Location = new System.Drawing.Point(525, 414);
             this.dtBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtBirth.Name = "dtBirth";
@@ -357,7 +358,7 @@ namespace LanguageCenterManage
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "StudentDetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "DetailStudent";
+            this.Text = "Student Detail";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.StudentDetailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profileImageBox)).EndInit();
@@ -379,7 +380,7 @@ namespace LanguageCenterManage
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private _TextValid txtPhone;
-        private System.Windows.Forms.DateTimePicker dtBirth;
+        private _DateTimePickerValid dtBirth;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSendEmail;
         private System.Windows.Forms.Button btnDelete;

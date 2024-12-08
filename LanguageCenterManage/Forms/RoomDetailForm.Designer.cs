@@ -132,7 +132,7 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.txtRoomId);
             this.Name = "RoomDetailForm";
-            this.Text = "RoomDetail";
+            this.Text = "Room Detail";
             this.Load += new System.EventHandler(this.RoomDetailForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

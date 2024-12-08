@@ -180,6 +180,12 @@
     <Compile Include="Controls\UsersControl.Designer.cs">
       <DependentUpon>UsersControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControl\_DateTimePickerValid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\_DateTimePickerValid.Designer.cs">
+      <DependentUpon>_DateTimePickerValid.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControl\_TextValid.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -126,6 +126,11 @@ namespace LanguageCenterManage.Forms
                 MessageBox.Show("Invalid phone", "400", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            else if (!dtBirth.isValid)
+            {
+                MessageBox.Show("Teacher must be at least 18 years old", "400", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
         private void TeacherDetailForm_FormClosed(object sender, FormClosedEventArgs e)

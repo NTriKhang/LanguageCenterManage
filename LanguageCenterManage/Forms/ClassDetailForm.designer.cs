@@ -208,7 +208,7 @@
             this.Controls.Add(this.Idtextbox);
             this.Controls.Add(this.materialLabel1);
             this.Name = "ClassDetailForm";
-            this.Text = "ClassDetailForm";
+            this.Text = "Class Detail";
             this.Load += new System.EventHandler(this.ClassDetailForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

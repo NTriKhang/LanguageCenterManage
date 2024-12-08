@@ -113,7 +113,7 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.SubjectTB);
             this.Name = "EmailForm";
-            this.Text = "EmailForm";
+            this.Text = "Email";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -42,12 +42,12 @@
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(54, 82);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(185, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(188, 24);
             this.materialLabel1.TabIndex = 1;
             this.materialLabel1.Text = "Choose day and shift";
             // 
@@ -94,7 +94,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.materialLabel1);
             this.Name = "RoomAvailableForm";
-            this.Text = "RoomAvailableForm";
+            this.Text = "Available Room";
             this.Load += new System.EventHandler(this.RoomAvailableForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();

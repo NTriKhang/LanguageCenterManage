@@ -38,8 +38,8 @@ namespace LanguageCenterManage.Forms
         private bool isValid()
         {
             if (txtFirstName.Text == "" || txtLastName.Text == "" || txtEmailStudent.Text == ""
-    || txtPhone.Text == "" || addressTextBox.Text == "" || roleIdCb.Text == ""
-    || roleNameTb.Text == "" || passwordTb.Text == "")
+                || txtPhone.Text == "" || addressTextBox.Text == "" || roleIdCb.Text == ""
+                || roleNameTb.Text == "" || passwordTb.Text == "")
             {
                 MessageBox.Show("Enter missing fields", "400", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -54,7 +54,11 @@ namespace LanguageCenterManage.Forms
                 MessageBox.Show("Invalid phone", "400", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
+            else if (!dtBirth.isValid)
+            {
+                MessageBox.Show("User must be at least 18 years old", "400", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
 

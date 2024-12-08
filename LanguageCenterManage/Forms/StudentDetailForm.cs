@@ -137,6 +137,11 @@ namespace LanguageCenterManage
                 MessageBox.Show("Invalid phone", "400", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            else if (!dtBirth.isValid)
+            {
+                MessageBox.Show("Studebt must be at least 6 years old", "400", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
         private void btnUpdate_Click(object sender, EventArgs e)

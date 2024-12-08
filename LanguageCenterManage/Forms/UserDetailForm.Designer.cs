@@ -32,7 +32,7 @@ namespace LanguageCenterManage.Forms
         {
             this.label7 = new System.Windows.Forms.Label();
             this.addressTextBox = new System.Windows.Forms.RichTextBox();
-            this.dtBirth = new System.Windows.Forms.DateTimePicker();
+            this.dtBirth = new _DateTimePickerValid();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmailStudent = new LanguageCenterManage.CustomControl._TextValid();
@@ -419,7 +419,7 @@ namespace LanguageCenterManage.Forms
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Name = "UserDetailForm";
-            this.Text = "UserDetailForm";
+            this.Text = "User Detail";
             this.Load += new System.EventHandler(this.UserDetailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profileImageBox)).EndInit();
             this.ResumeLayout(false);
@@ -431,7 +431,7 @@ namespace LanguageCenterManage.Forms
 
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox addressTextBox;
-        private System.Windows.Forms.DateTimePicker dtBirth;
+        private _DateTimePickerValid dtBirth;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtFirstName;
